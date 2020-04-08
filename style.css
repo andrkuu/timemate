@@ -69,3 +69,11 @@ body{
     color:white;
     
 }
+#inputContainer{
+    width: 40%;
+    margin: 0;
+    padding: 0;
+    margin-left: 40%;
+    margin-top: 30%;
+    position: absolute;
+}
