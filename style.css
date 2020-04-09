@@ -68,6 +68,7 @@ a {
     color: white;
     font-size: 2vw;
     justify-content: space-evenly;
+    display:inline;
 }
 
 .chosen {
