@@ -62,6 +62,13 @@ label{
 
 
 }
+input[type="time"]{
+    background-color: #b71234;
+    color:white;
+    border:none;
+    padding: 1vw;
+    font-size: 1vw;
+}
 .lingid{
     color: white;
     background-color:#b71234;
