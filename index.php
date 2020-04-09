@@ -3,21 +3,17 @@
 require("functions_user.php");
 require("functions_main.php");
 
+$notice = "";
+
 if(isset($_POST["submit_button"])){
 
     echo "test";
-$nameError = null;
-$surnameError = null;
-$birthMonthError = null;
-$birthYearError = null;
-$birthDayError = null;
-$birthDateError = null;
-$genderError = null;
-$emailError = null;
-$passwordError = null;
-$confirmpasswordError = null;
 
-//kui on uue kasutaja loomise nuppu vajutatud
+    $usernameError = null;
+    $passwordError = null;
+
+
+// if login button has been pressed
 if(isset($_POST["submitUserData"])) {
 
 
@@ -25,14 +21,17 @@ if(isset($_POST["submitUserData"])) {
     if (isset($_POST["username"]) and !empty($_POST["username"])) {
         $surname = test_input($_POST["username"]);
     } else {
-        $surnameError = "Palun sisesta perekonnanimi!";
+        $usernameError = "Palun sisesta perekonnanimi!";
     }
 
-    //password
-    if (isset($_POST["password"]) and !empty($_POST["surName"])) {
-        $surname = test_input($_POST["surName"]);
+    if (!isset($_POST["password"]) or strlen($_POST["password"]) < 8){
+        $passwordError = "Palun sisesta parool, vähemalt 8 märki!";
+    }
+
+    if(empty($usernameError) and empty($passwordError)){
+        $notice = signIn($_POST["username"], $_POST["password"]);
     } else {
-        $surnameError = "Palun sisesta perekonnanimi!";
+        $notice = "Ei saa sisse logida!";
     }
 
 
@@ -67,7 +66,7 @@ if(isset($_POST["submitUserData"])) {
             <input type="checkbox" id="remember_me" name="remember" value="remember">
             <label for="remember_me">Mäleta mind</label>
             <br><br>
-            <button type="submit" id="submit_button" name="submit_button" >Logi sisse</button>
+            <button type="submit" id="submit_button" name="submit_button" >Logi sisse</button><?php echo $notice; ?>
         </form>
     </div>
     

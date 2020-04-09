@@ -5,31 +5,22 @@ session_start();
 function signIn($userName, $password){
     $notice = "";
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn->prepare("SELECT password FROM vpusers WHERE email=?");
+    $stmt = $conn->prepare("SELECT password FROM users WHERE username=?");
     echo $conn->error;
-    $stmt->bind_param("s", $email);
+    $stmt->bind_param("s", $userName);
     $stmt->bind_result($passwordFromDb);
     if($stmt->execute()){
         //kui päring õnnestus
         if($stmt->fetch()){
             //kasutaja on olemas
-            if(password_verify($password, $passwordFromDb)){
+            if($password === $passwordFromDb){
                 //kui salasõna klapib
                 $stmt->close();
-                $stmt = $conn->prepare("SELECT id,firstname, lastname FROM vpusers WHERE email=?");
-                echo $conn->error;
-                $stmt->bind_param("s", $email);
-                $stmt->bind_result($idFromDb,$firstnameFromDb, $lastnameFromDb);
-                $stmt->execute();
-                $stmt->fetch();
-                //Enne sisselogitud lehtedele jõudmist, sulgeme andmebaasi ühendused
-                $notice = "Sisse logis " .$firstnameFromDb ." " .$lastnameFromDb ."!";
 
 
                 //Salvestame kasutaja info sessioonimuutujasse
-                $_SESSION["userFirstName"] = $firstnameFromDb;
-                $_SESSION["userLastName"] = $lastnameFromDb;
-                $_SESSION["userId"] = $idFromDb;
+                $_SESSION["userFirstName"] = $userName;
+                $_SESSION["userLastName"] = $passwordFromDb;
 
                 $stmt->close();
                 $conn->close();
