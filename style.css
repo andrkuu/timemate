@@ -59,6 +59,7 @@ label{
     text-align: left;
     position: relative;
     top:5vw;
+    display: inline-grid;
 
 
 }
@@ -80,7 +81,6 @@ input[type="time"]{
     font-size: 3vw;
     margin: 0 0;
     cursor: pointer;
-    display: inline-grid;
 }
 .lingid:target{
     background-color:white ;
