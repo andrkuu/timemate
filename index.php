@@ -12,7 +12,7 @@
 
     <div id="login_container">
         <form action="/aine.php">
-            <img src="images/tlulogo.png" id="tlu_logo2" alt="Tlu logo">
+            <img src="images/tlu_logo_wide.jpg" id="tlu_logo2" alt="Tlu logo">
             <br><br>
             <input type="text" id="user_name" name="password" placeholder="ÕIS-i kasutajanimi">
             <br><br>
