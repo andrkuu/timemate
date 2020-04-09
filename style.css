@@ -58,17 +58,20 @@ a {
     text-decoration: none;
     width: 10%;
     height: 6%;
-    padding: 0;
     margin-left: 40%;
     margin-top: 35%;
     position: absolute;
+}
+#sisesta{
     cursor: pointer;
     background-color:#b71234;
     border: none;
     color: white;
-    font-size: 2vw;
+    font-size: 1vw;
     justify-content: space-evenly;
-    display:inline;
+    display:block;
+    width:8vw;
+    height:3vw;
 }
 
 .chosen {
