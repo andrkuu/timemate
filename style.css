@@ -73,7 +73,7 @@ input[type="time"]{
     color: white;
     background-color:#b71234;
     border: none;
-    width:50vh;
+    width:25%;
     height:24vh;
     text-align: center;
     text-decoration: none;
@@ -81,8 +81,6 @@ input[type="time"]{
     margin: 0 0;
     cursor: pointer;
     display: block;
-    border:1px;
-    border-color:black ;
 }
 .lingid:target{
     background-color:white ;
