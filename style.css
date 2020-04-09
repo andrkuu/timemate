@@ -14,6 +14,29 @@ body{
     font-family: Impact, Charcoal, sans-serif;
 
 }
+#class{
+    background-color: white;
+    color: black;
+    padding: 1vw;
+    font-size: 1vw;
+    border: none;
+    cursor: pointer;
+}
+
+#type{
+    background-color: white;
+    color: black;
+    padding: 1vw;
+    font-size: 1vw;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+}
+label{
+    align-content: center;
+    size:3vw;
+
+}
 
 #links{
     margin: 0;
@@ -33,7 +56,7 @@ body{
     text-align: center;
     text-decoration: none;
     font-size: 3vw;
-    margin: 0px 0px;
+    margin: 0 0;
     cursor: pointer;
     display: block;
     border:1px;
@@ -52,17 +75,17 @@ a {
 }
 .logout{
     align-items: left;
-}*/
+}
 #buttonContainer{
     text-align: center;
     text-decoration: none;
     width: 10%;
     height: 6%;
-    margin-left: 40%;
+    margin-left: 57%;
     margin-top: 35%;
     position: absolute;
-}
-#sisesta{
+}*/
+#button{
     cursor: pointer;
     background-color:#b71234;
     border: none;
@@ -72,6 +95,11 @@ a {
     display:block;
     width:8vw;
     height:3vw;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    margin-top:2vw;
+    margin-left:3vw;
 }
 
 .chosen {
@@ -85,6 +113,9 @@ a {
     margin: 0;
     padding: 0;
     margin-left: 40%;
-    margin-top: 30%;
+    margin-top: 7%;
     position: absolute;
+    align-items: center;
+    justify-content: space-evenly;
+    display: inline-grid;
 }
