@@ -90,21 +90,7 @@ a {
     color: white;
     text-decoration: none;
 }
-/*.username{
-    text-align: right;
-}
-.logout{
-    align-items: left;
-}
-#buttonContainer{
-    text-align: center;
-    text-decoration: none;
-    width: 10%;
-    height: 6%;
-    margin-left: 57%;
-    margin-top: 35%;
-    position: absolute;
-}*/
+
 #button{
     cursor: pointer;
     background-color:#b71234;
