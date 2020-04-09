@@ -4,7 +4,16 @@ body{
     width: 100%;
     margin: 0;
 }
+#topbar{
+    width: 100vw;
+    height: 5vh;
+    background-color: #b71234;
+    color:white;
 
+}
+#tlu_logo{
+    height: 5vh;
+}
 #timemate{
     text-align: center;
     color: rgb(0, 0, 0);
@@ -13,6 +22,34 @@ body{
     padding: 0;
     font-family: Impact, Charcoal, sans-serif;
 
+}
+#class{
+    background-color: white;
+    color: black;
+    padding: 1vw;
+    font-size: 1vw;
+    border: none;
+    cursor: pointer;
+}
+
+#type{
+    background-color: white;
+    color: black;
+    padding: 1vw;
+    font-size: 1vw;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+}
+#time {
+    background-color: #b71234;
+    color: white;
+}
+label{
+    margin-left:34%;
+    align-content: center;
+    size:3vw;
+    font-size:1vw;
 }
 
 #links{
@@ -23,17 +60,25 @@ body{
     position: relative;
     top:5vw;
 
+
+}
+input[type="time"]{
+    background-color: #b71234;
+    color:white;
+    border:none;
+    padding: 1vw;
+    font-size: 1vw;
 }
 .lingid{
+    color: white;
     background-color:#b71234;
     border: none;
-    color: white;
-    width:30vw;
-    height:10vw;
+    width:50vh;
+    height:24vh;
     text-align: center;
     text-decoration: none;
     font-size: 3vw;
-    margin: 0px 0px;
+    margin: 0 0;
     cursor: pointer;
     display: block;
     border:1px;
@@ -52,17 +97,17 @@ a {
 }
 .logout{
     align-items: left;
-}*/
+}
 #buttonContainer{
     text-align: center;
     text-decoration: none;
     width: 10%;
     height: 6%;
-    margin-left: 40%;
+    margin-left: 57%;
     margin-top: 35%;
     position: absolute;
-}
-#sisesta{
+}*/
+#button{
     cursor: pointer;
     background-color:#b71234;
     border: none;
@@ -72,6 +117,11 @@ a {
     display:block;
     width:8vw;
     height:3vw;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    margin-top:2vw;
+    margin-left:20%;
 }
 
 .chosen {
@@ -84,7 +134,10 @@ a {
     width: 40%;
     margin: 0;
     padding: 0;
-    margin-left: 40%;
-    margin-top: 30%;
+    margin-left: 55vh;
+    margin-top: 20vh;
     position: absolute;
+    align-items: center;
+    justify-content: space-evenly;
+    display: inline-grid;
 }
