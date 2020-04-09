@@ -130,7 +130,7 @@ a {
 }
 #inputContainer{
     width: 40%;
-    margin: 0;
+    /*margin: 0;*/
     padding: 0;
     margin-left: 55vh;
     margin-top: 20vh;
