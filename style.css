@@ -44,12 +44,16 @@ body{
     background-color:white ;
     color:black ;
 }
-.username{
+a {
+    color: white;
+    text-decoration: none;
+}
+/*.username{
     text-align: right;
 }
 .logout{
     align-items: left;
-}
+}*/
 #buttonContainer{
     text-align: center;
     text-decoration: none;
@@ -58,12 +62,15 @@ body{
     cursor: pointer;
     
 }
-.chosen
-    color:white
+.chosen {
+    color: white;
+}
 .button{
-    background-color:rgb(#b71234);
+    background-color:#b71234;
     color:white;
-    
+}
+#class{
+
 }
 #inputContainer{
     width: 40%;
