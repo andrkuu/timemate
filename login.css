@@ -32,12 +32,15 @@ body{
     margin-top: 2vh;
 }
 #submit_button{
-    border-radius: 5px;
+    border-radius: 20px;
     border: none;
     background-color: #b71234;
     color: #dddddd;
     height: 5vh;
+    width: 10vw;
     cursor: pointer;
+    font: inherit;
+    box-shadow: inset 0 -3px 0 #950a27;
 }
 
 #error_message{
