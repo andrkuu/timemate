@@ -4,7 +4,16 @@ body{
     width: 100%;
     margin: 0;
 }
+#topbar{
+    width: 100vw;
+    height: 5vh;
+    background-color: #b71234;
+    color:white;
 
+}
+#tlu_logo{
+    height: 5vh;
+}
 #timemate{
     text-align: center;
     color: rgb(0, 0, 0);
@@ -32,10 +41,15 @@ body{
     cursor: pointer;
     align-items: center;
 }
+#time {
+    background-color: #b71234;
+    color: white;
+}
 label{
+    margin-left:34%;
     align-content: center;
     size:3vw;
-
+    font-size:1vw;
 }
 
 #links{
@@ -46,13 +60,14 @@ label{
     position: relative;
     top:5vw;
 
+
 }
 .lingid{
+    color: white;
     background-color:#b71234;
     border: none;
-    color: white;
-    width:30vw;
-    height:10vw;
+    width:50vh;
+    height:24vh;
     text-align: center;
     text-decoration: none;
     font-size: 3vw;
@@ -99,7 +114,7 @@ a {
     text-align: center;
     text-decoration: none;
     margin-top:2vw;
-    margin-left:3vw;
+    margin-left:20%;
 }
 
 .chosen {
@@ -112,8 +127,8 @@ a {
     width: 40%;
     margin: 0;
     padding: 0;
-    margin-left: 40%;
-    margin-top: 7%;
+    margin-left: 55vh;
+    margin-top: 20vh;
     position: absolute;
     align-items: center;
     justify-content: space-evenly;
