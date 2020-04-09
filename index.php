@@ -5,17 +5,11 @@ require("functions_main.php");
 
 $notice = "";
 
-if(isset($_POST["submit_button"])){
-
-    echo "test";
+// if login button has been pressed
+if(isset($_POST["submit_button"])) {
 
     $usernameError = null;
     $passwordError = null;
-
-
-// if login button has been pressed
-if(isset($_POST["submitUserData"])) {
-
 
     //username
     if (isset($_POST["username"]) and !empty($_POST["username"])) {
@@ -24,8 +18,8 @@ if(isset($_POST["submitUserData"])) {
         $usernameError = "Palun sisesta perekonnanimi!";
     }
 
-    if (!isset($_POST["password"]) or strlen($_POST["password"]) < 8){
-        $passwordError = "Palun sisesta parool, vähemalt 8 märki!";
+    if (!isset($_POST["password"]) or strlen($_POST["password"]) < 3){
+        $passwordError = "Palun sisesta parool, vähemalt 3 märki!";
     }
 
     if(empty($usernameError) and empty($passwordError)){
@@ -34,11 +28,11 @@ if(isset($_POST["submitUserData"])) {
         $notice = "Ei saa sisse logida!";
     }
 
-
-
-}
+    echo $notice;
 
 }
+
+
 
 ?>
 

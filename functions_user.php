@@ -25,7 +25,7 @@ function signIn($userName, $password){
                 $stmt->close();
                 $conn->close();
 
-                header("Location: home.php");
+                header("Location: aine.php");
                 exit();
 
 
@@ -34,7 +34,7 @@ function signIn($userName, $password){
                 $notice = "Vale salasõna!";
             }//kas password_verify
         } else {
-            $notice = "Sellist kasutajat (" .$email .") ei leitud!";
+            $notice = "Sellist kasutajat (" .$userName .") ei leitud!";
             //kui sellise e-mailiga ei saanud vastet (fetch ei andnud midagi), siis pole sellist kasutajat
         }//kas fetch õnnestus
     } else {
