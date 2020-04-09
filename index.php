@@ -28,7 +28,7 @@ if(isset($_POST["submit_button"])) {
         $notice = "Ei saa sisse logida!";
     }
 
-    echo $notice;
+    //echo $notice;
 
 }
 
@@ -61,7 +61,8 @@ if(isset($_POST["submit_button"])) {
             <input type="checkbox" id="remember_me" name="remember" value="remember">
             <label for="remember_me">Mäleta mind</label>
             <br><br>
-            <button type="submit" id="submit_button" name="submit_button" >Logi sisse</button><?php echo $notice; ?>
+            <button type="submit" id="submit_button" name="submit_button" >Logi sisse</button>
+            <p><?php echo $notice; ?></p>
         </form>
     </div>
     
