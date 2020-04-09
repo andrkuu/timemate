@@ -80,7 +80,7 @@ input[type="time"]{
     font-size: 3vw;
     margin: 0 0;
     cursor: pointer;
-    display: block;
+    display: inline-grid;
 }
 .lingid:target{
     background-color:white ;
