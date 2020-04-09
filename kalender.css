@@ -3,11 +3,12 @@ ul {list-style-type: none;}
 body {font-family: Verdana, sans-serif;}
 
 .month {
-    padding: 2vw 10vw;
-    width: 69vw;
+    padding: 2% 10%;
+    width: 76.5%;
+    height:8%;
     background: #b71234;
     text-align: center;
-    margin: -40vw 30vw;
+    margin: -46% 23.5%;
 }
 
 .month ul {
@@ -32,9 +33,10 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .weekdays {
-    margin: 40% 30vw;
-    width: 69vw;
-    padding: 2vw 10vw;
+    margin: 45% 23.5%;
+    width: 76.5%;
+    height:5%;
+    padding: 2% 10%;
     background-color: #ddd;
 }
 
@@ -46,16 +48,17 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .days {
-    margin: -40% 30vw;
-    width: 69vw;
-    padding: 10vw 10vw;
+    margin: -45% 23.5%;
+    width: 76.5%;
+    height: 16%;
+    padding: 12.7% 10%;
     background: #eee;
 }
 
 .days li {
     list-style-type: none;
     display: inline-block;
-    width: 13.6%;
+    width: 16%;
     text-align: center;
     margin-bottom: 5px;
     font-size:12px;
