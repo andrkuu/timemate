@@ -44,7 +44,7 @@ if(isset($_POST["submit_button"])) {
     <link rel="shortcut icon" href="/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="login.css">
-    <title>Login</title>
+    <title>| Login</title>
 </head>
 <body>
 
@@ -62,7 +62,7 @@ if(isset($_POST["submit_button"])) {
             <label for="remember_me">Mäleta mind</label>
             <br><br>
             <button type="submit" id="submit_button" name="submit_button" >Logi sisse</button>
-            <p><?php echo $notice; ?></p>
+            <div id="error_message"><?php echo $notice; ?></div>
         </form>
     </div>
     
