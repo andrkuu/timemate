@@ -1,0 +1,23 @@
+body{
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#panner{
+    width: 100vw;
+    height: 5vh;
+    background-color: #b71234;
+}
+
+#tlu_logo{
+    height: 5vh;
+}
+
+#login_container{
+    background-color: #666666;
+    width: 40vw;
+    margin-top: 20vh;
+    margin-left: 30vw;
+    text-align: center;
+}
