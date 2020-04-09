@@ -59,7 +59,7 @@ label{
     text-align: left;
     position: relative;
     top:5vw;
-    display: inline-grid;
+    display: block;
 
 
 }
