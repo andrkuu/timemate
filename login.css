@@ -2,6 +2,10 @@ body{
     background-color: white;
     margin: 0;
     padding: 0;
+    background-image: url("images/tluhoone.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #panner{
@@ -16,8 +20,30 @@ body{
 
 #login_container{
     background-color: #666666;
-    width: 40vw;
-    margin-top: 20vh;
-    margin-left: 30vw;
+    width: 30vw;
+    margin-top: 30vh;
+    margin-left: 35vw;
     text-align: center;
+    border-radius: 5px;
+}
+
+#tlu_logo2{
+    height: 5vh;
+    margin-top: 2vh;
+}
+#submit_button{
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    border: none;
+    background-color: #b71234;
+    color: #dddddd;
+    height: 5vh;
+
+}
+
+@media only screen and (max-width: 600px) {
+    #login_container{
+        width: 40vw;
+        argin-left: 30vw;
+    }
 }
