@@ -26,28 +26,33 @@ body{
 #class{
     background-color: white;
     color: black;
-    padding: 1vw;
+    padding: 2vw;
     font-size: 1vw;
-    border: none;
+    border-color: grey;
     cursor: pointer;
+    border-width: 1px;
+    border-radius:2vh;
 }
 
 #type{
     background-color: white;
     color: black;
-    padding: 1vw;
+    padding: 2vw;
     font-size: 1vw;
-    border: none;
     cursor: pointer;
     align-items: center;
+    border-width: 1px;
+    border-radius:2vh;
+    border-color: grey;
 }
 #time {
     background-color: #b71234;
     color: white;
+
 }
 label{
     margin-left:34%;
-    align-content: center;
+    align-content: flex-start;
     size:3vw;
     font-size:1vw;
 }
@@ -55,12 +60,11 @@ label{
 #links{
     margin: 0;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     text-align: left;
     position: relative;
     top:5vw;
-    display: block;
-
+    width:25%;
 
 }
 input[type="time"]{
@@ -78,10 +82,12 @@ input[type="time"]{
     height:24vh;
     text-align: center;
     text-decoration: none;
+    align-items: center;
     font-size: 3vw;
-    margin: 0 0;
     cursor: pointer;
-    display: block;
+    display: grid;
+    padding: 15px 32px;
+
 }
 .lingid:target{
     background-color:white ;
