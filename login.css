@@ -32,14 +32,16 @@ body{
     margin-top: 2vh;
 }
 #submit_button{
-    margin-bottom: 2vh;
     border-radius: 5px;
     border: none;
     background-color: #b71234;
     color: #dddddd;
     height: 5vh;
     cursor: pointer;
+}
 
+#error_message{
+    padding: 2vh;
 }
 
 @media only screen and (max-width: 600px) {
