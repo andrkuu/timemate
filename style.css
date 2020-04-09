@@ -16,8 +16,7 @@ body{
 }
 
 #links{
-    margin: auto;
-    display:block;
+    margin: 0;
     align-items: center;
     justify-content: space-evenly;
     text-align: left;
@@ -57,17 +56,22 @@ a {
 #buttonContainer{
     text-align: center;
     text-decoration: none;
-}
-.button{
+    width: 10%;
+    height: 6%;
+    padding: 0;
+    margin-left: 40%;
+    margin-top: 35%;
+    position: absolute;
     cursor: pointer;
-    
+    background-color:#b71234;
+    border: none;
+    color: white;
+    font-size: 2vw;
+    justify-content: space-evenly;
 }
+
 .chosen {
     color: white;
-}
-.button{
-    background-color:#b71234;
-    color:white;
 }
 #class{
 
