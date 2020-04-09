@@ -16,8 +16,7 @@ body{
 }
 
 #links{
-    margin: auto;
-    display:block;
+    margin: 0;
     align-items: center;
     justify-content: space-evenly;
     text-align: left;
@@ -44,26 +43,42 @@ body{
     background-color:white ;
     color:black ;
 }
-.username{
+a {
+    color: white;
+    text-decoration: none;
+}
+/*.username{
     text-align: right;
 }
 .logout{
     align-items: left;
-}
+}*/
 #buttonContainer{
     text-align: center;
     text-decoration: none;
+    width: 10%;
+    height: 6%;
+    margin-left: 40%;
+    margin-top: 35%;
+    position: absolute;
 }
-.button{
+#sisesta{
     cursor: pointer;
-    
+    background-color:#b71234;
+    border: none;
+    color: white;
+    font-size: 1vw;
+    justify-content: space-evenly;
+    display:block;
+    width:8vw;
+    height:3vw;
 }
-.chosen
-    color:white
-.button{
-    background-color:rgb(#b71234);
-    color:white;
-    
+
+.chosen {
+    color: white;
+}
+#class{
+
 }
 #inputContainer{
     width: 40%;
