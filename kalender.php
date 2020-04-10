@@ -10,12 +10,12 @@
 
   </head>
   <body>
-
+    <?php include('nav-bar.php'); ?>
     <div class="links">
-        <a href="statistika.html"><button class="lingid">Statistika</button></a>
+        <a href="statistika.php"><button class="lingid">Statistika</button></a>
         <a href="aine.php"><button class="lingid">Aine</button></a>
-        <a href="kalender.html"><button class="lingid">Kalender</button></a>
-        <a href="seaded.html"><button class="lingid">Seaded</button></a>
+        <a href="kalender.php"><button class="lingid">Kalender</button></a>
+        <a href="seaded.php"><button class="lingid">Seaded</button></a>
       </div>
     <div class="kalender">
     <div class="month">

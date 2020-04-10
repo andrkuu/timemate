@@ -8,12 +8,12 @@
     <title>Statistika</title>
   </head>
   <body>
-    
+    <?php include('nav-bar.php'); ?>
     <div class="links">
-        <a href="statistika.html" class="lingid"> Statistika ></a>
+        <a href="statistika.php" class="lingid"> Statistika ></a>
         <a href="aine.php" class="lingid"> Aine</a>
-        <a href="kalender.html" class="lingid">Kalender</a>
-        <a href="seaded.html" class="lingid"> Seaded</a>
+        <a href="kalender.php" class="lingid">Kalender</a>
+        <a href="seaded.php" class="lingid"> Seaded</a>
       </div>
     
   </body>
