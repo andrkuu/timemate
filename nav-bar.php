@@ -1,3 +1,5 @@
 <?php
-    echo "<div id=\"topbar\"></div>";
+    session_start();
+    echo "<div id=\"topbar\">".$_SESSION["userFirstName"]. " ".$_SESSION["userLastName"]."</div>";
+
 
