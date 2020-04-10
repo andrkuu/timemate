@@ -1,8 +1,5 @@
 <?php
-require("../../config.php");
-session_start();
-
-function signIn($userName, $password){
+function getSubjects($userName, $password){
     $notice = "";
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
     $stmt = $conn->prepare("SELECT password FROM users WHERE username=?");
@@ -21,8 +18,6 @@ function signIn($userName, $password){
                 //Salvestame kasutaja info sessioonimuutujasse
                 $_SESSION["userFirstName"] = $userName;
                 $_SESSION["userLastName"] = $passwordFromDb;
-
-
 
                 $stmt->close();
                 $conn->close();
@@ -43,30 +38,6 @@ function signIn($userName, $password){
         $notice = "Sisselogimisel tekkis tehniline viga!" .$stmt->error;
         //veateade, kui execute ei õnnestunud
     }//kas execute õnnestus
-
-    $stmt->close();
-    $conn->close();
-    return $notice;
-}
-
-function signUp($userName, $password){
-    $notice = null;
-    $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-
-    $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES(?,?)");
-    echo $conn->error;
-
-    //tekitame parooli räsi (hash) ehk krüpteerime
-    $options = ["cost" => 12, "salt" => substr(sha1("rBffUdkxZ"), 0, 22)];
-    $pwdhash = password_hash($password, PASSWORD_BCRYPT, $options);
-
-    $stmt->bind_param("ss", $userName, $pwdhash);
-
-    if($stmt->execute()){
-        $notice = "Kasutaja salvestamine õnnestus!";
-    } else {
-        $notice = "Kasutaja salvestamisel tekkis tehniline tõrge: " .$stmt->error;
-    }
 
     $stmt->close();
     $conn->close();
