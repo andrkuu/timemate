@@ -4,11 +4,12 @@ body {font-family: Verdana, sans-serif;}
 
 .month {
     padding: 2% 10%;
-    width: 76.5%;
+    width: 75%;
     height:8%;
     background: #b71234;
     text-align: center;
-    margin: -46% 23.5%;
+    margin: -46% 25%;
+    top: 0;
 }
 
 .month ul {
@@ -33,8 +34,8 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .weekdays {
-    margin: 45% 23.5%;
-    width: 76.5%;
+    margin: 45% 25%;
+    width: 75%;
     height:5%;
     padding: 2% 10%;
     background-color: #ddd;
@@ -48,10 +49,10 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .days {
-    margin: -45% 23.5%;
-    width: 76.5%;
-    height: 16%;
-    padding: 12.7% 10%;
+    margin: -45% 25%;
+    width: 75%;
+    height: 27%;
+    padding: 13.2% 10%;
     background: #eee;
 }
 
