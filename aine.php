@@ -16,7 +16,7 @@
         <option value="C#">C#</option>
         <option value="java">java</option>
         <option value="python">python</option>
-        <option value="interaktsioonidisain">interaktsiooni disain</option>
+        <option value="interaktsioonidisain">interaktsiooni disainid</option>
       </select>
       <br />
 
