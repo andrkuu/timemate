@@ -36,7 +36,39 @@
                 }]
             },
 
-            options: {}
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'bottom',
+                    display: true,
+
+                },
+                "hover": {
+                    "animationDuration": 0
+                },
+                "animation": {
+                    "onComplete": function () {
+                        var chartInstance = this.chart,
+                            ctx = chartInstance.ctx;
+
+                        ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'bottom';
+
+                        this.data.datasets.forEach(function (dataset, i) {
+                            var meta = chartInstance.controller.getDatasetMeta(i);
+                            meta.data.forEach(function (bar, index) {
+                                var data = dataset.data[index];
+                                ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                            });
+                        });
+                    }
+                },
+                title: {
+                    display: false,
+                    text: ''
+                },
+            },
         });
 
         var ctx = document.getElementById('pieChart').getContext('2d');
@@ -52,7 +84,7 @@
                         'rgb(255,54,44)',
                         'rgb(158,156,160)'
                         ],
-                    borderColor: 'rgb(62,162,255)',
+                    borderColor: 'rgb(158,156,160)',
                     data: [25,300]
                 }]
             },
