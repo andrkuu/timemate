@@ -36,7 +36,7 @@
 
     <div class="links">
         <a href="statistika.php"><button class="lingid">Statistika</button></a>
-        <a href="aine.php"><button class="lingid">Aine</button></a>
+        <a href="aine.php"><button class="selectedLink">Aine</button></a>
         <a href="kalender.php"><button class="lingid">Kalender</button></a>
         <a href="seaded.php"><button class="lingid">Seaded</button></a>
     </div>

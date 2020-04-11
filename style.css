@@ -10,11 +10,12 @@ body{
     height: 5vh;
     background-color: #b71234;
     color:white;
-
 }
+
 #tlu_logo{
     height: 5vh;
 }
+
 #timemate{
     text-align: center;
     color: rgb(0, 0, 0);
@@ -22,8 +23,8 @@ body{
     margin: 0;
     padding: 0;
     font-family: Impact, Charcoal, sans-serif;
-
 }
+
 #class{
     background-color: white;
     color: black;
@@ -46,6 +47,7 @@ body{
     border-radius:2vh;
     border-color: grey;
 }
+
 .time {
     background-color: #b71234;
     color: white;
@@ -53,6 +55,13 @@ body{
     border:transparent;
     border-radius:2vh;
 
+}
+input[type="time"]{
+    background-color: #b71234;
+    color:white;
+    border:none;
+    padding: 1vw;
+    font-size: 1vw;
 }
 label{
     margin-left:34%;
@@ -71,13 +80,7 @@ label{
     width:25%;
 
 }
-input[type="time"]{
-    background-color: #b71234;
-    color:white;
-    border:none;
-    padding: 1vw;
-    font-size: 1vw;
-}
+
 .lingid{
     color: white;
     background-color:#b71234;
@@ -89,14 +92,25 @@ input[type="time"]{
     align-items: center;
     font-size: 3vw;
     cursor: pointer;
-    display: grid;
     padding: 15px 32px;
+    display: grid;
+}
 
+.selectedLink{
+    color: black;
+    background-color:white;
+    border: none;
+    width:15%;
+    height:20vh;
+    text-align: center;
+    text-decoration: none;
+    align-items: center;
+    font-size: 3vw;
+    cursor: pointer;
+    padding: 15px 32px;
+    display: grid;
 }
-.lingid:target{
-    background-color:white ;
-    color:black ;
-}
+
 a {
     color: white;
     text-decoration: none;
@@ -122,9 +136,7 @@ a {
 .chosen {
     color: white;
 }
-#class{
 
-}
 #inputContainer{
     width: 40%;
     /*margin: 0;*/
