@@ -43,6 +43,16 @@
                     display: true,
 
                 },
+                scales: {
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            suggestedMin: 0,
+                            suggestedMax: 7
+                            // hiljem peaks võtma väärtuste min ja max väärtused ja siia panema
+                        }
+                    }]
+                },
                 "hover": {
                     "animationDuration": 0
                 },
