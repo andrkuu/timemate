@@ -19,12 +19,14 @@
 
     <canvas id="barChart"></canvas>
     <canvas id="pieChart"></canvas>
+    <canvas id="radarChart"></canvas>
+
 
     <script>
         var ctx = document.getElementById('barChart').getContext('2d');
         var chart = new Chart(ctx, {
 
-            type: 'bar',
+            type: 'line',
 
             data: {
                 labels: ['Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev', 'Pühapäev'],
@@ -32,7 +34,7 @@
                     label: 'Selle nädala aktiivsus',
                     backgroundColor: 'rgb(62,162,255)',
                     borderColor: 'rgb(62,162,255)',
-                    data: [0, 4, 1, 2, 6, 1, 0]
+                    data: [0, 4, 1, 2, 6, 1, 24]
                 }]
             },
 
@@ -102,6 +104,33 @@
             options: {}
         });
 
+        var ctx = document.getElementById('radarChart').getContext('2d');
+        var chart = new Chart(ctx, {
+
+            type: 'radar',
+
+            data: {
+                labels: ['Matemaatika', 'Java', 'PHP', 'Tarkvara testimine'],
+                datasets: [{
+                    label: 'Erinevatele ainetele kulutatud aeg',
+                    data: [1, 3, 2, 5]
+                }]
+            },
+
+            options: {
+
+                scale: {
+                    ticks: {
+                        beginAtZero: true,
+                        max: 5,
+                        min: 0,
+                        stepSize: 1
+                    }
+                }
+
+
+            }
+        });
 
 
     </script>
