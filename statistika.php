@@ -17,14 +17,14 @@
         <a href="seaded.php"><button class="lingid">Seaded</button></a>
     </div>
 
-    <canvas id="myChart"></canvas>
+    <canvas id="barChart"></canvas>
+    <canvas id="pieChart"></canvas>
 
     <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
+        var ctx = document.getElementById('barChart').getContext('2d');
         var chart = new Chart(ctx, {
 
             type: 'bar',
-
 
             data: {
                 labels: ['Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev', 'Pühapäev'],
@@ -36,9 +36,32 @@
                 }]
             },
 
-            // Configuration options go here
             options: {}
         });
+
+        var ctx = document.getElementById('pieChart').getContext('2d');
+        var chart = new Chart(ctx, {
+
+            type: 'pie',
+
+            data: {
+                labels: ['Vähem aega kulutatud', 'Rohkem aega kulutatud'],
+                datasets: [{
+                    label: 'Selle nädala aktiivsus',
+                    backgroundColor: [
+                        'rgb(255,54,44)',
+                        'rgb(158,156,160)'
+                        ],
+                    borderColor: 'rgb(62,162,255)',
+                    data: [25,300]
+                }]
+            },
+
+            options: {}
+        });
+
+
+
     </script>
     
   </body>
