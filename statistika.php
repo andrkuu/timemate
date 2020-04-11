@@ -113,7 +113,11 @@
                 labels: ['Matemaatika', 'Java', 'PHP', 'Tarkvara testimine'],
                 datasets: [{
                     label: 'Erinevatele ainetele kulutatud aeg',
-                    data: [1, 3, 2, 5]
+                    data: [1, 3, 2, 5],
+                    backgroundColor: [
+                        'rgba(255,54,44,0.5)'
+                    ],
+                    borderColor: 'rgba(255,54,44,0.5)',
                 }]
             },
 
