@@ -1,13 +1,14 @@
 ul {list-style-type: none;}
 
 .kalender{
-    width: 50vw;
+    width: 35vw;
     background-color: #ffffff;
     position: absolute;
-    left: 32.5vw;
-    top: 15vh;
+    left: 40vw;
+    top: 10vh;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 4vh;
 }
 .month{
     text-align: center;
@@ -15,6 +16,7 @@ ul {list-style-type: none;}
     height: 10vh;
     line-height: 8vh;
     border-radius: 5px;
+    font-family: Verdana, sans-serif, bold;
 }
 .month ul {
     margin: 0;
@@ -51,11 +53,26 @@ ul {list-style-type: none;}
     padding: 0px;
     text-align: center;
     height: 10vh;
-    line-height: 12vh;
+    line-height: 10vh;
 }
 
 .calendar-day:after{
     content: "";
     display: block;
-    padding-bottom: 70%;
+    padding-bottom: 60%;
+}
+
+.day-number{
+    margin-top: 2vh;
+}
+.calendar-day-head{
+    font-family: Verdana, sans-serif, bold;
+}
+
+@media only screen and (max-width: 800px) {
+    .kalender{
+        font-size: 3vh;
+        width: 50vw;
+        left: 32.5vw;
+    }
 }
