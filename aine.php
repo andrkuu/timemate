@@ -1,3 +1,19 @@
+<?php
+
+session_start();
+
+/*
+if(!isset($_SESSION["userFirstName"])){
+    header("Location: index.php");
+    exit();
+}
+kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale lehele
+
+*/
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +24,7 @@
     <title>Aine</title>
   </head>
   <body>
-    <?php include('nav-bar.php'); ?>
+    <?php require('nav-bar.php'); ?>
     <div id="inputContainer">
       <label for="class">Aine </label>
 
