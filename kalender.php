@@ -21,17 +21,38 @@ session_start();
 
 
       <script>
-          $(document).ready(function(){
 
-              $("#calender_box").load("build_calendar.php", {
-                  year: 2020, //$("#txtname").val()
-                  month: 4//$("#tel").val()
-              });
-          });
       </script>
       <script>
 
+          var dateObj = new Date();
+          var month = dateObj.getUTCMonth() + 1;
+          var year = dateObj.getUTCFullYear();
 
+
+          const capitalize = (s) => {
+              if (typeof s !== 'string') return ''
+              return s.charAt(0).toUpperCase() + s.slice(1)
+          }
+
+          function refreshCalendar(y,m){
+              $(document).ready(function(){
+
+                  $("#calender_box").load("build_calendar.php", {
+                      year: y,
+                      month: m
+                  });
+              });
+
+              let kuuContainer = document.querySelector("#kuu");
+              let aastaContainer = document.querySelector("#aasta");
+
+              let months = ["jaanuar", "veebruar", "märts", "aprill", "mai", "juuni", "juuli", "august", "september", "oktoober", "november", "detsember"]
+
+              kuuContainer.innerHTML = capitalize(months[m-1]);
+              aastaContainer.innerHTML = y;
+
+          }
 
           function tdclick(e){
               if (!e) var e = window.event;
@@ -48,11 +69,33 @@ session_start();
 
               if (e.target.className === "prev"){
                   console.log("p");
+                  if(month === 1){
+                      month = 12;
+                      year = year - 1;
+                  }
+                  else{
+                      month = month - 1;
+                  }
+
               }else if(e.target.className === "next"){
                   console.log("n");
+                  if(month === 12){
+                      month = 1;
+                      year = year + 1;
+                  }
+                  else{
+                      month = month + 1;
+                  }
               }
 
+              refreshCalendar(year,month);
+
           }
+
+
+
+          refreshCalendar(year,month);
+
 
       </script>
       <style>
@@ -206,7 +249,7 @@ session_start();
     <script src="kalender.js"></script>
     <script>
 
-
+        refreshCalendar(year,month);
         $('.popupCloseButton').click(function(){
             $('.popup').hide();
         });

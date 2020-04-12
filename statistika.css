@@ -21,21 +21,42 @@
     width: 35vw;
     background-color: #ffffff;
     position: absolute;
-    left: 40vw;
-    top: 10vh;
+    left: 45vw;
+    top: 15vh;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-size: 4vh;
 }
 
 #test {
-    width: 35.1vw;
-    height: 2.3vw;
-    background-color: #b71234;
     position: absolute;
-    color: white;
-    left: 40vw;
-    top: 5vh;
-    cursor: pointer;
+    top: 8vh;
+    background-color: #b71234;
     border: none;
+    border-radius: 5px;
+    color: white;
+    width: 20vw;
+    height: 5vh;
+    left: 52.5vw;
+}
+
+@media only screen and (max-width: 800px) {
+    .statistics{
+        top: 17vh;
+        font-size: 3vh;
+        width: 90vw;
+        left: 5vw;
+    }
+
+    #test {
+        position: absolute;
+        top: 10vh;
+        background-color: #b71234;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        width: 60vw;
+        height: 5vh;
+        left: 20vw;
+    }
 }
