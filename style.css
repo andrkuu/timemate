@@ -210,7 +210,7 @@ a {
     .lingid {
         color: white;
         background-color: #b71234;
-        width:30vw;
+        width:33vw;
         height: 5vh;
         text-align: center;
         text-decoration: none;
@@ -219,7 +219,7 @@ a {
         cursor: pointer;
         display: inline-grid;
         position:relative;
-        top:5vh;
+        top:4vh;
         border:none;
         margin:0;
         padding:0;
@@ -229,10 +229,11 @@ a {
     .selectedLink {
         color: black;
         background-color: white;
-        max-width: 30vw;
-        width: 30%;
-        height: 5vh;
+        max-width: 33vw;
+        width: 30vw;
+        height: 4vh;
         text-decoration: none;
+        text-align: center;
         align-items: flex-start;
         font-size: 3vw;
         cursor: pointer;
