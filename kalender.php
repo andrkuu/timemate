@@ -56,18 +56,19 @@ session_start();
               -moz-user-select: none;
               -ms-user-select: none;
               user-select: none;
-              left: 34.5vw;
-              top: -75vh;
+              left: 45.2vw;
+              top: -28vh;
           }
 
           /* The actual popup */
           .popup .popuptext {
               visibility: hidden;
-              width: 160px;
-              height: 250px;
+              width: 35vw;
+              height: 39.2vw;
               background-color: #555;
               color: #fff;
               text-align: center;
+              line-height: 34vw;
               border-radius: 6px;
               padding: 8px 0;
               position: absolute;
