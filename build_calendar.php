@@ -86,17 +86,17 @@ for ($day = 1; $day <= $days_in_month; $day++) {
             $temp = "";
 
             foreach (array_keys($events[$cur_date]) as $key => $value) {
-                $temp.= "<li>".$value." ";
-                $temp.= $events[$cur_date][$value]["type"]." ";
-                $temp.= $events[$cur_date][$value]["duration"]."h </li>";
+                $temp.= "<tr><td>".$value."</td>";
+                $temp.= "<td>".$events[$cur_date][$value]["type"]."</td>";
+                $temp.= "<td>".$events[$cur_date][$value]["duration"]."h</td></tr>";
             }
 
             $calendar .=
 
-                "<div hidden id='hidden_text'><ul>".$temp.
+                "<div hidden id='hidden_text'><table>".$temp.
 
 
-                "</ul></div>";
+                "</table></div>";
 
         }
         else{

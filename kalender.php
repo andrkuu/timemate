@@ -40,7 +40,7 @@ session_start();
               let child = e.target.childNodes[0];
               console.log(child.innerText);
               let events = e.target.childNodes[2];
-              myFunction(events.innerText);
+              myFunction(events.innerHTML);
           };
 
           function changeMonth(e){
