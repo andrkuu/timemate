@@ -107,7 +107,7 @@ session_start();
     <div class="links">
         <a href="statistika.php" class="lingid"> Statistika</a>
         <a href="aine.php" class="lingid" >Aine</a>
-        <a href="kalender.php" class="selectedLink" >Kalender</a>
+        <a href="kalender.php" class="lingid" id="chosen" >Kalender</a>
         <a href="seaded.php" class="lingid" id="tools"> Seaded</a>
     </div>
 
