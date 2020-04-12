@@ -218,8 +218,9 @@ label{
         line-height:1vh;
         font-size:2.5vh;
     }
-
-
+    #chosen{
+        background-color:white;
+        color:black;
 
 
 
