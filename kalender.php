@@ -23,6 +23,7 @@ function build_html_calendar($year, $month, $events = null) {
     $css_cal_day_blank = 'calendar-day-np';
     $css_cal_day_event = 'calendar-day-event';
     $css_cal_event = 'calendar-event';
+    $css_cal_alert = "display-alert";
 
 
     $headings = ['E', 'T', 'K', 'N', 'R', 'L', 'P'];
@@ -60,6 +61,9 @@ function build_html_calendar($year, $month, $events = null) {
             "<td onclick='tdclick(event)' class='{$css_cal_day}'>";
 
         $calendar .= "<div onclick='event.stopPropagation();' class='{$css_cal_day_number}'>" . $day . "</div>";
+        $calendar .= $draw_event ?
+            "<div class='{$css_cal_alert}'></div>" :
+            "";
 
         if ($draw_event) {
 
