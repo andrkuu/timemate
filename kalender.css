@@ -4,11 +4,11 @@ body {font-family: Verdana, sans-serif;}
 
 .month {
     padding: 2% 10%;
-    width: 75%;
+    width: 85%;
     height:8%;
     background: #b71234;
     text-align: center;
-    margin: -46% 25%;
+    margin: -37.7% 15%;
     top: 0;
 }
 
@@ -33,53 +33,10 @@ body {font-family: Verdana, sans-serif;}
     padding-top: 10px;
 }
 
-.weekdays {
-    margin: 45% 25%;
-    width: 75%;
-    height:5%;
-    padding: 2% 10%;
-    background-color: #ddd;
-}
-
-.weekdays li {
-    display: inline-block;
-    width: 13.6%;
-    color: #666;
-    text-align: center;
-}
-
-.days {
-    margin: -45% 25%;
-    width: 75%;
-    height: 27%;
-    padding: 13.2% 10%;
-    background: #eee;
-}
-
-.days li {
-    list-style-type: none;
-    display: inline-block;
-    width: 16%;
-    text-align: center;
-    margin-bottom: 5px;
-    font-size:12px;
-    color: #777;
-}
-
-.days li .active {
-    padding: 5px;
-    background: #b71234;
-    color: white !important
-}
-
-
-
-
-
-
 /* calendar */
 table.calendar {
     border-left: 1px solid #999;
+
 }
 
 tr.calendar-row {

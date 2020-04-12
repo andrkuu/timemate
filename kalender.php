@@ -171,6 +171,8 @@ function build_html_calendar($year, $month, $events = null) {
                     <span style="font-size:18px">2020</span>
                 </li>
             </ul>
+        </div>
+
 
         <?php
         $events = [
