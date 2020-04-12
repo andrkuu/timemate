@@ -5,6 +5,7 @@ require("functions_main.php");
 
 $notice = "";
 
+
 // if login button has been pressed
 if(isset($_POST["submit_button"])) {
 

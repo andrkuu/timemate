@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 /**
  * Returns the calendar's html for the given year and month.
  *
