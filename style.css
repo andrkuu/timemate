@@ -202,22 +202,26 @@ label{
     #links{
         align-items: center;
         position:relative;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        width: 100vw;
+        height:5vh;
     }
     .lingid {
+        width: 32.2%;
+        height:5vh;
         color: white;
         background-color: #b71234;
-        width:32vw;
-        height: 5vh;
         text-align: center;
         text-decoration: none;
-        align-items: flex-start;
         font-size: 3vw;
         cursor: pointer;
-        display: inline-grid;
+        display:inline-flex;
         position:relative;
         top:5vh;
         border:none;
-        margin:0;
+        margin:auto;
         padding:0;
     }
 
@@ -225,14 +229,14 @@ label{
     .selectedLink {
         color: black;
         background-color: white;
-        width: 33vw;
-        height: 4vh;
+        width: 33%;
+        height: 5vh;
         text-decoration: none;
         text-align: center;
-        align-items: flex-start;
+        align-items: center;
         font-size: 3vw;
         cursor: pointer;
-        display: inline-grid;
+        display: inline-flex;
         position:relative;
         top:5vh;
         border:none;
@@ -275,6 +279,7 @@ label{
         margin-left:25vw;
         border-radius:4vh;
         padding:4vh 5vw ;
+        display: inline-block;
 
 
     }
