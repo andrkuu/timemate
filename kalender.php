@@ -56,12 +56,15 @@ session_start();
               -moz-user-select: none;
               -ms-user-select: none;
               user-select: none;
+              left: 34.5vw;
+              top: -75vh;
           }
 
           /* The actual popup */
           .popup .popuptext {
               visibility: hidden;
               width: 160px;
+              height: 250px;
               background-color: #555;
               color: #fff;
               text-align: center;
@@ -74,26 +77,12 @@ session_start();
               margin-left: -80px;
           }
 
-          /* Popup arrow */
-          .popup .popuptext::after {
-              content: "";
-              position: absolute;
-              top: 100%;
-              left: 50%;
-              margin-left: -5px;
-              border-width: 5px;
-              border-style: solid;
-              border-color: #555 transparent transparent transparent;
-          }
-
-          /* Toggle this class - hide and show the popup */
           .popup .show {
               visibility: visible;
               -webkit-animation: fadeIn 1s;
               animation: fadeIn 1s;
           }
 
-          /* Add animation (fade in the popup) */
           @-webkit-keyframes fadeIn {
               from {opacity: 0;}
               to {opacity: 1;}
@@ -114,7 +103,7 @@ session_start();
         <a href="seaded.php" class="lingid" id="tools"> Seaded</a>
     </div>
 
-    <div class="popup" onclick="myFunction()">klick
+    <div class="popup" onclick="myFunction()">
         <span class="popuptext" id="myPopup">mingi lambine tekst</span>
     </div>
 
