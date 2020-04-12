@@ -25,6 +25,7 @@ session_start();
         <div id=wrapper>
             <canvas id="barChart" width=300 height=300></canvas>
             <canvas id="pieChart" width=300 height=300></canvas>
+            <canvas id="radarChart" width=300 height=300></canvas>
         </div>
 
 
@@ -152,8 +153,8 @@ session_start();
 
             }
         });
-        var barChart=document.getElementById('barChart').getContext('2d');
-        var pieChart=document.getElementById('pieChart').getContext('2d');
+        var barChart=document.getElementById('barChart');
+        var pieChart=document.getElementById('pieChart');
 
         swapCanvases();
 
