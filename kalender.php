@@ -21,8 +21,11 @@ session_start();
 
       <script>
           $(document).ready(function(){
-              $("#calender_box").load('build_calendar.php');
 
+              $("#calender_box").load("build_calendar.php", {
+                  year: 2020, //$("#txtname").val()
+                  month: 3//$("#tel").val()
+              });
           });
       </script>
       <script>
@@ -40,8 +43,12 @@ session_start();
           };
 
           function changeMonth(e){
-              console.log(e.target.className);
 
+              if (e.target.className === "prev"){
+                  console.log("p");
+              }else if(e.target.className === "next"){
+                  console.log("n");
+              }
 
           }
 
@@ -56,15 +63,19 @@ session_start();
               -moz-user-select: none;
               -ms-user-select: none;
               user-select: none;
+              left: 45.2vw;
+              top: -28vh;
           }
 
           /* The actual popup */
           .popup .popuptext {
               visibility: hidden;
-              width: 160px;
+              width: 35vw;
+              height: 39.2vw;
               background-color: #555;
               color: #fff;
               text-align: center;
+              line-height: 34vw;
               border-radius: 6px;
               padding: 8px 0;
               position: absolute;
@@ -74,26 +85,12 @@ session_start();
               margin-left: -80px;
           }
 
-          /* Popup arrow */
-          .popup .popuptext::after {
-              content: "";
-              position: absolute;
-              top: 100%;
-              left: 50%;
-              margin-left: -5px;
-              border-width: 5px;
-              border-style: solid;
-              border-color: #555 transparent transparent transparent;
-          }
-
-          /* Toggle this class - hide and show the popup */
           .popup .show {
               visibility: visible;
-              -webkit-animation: fadeIn 1s;
-              animation: fadeIn 1s;
+              -webkit-animation: fadeIn 0.3s;
+              animation: fadeIn 0.3s;
           }
 
-          /* Add animation (fade in the popup) */
           @-webkit-keyframes fadeIn {
               from {opacity: 0;}
               to {opacity: 1;}
@@ -114,7 +111,7 @@ session_start();
         <a href="seaded.php" class="lingid" id="tools"> Seaded</a>
     </div>
 
-    <div class="popup" onclick="myFunction()">klick
+    <div class="popup" onclick="myFunction()">
         <span class="popuptext" id="myPopup">mingi lambine tekst</span>
     </div>
 

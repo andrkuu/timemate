@@ -1,5 +1,7 @@
 <?php
 
+$year = $_POST["year"];
+$month = $_POST["month"];
 
 $events = [
     "2020-04-05" => [
@@ -23,8 +25,6 @@ $events = [
     ],
 ];
 
-$year = 2020;
-$month = 4;
 
 
 // CSS classes
