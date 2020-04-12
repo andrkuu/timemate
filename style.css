@@ -266,13 +266,17 @@ label{
     #button{
         border: none;
         color: white;
-        font-size: 7vw;
-        justify-content: space-evenly;
+        font-size: 4vw;
+        justify-content:normal;
         width:30vw;
         height:5vh;
         text-decoration: none;
         margin-top:20vw;
         margin-left:25vw;
+        border-radius:4vh;
+        padding:4vh 5vw ;
+
+
     }
     #type{
         padding: 3vw;
@@ -281,15 +285,15 @@ label{
         border-radius:2vh;
         border-color: grey;
     }
-    .time {
+    #kulu {
         background-color: #b71234;
         color: white;
-        padding:1vw;
         size:7vw;
         border:transparent;
         border-radius:2vh;
-
+        padding: 5vw 5vh;
     }
+
 }
 
 
