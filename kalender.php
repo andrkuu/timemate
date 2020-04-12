@@ -14,6 +14,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="script.js"></script>
     <script src="jquery.js"></script>
+
     <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="kalender.css">
     <title>Kalender</title>
@@ -24,7 +25,7 @@ session_start();
 
               $("#calender_box").load("build_calendar.php", {
                   year: 2020, //$("#txtname").val()
-                  month: 3//$("#tel").val()
+                  month: 4//$("#tel").val()
               });
           });
       </script>
@@ -120,10 +121,10 @@ session_start();
             <ul>
                 <li class="prev" onclick="changeMonth(event)">&#10094;</li>
                 <li class="next" onclick="changeMonth(event)">&#10095;</li>
-                <li>
-                    Aprill
-                    <span style="font-size:18px">2020</span>
-                </li>
+                <div id="container">
+                <div id="kuu">kuu</div>
+                <div id="aasta">aasta</div>
+                </div>
             </ul>
         </div>
         <div id="calender_box">
@@ -172,6 +173,7 @@ session_start();
         ?>
         </div>
         </div>
+    <script src="kalender.js"></script>
     <script>
 
 

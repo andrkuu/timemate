@@ -1,5 +1,16 @@
 ul {list-style-type: none;}
 
+#kuu{
+    color: white;
+    font-size: 16px;
+}
+
+#aasta{
+    color: white;
+    font-size: 16px;
+    line-height: 0vh;
+}
+
 .kalender{
     width: 35vw;
     background-color: #ffffff;

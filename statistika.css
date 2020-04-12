@@ -29,11 +29,13 @@
 }
 
 #test {
-    width: 5vw;
+    width: 35.1vw;
+    height: 2.3vw;
     background-color: #b71234;
     position: absolute;
     color: white;
-    left: 25vw;
-    top: 10vh;
+    left: 40vw;
+    top: 5vh;
     cursor: pointer;
+    border: none;
 }
