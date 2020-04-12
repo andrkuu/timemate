@@ -21,8 +21,11 @@ session_start();
 
       <script>
           $(document).ready(function(){
-              $("#calender_box").load('build_calendar.php');
 
+              $("#calender_box").load("build_calendar.php", {
+                  year: 2020, //$("#txtname").val()
+                  month: 3//$("#tel").val()
+              });
           });
       </script>
       <script>
@@ -40,8 +43,12 @@ session_start();
           };
 
           function changeMonth(e){
-              console.log(e.target.className);
 
+              if (e.target.className === "prev"){
+                  console.log("p");
+              }else if(e.target.className === "next"){
+                  console.log("n");
+              }
 
           }
 
