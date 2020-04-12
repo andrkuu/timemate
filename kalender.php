@@ -71,16 +71,14 @@ function build_html_calendar($year, $month, $events = null) {
                     $temp.= $value." ";
                     $temp.= $events[$cur_date][$value]["type"]." ";
                     $temp.= $events[$cur_date][$value]["duration"]."h ";
-                    $temp.= "<br>";
                 }
 
-                $calendar .=
-                    "<div class='{$css_cal_event}'>" .
-                    "<p>" .
+                /*$calendar .=
 
-                    $temp.
-                    "</p>" .
-                    "</div>";
+                    "<p hidden>test".
+
+
+                    "</p>";*/
 
             }
             else{
@@ -216,7 +214,7 @@ function build_html_calendar($year, $month, $events = null) {
 
         //print_r($title);
         //print_r($content);
-        echo build_html_calendar(2020, 4/*,$events*/);
+        echo build_html_calendar(2020, 4,$events);
 
         ?>
         </div>

@@ -22,7 +22,7 @@ session_start();
         <a href="kalender.php" class="lingid" > Kalender</a>
         <a href="seaded.php" class="lingid" > Seaded</a>
         <button id="test">vaheta vaadet</button>
-        <div id=wrapper>
+        <div id="statistics" class="statistics">
             <canvas id="barChart" width=300 height=300></canvas>
             <canvas id="pieChart" width=300 height=300></canvas>
             <canvas id="radarChart" width=300 height=300></canvas>
@@ -163,7 +163,7 @@ session_start();
         };
 
         function swapCanvases(){
-            if (barChart.style.visibility != 'visible') {
+            if (barChart.style.visibility !== 'visible') {
                 barChart.style.visibility = 'visible';
                 pieChart.style.visibility = 'hidden';
 
