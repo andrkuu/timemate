@@ -19,6 +19,7 @@ body{
 }
 
 #logout{
+    background-color: #b71234;
     border:none;
     top:0;
     right:0;
@@ -28,6 +29,7 @@ body{
     flex: 2;
     cursor: pointer;
 }
+
 #logout_img{
     background-color: #b71234;
     height: 4vh;
