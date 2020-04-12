@@ -1,19 +1,25 @@
-* {box-sizing: border-box;}
 ul {list-style-type: none;}
-body {font-family: Verdana, sans-serif;}
 
-.month {
-    padding: 2% 10%;
-    width: 85%;
-    height:8%;
-    background: #b71234;
-    text-align: center;
-    margin: -37.7% 15%;
-    top: 0;
+.kalender{
+    width: 50vw;
+    background-color: #ffffff;
+    position: absolute;
+    left: 32.5vw;
+    top: 15vh;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
+.month{
+    text-align: center;
+    background-color: #b71234;
+    height: 10vh;
+    line-height: 8vh;
+    border-radius: 5px;
+}
 .month ul {
     margin: 0;
+    margin-left: 2vw;
+    margin-right: 2vw;
     padding: 0;
 }
 
@@ -33,71 +39,20 @@ body {font-family: Verdana, sans-serif;}
     padding-top: 10px;
 }
 
-/* calendar */
-table.calendar {
-    border-left: 1px solid #999;
-
-}
-
-tr.calendar-row {
-}
-
-td.calendar-day {
-    min-height: 80px;
-    font-size: 11px;
-    position: relative;
-}
-
-.calendar-day td .active {
-    padding: 5px;
-    background: #b71234;
-    color: white !important
-}
-
-* html div.calendar-day {
-    height: 80px;
-}
-
-td.calendar-day:hover {
-    background: #eceff5;
-}
-
-td.calendar-day-np {
-    background: #eee;
-    min-height: 80px;
-}
-
-* html div.calendar-day-np {
-    height: 80px;
-}
-
-td.calendar-day-head {
-    background: #ccc;
-    font-weight: bold;
+.calendar-day{
+    width: 12vw;
     text-align: center;
-    width: 120px;
-    padding: 5px;
-    border-bottom: 1px solid #999;
-    border-top: 1px solid #999;
-    border-right: 1px solid #999;
+    cursor: pointer;
 }
-
-div.day-number {
-    padding: 5px;
-    font-weight: bold;
+.calendar-day-head{
+    padding: 0px;
     text-align: center;
-    pointer-events: none;
-
+    height: 10vh;
+    line-height: 12vh;
 }
 
-div.calendar-event {
-    pointer-events: none;
-}
-
-/* shared */
-td.calendar-day, td.calendar-day-np {
-    width: 120px;
-    padding: 5px;
-    border-bottom: 1px solid #999;
-    border-right: 1px solid #999;
+.calendar-day:after{
+    content: "";
+    display: block;
+    padding-bottom: 70%;
 }
