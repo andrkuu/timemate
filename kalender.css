@@ -80,6 +80,9 @@ ul {list-style-type: none;}
     display: block;
     padding-bottom: 60%;
 }
+.calendar-day-event-container:hover{
+    background-color: #dddddd;
+}
 
 @media only screen and (max-width: 800px) {
     .kalender{
