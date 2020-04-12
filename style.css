@@ -108,20 +108,21 @@ label{
     font-size:1vw;
 }
 
-#links{
-    margin: 0;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
-    position: relative;
-    top:5vw;
+.links{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color:#b71234;
+    flex-direction: column;
+    position:relative;
+    top:0;
+    width:25vw;
 }
 
 .lingid{
     color: white;
     background-color:#b71234;
     width:25vw;
-    height:25vh;
+    height:20vh;
     align-items: center;
     text-align: center;
     text-decoration: none;
@@ -132,21 +133,9 @@ label{
     display: grid;
 }
 
-.selectedLink{
-    color: black;
+#chosen{
     background-color:white;
-    border: none;
-    width:15%;
-    height:25vh;
-    text-align: center;
-    text-decoration: none;
-    align-items: center;
-    font-size: 3vw;
-    cursor: pointer;
-    padding: 15px 32px;
-    display: grid;
-}
-
+    color:black;
 
 #button{
     cursor: pointer;
@@ -170,15 +159,14 @@ label{
 }
 
 #inputContainer{
-    width: 40%;
     /*margin: 0;*/
     padding: 0;
-    margin-left: 55vh;
+    margin-left: 30vw;
     margin-top: 20vh;
-    position: absolute;
     align-items: center;
     justify-content: space-evenly;
     display: inline-grid;
+    position:absolute;
 }
 @media only screen and (max-width: 800px){
     #topbar{
@@ -188,7 +176,7 @@ label{
         height: 5vh;
         display: flex;
         justify-content: flex-end;
-        position: fixed;
+        position: absolute;
         border:none;
     }
     #client_name{
@@ -218,8 +206,9 @@ label{
         line-height:1vh;
         font-size:2.5vh;
     }
-
-
+    #chosen{
+        background-color:white;
+        color:black;
 
 
 

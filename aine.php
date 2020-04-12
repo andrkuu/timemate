@@ -26,6 +26,12 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
   </head>
   <body>
     <?php require('nav-bar.php'); ?>
+    <div class="links">
+        <a href="statistika.php" class="lingid"> Statistika</a>
+        <a href="aine.php" class="lingid" id="chosen">Aine</a>
+        <a href="kalender.php" class="lingid">Kalender</a>
+        <a href="seaded.php" class="lingid" id="tools"> Seaded</a>
+    </div>
     <div id="inputContainer">
       <label for="class">Aine </label>
 
@@ -51,11 +57,6 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
       <input type="button" value="sisesta" id="button" />
     </div>
 
-    <div class="links">
-        <a href="statistika.php" class="lingid"> Statistika</a>
-        <a href="aine.php" class="lingid" id="chosen">Aine</a>
-        <a href="kalender.php" class="lingid">Kalender</a>
-        <a href="seaded.php" class="lingid" id="tools"> Seaded</a>
-    </div>
+
   </body>
 </html>
