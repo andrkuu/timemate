@@ -179,6 +179,9 @@ label{
     position:absolute;
 }
 @media only screen and (max-width: 800px){
+    #label{
+        font-size:5vh;
+    }
     #topbar{
         background-color: #b71234;
         color:white;
@@ -210,7 +213,7 @@ label{
 
     .lingid{
         background-color:#b71234;
-        width:30vw;
+        width:20vw;
         text-align: center;
         height: 4vh;
         text-align: center;
