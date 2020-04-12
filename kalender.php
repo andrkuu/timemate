@@ -40,7 +40,7 @@ session_start();
               let child = e.target.childNodes[0];
               console.log(child.innerText);
               let events = e.target.childNodes[2];
-              myFunction(events.innerText);
+              myFunction(events.innerHTML);
           };
 
           function changeMonth(e){
@@ -64,19 +64,18 @@ session_start();
               -moz-user-select: none;
               -ms-user-select: none;
               user-select: none;
-              left: 45.2vw;
-              top: -28vh;
+              left: 50.2vw;
+              top: -46vh;
           }
 
-          /* The actual popup */
           .popup .popuptext {
               visibility: hidden;
-              width: 35vw;
-              height: 39.2vw;
+              width: 25vw;
+              height: 20vw;
               background-color: #555;
               color: #fff;
               text-align: center;
-              line-height: 34vw;
+              line-height: 18vw;
               border-radius: 6px;
               padding: 8px 0;
               position: absolute;
