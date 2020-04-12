@@ -34,14 +34,11 @@ body{
     padding: 0;
     margin: 0;
     margin: 0.5vh;
+    margin-right: 2vw;
 }
 
 #client_name{
-    border:none;
-    top:0;
-    right:0;
     height:5vh;
-    border:none;
     display: flex;
     justify-content: flex-end;
     padding:1vh;
