@@ -48,9 +48,21 @@ body{
     padding: 2vh;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
+    body{
+        background-image: none;
+    }
     #login_container{
-        width: 40vw;
-        margin-left: 30vw;
+        width: 80vw;
+        margin-left: 10vw;
+    }
+    #submit_button{
+        width: 20vw;
+    }
+
+    #user_name{
+        width: 60vw;
+        height: 5vh;
+        border-radius: 5px;
     }
 }
