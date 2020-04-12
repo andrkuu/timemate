@@ -8,9 +8,10 @@
     }
 $_SESSION["userFirstName"] = "Robert";
 $_SESSION["userLastName"] = "Noor";
-    echo "<div id=\"topbar\">".$_SESSION["userFirstName"]. " ".$_SESSION["userLastName"]."
+    echo "<div id=\"topbar\"><img src=\"images/tlulogo.png\" id=\"tlu_logo\" alt=\"Tlu logo\"> 
+    <div id='client_name'>".$_SESSION["userFirstName"]. " ".$_SESSION["userLastName"]."</div>
     <form method=\"POST\" action=\"". htmlspecialchars($_SERVER["PHP_SELF"])."\">
-        <p><button type=\"submit\" id=\"logout\" name=\"logout\">Logi välja</button></p>           
+        <button type=\"submit\" id=\"logout\" name=\"logout\">Logi välja</button>           
     </form>
-    <img src=\"images/tlulogo.png\" id=\"tlu_logo\" alt=\"Tlu logo\">
+    <link rel=\"stylesheet\" href=\"style.css\">
 </div>";

@@ -167,13 +167,12 @@ function build_html_calendar($year, $month, $events = null) {
                 <li class="prev">&#10094;</li>
                 <li class="next">&#10095;</li>
                 <li>
-                    Aprill<br>
+                    Aprill
                     <span style="font-size:18px">2020</span>
                 </li>
             </ul>
         </div>
-
-
+        <div id="calender_box">
         <?php
         $events = [
             "2020-04-05" => [
@@ -217,9 +216,10 @@ function build_html_calendar($year, $month, $events = null) {
 
         //print_r($title);
         //print_r($content);
-        echo build_html_calendar(2020, 4,$events);
+        echo build_html_calendar(2020, 4/*,$events*/);
 
         ?>
+        </div>
         </div>
   </body>
 </html>
