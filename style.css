@@ -203,8 +203,6 @@ label{
         align-items: center;
         position:relative;
         flex-direction: row;
-        flex-wrap: nowrap;
-        flex-direction: row;
         width: 100vw;
         height:5vh;
     }
