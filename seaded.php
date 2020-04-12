@@ -18,7 +18,7 @@ session_start();
         <a href="statistika.php" class="lingid"> Statistika</a>
         <a href="aine.php" class="lingid" >Aine</a>
         <a href="kalender.php" class="lingid">Kalender</a>
-        <a href="seaded.php" class="selectedLink"> Seaded</a>
+        <a href="seaded.php" class="lingid" id="chosen"> Seaded</a>
 
     </div>
     
