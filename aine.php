@@ -33,7 +33,7 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
         <a href="seaded.php" class="lingid" id="tools"> Seaded</a>
     </div>
     <div id="inputContainer">
-      <label for="class">Aine </label>
+      <label for="class" id="label">Aine </label>
 
       <select id="class">
         <option value="C#">C#</option>
@@ -43,7 +43,7 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
       </select>
       <br />
 
-      <label for="type">Tüüp </label>
+      <label for="type" id="label">Tüüp </label>
 
       <select id="type">
         <option value="rühm">rühmatöö</option>
@@ -52,7 +52,7 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
       </select>
       <br />
 
-      <label for="kulu">Kulu </label>
+      <label for="kulu" id="label">Kulu </label>
       <input type="time" id="kulu" name="time" />
       <input type="button" value="sisesta" id="button" />
     </div>
