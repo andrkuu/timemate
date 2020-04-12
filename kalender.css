@@ -43,6 +43,7 @@ ul {list-style-type: none;}
     width: 12vw;
     text-align: center;
     cursor: pointer;
+    border: 1px solid black;
 }
 .calendar-day-head{
     padding: 0px;
