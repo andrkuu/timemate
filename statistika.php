@@ -20,11 +20,11 @@ session_start();
         <a href="kalender.php" class="lingid" > Kalender</a>
         <a href="seaded.php" class="lingid" > Seaded</a>
     </div>
-
-    <canvas id="barChart"></canvas>
-    <canvas id="pieChart"></canvas>
-    <canvas id="radarChart"></canvas>
-
+    <div id="statisticsContainer">
+    <canvas id="barChart" class="chart"></canvas>
+    <canvas id="pieChart" class="chart"></canvas>
+    <canvas id="radarChart" class="chart"></canvas>
+    </div>
 
     <script>
         var ctx = document.getElementById('barChart').getContext('2d');
