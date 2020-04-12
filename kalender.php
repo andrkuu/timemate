@@ -57,40 +57,65 @@ session_start();
       </script>
       <style>
           /* Popup container - can be anything you want */
-          .popup {
-              position: relative;
+          /* Popup box BEGIN */
+          .popup{
+              background:rgba(0,0,0,.4);
+              cursor:pointer;
+              display:none;
+              height:100%;
+              position:fixed;
+              text-align:center;
+              top:0;
+              width:100%;
+              z-index:10000;
+          }
+          .popup .helper{
+              display:inline-block;
+              height:100%;
+              vertical-align:middle;
+          }
+          .popup > div {
+              background-color: #fff;
+              box-shadow: 10px 10px 60px #555;
               display: inline-block;
+              height: auto;
+              max-width: 551px;
+              min-height: 100px;
+              vertical-align: middle;
+              width: 60%;
+              position: relative;
+              border-radius: 8px;
+              padding: 15px 5%;
+          }
+          .popupCloseButton {
+              background-color: #fff;
+              border: 3px solid #999;
+              border-radius: 50px;
               cursor: pointer;
-              -webkit-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              user-select: none;
-              left: 50.2vw;
-              top: -46vh;
-          }
-
-          .popup .popuptext {
-              visibility: hidden;
-              width: 25vw;
-              height: 20vw;
-              background-color: #555;
-              color: #fff;
-              text-align: center;
-              line-height: 18vw;
-              border-radius: 6px;
-              padding: 8px 0;
+              display: inline-block;
+              font-family: arial;
+              font-weight: bold;
               position: absolute;
-              z-index: 1;
-              bottom: 125%;
-              left: 50%;
-              margin-left: -80px;
+              top: -20px;
+              right: -20px;
+              font-size: 25px;
+              line-height: 30px;
+              width: 30px;
+              height: 30px;
+              text-align: center;
           }
+          .popupCloseButton:hover {
+              background-color: #ccc;
+          }
+          .trigger_popup_fricc {
+              cursor: pointer;
+              font-size: 20px;
+              margin: 20px;
+              display: inline-block;
+              font-weight: bold;
+          }
+          /* Popup box BEGIN */
 
-          .popup .show {
-              visibility: visible;
-              -webkit-animation: fadeIn 0.3s;
-              animation: fadeIn 0.3s;
-          }
 
           @-webkit-keyframes fadeIn {
               from {opacity: 0;}
@@ -112,8 +137,12 @@ session_start();
         <a href="seaded.php" class="lingid" id="tools"> Seaded</a>
     </div>
 
-    <div class="popup" id="myPopup" onclick="myFunction()">
-
+    <div class="popup">
+        <span class="helper"></span>
+        <div>
+            <div class="popupCloseButton">&times;</div>
+            <p>Add any HTML content<br />inside the popup box!</p>
+        </div>
     </div>
 
     <div class="kalender">
@@ -177,12 +206,20 @@ session_start();
     <script>
 
 
+        $('.popupCloseButton').click(function(){
+            $('.popup').hide();
+        });
+
 
         function myFunction(date) {
 
-            var popup = document.getElementById("myPopup");
-            popup.classList.toggle("show");
-            popup.innerHTML = date;
+           // var popup = document.getElementById("myPopup");
+            //popup.classList.toggle("show");
+            //popup.innerHTML = date;
+            $('.popup').show();
+
+
+
         }
     </script>
   </body>
