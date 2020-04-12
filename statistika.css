@@ -1,0 +1,13 @@
+#wrapper{position:relative;}
+#barChart{
+    position:absolute;
+    border:1px solid red;
+    width: 300px;
+    height: 300px;
+}
+#pieChart{
+    position:absolute;
+    border:1px solid blue;
+    width: 300px;
+    height: 300px;
+}
