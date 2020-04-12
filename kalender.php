@@ -18,7 +18,7 @@ function build_html_calendar($year, $month, $events = null) {
     $css_cal_row = 'calendar-row';
     $css_cal_day_head = 'calendar-day-head';
     $css_cal_day = 'calendar-day';
-    $css_cal_day_active = 'calendar-day-active';
+    $css_cal_day_active = 'calendar-day-event-container';
     $css_cal_day_number = 'day-number';
     $css_cal_day_blank = 'calendar-day-np';
     $css_cal_day_event = 'calendar-day-event';
@@ -68,17 +68,17 @@ function build_html_calendar($year, $month, $events = null) {
                 $temp = "";
 
                 foreach (array_keys($events[$cur_date]) as $key => $value) {
-                    $temp.= $value." ";
+                    $temp.= "<li>".$value." ";
                     $temp.= $events[$cur_date][$value]["type"]." ";
-                    $temp.= $events[$cur_date][$value]["duration"]."h ";
+                    $temp.= $events[$cur_date][$value]["duration"]."h </li>";
                 }
 
-                /*$calendar .=
+                $calendar .=
 
-                    "<p hidden>test".
+                    "<div hidden><ul>".$temp.
 
 
-                    "</p>";*/
+                    "</ul></div>";
 
             }
             else{
