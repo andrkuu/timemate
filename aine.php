@@ -35,10 +35,10 @@
     </div>
 
     <div class="links">
-        <a href="statistika.php"><button class="lingid">Statistika</button></a>
-        <a href="aine.php"><button class="selectedLink">Aine</button></a>
-        <a href="kalender.php"><button class="lingid">Kalender</button></a>
-        <a href="seaded.php"><button class="lingid">Seaded</button></a>
+        <a href="statistika.php" class="lingid"> Statistika</a>
+        <a href="aine.php" class="selectedLink" >Aine</a>
+        <a href="kalender.php" class="lingid">Kalender</a>
+        <a href="seaded.php" class="lingid"> Seaded</a>
     </div>
   </body>
 </html>

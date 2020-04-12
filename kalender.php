@@ -111,11 +111,11 @@ function build_html_calendar($year, $month, $events = null) {
   <body>
     <?php include('nav-bar.php'); ?>
     <div class="links">
-        <a href="statistika.php"><button class="lingid">Statistika</button></a>
-        <a href="aine.php"><button class="lingid">Aine</button></a>
-        <a href="kalender.php"><button class="selectedLink">Kalender</button></a>
-        <a href="seaded.php"><button class="lingid">Seaded</button></a>
-      </div>
+        <a href="statistika.php" class="lingid"> Statistika</a>
+        <a href="aine.php" class="lingid" >Aine</a>
+        <a href="kalender.php" class="selectedLink">Kalender</a>
+        <a href="seaded.php" class="lingid"> Seaded</a>
+    </div>
 
     <?php
     $events = [
