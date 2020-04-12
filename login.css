@@ -55,14 +55,27 @@ body{
     #login_container{
         width: 80vw;
         margin-left: 10vw;
-    }
-    #submit_button{
-        width: 20vw;
+        margin-top: 20vh;
     }
 
+    #tlu_logo2{
+        height: 10vh;
+        margin-top: 0vh;
+    }
     #user_name{
         width: 60vw;
         height: 5vh;
         border-radius: 5px;
+    }
+
+    #password{
+        width: 60vw;
+        height: 5vh;
+        border-radius: 5px;
+    }
+
+    #submit_button{
+        width: 60vw;
+        height: 7vh;
     }
 }
