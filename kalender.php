@@ -57,7 +57,7 @@ function build_html_calendar($year, $month, $events = null) {
         }
 
         $calendar .= $draw_event ?
-            "<td onclick='tdclick(event)' class='{$css_cal_day_active} {$css_cal_day_event}'>" :
+            "<td onclick='tdclick(event)' class='{$css_cal_day_active}'>" :
             "<td onclick='tdclick(event)' class='{$css_cal_day}'>";
 
         $calendar .= "<div onclick='event.stopPropagation();' class='{$css_cal_day_number}'>" . $day . "</div>";
@@ -79,7 +79,7 @@ function build_html_calendar($year, $month, $events = null) {
 
                 $calendar .=
 
-                    "<div hidden><ul>".$temp.
+                    "<div hidden id='hidden_text'><ul>".$temp.
 
 
                     "</ul></div>";

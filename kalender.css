@@ -64,6 +64,7 @@ ul {list-style-type: none;}
 
 .day-number{
     margin-top: 2vh;
+    pointer-events: none;
 }
 .calendar-day-head{
     font-family: Verdana, sans-serif, bold;
@@ -83,6 +84,17 @@ ul {list-style-type: none;}
 .calendar-day-event-container:hover{
     background-color: #dddddd;
 }
+.display-alert{
+    white-space: nowrap;
+    background-color: #B40000;
+    width: 6%;
+    margin: 4%;
+    margin-top: 0;
+    height: 0.2vw;
+    border-radius: 100%;
+    position: absolute;
+    float: left;
+ }
 
 @media only screen and (max-width: 800px) {
     .kalender{
