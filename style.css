@@ -28,6 +28,7 @@ body{
     justify-content: flex-end;
     padding:1vh;
     flex: 2;
+    cursor: pointer;
 }
 
 #client_name{
