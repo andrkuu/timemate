@@ -152,6 +152,12 @@ function build_html_calendar($year, $month, $events = null) {
 
           };
 
+          function changeMonth(e){
+              console.log(e.target.className);
+
+
+          }
+
       </script>
   </head>
   <body>
@@ -167,8 +173,8 @@ function build_html_calendar($year, $month, $events = null) {
     <div class="kalender">
         <div class="month">
             <ul>
-                <li class="prev">&#10094;</li>
-                <li class="next">&#10095;</li>
+                <li class="prev" onclick="changeMonth(event)">&#10094;</li>
+                <li class="next" onclick="changeMonth(event)">&#10095;</li>
                 <li>
                     Aprill
                     <span style="font-size:18px">2020</span>
@@ -217,8 +223,7 @@ function build_html_calendar($year, $month, $events = null) {
         $title = key((array_values($events)[$event_index]));
         $content = array_values(array_values($events)[$event_index]);
 
-        //print_r($title);
-        //print_r($content);
+
         echo build_html_calendar(2020, 4,$events);
 
         ?>
