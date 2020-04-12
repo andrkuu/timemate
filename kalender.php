@@ -18,6 +18,7 @@ function build_html_calendar($year, $month, $events = null) {
     $css_cal_row = 'calendar-row';
     $css_cal_day_head = 'calendar-day-head';
     $css_cal_day = 'calendar-day';
+    $css_cal_day_active = 'calendar-day-active';
     $css_cal_day_number = 'day-number';
     $css_cal_day_blank = 'calendar-day-np';
     $css_cal_day_event = 'calendar-day-event';
@@ -55,19 +56,46 @@ function build_html_calendar($year, $month, $events = null) {
         }
 
         $calendar .= $draw_event ?
-            "<td class='{$css_cal_day} {$css_cal_day_event}'>" :
-            "<td class='{$css_cal_day}'>";
+            "<td onclick='tdclick(event)' class='{$css_cal_day_active} {$css_cal_day_event}'>" :
+            "<td onclick='tdclick(event)' class='{$css_cal_day}'>";
 
-        $calendar .= "<div class='{$css_cal_day_number}'>" . $day . "</div>";
+        $calendar .= "<div onclick='event.stopPropagation();' class='{$css_cal_day_number}'>" . $day . "</div>";
 
         if ($draw_event) {
-            $calendar .=
-                "<div class='{$css_cal_event}'>" .
-                "<a href='{$events[$cur_date]['href']}'>" .
-                $events[$cur_date]['text'] .
-                "</a>" .
-                "</div>";
+
+            if (array_key_exists($cur_date,$events)){
+
+                $temp = "";
+
+                foreach (array_keys($events[$cur_date]) as $key => $value) {
+                    $temp.= $value." ";
+                    $temp.= $events[$cur_date][$value]["type"]." ";
+                    $temp.= $events[$cur_date][$value]["duration"]."h ";
+                    $temp.= "<br>";
+                }
+
+                $calendar .=
+                    "<div class='{$css_cal_event}'>" .
+                    "<p>" .
+
+                    $temp.
+                    "</p>" .
+                    "</div>";
+
+            }
+            else{
+                $calendar .=
+                    "<div class='{$css_cal_event}'>" .
+                    "<p>" .
+
+                    $events[$cur_date][array_values($events)[0]] .
+                    "</p>" .
+                    "</div>";
+            }
+
+
         }
+
 
         $calendar .= "</td>";
 
@@ -109,7 +137,19 @@ function build_html_calendar($year, $month, $events = null) {
     <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="kalender.css">
     <title>Kalender</title>
+      <script>
 
+
+          function tdclick(e){
+              if (!e) var e = window.event;
+              e.cancelBubble = true;
+              e.stopPropagation();
+              let child = e.target.childNodes[0];
+              console.log(child.innerText);
+
+          };
+
+      </script>
   </head>
   <body>
     <?php include('nav-bar.php'); ?>
@@ -120,23 +160,7 @@ function build_html_calendar($year, $month, $events = null) {
         <a href="seaded.php" class="lingid"> Seaded</a>
     </div>
 
-    <?php
-    $events = [
-        '2020-04-05' => [
-            'text' => "An event for the 5 july 2015",
-            'href' => "http://example.com/link/to/event"
-        ],
-        '2020-04-23' => [
-            'text' => "An event for the 23 july 2015",
-            'href' => "/path/to/event"
-        ],
-    ];
 
-    echo build_html_calendar(2020, 4,$events);
-
-
-
-    ?>
     <div class="kalender">
         <div class="month">
             <ul>
@@ -147,50 +171,53 @@ function build_html_calendar($year, $month, $events = null) {
                     <span style="font-size:18px">2020</span>
                 </li>
             </ul>
+
+        <?php
+        $events = [
+            "2020-04-05" => [
+                "Matemaatika" => [
+                    "type" => "Kodutöö",
+                    "duration" => 5
+                ]
+            ],
+
+            "2020-04-07" => [
+                "Interaktsioonidisain" => [
+                    "type" => "Kodutöö",
+                    "duration" => 3
+                ],
+
+                "Java" => [
+                    "type" => "Kodutöö",
+                    "duration" => 5
+                ]
+
+            ],
+        ];
+
+        // print_r($events);
+
+        $event_index = 1;
+        //print_r($events["2020-04-07"]);
+        $date = "2020-04-06";
+
+        if (array_key_exists($date,$events)){
+            foreach (array_keys($events[$date]) as $key => $value) {
+                echo $value." ";
+                echo($events[$date][$value]["type"]." ");
+                echo($events[$date][$value]["duration"]." ");
+                echo "<br>";
+            }
+        }
+
+        $title = key((array_values($events)[$event_index]));
+        $content = array_values(array_values($events)[$event_index]);
+
+        //print_r($title);
+        //print_r($content);
+        echo build_html_calendar(2020, 4,$events);
+
+        ?>
         </div>
-
-        <ul class="weekdays">
-            <li>Mo</li>
-            <li>Tu</li>
-            <li>We</li>
-            <li>Th</li>
-            <li>Fr</li>
-            <li>Sa</li>
-            <li>Su</li>
-        </ul>
-
-        <ul class="days">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li><span class="active">9</span></li>
-            <li>10</li>
-            <li>11</li>
-            <li>12</li>
-            <li>13</li>
-            <li>14</li>
-            <li>15</li>
-            <li>16</li>
-            <li>17</li>
-            <li>18</li>
-            <li>19</li>
-            <li>20</li>
-            <li>21</li>
-            <li>22</li>
-            <li>23</li>
-            <li>24</li>
-            <li>25</li>
-            <li>26</li>
-            <li>27</li>
-            <li>28</li>
-            <li>29</li>
-            <li>30</li>
-            <li>31</li>
-        </ul></div>
   </body>
 </html>
