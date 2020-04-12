@@ -157,11 +157,12 @@ label{
     justify-content: space-evenly;
     display:block;
     width:8vw;
-    height:3vw;
+    height:3vh;
     text-align: center;
     text-decoration: none;
     margin-top:4vw;
     margin-left:2vw;
+    line-height: 0vh;
 }
 
 .chosen {
@@ -236,7 +237,7 @@ label{
         /*margin: 0;*/
         padding: 0;
         margin-left: 30vw;
-        margin-top: 30vh;
+        margin-top: 10vh;
         position: absolute;
         align-items: center;
         justify-content: space-evenly;
@@ -259,11 +260,11 @@ label{
         color: white;
         font-size: 4vw;
         justify-content:normal;
-        width:30vw;
+        width:50vw;
         height:5vh;
         text-decoration: none;
         margin-top:20vw;
-        margin-left:25vw;
+        margin-left:10vw;
         border-radius:4vh;
         padding:4vh 5vw ;
 
@@ -279,7 +280,8 @@ label{
     #kulu {
         background-color: #b71234;
         color: white;
-        size:7vw;
+        font-size:5vw;
+        text-align: center;
         width: 77%;
         border:transparent;
         border-radius:2vh;
