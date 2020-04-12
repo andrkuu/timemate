@@ -149,6 +149,7 @@ label{
 a {
     color: white;
     text-decoration: none;
+    padding:0;
 }
 
 #button{
@@ -209,7 +210,7 @@ a {
     .lingid {
         color: white;
         background-color: #b71234;
-        width: 33%;
+        width:33vw;
         height: 5vh;
         text-align: center;
         text-decoration: none;
@@ -223,10 +224,11 @@ a {
         margin:0;
     }
 
+
     .selectedLink {
         color: black;
         background-color: white;
-        width: 15vw;
+        width: 33vw;
         height: 5vh;
         text-decoration: none;
         align-items: flex-start;
@@ -239,6 +241,12 @@ a {
     }
     #tools{
         display:none;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        padding:0;
+        margin:0;
     }
 }
 
