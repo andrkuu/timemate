@@ -55,10 +55,10 @@ function build_html_calendar($year, $month, $events = null) {
         }
 
         $calendar .= $draw_event ?
-            "<td class='{$css_cal_day} {$css_cal_day_event}'>" :
-            "<td class='{$css_cal_day}'>";
+            "<td onclick='tdclick(event)' class='{$css_cal_day} {$css_cal_day_event}'>" :
+            "<td onclick='tdclick(event)' class='{$css_cal_day}'>";
 
-        $calendar .= "<div class='{$css_cal_day_number}'>" . $day . "</div>";
+        $calendar .= "<div onclick='event.stopPropagation();' class='{$css_cal_day_number}'>" . $day . "</div>";
 
         if ($draw_event) {
 
@@ -132,7 +132,22 @@ function build_html_calendar($year, $month, $events = null) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
     <script defer src="script.js"></script>
+    <script>
+
+
+        function tdclick(e){
+            if (!e) var e = window.event;
+            e.cancelBubble = true;
+            e.stopPropagation();
+            let child = e.target.childNodes[0];
+            console.log(child.innerText);
+
+        };
+
+    </script>
     <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="kalender.css">
     <title>Kalender</title>

@@ -129,6 +129,12 @@ div.day-number {
     padding: 5px;
     font-weight: bold;
     text-align: center;
+    pointer-events: none;
+
+}
+
+div.calendar-event {
+    pointer-events: none;
 }
 
 /* shared */
