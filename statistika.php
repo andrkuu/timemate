@@ -156,22 +156,39 @@ session_start();
         });
         var barChart=document.getElementById('barChart');
         var pieChart=document.getElementById('pieChart');
-
-        swapCanvases();
+        var radarChart=document.getElementById('radarChart');
 
         document.getElementById("test").onclick=function(){
             swapCanvases();
         };
 
+        var chartNr = 0;
+
+        swapCanvases();
+
         function swapCanvases(){
-            if (barChart.style.visibility !== 'visible') {
+
+            if(chartNr < 2){
+                chartNr++;
+            }
+            else{
+                chartNr = 0;
+            }
+
+            if(chartNr == 0){
                 barChart.style.visibility = 'visible';
                 pieChart.style.visibility = 'hidden';
-
-            } else {
+                radarChart.style.visibility = 'hidden';
+            }else if(chartNr == 1){
                 barChart.style.visibility = 'hidden';
                 pieChart.style.visibility = 'visible';
-            }}
+                radarChart.style.visibility = 'hidden';
+            }else if(chartNr == 2){
+                barChart.style.visibility = 'hidden';
+                pieChart.style.visibility = 'hidden';
+                radarChart.style.visibility = 'visible';
+            }
+        }
 
 
     </script>

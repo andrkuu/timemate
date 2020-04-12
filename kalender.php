@@ -152,7 +152,71 @@ function build_html_calendar($year, $month, $events = null) {
 
           };
 
+          function changeMonth(e){
+              console.log(e.target.className);
+
+
+          }
+
       </script>
+      <style>
+          /* Popup container - can be anything you want */
+          .popup {
+              position: relative;
+              display: inline-block;
+              cursor: pointer;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+          }
+
+          /* The actual popup */
+          .popup .popuptext {
+              visibility: hidden;
+              width: 160px;
+              background-color: #555;
+              color: #fff;
+              text-align: center;
+              border-radius: 6px;
+              padding: 8px 0;
+              position: absolute;
+              z-index: 1;
+              bottom: 125%;
+              left: 50%;
+              margin-left: -80px;
+          }
+
+          /* Popup arrow */
+          .popup .popuptext::after {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: #555 transparent transparent transparent;
+          }
+
+          /* Toggle this class - hide and show the popup */
+          .popup .show {
+              visibility: visible;
+              -webkit-animation: fadeIn 1s;
+              animation: fadeIn 1s;
+          }
+
+          /* Add animation (fade in the popup) */
+          @-webkit-keyframes fadeIn {
+              from {opacity: 0;}
+              to {opacity: 1;}
+          }
+
+          @keyframes fadeIn {
+              from {opacity: 0;}
+              to {opacity:1 ;}
+          }
+      </style>
   </head>
   <body>
     <?php include('nav-bar.php'); ?>
@@ -163,12 +227,15 @@ function build_html_calendar($year, $month, $events = null) {
         <a href="seaded.php" class="lingid" id="tools"> Seaded</a>
     </div>
 
+    <div class="popup" onclick="myFunction()">klick
+        <span class="popuptext" id="myPopup">mingi lambine tekst</span>
+    </div>
 
     <div class="kalender">
         <div class="month">
             <ul>
-                <li class="prev">&#10094;</li>
-                <li class="next">&#10095;</li>
+                <li class="prev" onclick="changeMonth(event)">&#10094;</li>
+                <li class="next" onclick="changeMonth(event)">&#10095;</li>
                 <li>
                     Aprill
                     <span style="font-size:18px">2020</span>
@@ -217,12 +284,17 @@ function build_html_calendar($year, $month, $events = null) {
         $title = key((array_values($events)[$event_index]));
         $content = array_values(array_values($events)[$event_index]);
 
-        //print_r($title);
-        //print_r($content);
+
         echo build_html_calendar(2020, 4,$events);
 
         ?>
         </div>
         </div>
+    <script>
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
   </body>
 </html>
