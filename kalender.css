@@ -23,6 +23,7 @@ ul {list-style-type: none;}
     margin-left: 2vw;
     margin-right: 2vw;
     padding: 0;
+    cursor: pointer;
 }
 
 .month ul li {
@@ -33,12 +34,32 @@ ul {list-style-type: none;}
 
 .month .prev {
     float: left;
-    padding-top: 10px;
+    height: 2vh;
+    top: 0;
+    position: absolute;
+    padding: 4vh;
+    line-height: 2vh;
+    border-radius: 5px;
+    left: 0;
+}
+
+.prev:hover{
+    background-color: #950a27;
 }
 
 .month .next {
     float: right;
-    padding-top: 10px;
+    height: 2vh;
+    top: 0;
+    position: absolute;
+    padding: 4vh;
+    line-height: 2vh;
+    border-radius: 5px;
+    right: 0;
+}
+
+.next:hover{
+    background-color: #950a27;
 }
 
 .calendar-day{
