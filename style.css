@@ -52,12 +52,7 @@ body{
     height: 5vh;
     display:inline;
 }
-p.topbar{
-    color:black;
-    position:absolute;
-    top: 0;
-    right: 10vw;
-}
+
 
 #timemate{
     text-align: center;
@@ -188,5 +183,65 @@ a {
     justify-content: space-evenly;
     display: inline-grid;
 }
+@media only screen and (max-width: 800px){
+    #topbar{
+        background-color: #b71234;
+        color:white;
+        width: 100vw;
+        height: 5vh;
+        display: flex;
+        justify-content: flex-end;
+        position: fixed;
+        border:none;
+    }
+    #client_name{
+        height:5vh;
+        display: flex;
+        justify-content: flex-end;
+        padding:1vh;
+        flex: 1;
+        margin-right: 1vw;
+    }
+    #links{
+        text-align: left;
+        position:relative;
+    }
+    .lingid {
+        color: white;
+        background-color: #b71234;
+        width: 33%;
+        height: 5vh;
+        text-align: center;
+        text-decoration: none;
+        align-items: flex-start;
+        font-size: 3vw;
+        cursor: pointer;
+        display: inline-grid;
+        position:relative;
+        top:5vh;
+        border:none;
+        margin:0;
+    }
+
+    .selectedLink {
+        color: black;
+        background-color: white;
+        width: 15vw;
+        height: 5vh;
+        text-decoration: none;
+        align-items: flex-start;
+        font-size: 3vw;
+        cursor: pointer;
+        display: inline-grid;
+        position:relative;
+        top:5vh;
+        border:none;
+    }
+    #tools{
+        display:none;
+    }
+}
+
+
 
 

@@ -20,7 +20,7 @@ session_start();
         <a href="statistika.php" class="selectedLink" > Statistika</a>
         <a href="aine.php" class="lingid" > Aine</a>
         <a href="kalender.php" class="lingid" > Kalender</a>
-        <a href="seaded.php" class="lingid" > Seaded</a>
+        <a href="seaded.php" class="lingid" id="tools" > Seaded</a>
         <button id="test">vaheta vaadet</button>
         <div id=wrapper>
             <canvas id="barChart" width=300 height=300></canvas>
