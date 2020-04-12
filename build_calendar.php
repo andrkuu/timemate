@@ -93,7 +93,7 @@ for ($day = 1; $day <= $days_in_month; $day++) {
 
             $calendar .=
 
-                "<div hidden id='hidden_text'><table>".$temp.
+                "<div hidden id='hidden_text'><table><tr><th>Aine</th><th>Tüüp</th><th>Kulunud tunnid</th></tr>".$temp.
 
 
                 "</table></div>";
