@@ -98,8 +98,9 @@ ul {list-style-type: none;}
 
 @media only screen and (max-width: 800px) {
     .kalender{
+        top: 17vh;
         font-size: 3vh;
-        width: 50vw;
-        left: 32.5vw;
+        width: 90vw;
+        left: 5vw;
     }
 }
