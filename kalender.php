@@ -80,8 +80,8 @@ session_start();
 
           .popup .show {
               visibility: visible;
-              -webkit-animation: fadeIn 1s;
-              animation: fadeIn 1s;
+              -webkit-animation: fadeIn 0.3s;
+              animation: fadeIn 0.3s;
           }
 
           @-webkit-keyframes fadeIn {
