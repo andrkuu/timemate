@@ -6,6 +6,7 @@ session_start();
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="script.js"></script>
       <script src="chart.js"></script>
@@ -22,7 +23,7 @@ session_start();
         <a href="kalender.php" class="lingid" > Kalender</a>
         <a href="seaded.php" class="lingid" id="tools" > Seaded</a>
         <button id="test">vaheta vaadet</button>
-        <div id=wrapper>
+        <div id="statistics" class="statistics">
             <canvas id="barChart" width=300 height=300></canvas>
             <canvas id="pieChart" width=300 height=300></canvas>
             <canvas id="radarChart" width=300 height=300></canvas>
@@ -163,7 +164,7 @@ session_start();
         };
 
         function swapCanvases(){
-            if (barChart.style.visibility != 'visible') {
+            if (barChart.style.visibility !== 'visible') {
                 barChart.style.visibility = 'visible';
                 pieChart.style.visibility = 'hidden';
 

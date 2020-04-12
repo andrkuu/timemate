@@ -18,11 +18,12 @@ function build_html_calendar($year, $month, $events = null) {
     $css_cal_row = 'calendar-row';
     $css_cal_day_head = 'calendar-day-head';
     $css_cal_day = 'calendar-day';
-    $css_cal_day_active = 'calendar-day-active';
+    $css_cal_day_active = 'calendar-day-event-container';
     $css_cal_day_number = 'day-number';
     $css_cal_day_blank = 'calendar-day-np';
     $css_cal_day_event = 'calendar-day-event';
     $css_cal_event = 'calendar-event';
+    $css_cal_alert = "display-alert";
 
 
     $headings = ['E', 'T', 'K', 'N', 'R', 'L', 'P'];
@@ -56,10 +57,13 @@ function build_html_calendar($year, $month, $events = null) {
         }
 
         $calendar .= $draw_event ?
-            "<td onclick='tdclick(event)' class='{$css_cal_day_active} {$css_cal_day_event}'>" :
+            "<td onclick='tdclick(event)' class='{$css_cal_day_active}'>" :
             "<td onclick='tdclick(event)' class='{$css_cal_day}'>";
 
         $calendar .= "<div onclick='event.stopPropagation();' class='{$css_cal_day_number}'>" . $day . "</div>";
+        $calendar .= $draw_event ?
+            "<div class='{$css_cal_alert}'></div>" :
+            "";
 
         if ($draw_event) {
 
@@ -68,19 +72,17 @@ function build_html_calendar($year, $month, $events = null) {
                 $temp = "";
 
                 foreach (array_keys($events[$cur_date]) as $key => $value) {
-                    $temp.= $value." ";
+                    $temp.= "<li>".$value." ";
                     $temp.= $events[$cur_date][$value]["type"]." ";
-                    $temp.= $events[$cur_date][$value]["duration"]."h ";
-                    $temp.= "<br>";
+                    $temp.= $events[$cur_date][$value]["duration"]."h </li>";
                 }
 
                 $calendar .=
-                    "<div class='{$css_cal_event}'>" .
-                    "<p>" .
 
-                    $temp.
-                    "</p>" .
-                    "</div>";
+                    "<div hidden id='hidden_text'><ul>".$temp.
+
+
+                    "</ul></div>";
 
             }
             else{
@@ -132,6 +134,7 @@ function build_html_calendar($year, $month, $events = null) {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -216,7 +219,7 @@ function build_html_calendar($year, $month, $events = null) {
 
         //print_r($title);
         //print_r($content);
-        echo build_html_calendar(2020, 4/*,$events*/);
+        echo build_html_calendar(2020, 4,$events);
 
         ?>
         </div>
