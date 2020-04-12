@@ -69,6 +69,18 @@ ul {list-style-type: none;}
     font-family: Verdana, sans-serif, bold;
 }
 
+.calendar-day-event-container{
+    width: 12vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+.calendar-day-event-container:after{
+    content: "";
+    display: block;
+    padding-bottom: 60%;
+}
+
 @media only screen and (max-width: 800px) {
     .kalender{
         font-size: 3vh;
