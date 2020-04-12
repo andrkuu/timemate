@@ -6,7 +6,6 @@ session_start();
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="script.js"></script>
       <script src="chart.js"></script>
@@ -21,13 +20,16 @@ session_start();
         <a href="statistika.php" class="selectedLink" > Statistika</a>
         <a href="aine.php" class="lingid" > Aine</a>
         <a href="kalender.php" class="lingid" > Kalender</a>
-        <a href="seaded.php" class="lingid" id="tools" > Seaded</a>
-        <button id="test">vaheta vaadet</button>
+        <a href="seaded.php" class="lingid" > Seaded</a>
+        <button id="test">vaade1</button>
+        <button id="test1">vaade2</button>
+        <button id="test2">vaade3</button>
         <div id="statistics" class="statistics">
             <canvas id="barChart" width=300 height=300></canvas>
             <canvas id="pieChart" width=300 height=300></canvas>
             <canvas id="radarChart" width=300 height=300></canvas>
         </div>
+
 
 
     <script>
@@ -156,22 +158,23 @@ session_start();
         });
         var barChart=document.getElementById('barChart');
         var pieChart=document.getElementById('pieChart');
+        var radarChart=document.getElementById('radarChart');
 
         swapCanvases();
+
 
         document.getElementById("test").onclick=function(){
             swapCanvases();
         };
 
-        function swapCanvases(){
-            if (barChart.style.visibility !== 'visible') {
-                barChart.style.visibility = 'visible';
-                pieChart.style.visibility = 'hidden';
+        function swapCanvases(event) {
+            barChart.style.visibility = 'hidden';
+            radarChart.style.visibility = 'hidden';
+            pieChart.style.visibility = 'hidden';
+            var clickedElement = event.target;
+            clickedElement.style.visibility = "visible";
+        }
 
-            } else {
-                barChart.style.visibility = 'hidden';
-                pieChart.style.visibility = 'visible';
-            }}
 
 
     </script>

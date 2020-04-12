@@ -1,4 +1,11 @@
 #wrapper{position:relative;}
+
+#radarChart{
+    position:absolute;
+    border:1px solid green;
+
+}
+
 #barChart{
     position:absolute;
     border:1px solid red;
