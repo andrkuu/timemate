@@ -24,11 +24,16 @@ body{
     right:0;
     height:5vh;
     border:none;
-    display: flex;
     justify-content: flex-end;
-    padding:1vh;
     flex: 2;
     cursor: pointer;
+}
+#logout_img{
+    background-color: #b71234;
+    height: 4vh;
+    padding: 0;
+    margin: 0;
+    margin: 0.5vh;
 }
 
 #client_name{
