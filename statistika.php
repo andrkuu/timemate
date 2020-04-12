@@ -113,8 +113,16 @@ session_start();
 
             type: 'radar',
 
+
             data: {
+
                 labels: ['Matemaatika', 'Java', 'PHP', 'Tarkvara testimine'],
+                scaleLabel :[{
+                    fontSize : 20,
+                    fontColor: 'black'
+                }],
+
+
                 datasets: [{
                     label: 'Erinevatele ainetele kulutatud aeg',
                     data: [1, 3, 2, 5],
@@ -132,9 +140,12 @@ session_start();
                         beginAtZero: true,
                         max: 5,
                         min: 0,
-                        stepSize: 1
-                    }
-                }
+                        stepSize: 1,
+                        fontSize: 25
+                    },
+                    pointLabels: { fontSize: 25 }
+                },
+
 
 
             }
