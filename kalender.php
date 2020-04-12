@@ -141,7 +141,8 @@ session_start();
         <span class="helper"></span>
         <div>
             <div class="popupCloseButton">&times;</div>
-            <p>Add any HTML content<br />inside the popup box!</p>
+            <div id="myPopup"><p>Add any HTML content<br />inside the popup box!</p></div>
+
         </div>
     </div>
 
@@ -213,9 +214,9 @@ session_start();
 
         function myFunction(date) {
 
-           // var popup = document.getElementById("myPopup");
-            //popup.classList.toggle("show");
-            //popup.innerHTML = date;
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+            popup.innerHTML = date;
             $('.popup').show();
 
 
