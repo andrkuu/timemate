@@ -40,6 +40,7 @@ session_start();
               let child = e.target.childNodes[0];
               console.log(child.innerText);
               let events = e.target.childNodes[2];
+              console.log(events.innerHTML);
               myFunction(events.innerHTML);
           };
 
@@ -111,8 +112,8 @@ session_start();
         <a href="seaded.php" class="lingid" id="tools"> Seaded</a>
     </div>
 
-    <div class="popup" onclick="myFunction()">
-        <span class="popuptext" id="myPopup">mingi lambine tekst</span>
+    <div class="popup" id="myPopup" onclick="myFunction()">
+
     </div>
 
     <div class="kalender">
@@ -181,7 +182,7 @@ session_start();
 
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
-            popup.innerText = date;
+            popup.innerHTML = date;
         }
     </script>
   </body>
