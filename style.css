@@ -5,15 +5,35 @@ body{
     margin: 0;
 
 }
+
 #topbar{
-    width: 100vw;
-    height: 5vh;
     background-color: #b71234;
     color:white;
+    width: 100vw;
+    height: 5vh;
+}
+
+#logout{
+    border:none;
+    position:absolute;
+    top:0;
+    right:0;
+    height:5vh;
+    border:none;
+    display: inline;
+    padding:1vh;
+
 }
 
 #tlu_logo{
     height: 5vh;
+    display:inline;
+}
+p.topbar{
+    color:black;
+    position:absolute;
+    top: 0;
+    right: 10vw;
 }
 
 #timemate{
@@ -77,14 +97,11 @@ label{
     text-align: left;
     position: relative;
     top:5vw;
-    width:25%;
-
 }
 
 .lingid{
     color: white;
     background-color:#b71234;
-    border: none;
     width:15%;
     height:20vh;
     text-align: center;
