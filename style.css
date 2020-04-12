@@ -211,20 +211,18 @@ label{
 
     .lingid{
         background-color:#b71234;
-        width:33vw;
+        width:30vw;
         text-align: center;
-        height: 5vh;
+        height: 4vh;
         text-align: center;
         line-height:1vh;
-        font-size:5vh;
+        font-size:2.5vh;
     }
 
 
 
 
-    .lingid.chosen{
-        background: white;
-        color:black;
+
     }
 
     #tools{
@@ -266,7 +264,6 @@ label{
         margin-left:25vw;
         border-radius:4vh;
         padding:4vh 5vw ;
-        display: inline-block;
 
     }
 
@@ -281,9 +278,11 @@ label{
         background-color: #b71234;
         color: white;
         size:7vw;
+        width: 77%;
         border:transparent;
         border-radius:2vh;
         padding: 5vw 5vh;
+        display: inline-block;
     }
 
 }
