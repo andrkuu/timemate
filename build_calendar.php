@@ -74,7 +74,17 @@ for ($day = 1; $day <= $days_in_month; $day++) {
         "<td onclick='tdclick(event)' class='{$css_cal_day_active}'>" :
         "<td onclick='tdclick(event)' class='{$css_cal_day}'>";
 
-    $calendar .= "<div onclick='event.stopPropagation();' class='{$css_cal_day_number}'>" . $day . "</div>";
+
+    $todayMarker = "";
+
+    if($day == date("d") && intval($month) == date("m") && intval($year) == date("Y")){
+        $todayMarker = "style=\"color:#b71234\"";
+    }
+    else{
+        $todayMarker = "";
+    }
+
+    $calendar .= "<div onclick='event.stopPropagation();' ".$todayMarker."class='{$css_cal_day_number}'>" . $day . "</div>";
     $calendar .= $draw_event ?
         "<div class='{$css_cal_alert}'></div>" :
         "";
