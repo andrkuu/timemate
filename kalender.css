@@ -73,6 +73,19 @@ ul {list-style-type: none;}
     background-color: #950a27;
 }
 
+.calendar-day-np{
+    width: 12vw;
+    text-align: center;
+    cursor: pointer;
+    color: #c8c8c8;
+}
+
+.calendar-day-np:after{
+    content: "";
+    display: block;
+    padding-bottom: 60%;
+}
+
 .calendar-day{
     width: 12vw;
     text-align: center;
