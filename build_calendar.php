@@ -58,9 +58,15 @@ $days_in_month = date('t', mktime(0, 0, 0, $month, 1, $year));
 
 $calendar .= "<tr class='{$css_cal_row}'>";
 
-for ($x = 1; $x < $running_day; $x++) {
-    $calendar .= "<td class='{$css_cal_day_blank}'> </td>";
+$StartDate= date("Y-F-d",strtotime($year."-".$month."-1"));
+
+for ($i=$running_day-1; $i>=1; $i--) {
+
+    $prev = date('d', strtotime(-$i . ' day', strtotime($StartDate))) . "<br />";
+    $calendar .= "<td class='{$css_cal_day_blank}'> <div class=\"day-number\">".$prev."</div> </td>";
 }
+
+
 
 for ($day = 1; $day <= $days_in_month; $day++) {
 
@@ -74,7 +80,17 @@ for ($day = 1; $day <= $days_in_month; $day++) {
         "<td onclick='tdclick(event)' class='{$css_cal_day_active}'>" :
         "<td onclick='tdclick(event)' class='{$css_cal_day}'>";
 
-    $calendar .= "<div onclick='event.stopPropagation();' class='{$css_cal_day_number}'>" . $day . "</div>";
+
+    $todayMarker = "";
+
+    if($day == date("d") && intval($month) == date("m") && intval($year) == date("Y")){
+        $todayMarker = "style=\"color:#b71234\"";
+    }
+    else{
+        $todayMarker = "";
+    }
+
+    $calendar .= "<div onclick='event.stopPropagation();' ".$todayMarker."class='{$css_cal_day_number}'>" . $day . "</div>";
     $calendar .= $draw_event ?
         "<div class='{$css_cal_alert}'></div>" :
         "";
@@ -122,16 +138,19 @@ for ($day = 1; $day <= $days_in_month; $day++) {
         }
         $running_day = 1;
     }
-
     else {
         $running_day++;
     }
 
 }
 
+
+$next_day = 1;
 if ($running_day != 1) {
     for ($x = $running_day; $x <= 7; $x++) {
-        $calendar .= "<td class='{$css_cal_day_blank}'> </td>";
+
+        $calendar .= "<td class='{$css_cal_day_blank}'> <div class=\"day-number\">".$next_day."</div> </td>";
+        $next_day++;
     }
 }
 
