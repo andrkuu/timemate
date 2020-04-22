@@ -28,15 +28,15 @@ $events = [
 
 
 // CSS classes
-$css_cal = 'calendar';
-$css_cal_row = 'calendar-row';
-$css_cal_day_head = 'calendar-day-head';
-$css_cal_day = 'calendar-day';
-$css_cal_day_active = 'calendar-day-event-container';
+$css_cal = 'kalender';
+$css_cal_row = 'kalender-row';
+$css_cal_day_head = 'kalender-day-head';
+$css_cal_day = 'kalender-day';
+$css_cal_day_active = 'kalender-day-event-container';
 $css_cal_day_number = 'day-number';
-$css_cal_day_blank = 'calendar-day-np';
-$css_cal_day_event = 'calendar-day-event';
-$css_cal_event = 'calendar-event';
+$css_cal_day_blank = 'kalender-day-np';
+$css_cal_day_event = 'kalender-day-event';
+$css_cal_event = 'kalender-event';
 $css_cal_alert = "display-alert";
 
 

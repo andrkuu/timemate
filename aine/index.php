@@ -18,24 +18,20 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="shortcut icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="subject.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Aine</title>
   </head>
   <body>
-    <?php require('nav-bar.php'); ?>
+    <?php require('../nav-bar.php'); ?>
     <div class="links">
-        <a href="statistics.php" class="page"> Statistika</a>
-        <a href="subject.php" class="page" id="chosen">Aine</a>
-        <a href="calendar.php" class="page">Kalender</a>
-        <a href="settings.php" class="page" id="tools"> Seaded</a>
+        <a href="../statistika/index.php" class="page"> Statistika</a>
+        <a href="index.php" class="page" id="chosen">Aine</a>
+        <a href="../kalender/index.php" class="page">Kalender</a>
+        <a href="../seaded/index.php" class="page" id="tools"> Seaded</a>
     </div>
     <div id="inputContainer">
-        <label for="class" id="inputDate">
-
       <label for="class" id="label">Aine </label>
 
       <select id="class">
@@ -59,6 +55,7 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
       <input type="time" id="kulu" name="time" />
       <input type="button" value="sisesta" id="button" />
     </div>
+
 
   </body>
 </html>

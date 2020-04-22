@@ -12,10 +12,9 @@ session_start();
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="script.js"></script>
-    <script src="jquery.js"></script>
+    <script src="../jquery.js"></script>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="calendar.css">
     <title>Kalender</title>
 
@@ -172,12 +171,12 @@ session_start();
     </style>
 </head>
 <body>
-<?php include('nav-bar.php'); ?>
+<?php require('../nav-bar.php'); ?>
 <div class="links">
-    <a href="statistics.php" class="page"> Statistika</a>
-    <a href="subject.php" class="page" >Aine</a>
-    <a href="calendar.php" class="page" id="chosen" >Kalender</a>
-    <a href="settings.php" class="page" id="tools"> Seaded</a>
+    <a href="../statistika/index.php" class="page"> Statistika</a>
+    <a href="../aine/index.php" class="page" >Aine</a>
+    <a href="index.php" class="page" id="chosen" >Kalender</a>
+    <a href="../seaded/index.php" class="page" id="tools"> Seaded</a>
 </div>
 
 <div id="popup" class="popup">
