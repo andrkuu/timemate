@@ -21,6 +21,7 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
     <link rel="shortcut icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="subject.css">
     <title>Aine</title>
   </head>
   <body>

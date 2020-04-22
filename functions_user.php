@@ -27,7 +27,7 @@ function signIn($userName, $password){
                 $stmt->close();
                 $conn->close();
 
-                header("Location: index.php");
+                header("Location: aine/");
                 exit();
 
 
