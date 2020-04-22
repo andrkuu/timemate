@@ -150,7 +150,7 @@ function build_html_calendar($year, $month, $events = null) {
 
     </script>
     <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="kalender.css">
+      <link rel="stylesheet" href="calendar.css">
     <title>Kalender</title>
 
   </head>

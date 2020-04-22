@@ -16,7 +16,7 @@ session_start();
     <script src="jquery.js"></script>
 
     <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="kalender.css">
+      <link rel="stylesheet" href="calendar.css">
     <title>Kalender</title>
 
 
@@ -174,10 +174,10 @@ session_start();
   <body>
     <?php include('nav-bar.php'); ?>
     <div class="links">
-        <a href="statistika.php" class="page"> Statistika</a>
-        <a href="aine.php" class="page" >Aine</a>
-        <a href="kalender.php" class="page" id="chosen" >Kalender</a>
-        <a href="seaded.php" class="page" id="tools"> Seaded</a>
+        <a href="statistics.php" class="page"> Statistika</a>
+        <a href="subject.php" class="page" >Aine</a>
+        <a href="calendar.php" class="page" id="chosen" >Kalender</a>
+        <a href="settings.php" class="page" id="tools"> Seaded</a>
     </div>
 
     <div id="popup" class="popup">
@@ -246,7 +246,7 @@ session_start();
         ?>
         </div>
         </div>
-    <script src="kalender.js"></script>
+    <script src="calendar.js"></script>
     <script>
 
         refreshCalendar(year,month);
