@@ -15,7 +15,7 @@ session_start();
     <script src="../jquery.js"></script>
 
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="calendar.css">
+    <link rel="stylesheet" href="../calendar.css">
     <title>Kalender</title>
 
 

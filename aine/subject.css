@@ -1,13 +1,12 @@
 #inputContainer{
     width: 40%;
-
     padding: 0;
     margin-left: 30vw;
     margin-top: -60vh;
     position: absolute;
-    align-items: center;
     justify-content: space-evenly;
-    display: inline-grid;
+    display: grid;
+    align-items: center;
 }
 
 #class{
@@ -55,7 +54,7 @@
     text-decoration: none;
     margin-top: 4vw;
     margin-left: 2vw;
-    line-height: 0vh;
+    line-height: 0;
 }
 
 input[type="time"] {
@@ -78,6 +77,27 @@ input[type="time"] {
     color: black;
     border: none;
 
+}
+
+#arrows{
+}
+
+i {
+    align-self: flex-start;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
 }
 
 @media only screen and (max-width: 800px) {
