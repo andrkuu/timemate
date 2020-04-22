@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="shortcut icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../chart.js"></script>
     <script src="statistics.js"></script>
@@ -17,10 +17,10 @@ session_start();
 <body>
 <?php include('../nav-bar.php'); ?>
 <div class="links">
-    <a href="index.php" class="page" id="chosen" > Statistika</a>
-    <a href="../aine/index.php" class="page" > Aine</a>
-    <a href="../kalender/index.php" class="page" > Kalender</a>
-    <a href="../seaded/index.php" class="page" id="tools" > Seaded</a>
+    <a href="../statistika/" class="page" id="chosen" > Statistika</a>
+    <a href="../aine/" class="page" > Aine</a>
+    <a href="../kalender/" class="page" > Kalender</a>
+    <a href="../seaded/" class="page" id="tools" > Seaded</a>
     <button id="test">vaheta vaadet</button>
     <div id="statistics" class="statistics">
         <canvas id="barChart" width=300 height=300></canvas>

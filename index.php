@@ -42,18 +42,18 @@ if(isset($_POST["submit_button"])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="shortcut icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="login.css">
     <title>| Login</title>
 </head>
 <body>
 
-    <div id="banner"><img src="images/tlulogo.png" id="tlu_logo" alt="Tlu logo"></div>
+    <div id="banner"><img src="../images/tlulogo.png" id="tlu_logo" alt="Tlu logo"></div>
 
     <div id="login_container">
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <img src="images/tlu_logo_wide.jpg" id="tlu_logo2" alt="Tlu logo">
+            <img src="../images/tlu_logo_wide.jpg" id="tlu_logo2" alt="Tlu logo">
             <br><br>
             <input type="text" id="user_name" name="username" placeholder="ÕIS-i kasutajanimi">
             <br><br>
