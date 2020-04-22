@@ -113,12 +113,29 @@ label {
 .chosen {
     color: white;
 }
+i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
 
 
 @media only screen and (max-width: 800px) {
     #label {
         font-size: 5vh;
     }
+
     #topbar {
         background-color: #b71234;
         color: white;
@@ -129,6 +146,7 @@ label {
         position: absolute;
         border: none;
     }
+
     #client_name {
         height: 5vh;
         display: flex;
@@ -137,6 +155,7 @@ label {
         flex: 1;
         margin-right: 1vw;
     }
+
     .links {
         display: flex;
         flex-wrap: nowrap;
@@ -155,6 +174,7 @@ label {
         line-height: 1vh;
         font-size: 2.5vh;
     }
+
     #chosen {
         background-color: white;
         color: black;
@@ -162,62 +182,6 @@ label {
 
     #tools {
         display: none;
-    }
-
-    #inputContainer {
-        width: 40%;
-        /*margin: 0;*/
-        padding: 0;
-        margin-left: 30vw;
-        margin-top: 10vh;
-        position: absolute;
-        align-items: center;
-        justify-content: space-evenly;
-        display: inline-grid;
-    }
-
-    #class {
-        background-color: white;
-        color: black;
-        padding: 1vw;
-        font-size: 7vw;
-        border-color: grey;
-        cursor: pointer;
-        border-width: 1px;
-        border-radius: 2vh;
-    }
-
-    #button {
-        border: none;
-        color: white;
-        font-size: 4vw;
-        justify-content: normal;
-        width: 50vw;
-        height: 5vh;
-        text-decoration: none;
-        margin-top: 20vw;
-        margin-left: 10vw;
-        border-radius: 4vh;
-        padding: 4vh 5vw;
-    }
-
-    #type {
-        padding: 3vw;
-        font-size: 7vw;
-        border-width: 1px;
-        border-radius: 2vh;
-        border-color: grey;
-    }
-    #kulu {
-        background-color: #b71234;
-        color: white;
-        font-size: 5vw;
-        text-align: center;
-        width: 77%;
-        border: transparent;
-        border-radius: 2vh;
-        padding: 5vw 5vh;
-        display: inline-block;
     }
 }
 
