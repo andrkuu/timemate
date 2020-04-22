@@ -4,30 +4,30 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="script.js"></script>
-      <script src="chart.js"></script>
-      <script src="statistics.js"></script>
+    <script src="chart.js"></script>
+    <script src="statistics.js"></script>
     <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="statistics.css">
+    <link rel="stylesheet" href="statistics.css">
     <title>Statistika</title>
-  </head>
-  <body>
-    <?php include('nav-bar.php'); ?>
-    <div class="links">
-        <a href="statistics.php" class="page" id="chosen" > Statistika</a>
-        <a href="subject.php" class="page" > Aine</a>
-        <a href="calendar.php" class="page" > Kalender</a>
-        <a href="settings.php" class="page" id="tools" > Seaded</a>
-        <button id="test">vaheta vaadet</button>
-        <div id="statistics" class="statistics">
-            <canvas id="barChart" width=300 height=300></canvas>
-            <canvas id="pieChart" width=300 height=300></canvas>
-            <canvas id="radarChart" width=300 height=300></canvas>
-        </div>
+</head>
+<body>
+<?php include('nav-bar.php'); ?>
+<div class="links">
+    <a href="statistics.php" class="page" id="chosen" > Statistika</a>
+    <a href="subject.php" class="page" > Aine</a>
+    <a href="calendar.php" class="page" > Kalender</a>
+    <a href="settings.php" class="page" id="tools" > Seaded</a>
+    <button id="test">vaheta vaadet</button>
+    <div id="statistics" class="statistics">
+        <canvas id="barChart" width=300 height=300></canvas>
+        <canvas id="pieChart" width=300 height=300></canvas>
+        <canvas id="radarChart" width=300 height=300></canvas>
+    </div>
 
 
     <script>
@@ -103,7 +103,7 @@ session_start();
                     backgroundColor: [
                         'rgb(255,54,44)',
                         'rgb(158,156,160)'
-                        ],
+                    ],
                     borderColor: 'rgb(158,156,160)',
                     data: [25,300]
                 }]
@@ -192,6 +192,6 @@ session_start();
 
 
     </script>
-    
-  </body>
+
+</body>
 </html>

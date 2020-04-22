@@ -1,20 +1,19 @@
-#wrapper{position:relative;}
-
-#radarChart{
-    position:absolute;
-    border:1px solid green;
-
+#wrapper {
+    position: relative;
 }
 
-#barChart{
-    position:absolute;
-    border:1px solid red;
-
+#radarChart {
+    position: absolute;
+    border: 1px solid green;
 }
-#pieChart{
-    position:absolute;
-    border:1px solid blue;
 
+#barChart {
+    position: absolute;
+    border: 1px solid red;
+}
+#pieChart {
+    position: absolute;
+    border: 1px solid blue;
 }
 
 .statistics {
@@ -41,7 +40,7 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .statistics{
+    .statistics {
         top: 17vh;
         font-size: 3vh;
         width: 90vw;
