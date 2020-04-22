@@ -32,6 +32,10 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
         <a href="../seaded/" class="page" id="tools"> Seaded</a>
     </div>
     <div id="inputContainer">
+        <i class="arrow left"></i>
+        <select id="day">
+        </select>
+        <i class="arrow right"></i>
       <label for="class" id="label">Aine </label>
 
       <select id="class">
