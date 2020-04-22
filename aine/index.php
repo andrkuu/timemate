@@ -10,7 +10,7 @@ if(!isset($_SESSION["userFirstName"])){
 kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale lehele
 
 */
-
+$today = ("täna");
 ?>
 
 
@@ -35,8 +35,7 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
     <div id="inputContainer">
         <div id="arrows">
             <i class="arrow left"></i>
-            <select id="day">
-            </select>
+            <?php echo $today; ?>
             <i class="arrow right"></i>
         </div>
 
