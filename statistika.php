@@ -18,10 +18,10 @@ session_start();
   <body>
     <?php include('nav-bar.php'); ?>
     <div class="links">
-        <a href="statistika.php" class="lingid" id="chosen" > Statistika</a>
-        <a href="aine.php" class="lingid" > Aine</a>
-        <a href="kalender.php" class="lingid" > Kalender</a>
-        <a href="seaded.php" class="lingid" id="tools" > Seaded</a>
+        <a href="statistika.php" class="page" id="chosen" > Statistika</a>
+        <a href="aine.php" class="page" > Aine</a>
+        <a href="kalender.php" class="page" > Kalender</a>
+        <a href="seaded.php" class="page" id="tools" > Seaded</a>
         <button id="test">vaheta vaadet</button>
         <div id="statistics" class="statistics">
             <canvas id="barChart" width=300 height=300></canvas>

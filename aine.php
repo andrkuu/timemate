@@ -27,10 +27,10 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
   <body>
     <?php require('nav-bar.php'); ?>
     <div class="links">
-        <a href="statistika.php" class="lingid"> Statistika</a>
-        <a href="aine.php" class="lingid" id="chosen">Aine</a>
-        <a href="kalender.php" class="lingid">Kalender</a>
-        <a href="seaded.php" class="lingid" id="tools"> Seaded</a>
+        <a href="statistika.php" class="page"> Statistika</a>
+        <a href="aine.php" class="page" id="chosen">Aine</a>
+        <a href="kalender.php" class="page">Kalender</a>
+        <a href="seaded.php" class="page" id="tools"> Seaded</a>
     </div>
     <div id="inputContainer">
       <label for="class" id="label">Aine </label>

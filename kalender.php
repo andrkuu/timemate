@@ -174,13 +174,13 @@ session_start();
   <body>
     <?php include('nav-bar.php'); ?>
     <div class="links">
-        <a href="statistika.php" class="lingid"> Statistika</a>
-        <a href="aine.php" class="lingid" >Aine</a>
-        <a href="kalender.php" class="lingid" id="chosen" >Kalender</a>
-        <a href="seaded.php" class="lingid" id="tools"> Seaded</a>
+        <a href="statistika.php" class="page"> Statistika</a>
+        <a href="aine.php" class="page" >Aine</a>
+        <a href="kalender.php" class="page" id="chosen" >Kalender</a>
+        <a href="seaded.php" class="page" id="tools"> Seaded</a>
     </div>
 
-    <div class="popup">
+    <div id="popup" class="popup">
         <span class="helper"></span>
         <div>
             <div class="popupCloseButton">&times;</div>
@@ -261,7 +261,6 @@ session_start();
             popup.classList.toggle("show");
             popup.innerHTML = date;
             $('.popup').show();
-
 
 
         }
