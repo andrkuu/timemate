@@ -22,6 +22,7 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="subject.css">
     <title>Aine</title>
   </head>
   <body>
@@ -33,6 +34,8 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
         <a href="settings.php" class="page" id="tools"> Seaded</a>
     </div>
     <div id="inputContainer">
+        <label for="class" id="inputDate">
+
       <label for="class" id="label">Aine </label>
 
       <select id="class">
@@ -56,7 +59,6 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
       <input type="time" id="kulu" name="time" />
       <input type="button" value="sisesta" id="button" />
     </div>
-
 
   </body>
 </html>

@@ -60,40 +60,9 @@ body {
     padding: 0;
     font-family: Impact, Charcoal, sans-serif;
 }
-#inputContainer {
-    width: 40%;
-    /*margin: 0;*/
-    padding: 0;
-    margin-left: 30vw;
-    margin-top: -70vh;
-    position: absolute;
-    align-items: center;
-    justify-content: space-evenly;
-    display: inline-grid;
-}
 
-#class {
-    background-color: white;
-    color: black;
-    padding: 1vw;
-    font-size: 1vw;
-    border-color: grey;
-    cursor: pointer;
-    border-width: 1px;
-    border-radius: 2vh;
-}
 
-#type {
-    background-color: white;
-    color: black;
-    padding: 1vw;
-    font-size: 1vw;
-    cursor: pointer;
-    align-items: center;
-    border-width: 1px;
-    border-radius: 2vh;
-    border-color: grey;
-}
+
 
 .time {
     background-color: #b71234;
@@ -102,13 +71,7 @@ body {
     border: transparent;
     border-radius: 2vh;
 }
-input[type="time"] {
-    background-color: #b71234;
-    color: white;
-    border: none;
-    padding: 1vw;
-    font-size: 1vw;
-}
+
 label {
     margin-left: 34%;
     align-content: flex-start;
@@ -145,37 +108,13 @@ label {
     background-color: white;
     color: black;
 }
-#button {
-    cursor: pointer;
-    background-color: #b71234;
-    border: none;
-    color: white;
-    font-size: 1vw;
-    justify-content: space-evenly;
-    display: block;
-    width: 8vw;
-    height: 3vh;
-    text-align: center;
-    text-decoration: none;
-    margin-top: 4vw;
-    margin-left: 2vw;
-    line-height: 0vh;
-}
+
 
 .chosen {
     color: white;
 }
 
-#inputContainer {
-    /*margin: 0;*/
-    padding: 0;
-    margin-left: 40vw;
-    margin-top: -70vh;
-    align-items: center;
-    justify-content: space-evenly;
-    display: inline-grid;
-    position: absolute;
-}
+
 @media only screen and (max-width: 800px) {
     #label {
         font-size: 5vh;
