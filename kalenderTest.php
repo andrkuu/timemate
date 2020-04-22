@@ -3,26 +3,26 @@
 session_start();
 
 /**
- * Returns the calendar's html for the given year and month.
+ * Returns the kalender's html for the given year and month.
  *
  * @param $year (Integer) The year, e.g. 2015.
  * @param $month (Integer) The month, e.g. 7.
  * @param $events (Array) An array of events where the key is the day's date
  * in the format "Y-m-d", the value is an array with 'text' and 'link'.
- * @return (String) The calendar's html.
+ * @return (String) The kalender's html.
  */
 function build_html_calendar($year, $month, $events = null) {
 
     // CSS classes
-    $css_cal = 'calendar';
-    $css_cal_row = 'calendar-row';
-    $css_cal_day_head = 'calendar-day-head';
-    $css_cal_day = 'calendar-day';
-    $css_cal_day_active = 'calendar-day-active';
+    $css_cal = 'kalender';
+    $css_cal_row = 'kalender-row';
+    $css_cal_day_head = 'kalender-day-head';
+    $css_cal_day = 'kalender-day';
+    $css_cal_day_active = 'kalender-day-active';
     $css_cal_day_number = 'day-number';
-    $css_cal_day_blank = 'calendar-day-np';
-    $css_cal_day_event = 'calendar-day-event';
-    $css_cal_event = 'calendar-event';
+    $css_cal_day_blank = 'kalender-day-np';
+    $css_cal_day_event = 'kalender-day-event';
+    $css_cal_event = 'kalender-event';
 
 
     $headings = ['E', 'T', 'K', 'N', 'R', 'L', 'P'];
@@ -135,7 +135,6 @@ function build_html_calendar($year, $month, $events = null) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
-    <script defer src="script.js"></script>
     <script>
 
 
@@ -150,7 +149,7 @@ function build_html_calendar($year, $month, $events = null) {
 
     </script>
     <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="calendar.css">
+      <link rel="stylesheet" href="kalender/calendar.css">
     <title>Kalender</title>
 
   </head>

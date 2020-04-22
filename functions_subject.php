@@ -22,7 +22,7 @@ function getSubjects($userName, $password){
                 $stmt->close();
                 $conn->close();
 
-                header("Location: subject.php");
+                header("Location: index.php");
                 exit();
 
 
