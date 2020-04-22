@@ -4,6 +4,11 @@ session_start();
 
 function signIn($userName, $password){
     $notice = "";
+
+    $_SESSION["userFirstName"] = $userName;
+    $_SESSION["userLastName"] = $password;
+
+    /*
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
     $stmt = $conn->prepare("SELECT password FROM users WHERE username=?");
     echo $conn->error;
@@ -27,7 +32,7 @@ function signIn($userName, $password){
                 $stmt->close();
                 $conn->close();
 
-                header("Location: aine/");
+
                 exit();
 
 
@@ -46,6 +51,8 @@ function signIn($userName, $password){
 
     $stmt->close();
     $conn->close();
+    */
+    header("Location: aine/");
     return $notice;
 }
 
