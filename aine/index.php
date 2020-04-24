@@ -46,10 +46,17 @@ if(isset($_POST["submitSubject"])){
   <body>
     <?php require('../nav-bar.php'); ?>
     <div class="links">
-        <a href="../statistika/" class="page"> Statistika</a>
-        <a href="../aine/" class="page" id="chosen">Aine</a>
-        <a href="../kalender/" class="page">Kalender</a>
-        <a href="../seaded/" class="page" id="tools"> Seaded</a>
+        <a href="../statistika/" class="page"><span class="link_names">Statistika</span></a>
+        <a href="../aine/" class="page" id="chosen"> <span class="link_names">Aine</span></a>
+        <a href="../kalender/" class="page"><span class="link_names">Kalender</span></a>
+        <a href="../seaded/" class="page"><span class="link_names">Seaded</span></a>
+    </div>
+
+    <div class="images">
+        <img src="../images/statistics.png" alt="statistics" class="link_icons" id="first_icon">
+        <img src="../images/add.png" alt="statistics" class="link_icons" id="second_icon">
+        <img src="../images/calendar.png" alt="statistics" class="link_icons" id="third_icon">
+        <img src="../images/wrench.png" alt="statistics" class="link_icons" id="fourth_icon">
     </div>
     <div id="inputContainer">
         <div id="arrows">
@@ -62,7 +69,7 @@ if(isset($_POST["submitSubject"])){
 
       <label for="class" id="label">Aine </label>
         <?php
-            //echo getSubjects();
+            echo getSubjects();
         ?>
       <br />
 

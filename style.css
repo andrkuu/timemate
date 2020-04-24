@@ -77,19 +77,45 @@ body {
     top: 0;
     width: 25vw;
 }
+.link_icons{
+    height: 8vh;
+    position: absolute;
+}
+
+#first_icon{
+    top: 11vh;
+    left: 16vw;
+}
+#second_icon{
+    top: 35vh;
+    left: 16vw;
+}
+#third_icon{
+    top: 60vh;
+    left: 16vw;
+}
+#fourth_icon{
+    top: 83vh;
+    left: 16vw;
+}
+
+
 
 .page {
     color: white;
     background-color: #b71234;
     width: 25vw;
     height: 24vh;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
     align-items: center;
     font-size: 3vw;
     cursor: pointer;
     display: grid;
     padding:0;
+}
+.link_names{
+    margin-left: 1vw;
 }
 
 #chosen {
@@ -155,6 +181,10 @@ body {
 
     #tools {
         display: none;
+    }
+
+    .images{
+        visibility: hidden;
     }
 }
 
