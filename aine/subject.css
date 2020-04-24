@@ -111,14 +111,41 @@ i {
 
 @media only screen and (max-width: 800px) {
     #inputContainer {
-        width: 40%;
+        margin-left: 20vw;
         /*margin: 0;*/
         padding: 0;
-        margin-left: 30vw;
+        display: flex;
         margin-top: 10vh;
-        position: absolute;
         align-items: center;
         justify-content: space-evenly;
-        display: inline-grid;
+        flex-direction: column;
+    }
+
+    .dropdown{
+        background-color: white;
+        color: black;
+        padding: 2vw;
+        font-size: 5vw;
+        border-color: grey;
+        cursor: pointer;
+        border-width: 1px;
+        border-radius:2vh;
+        width: 60vw;
+    }
+
+    #labelForSubjects{
+        margin-left: 19vw;
+        font-size:2vw;
+    }
+    #submit_button {
+        font-size: 5vw;
+        display: block;
+        height: 2.5vh;
+        margin-top: 2vw;
+        margin-left: 8vw;
+        line-height: 0;
+        padding:5vw;
+        margin-top:5vw;
+        border-radius:2vw;
     }
 }
