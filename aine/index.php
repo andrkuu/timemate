@@ -29,7 +29,7 @@ if(isset($_POST["submitSubject"])){
 
     echo(insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"])));
 }
-
+$submitDay ="täna";
 
 ?>
 
@@ -61,7 +61,7 @@ if(isset($_POST["submitSubject"])){
     <div id="inputContainer">
         <div id="arrows">
             <i class="arrow left" onclick="changeDay(event)"></i>
-            <p id="displayDay"></p>
+            <i id="displayDay"><?php echo $submitDay;?></i>
             <i class="arrow right" onclick="changeDay(event)"></i>
         </div>
 

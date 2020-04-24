@@ -4,18 +4,16 @@
     margin-top:-90vh;
     position: absolute;
     justify-content: space-evenly;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
-p{
-    align-self: center;
-}
+
 
 .dropdown{
     background-color: white;
     color: black;
-    padding: 0.5vw;
+    padding: 1vw;
     font-size: 1.5vw;
     border-color: grey;
     cursor: pointer;
@@ -82,10 +80,15 @@ input[type="time"] {
     background: white;
     color: black;
     border: none;
-
 }
-
+#displayDay{
+    border:none;
+    font-size:2vw;
+    font-style: normal;
+}
 #arrows{
+    display: inline-block;
+    margin-left: -1vw;
 }
 
 i {
@@ -117,48 +120,5 @@ i {
         align-items: center;
         justify-content: space-evenly;
         display: inline-grid;
-    }
-
-    #class {
-        background-color: white;
-        color: black;
-        padding: 1vw;
-        font-size: 7vw;
-        border-color: grey;
-        cursor: pointer;
-        border-width: 1px;
-        border-radius: 2vh;
-    }
-
-    #button {
-        border: none;
-        color: white;
-        font-size: 4vw;
-        justify-content: normal;
-        width: 50vw;
-        height: 5vh;
-        text-decoration: none;
-        margin-top: 20vw;
-        border-radius: 4vh;
-        padding: 4vh 5vw;
-    }
-
-    #type {
-        padding: 3vw;
-        font-size: 7vw;
-        border-width: 1px;
-        border-radius: 2vh;
-        border-color: grey;
-    }
-    #kulu {
-        background-color: #b71234;
-        color: white;
-        font-size: 5vw;
-        text-align: center;
-        width: 77%;
-        border: transparent;
-        border-radius: 2vh;
-        padding: 5vw 5vh;
-        display: inline-block;
     }
 }
