@@ -24,9 +24,9 @@ session_start();
 
     <div class="settings_content">
         <div id="notifications">
-        <p>Õppejõu teavitused</p>
-        <p>Tunniplaani teavitused</p>
-        <p>Tähtaja teavitused</p>
+        <p>Õppejõu teavitused</p><div class="slide"></div>
+        <p>Tunniplaani teavitused</p><div class="slide"></div>
+        <p>Tähtaja teavitused</p><div class="slide"></div>
         </div>
 
         <div id="history">
