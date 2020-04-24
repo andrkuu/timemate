@@ -106,8 +106,8 @@ session_start();
         .popup {
             height: 25%;
             color: black;
-            position: absolute;
-            left: 77vw;
+            position: fixed;
+            right: 3vw;
             width: 20vw;
             z-index: 1;
             top: 5vw;
@@ -115,6 +115,17 @@ session_start();
             overflow-x: visible;
             transition: 3s;
             padding-top: 60px;
+        }
+        /* SIDEBAR HIDDEN STATE */
+        .popup[aria-hidden="true"] {
+            transition: 200ms;
+            transform: translateX(100%);
+        }
+        /* SIDEBAR VISIBLE STATE */
+        .popup:not([aria-hidden]),
+        .popup[aria-hidden="false"] {
+            transition: 200ms;
+            transform: translateX(0);
         }
 
         .popup a {
