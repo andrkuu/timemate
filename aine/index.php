@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-//include("../functions_subject.php");
+include("../functions_subject.php");
 /*
 if(!isset($_SESSION["userFirstName"])){
     header("Location: index.php");
@@ -76,14 +76,14 @@ $today = ("täna");
       <label for="class" id="label">Aine </label>
 
         <?php
-//            echo getSubjects();
+            echo getSubjects();
         ?>
       <br />
 
       <label for="type" id="label">Tüüp </label>
 
         <?php
-//            echo getActivities();
+            echo getActivities();
         ?>
       <br />
 
