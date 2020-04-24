@@ -17,7 +17,7 @@ ul {
     width: 35vw;
     background-color: #ffffff;
     position: absolute;
-    left: 40vw;
+    left: 30vw;
     top: 10vh;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -142,7 +142,69 @@ ul {
     position: absolute;
     float: left;
 }
+.popuptext {
+    background-color: #b71234;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    height: 8vh;
+    flex-direction: row;
+    color: white;
+}
+.popupasi {
+    width: 28vw;
+    height: 30vh;
+    text-align: center;
+    margin-top: 0vh;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: rgb(166, 166, 174);
+    background: linear-gradient(90deg, rgb(166, 166, 174) 0%, rgb(166, 166, 174) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 79%, rgba(166, 166, 174) 79%, rgba(166, 166, 174) 100%);
 
+}
+
+.popup {
+    height: 30%;
+    position: fixed;
+    right: 4vw;
+    width: 28vw;
+    z-index: 1;
+    top: 5vw;
+    background-color: transparent;
+    overflow-x: visible;
+
+}
+#aine{
+    width: 46%;
+ }
+#õppetegevus{
+    left: 46%;
+    width: 33%;
+}
+#kestvus{
+    left: 79%;
+    width: 21%;
+}
+#kõik{
+    background-color: #b71234;
+}
+
+
+
+
+.popup a:hover {
+    color: #f1f1f1;
+}
+
+.popupCloseButton {
+    position: absolute;
+    top: 0;
+    width: 28vw;
+    height: 30vh;
+    cursor: pointer;
+    color:transparent;
+
+}
 @media only screen and (max-width: 800px) {
     .kalender {
         top: 17vh;
@@ -151,3 +213,5 @@ ul {
         left: 5vw;
     }
 }
+
+

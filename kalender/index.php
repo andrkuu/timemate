@@ -98,59 +98,6 @@ session_start();
 
     </script>
 
-    <style>
-        body {
-            font-family: "Lato", sans-serif;
-        }
-
-        .popup {
-            height: 25%;
-            color: black;
-            position: fixed;
-            right: 3vw;
-            width: 20vw;
-            z-index: 1;
-            top: 5vw;
-            background-color: #c8c8c8;
-            overflow-x: visible;
-            transition: 3s;
-            padding-top: 60px;
-        }
-        /* SIDEBAR HIDDEN STATE */
-        .popup[aria-hidden="true"] {
-            transition: 200ms;
-            transform: translateX(100%);
-        }
-        /* SIDEBAR VISIBLE STATE */
-        .popup:not([aria-hidden]),
-        .popup[aria-hidden="false"] {
-            transition: 200ms;
-            transform: translateX(0);
-        }
-
-        .popup a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 5s;
-        }
-
-        .popup a:hover {
-            color: #f1f1f1;
-        }
-
-        .popupCloseButton {
-            position: absolute;
-            top: 0;
-            cursor: pointer;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-    </style>
 
 </head>
 <body>
@@ -173,7 +120,7 @@ session_start();
     <span class="helper"></span>
     <div>
         <div class="popupCloseButton">&times;</div>
-        <div id="myPopup"><p>Add any HTML content<br />inside the popup box!</p></div>
+        <div id="myPopup"></div>
 
     </div>
 </div>
