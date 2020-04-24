@@ -27,12 +27,12 @@ if(isset($_POST["submitSubject"])){
 
     $duration = ($hour * 60) + $min;
 
-    echo(insert_time_report($_POST["subject"], $_POST["type"], $duration));
+    echo(insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"])));
 }
 
 
 ?>
-*/
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

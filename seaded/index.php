@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("../functions_subject.php");
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +60,11 @@ session_start();
 
         <div id="history">
             <div id="history_header">Sinu eelmised tegevused</div>
-            <div id="content_box"></div>
+            <div id="content_box">
+                <?php
+                   echo getPreviousActivities();
+                ?>
+            </div>
         </div>
     
   </body>
