@@ -10,7 +10,7 @@ body {
     background-color: #b71234;
     color: white;
     width: 100%;
-    height: 5vh;
+    height: 4vh;
     display: flex;
     justify-content: flex-end;
     padding: 0;
@@ -22,7 +22,7 @@ body {
     border: none;
     top: 0;
     right: 0;
-    height: 5vh;
+    height: 4vh;
     border: none;
     justify-content: flex-end;
     flex: 2;
@@ -31,7 +31,7 @@ body {
 
 #logout_img {
     background-color: #b71234;
-    height: 4vh;
+    height: 3vh;
     padding: 0;
     margin: 0;
     margin: 0.5vh;
@@ -39,16 +39,16 @@ body {
 }
 
 #client_name {
-    height: 5vh;
+    height: 4vh;
     display: flex;
     justify-content: flex-end;
-    padding: 1vh;
     flex: 3;
     margin-right: 1vw;
+    line-height: 4vh;
 }
 
 #tlu_logo {
-    height: 5vh;
+    height: 4vh;
     display: inline;
 }
 
@@ -60,10 +60,6 @@ body {
     padding: 0;
     font-family: Impact, Charcoal, sans-serif;
 }
-
-
-
-
 .time {
     background-color: #b71234;
     color: white;
@@ -86,7 +82,7 @@ body {
     color: white;
     background-color: #b71234;
     width: 25vw;
-    height: 20vh;
+    height: 24vh;
     text-align: center;
     text-decoration: none;
     align-items: center;

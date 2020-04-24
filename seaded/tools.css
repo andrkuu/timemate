@@ -70,21 +70,21 @@ input:checked + .slider:before {
     text-align: right;
 }
 #notifications{
-    margin-left: 31vw;
-    top: 5vh;
+    margin-left: 25vw;
+    top: 4vh;
     position: absolute;
-    height: 95vh;
+    height: 96vh;
     width: 30vw;
     background-color: greenyellow;
 }
 
 /* history*/
 #history{
-    height: 95vh;
-    width: 39vw;
+    height: 96vh;
+    width: 50vw;
     background-color: green;
-    margin-left: 61vw;
-    top: 5vh;
+    margin-left: 50vw;
+    top: 4vh;
     position: absolute;
 }
 
@@ -96,7 +96,7 @@ input:checked + .slider:before {
 
 #content_box{
     height: 80vh;
-    width: 37vw;
+    width: 48vw;
     background-color: #81DF00;
     margin-left: 1vw;
     margin-top: 2vh;
