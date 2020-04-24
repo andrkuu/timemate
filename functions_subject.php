@@ -31,7 +31,7 @@ function getSubjects(){
     $result .= "<select name=\"subject\">";
 
     while($stmt -> fetch()){
-        $result .= "<option value=\"".$codeFromDb."\">".$nameFromDb."</option> \n";
+        $result .= "<option value=\"".$idFromDb."\">".$nameFromDb."</option> \n";
     }
 
     $result .= "</select>";
@@ -41,17 +41,17 @@ function getSubjects(){
     return $result;
 }
 
-function insert_load($regNr, $name, $weight_in, $weight_out){
+function insert_time_report($subject_id, $activity_id, $duration){
 
     $ret = False;
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn->prepare("INSERT INTO Truck_Loads (Truck_ID, Load_Name, Weight_IN, 	Weight_OUT) VALUES ((select ID from Trucks where Reg_NR=?), (?),(?),(?))");
+    $stmt = $conn->prepare("INSERT INTO time_reportings (subject_id, activity_id, duration) VALUES ((?),(?),(?))");
 
-    $stmt->bind_param("ssdd", $regNr,$name, $weight_in, $weight_out);
+    $stmt->bind_param("iii", $subject_id,$activity_id, $duration);
     if($stmt->execute()){
         $ret = True;
     }else{
-        $ret = "Uue kauba viga: " .$stmt->error;
+        $ret = "Mingi viga: " .$stmt->error;
     }
 
     $stmt->close();

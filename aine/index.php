@@ -14,8 +14,19 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
 if(isset($_POST["submitSubject"])){
 
     echo $_POST["subject"];
+    echo "\n";
     echo $_POST["type"];
+    echo "\n";
     echo $_POST["time"];
+    $time = $_POST["time"];
+
+    $arr = explode(':',$time);
+    $hour = intval($arr[0]);
+    $min = intval($arr[1]);
+
+    $duration = ($hour * 60) + $min;
+
+    echo(insert_time_report($_POST["subject"], $_POST["type"], $duration));
 }
 
 $today = ("täna");
