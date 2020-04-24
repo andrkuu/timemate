@@ -99,7 +99,7 @@ function getPreviousActivities($userId){
         $result .=
             "<li>"
                 .$day." "
-                .$months[intval($month)]." "
+                .ucfirst($months[intval($month)])." "
                 .$subjectIdFromDb." "
                 .$activityIdFromDb." "
                 .$hours."h "
