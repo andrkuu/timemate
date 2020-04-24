@@ -10,6 +10,7 @@ function getMonthActivities($userId, $monthNr, $yearNr){
                                             duration, report_date FROM time_reportings WHERE user_id=? AND MONTH(report_date) = ? AND YEAR(report_date) = ?  
                                             GROUP BY subject_id, activity_id, duration
                                             ORDER BY report_date
+                                            LIMIT 3
    ");
 
     echo $conn -> error;
