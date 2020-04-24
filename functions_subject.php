@@ -67,7 +67,9 @@ function getPreviousActivities($userId){
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
     $stmt = $conn -> prepare("SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
                                             (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
-                                            duration, date FROM time_reportings WHERE user_id=? ORDER BY date");
+                                            sum(duration), report_date FROM time_reportings WHERE user_id=? 
+                                            GROUP BY duration
+                                            ORDER BY report_date");
 
     echo $conn -> error;
     $stmt->bind_param("i", $userId);
