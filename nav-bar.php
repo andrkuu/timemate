@@ -13,5 +13,5 @@
             <img id='logout_img' src=\"../images/logout.png\" alt=\"logout\">
         </button>       
     </form>
-    <link rel=\"stylesheet\" href=\"style.css\">
+    <link rel=\"stylesheet\" href=\"../style.css\">
 </div>";

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+include("../functions_subject.php");
 /*
 if(!isset($_SESSION["userFirstName"])){
     header("Location: index.php");
@@ -10,7 +10,7 @@ if(!isset($_SESSION["userFirstName"])){
 kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale lehele
 
 */
-
+$today = ("täna");
 ?>
 
 
@@ -33,27 +33,24 @@ kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale l
         <a href="../seaded/" class="page" id="tools"> Seaded</a>
     </div>
     <div id="inputContainer">
-        <i class="arrow left"></i>
-        <select id="day">
-        </select>
-        <i class="arrow right"></i>
+        <div id="arrows">
+            <i class="arrow left"></i>
+            <?php echo $today; ?>
+            <i class="arrow right"></i>
+        </div>
+
       <label for="class" id="label">Aine </label>
 
-      <select id="class">
-        <option value="C#">C#</option>
-        <option value="java">java</option>
-        <option value="python">python</option>
-        <option value="interaktsioonidisain">interaktsiooni disainid</option>
-      </select>
+        <?php
+            echo getSubjects();
+        ?>
       <br />
 
       <label for="type" id="label">Tüüp </label>
 
-      <select id="type">
-        <option value="rühm">rühmatöö</option>
-        <option value="iseseisev">iseseisev töö</option>
-        <option value="kodune">kodune töö</option>
-      </select>
+        <?php
+            echo getActivities();
+        ?>
       <br />
 
       <label for="kulu" id="label">Kulu </label>
