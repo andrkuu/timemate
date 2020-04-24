@@ -67,7 +67,9 @@ function getPreviousActivities($userId){
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
     $stmt = $conn -> prepare("SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
                                             (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
-                                            duration, date FROM time_reportings WHERE user_id=? ORDER BY date");
+                                            sum(duration), report_date FROM time_reportings WHERE user_id=? 
+                                            GROUP BY duration
+                                            ORDER BY report_date");
 
     echo $conn -> error;
     $stmt->bind_param("i", $userId);
@@ -97,13 +99,12 @@ function getPreviousActivities($userId){
         $day = date("d",strtotime($dateFromDb));
         $month = date("m",strtotime($dateFromDb));
         $result .=
-            "<li>"
-                .$day." "
-                .ucfirst($months[intval($month)])." "
-                .$subjectIdFromDb." "
-                .$activityIdFromDb." "
-                .$hours."h "
-                .$minutes."m  
+            "<li id='one_item_history'>"
+                ."<span id='date_box'> <span id='history_day'>".$day." </span>"
+                ."<span id='history_month'>".ucfirst($months[intval($month)])."</span></span>"
+                ."<span id='subject_box'> <span id='history_subject'>".$subjectIdFromDb."</span>"
+                ."<span id='history_activity'>".$activityIdFromDb."</span></span>"
+                ."<span id='history_time'>".$durationFromDb." min</span>
             </li> \n";
     }
 
