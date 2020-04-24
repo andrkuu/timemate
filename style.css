@@ -87,18 +87,22 @@ body {
 #first_icon{
     top: 11vh;
     left: 16vw;
+    pointer-events: none;
 }
 #second_icon{
     top: 35vh;
     left: 16vw;
+    pointer-events: none;
 }
 #third_icon{
     top: 60vh;
     left: 16vw;
+    pointer-events: none;
 }
 #fourth_icon{
     top: 83vh;
     left: 16vw;
+    pointer-events: none;
 }
 .page {
     color: white;
