@@ -97,77 +97,48 @@ session_start();
 
 
     </script>
+
     <style>
-        /* Popup container - can be anything you want */
-        /* Popup box BEGIN */
-        .popup{
-            background:rgba(0,0,0,.4);
-            cursor:pointer;
-            display:none;
-            height:100%;
-            position:fixed;
-            text-align:center;
-            top:0;
-            width:100%;
-            z-index:10000;
+        body {
+            font-family: "Lato", sans-serif;
         }
-        .popup .helper{
-            display:inline-block;
-            height:100%;
-            vertical-align:middle;
-        }
-        .popup > div {
-            background-color: #fff;
-            box-shadow: 10px 10px 60px #555;
-            display: inline-block;
-            height: auto;
-            max-width: 551px;
-            min-height: 100px;
-            vertical-align: middle;
-            width: 60%;
-            position: relative;
-            border-radius: 8px;
-            padding: 15px 5%;
-        }
-        .popupCloseButton {
-            background-color: #fff;
-            border: 3px solid #999;
-            border-radius: 50px;
-            cursor: pointer;
-            display: inline-block;
-            font-family: arial;
-            font-weight: bold;
+
+        .popup {
+            height: 25%;
+            color: black;
             position: absolute;
-            top: -20px;
-            right: -20px;
+            left: 77vw;
+            width: 20vw;
+            z-index: 1;
+            top: 5vw;
+            background-color: #c8c8c8;
+            overflow-x: visible;
+            transition: 3s;
+            padding-top: 60px;
+        }
+
+        .popup a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
             font-size: 25px;
-            line-height: 30px;
-            width: 30px;
-            height: 30px;
-            text-align: center;
+            color: #818181;
+            display: block;
+            transition: 5s;
         }
-        .popupCloseButton:hover {
-            background-color: #ccc;
+
+        .popup a:hover {
+            color: #f1f1f1;
         }
-        .trigger_popup_fricc {
+
+        .popupCloseButton {
+            position: absolute;
+            top: 0;
             cursor: pointer;
-            font-size: 20px;
-            margin: 20px;
-            display: inline-block;
-            font-weight: bold;
-        }
-        /* Popup box BEGIN */
-
-
-        @-webkit-keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
         }
 
-        @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity:1 ;}
-        }
     </style>
 </head>
 <body>
