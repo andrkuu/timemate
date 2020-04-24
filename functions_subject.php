@@ -1,45 +1,52 @@
 <?php
-function getSubjects($userName, $password){
-    $notice = "";
+require("../../../config.php");
+
+function getActivities(){
+    $result = null;
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn->prepare("SELECT password FROM users WHERE username=?");
-    echo $conn->error;
-    $stmt->bind_param("s", $userName);
-    $stmt->bind_result($passwordFromDb);
-    if($stmt->execute()){
-        //kui päring õnnestus
-        if($stmt->fetch()){
-            //kasutaja on olemas
-            if($password === $passwordFromDb){
-                //kui salasõna klapib
-                $stmt->close();
+    $stmt = $conn -> prepare("SELECT id, name FROM activities");
+    echo $conn -> error;
+    $stmt -> bind_result($idFromDb, $name);
+    $stmt -> execute();
+    $result .= "<select id=\"type\">";
 
+    while($stmt -> fetch()){
+        $result .= "<option value=\"".$idFromDb."\">".$name."</option> \n";
+    }
 
-                //Salvestame kasutaja info sessioonimuutujasse
-                $_SESSION["userFirstName"] = $userName;
-                $_SESSION["userLastName"] = $passwordFromDb;
-
-                $stmt->close();
-                $conn->close();
-
-                header("Location: index.php");
-                exit();
-
-
-
-            } else {
-                $notice = "Vale salasõna!";
-            }//kas password_verify
-        } else {
-            $notice = "Sellist kasutajat (" .$userName .") ei leitud!";
-            //kui sellise e-mailiga ei saanud vastet (fetch ei andnud midagi), siis pole sellist kasutajat
-        }//kas fetch õnnestus
-    } else {
-        $notice = "Sisselogimisel tekkis tehniline viga!" .$stmt->error;
-        //veateade, kui execute ei õnnestunud
-    }//kas execute õnnestus
+    $result .= "</select>";
 
     $stmt->close();
     $conn->close();
-    return $notice;
+    return $result;
 }
+
+function getSubjects(){
+    $result = null;
+    $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
+    $stmt = $conn -> prepare("SELECT id, name, code FROM subjects");
+    echo $conn -> error;
+    $stmt -> bind_result($idFromDb, $nameFromDb, $codeFromDb);
+    $stmt -> execute();
+    $result .= "<select id=\"subject\">";
+
+    while($stmt -> fetch()){
+        $result .= "<option value=\"".$codeFromDb."\">".$nameFromDb."</option> \n";
+    }
+
+    $result .= "</select>";
+
+    $stmt->close();
+    $conn->close();
+    return $result;
+}
+
+
+/*
+ * <select id="type">
+        <option value="rühm">rühmatöö</option>
+        <option value="iseseisev">iseseisev töö</option>
+        <option value="kodune">kodune töö</option>
+      </select>
+ *
+ */

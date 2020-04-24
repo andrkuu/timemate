@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+include("../functions_subject.php");
 /*
 if(!isset($_SESSION["userFirstName"])){
     header("Location: index.php");
@@ -41,21 +41,16 @@ $today = ("täna");
 
       <label for="class" id="label">Aine </label>
 
-      <select id="class">
-        <option value="C#">C#</option>
-        <option value="java">java</option>
-        <option value="python">python</option>
-        <option value="interaktsioonidisain">interaktsiooni disainid</option>
-      </select>
+        <?php
+            echo getSubjects();
+        ?>
       <br />
 
       <label for="type" id="label">Tüüp </label>
 
-      <select id="type">
-        <option value="rühm">rühmatöö</option>
-        <option value="iseseisev">iseseisev töö</option>
-        <option value="kodune">kodune töö</option>
-      </select>
+        <?php
+            echo getActivities();
+        ?>
       <br />
 
       <label for="kulu" id="label">Kulu </label>
