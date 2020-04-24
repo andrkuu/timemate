@@ -150,6 +150,7 @@ ul {
     height: 8vh;
     flex-direction: row;
     color: white;
+
 }
 .popupasi {
     width: 28vw;
@@ -158,8 +159,8 @@ ul {
     margin-top: 0vh;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: rgb(166, 166, 174);
-    background: linear-gradient(90deg, rgb(166, 166, 174) 0%, rgb(166, 166, 174) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 79%, rgba(166, 166, 174) 79%, rgba(166, 166, 174) 100%);
+    background: linear-gradient(90deg, rgb(204, 204, 204) 0%, rgb(204, 204, 204) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 79%, rgba(204, 204, 204) 79%, rgba(204, 204, 204) 100%);
+    border-collapse: collapse;
 
 }
 
@@ -176,6 +177,7 @@ ul {
 }
 #aine{
     width: 46%;
+    border-top-left-radius: 5px;
  }
 #õppetegevus{
     left: 46%;
@@ -184,9 +186,7 @@ ul {
 #kestvus{
     left: 79%;
     width: 21%;
-}
-#kõik{
-    background-color: #b71234;
+    border-top-right-radius: 5px;
 }
 
 
