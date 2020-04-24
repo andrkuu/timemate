@@ -26,7 +26,7 @@ session_start();
         <div id="notifications">
         <p>Õppejõu teavitused</p><div class="slide"></div>
         <p>Tunniplaani teavitused</p><div class="slide"></div>
-        <p>Tähtaja teavitused</p><div class="slide"></div>
+        <p>Tähtaja teavitused:</p><div class="slide"></div>
         </div>
 
         <div id="history">
