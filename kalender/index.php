@@ -106,7 +106,7 @@ session_start();
     <a href="../statistika/" class="page"><span class="link_names">Statistika</span></a>
     <a href="../aine/" class="page"> <span class="link_names">Aine</span></a>
     <a href="../kalender/" class="page" id="chosen"><span class="link_names">Kalender</span></a>
-    <a href="../seaded/" class="page" ><span class="link_names">Seaded</span></a>
+    <a href="../seaded/" class="page" id="tools"><span class="link_names">Seaded</span></a>
 </div>
 
 <div class="images">

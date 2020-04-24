@@ -1,5 +1,7 @@
 <?php
 session_start();
+include("../functions_subject.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -15,10 +17,10 @@ session_start();
   <body>
     <?php include('../nav-bar.php'); ?>
     <div class="links">
-        <a href="../statistika/" class="page"><span class="link_names">Statistika</span></a>
-        <a href="../aine/" class="page"> <span class="link_names">Aine</span></a>
-        <a href="../kalender/" class="page"><span class="link_names">Kalender</span></a>
-        <a href="../seaded/" class="page" id="chosen"><span class="link_names">Seaded</span></a>
+        <a href="../statistika/" class="page" id="tools"><span class="link_names">Statistika</span></a>
+        <a href="../aine/" class="page" id="tools"> <span class="link_names">Aine</span></a>
+        <a href="../kalender/" class="page" id="tools"><span class="link_names">Kalender</span></a>
+        <a href="../seaded/" class="page" id="chosen" id="tools"<span class="link_names">Seaded</span></a>
     </div>
 
     <div class="images">
@@ -36,7 +38,7 @@ session_start();
                 <input type="checkbox">
                 <span class="slider round"></span>
             </label>
-               <span>Õppejõu teavitused</span>
+               <span class="switch_text">Õppejõu teavitused</span>
            </div>
 
             <div id="second" class="switch_box">
@@ -44,7 +46,7 @@ session_start();
                 <input type="checkbox" id="second2" >
                 <span class="slider round"></span>
             </label>
-                <span>Tunniplaani teavitused</span>
+                <span class="switch_text">Tunniplaani teavitused</span>
             </div>
 
             <div  id="third" class="switch_box">
@@ -52,14 +54,19 @@ session_start();
                 <input type="checkbox">
                 <span class="slider round"></span>
             </label>
-                <span>Tähtaja teavitused</span>
+                <span class="switch_text">Tähtaja teavitused</span>
             </div>
 
         </div>
 
         <div id="history">
             <div id="history_header">Sinu eelmised tegevused</div>
-            <div id="content_box"></div>
+            <div id="content_box">
+                <?php
+                    echo getPreviousActivities(intval($_SESSION["id"]));
+                ?>
+            </div>
+            <div id="back_button">Tagasi</div>
         </div>
     
   </body>

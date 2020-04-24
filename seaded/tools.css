@@ -1,4 +1,9 @@
 /* Toggle switch*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
 .switch {
     position: relative;
     display: inline-block;
@@ -69,20 +74,21 @@ input:checked + .slider:before {
     white-space: nowrap;
     text-align: right;
 }
+.switch_text{
+    font-size: medium;
+}
 #notifications{
     margin-left: 25vw;
     top: 4vh;
     position: absolute;
     height: 96vh;
     width: 30vw;
-    background-color: greenyellow;
 }
 
 /* history*/
 #history{
     height: 96vh;
     width: 50vw;
-    background-color: green;
     margin-left: 50vw;
     top: 4vh;
     position: absolute;
@@ -97,19 +103,111 @@ input:checked + .slider:before {
 #content_box{
     height: 80vh;
     width: 48vw;
-    background-color: #81DF00;
     margin-left: 1vw;
     margin-top: 2vh;
+
 }
 
-
-label{
-    margin-left:0%;
+#back_button{
+    display: none;
+}
+#one_item_history{
+    margin-top: 2vh;
+    height: 10vh;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+}
+#date_box{
+    background-color: white;
+    margin-top: 1vh;
+    height: 8vh;
+    width: 8vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    text-align: center;
+    color: #950a27;
+    order: 1;
 }
 
+#subject_box{
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2vw;
+    text-align: left;
+    flex-grow: 4;
+    order: 2;
+}
+
+#history_day{
+    white-space: pre;
+    font-size: 4vh;
+}
+
+#history_month{
+    white-space: pre;
+    font-size: 2vh;
+}
+
+#history_subject{
+    font-weight: bold;
+    font-size: 1.8vh;
+
+}
+
+#history_activity{
+    margin-top: 1vh;
+}
+
+#history_time{
+    order: 3;
+    flex-grow: 1;
+    margin-right: 1vw;
+    text-align: right;
+    line-height: 10vh;
+    font-size: 2vh;
+}
 
 @media only screen and (max-width: 800px) {
     #chosen{
         display:none
+    }
+
+    #history{
+        height: 65vh;
+        width: 100vw;
+        margin-left: 0vw;
+        top: 35vh;
+        position: absolute;
+    }
+
+    #content_box{
+        height: 40vh;
+        width: 80vw;
+        margin-left: 10vw;
+        margin-top: 2vh;
+    }
+
+    #notifications{
+        margin-left: 0vw;
+        top: 5vh;
+        position: absolute;
+        height: 30vh;
+        width: 100vw;
+    }
+
+    #back_button{
+        display: block;
+        height: 6vh;
+        width: 50vw;
+        margin-left: 25vw;
+        margin-top: 5vh;
+        background-color: #950a27;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 6vh;
+        color: white;
     }
 }
