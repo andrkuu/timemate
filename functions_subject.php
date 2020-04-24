@@ -8,7 +8,7 @@ function getActivities(){
     echo $conn -> error;
     $stmt -> bind_result($idFromDb, $name);
     $stmt -> execute();
-    $result .= "<select name=\"type\">";
+    $result .= "<select name=\"type\" class=\"dropdown\">";
 
     while($stmt -> fetch()){
         $result .= "<option value=\"".$idFromDb."\">".$name."</option> \n";
@@ -28,7 +28,7 @@ function getSubjects(){
     echo $conn -> error;
     $stmt -> bind_result($idFromDb, $nameFromDb, $codeFromDb);
     $stmt -> execute();
-    $result .= "<select name=\"subject\">";
+    $result .= "<select name=\"subject\" class=\"dropdown\">";
 
     while($stmt -> fetch()){
         $result .= "<option value=\"".$idFromDb."\">".$nameFromDb."</option> \n";
@@ -99,13 +99,12 @@ function getPreviousActivities($userId){
         $day = date("d",strtotime($dateFromDb));
         $month = date("m",strtotime($dateFromDb));
         $result .=
-            "<li>"
-                .$day." "
-                .ucfirst($months[intval($month)])." "
-                .$subjectIdFromDb." "
-                .$activityIdFromDb." "
-                .$hours."h "
-                .$minutes."m  
+            "<li id='one_item_history'>"
+                ."<span id='date_box'> <span id='history_day'>".$day." </span>"
+                ."<span id='history_month'>".ucfirst($months[intval($month)])."</span></span>"
+                ."<span id='subject_box'> <span id='history_subject'>".$subjectIdFromDb."</span>"
+                ."<span id='history_activity'>".$activityIdFromDb."</span></span>"
+                ."<span id='history_time'>".$durationFromDb." min</span>
             </li> \n";
     }
 

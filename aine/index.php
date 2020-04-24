@@ -34,7 +34,7 @@ if(isset($_POST["submitSubject"])){
     }
 
 }
-
+$submitDay ="täna";
 
 ?>
 
@@ -65,29 +65,31 @@ if(isset($_POST["submitSubject"])){
     </div>
     <div id="inputContainer">
         <div id="arrows">
-            <i class="arrow left" id="dayBefore" onclick="changeDay(event)"></i>
-            <p id="displayDay"></p>
-            <i class="arrow right" id="dayAfter" onclick="changeDay(event)"></i>
+            <i class="arrow left" onclick="changeDay(event)"></i>
+            <i id="displayDay"><?php echo $submitDay;?></i>
+            <i class="arrow right" onclick="changeDay(event)"></i>
         </div>
 
       <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-      <label for="class" id="label">Aine </label>
-        <?php
-            echo getSubjects();
-        ?>
+          <p id="labelForSubjects"><label for="class" id="label">Aine </label></p>
+        <div id="subject">
+            <?php
+                echo getSubjects();
+            ?>
+        </div>
       <br />
 
-      <label for="type" id="label">Tüüp </label>
+          <p id="labelForSubjects"><label for="type" id="label">Tüüp </label></p>
 
         <?php
            echo getActivities();
         ?>
       <br />
 
-      <label for="kulu" id="label">Kulu </label>
+          <p id="labelForSubjects"><label for="kulu" id="label">Kulu </label></p>
       <input type="time" id="kulu" name="time" />
-      <input id="kulu" name="submitSubject" type="submit" value="sisesta" />
+      <input id="submit_button" name="submitSubject" type="submit" value="sisesta" />
 
       </form>
     </div>
@@ -95,18 +97,19 @@ if(isset($_POST["submitSubject"])){
 
   </body>
 
-  <script>
-        let days = ['täna', 'eile', 'üleeile'];
-        let dayNr = 0;
 
-
-        function changeDay(e) {
-            if (e.target.className === "dayBefore") {
-                if (dayNr !== 2)
-                    Document.getElementById("displayDay").innerHTML(days[dayNr + 1]);
-            } else(e.target.class === "dayAfter") {
-                if (dayNr !== 0)
-                    Document.getElementById("displayDay").innerHTML(days[dayNr - 1]);
-            }
-  </script>
 </html>
+<script>
+    let days = ['täna', 'eile', 'üleeile'];
+    let dayNr = 0;
+
+
+    function changeDay(e) {
+        if (e.target.className === "dayBefore") {
+            if (dayNr !== 2)
+                Document.getElementById("displayDay").innerHTML(days[dayNr + 1]);
+        } else{
+            if (dayNr !== 0)
+                Document.getElementById("displayDay").innerHTML(days[dayNr - 1]);
+        }
+</script>
