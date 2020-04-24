@@ -22,17 +22,40 @@ session_start();
 
     </div>
 
-    <div class="settings_content">
+
+
         <div id="notifications">
-        <p>Õppejõu teavitused</p><div class="slide"></div>
-        <p>Tunniplaani teavitused</p><div class="slide"></div>
-        <p>Tähtaja teavitused:</p><div class="slide"></div>
+
+           <div id="first" class="switch_box">
+            <label class="switch" >
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+               <span>Õppejõu teavitused</span>
+           </div>
+
+            <div id="second" class="switch_box">
+            <label class="switch" >
+                <input type="checkbox" id="second2" >
+                <span class="slider round"></span>
+            </label>
+                <span>Tunniplaani teavitused</span>
+            </div>
+
+            <div  id="third" class="switch_box">
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+                <span>Tähtaja teavitused</span>
+            </div>
+
         </div>
 
         <div id="history">
-            <p>Sinu eelmised tegevused</p>
+            <div id="history_header">Sinu eelmised tegevused</div>
+            <div id="content_box"></div>
         </div>
-    </div>
     
   </body>
 </html>
