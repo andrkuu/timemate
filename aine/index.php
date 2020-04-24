@@ -10,6 +10,14 @@ if(!isset($_SESSION["userFirstName"])){
 kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale lehele
 
 */
+
+if(isset($_POST["submitSubject"])){
+
+    echo $_POST["subject"];
+    echo $_POST["type"];
+    echo $_POST["time"];
+}
+
 $today = ("täna");
 ?>
 
@@ -39,6 +47,8 @@ $today = ("täna");
             <i class="arrow right"></i>
         </div>
 
+      <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
       <label for="class" id="label">Aine </label>
 
         <?php
@@ -55,7 +65,9 @@ $today = ("täna");
 
       <label for="kulu" id="label">Kulu </label>
       <input type="time" id="kulu" name="time" />
-      <input type="button" value="sisesta" id="button" />
+      <input id="kulu" name="submitSubject" type="submit" value="sisesta" />
+
+      </form>
     </div>
 
 
