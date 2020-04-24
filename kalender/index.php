@@ -140,6 +140,7 @@ session_start();
         }
 
     </style>
+
 </head>
 <body>
 <?php require('../nav-bar.php'); ?>
