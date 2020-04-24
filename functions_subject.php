@@ -62,20 +62,52 @@ function insert_time_report($subject_id, $activity_id, $duration, $user_id){
 
 }
 
-function getPreviousActivities(){
+function getPreviousActivities($userId){
     $result = null;
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn -> prepare("SELECT id, name, code FROM subjects ORDER BY name");
+    $stmt = $conn -> prepare("SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
+                                            (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
+                                            duration, date FROM time_reportings WHERE user_id=? ORDER BY date");
+
     echo $conn -> error;
-    $stmt -> bind_result($idFromDb, $nameFromDb, $codeFromDb);
+    $stmt->bind_param("i", $userId);
+    $stmt -> bind_result($subjectIdFromDb, $activityIdFromDb, $durationFromDb, $dateFromDb);
     $stmt -> execute();
-    $result .= "<select name=\"subject\">";
+    $result .= "<ul>";
+
+
+     $months = [
+        "jaanuar",
+        "veebruar",
+        "märts",
+        "aprill",
+        "mai",
+        "juuni",
+        "juuli",
+        "august",
+        "september",
+        "oktoober",
+        "november",
+        "detsember"
+    ];
 
     while($stmt -> fetch()){
-        $result .= "<option value=\"".$idFromDb."\">".$nameFromDb."</option> \n";
+        $hours = floor($durationFromDb / 60);
+        $minutes = ($durationFromDb % 60);
+        $day = date("d",strtotime($dateFromDb));
+        $month = date("m",strtotime($dateFromDb));
+        $result .=
+            "<li>"
+                .$day." "
+                .$months[intval($month)]." "
+                .$subjectIdFromDb." "
+                .$activityIdFromDb." "
+                .$hours."h "
+                .$minutes."m  
+            </li> \n";
     }
 
-    $result .= "</select>";
+    $result .= "</ul>";
 
     $stmt->close();
     $conn->close();
