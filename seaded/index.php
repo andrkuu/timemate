@@ -21,6 +21,18 @@ session_start();
         <a href="../seaded/" class="page" id="chosen"> Seaded</a>
 
     </div>
+
+    <div class="settings_content">
+        <div id="notifications">
+        <p>Õppejõu teavitused</p>
+        <p>Tunniplaani teavitused</p>
+        <p>Tähtaja teavitused</p>
+        </div>
+
+        <div id="history">
+            <p>Sinu eelmised tegevused</p>
+        </div>
+    </div>
     
   </body>
 </html>
