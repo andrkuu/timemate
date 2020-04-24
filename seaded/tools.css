@@ -1,3 +1,111 @@
+/* Toggle switch*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #81DF00;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #81DF00;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+/* Toggle switch end*/
+
+#first{
+    top: 7vh;
+}
+#second{
+    top: 14vh;
+}
+#third{
+    top: 21vh;
+}
+
+.switch_box{
+    left: 2vw;
+    position: absolute;
+    white-space: nowrap;
+    text-align: right;
+}
+#notifications{
+    margin-left: 31vw;
+    top: 5vh;
+    position: absolute;
+    height: 95vh;
+    width: 30vw;
+    background-color: greenyellow;
+}
+
+/* history*/
+#history{
+    height: 95vh;
+    width: 39vw;
+    background-color: green;
+    margin-left: 61vw;
+    top: 5vh;
+    position: absolute;
+}
+
+#history_header{
+    text-align: center;
+    font-size: large;
+    margin-top: 3vh;
+}
+
+#content_box{
+    height: 80vh;
+    width: 37vw;
+    background-color: #81DF00;
+    margin-left: 1vw;
+    margin-top: 2vh;
+}
+
+
+label{
+    margin-left:0%;
+}
 
 
 @media only screen and (max-width: 800px) {

@@ -72,13 +72,6 @@ body {
     border-radius: 2vh;
 }
 
-label {
-    margin-left: 34%;
-    align-content: flex-start;
-    size: 3vw;
-    font-size: 1vw;
-}
-
 .links {
     display: flex;
     flex-wrap: nowrap;

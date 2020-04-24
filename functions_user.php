@@ -22,10 +22,10 @@ function signIn($userName, $password){
                 //kui salasõna klapib
                 $stmt->close();
 
-
                 //Salvestame kasutaja info sessioonimuutujasse
                 $_SESSION["userFirstName"] = $userName;
                 $_SESSION["userLastName"] = $passwordFromDb;
+
 
 
 
