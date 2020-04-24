@@ -158,8 +158,8 @@ ul {
     margin-top: 0vh;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: rgb(128,128,128);
-    background: linear-gradient(90deg, rgba(128,128,128,1) 0%, rgba(128,128,128,1) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 79%, rgba(128,128,128,1) 79%, rgba(128,128,128,1) 100%);
+    background: rgb(166, 166, 174);
+    background: linear-gradient(90deg, rgb(166, 166, 174) 0%, rgb(166, 166, 174) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 79%, rgba(166, 166, 174) 79%, rgba(166, 166, 174) 100%);
 
 }
 
