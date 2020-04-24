@@ -87,14 +87,13 @@ body {
     background-color: #b71234;
     width: 25vw;
     height: 20vh;
-    align-items: center;
     text-align: center;
     text-decoration: none;
     align-items: center;
     font-size: 3vw;
     cursor: pointer;
-    padding: 15px 32px;
     display: grid;
+    padding:0;
 }
 
 #chosen {

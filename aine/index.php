@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include("../functions_subject.php");
+//include("../functions_subject.php");
 /*
 if(!isset($_SESSION["userFirstName"])){
     header("Location: index.php");
@@ -20,7 +20,21 @@ if(isset($_POST["submitSubject"])){
 
 $today = ("täna");
 ?>
+<script>
 
+    let days = ['täna','eile','üleeile'];
+    let dayNr = 0;
+
+
+        function smallerDayEst() {
+            document.getElementById("displayDay").innerHTML(days[dayNr + 1]);
+        }
+
+        function biggerDayEst() {
+            document.write(days[dayNr - 1]);
+        }
+
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,9 +56,9 @@ $today = ("täna");
     </div>
     <div id="inputContainer">
         <div id="arrows">
-            <i class="arrow left"></i>
-            <?php echo $today; ?>
-            <i class="arrow right"></i>
+            <i class="arrow left" id="dayBefore" onclick="smallerDayEst()"></i>
+            <p id="displayDay"></p>
+            <i class="arrow right" id="dayAfter" onclick="smallerDayEst()"></i>
         </div>
 
       <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -52,14 +66,14 @@ $today = ("täna");
       <label for="class" id="label">Aine </label>
 
         <?php
-            echo getSubjects();
+//            echo getSubjects();
         ?>
       <br />
 
       <label for="type" id="label">Tüüp </label>
 
         <?php
-            echo getActivities();
+//            echo getActivities();
         ?>
       <br />
 
