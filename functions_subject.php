@@ -8,7 +8,7 @@ function getActivities(){
     echo $conn -> error;
     $stmt -> bind_result($idFromDb, $name);
     $stmt -> execute();
-    $result .= "<select name=\"type\">";
+    $result .= "<select name=\"type\" class=\"dropdown\">";
 
     while($stmt -> fetch()){
         $result .= "<option value=\"".$idFromDb."\">".$name."</option> \n";
@@ -28,7 +28,7 @@ function getSubjects(){
     echo $conn -> error;
     $stmt -> bind_result($idFromDb, $nameFromDb, $codeFromDb);
     $stmt -> execute();
-    $result .= "<select name=\"subject\">";
+    $result .= "<select name=\"subject\" class=\"dropdown\">";
 
     while($stmt -> fetch()){
         $result .= "<option value=\"".$idFromDb."\">".$nameFromDb."</option> \n";

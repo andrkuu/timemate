@@ -1,36 +1,34 @@
 #inputContainer{
-    width: 40%;
     padding: 0;
-    margin-left: 30vw;
-    margin-top: -60vh;
+    margin-left: 45vw;
+    margin-top:-90vh;
     position: absolute;
     justify-content: space-evenly;
-    display: grid;
     align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
-#class{
+
+.dropdown{
     background-color: white;
     color: black;
     padding: 1vw;
-    font-size: 1vw;
+    font-size: 1.5vw;
     border-color: grey;
     cursor: pointer;
     border-width: 1px;
     border-radius:2vh;
+    width: 27vw;
+}
+.option {
+    padding: 4vh;
+}
+label{
+    display:flex;
+    align-self: center;
 }
 
-#type{
-    background-color: white;
-    color: black;
-    padding: 1vw;
-    font-size: 1vw;
-    cursor: pointer;
-    align-items: center;
-    border-width: 1px;
-    border-radius:2vh;
-    border-color: grey;
-}
 
 .time {
     background-color: #b71234;
@@ -40,21 +38,26 @@
     border-radius:2vh;
 }
 
-#button {
+#submit_button {
     cursor: pointer;
     background-color: #b71234;
     border: none;
     color: white;
-    font-size: 1vw;
+    font-size: 2vw;
     justify-content: space-evenly;
     display: block;
-    width: 8vw;
-    height: 3vh;
+    height: 2.5vh;
     text-align: center;
     text-decoration: none;
-    margin-top: 4vw;
-    margin-left: 2vw;
+    margin-top: 2vw;
+    margin-left: 8vw;
     line-height: 0;
+    padding:2.5vw;
+    border-radius:2vw;
+}
+#labelForSubjects{
+    margin-left: 11vw;
+    font-size:2vw;
 }
 
 input[type="time"] {
@@ -62,7 +65,8 @@ input[type="time"] {
     color: white;
     border: none;
     padding: 1vw;
-    font-size: 1vw;
+    font-size: 2vw;
+    width: 25.5vw;
 }
 
 .time {
@@ -76,10 +80,15 @@ input[type="time"] {
     background: white;
     color: black;
     border: none;
-
 }
-
+#displayDay{
+    border:none;
+    font-size:2vw;
+    font-style: normal;
+}
 #arrows{
+    display: inline-block;
+    margin-left: -1vw;
 }
 
 i {
@@ -111,49 +120,5 @@ i {
         align-items: center;
         justify-content: space-evenly;
         display: inline-grid;
-    }
-
-    #class {
-        background-color: white;
-        color: black;
-        padding: 1vw;
-        font-size: 7vw;
-        border-color: grey;
-        cursor: pointer;
-        border-width: 1px;
-        border-radius: 2vh;
-    }
-
-    #button {
-        border: none;
-        color: white;
-        font-size: 4vw;
-        justify-content: normal;
-        width: 50vw;
-        height: 5vh;
-        text-decoration: none;
-        margin-top: 20vw;
-        margin-left: 10vw;
-        border-radius: 4vh;
-        padding: 4vh 5vw;
-    }
-
-    #type {
-        padding: 3vw;
-        font-size: 7vw;
-        border-width: 1px;
-        border-radius: 2vh;
-        border-color: grey;
-    }
-    #kulu {
-        background-color: #b71234;
-        color: white;
-        font-size: 5vw;
-        text-align: center;
-        width: 77%;
-        border: transparent;
-        border-radius: 2vh;
-        padding: 5vw 5vh;
-        display: inline-block;
     }
 }
