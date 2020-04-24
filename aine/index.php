@@ -26,13 +26,12 @@ $today = ("täna");
     let dayNr = 0;
 
 
-        function smallerDayEst() {
-            document.getElementById("displayDay").innerHTML(days[dayNr + 1]);
+        function changeDay(e) {
+            if (e.target.className === "arrow left")
+                document.getElementById("displayDay").innerHTML(days[dayNr + 1]);
+
         }
 
-        function biggerDayEst() {
-            document.write(days[dayNr - 1]);
-        }
 
 </script>
 
