@@ -55,6 +55,7 @@ label{
     padding:2.5vw;
     border-radius:2vw;
 }
+
 #labelForSubjects{
     margin-left: 11vw;
     font-size:2vw;
@@ -76,11 +77,13 @@ input[type="time"] {
     border: transparent;
     border-radius: 2vh;
 }
+
 #day {
     background: white;
     color: black;
     border: none;
 }
+
 #displayDay{
     border:none;
     font-size:2vw;
@@ -121,7 +124,7 @@ i {
         flex-direction: column;
     }
 
-    .dropdown{
+    .dropdown {
         background-color: white;
         color: black;
         padding: 2vw;
@@ -129,23 +132,51 @@ i {
         border-color: grey;
         cursor: pointer;
         border-width: 1px;
-        border-radius:2vh;
+        border-radius: 2vh;
         width: 60vw;
     }
 
-    #labelForSubjects{
+    #labelForSubjects {
         margin-left: 19vw;
-        font-size:2vw;
+        font-size: 2vw;
     }
+
     #submit_button {
         font-size: 5vw;
         display: block;
         height: 2.5vh;
-        margin-top: 2vw;
-        margin-left: 8vw;
+        margin-left: 15vw;
         line-height: 0;
-        padding:5vw;
-        margin-top:5vw;
-        border-radius:2vw;
+        padding: 7vw;
+        margin-top: 8vw;
+        border-radius: 2vw;
+    }
+
+    input[type="time"] {
+        background-color: #b71234;
+        color: white;
+        border: none;
+        padding: 5vw;
+        font-size: 5vw;
+        width: 52vw;
+    }
+
+    #arrows{
+        margin-left: -7vw;
+        margin-bottom: 5vh;
+
+    }
+
+    i {
+        align-self: flex-start;
+        border: solid black;
+        border-width: 0 6px 6px 0;
+        display: inline-block;
+        padding: 6px;
+    }
+
+
+    #displayDay {
+        font-size: 10vw;
     }
 }
