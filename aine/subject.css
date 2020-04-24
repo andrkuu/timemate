@@ -1,36 +1,36 @@
 #inputContainer{
-    width: 40%;
     padding: 0;
-    margin-left: 30vw;
-    margin-top: -60vh;
+    margin-left: 45vw;
+    margin-top:-90vh;
     position: absolute;
     justify-content: space-evenly;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
+p{
+    align-self: center;
+}
 
-#class{
+.dropdown{
     background-color: white;
     color: black;
-    padding: 1vw;
-    font-size: 1vw;
+    padding: 0.5vw;
+    font-size: 1.5vw;
     border-color: grey;
     cursor: pointer;
     border-width: 1px;
     border-radius:2vh;
+    width: 27vw;
+}
+.option {
+    padding: 4vh;
+}
+label{
+    display:flex;
+    align-self: center;
 }
 
-#type{
-    background-color: white;
-    color: black;
-    padding: 1vw;
-    font-size: 1vw;
-    cursor: pointer;
-    align-items: center;
-    border-width: 1px;
-    border-radius:2vh;
-    border-color: grey;
-}
 
 .time {
     background-color: #b71234;
@@ -40,21 +40,26 @@
     border-radius:2vh;
 }
 
-#button {
+#submit_button {
     cursor: pointer;
     background-color: #b71234;
     border: none;
     color: white;
-    font-size: 1vw;
+    font-size: 2vw;
     justify-content: space-evenly;
     display: block;
-    width: 8vw;
-    height: 3vh;
+    height: 2.5vh;
     text-align: center;
     text-decoration: none;
-    margin-top: 4vw;
-    margin-left: 2vw;
+    margin-top: 2vw;
+    margin-left: 8vw;
     line-height: 0;
+    padding:2.5vw;
+    border-radius:2vw;
+}
+#labelForSubjects{
+    margin-left: 11vw;
+    font-size:2vw;
 }
 
 input[type="time"] {
@@ -62,7 +67,8 @@ input[type="time"] {
     color: white;
     border: none;
     padding: 1vw;
-    font-size: 1vw;
+    font-size: 2vw;
+    width: 25.5vw;
 }
 
 .time {
@@ -133,7 +139,6 @@ i {
         height: 5vh;
         text-decoration: none;
         margin-top: 20vw;
-        margin-left: 10vw;
         border-radius: 4vh;
         padding: 4vh 5vw;
     }
