@@ -5,28 +5,25 @@ session_start();
 function signIn($userName, $password){
     $notice = "";
 
-    $_SESSION["userFirstName"] = $userName;
-    $_SESSION["userLastName"] = $password;
 
-    /*
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn->prepare("SELECT password FROM users WHERE username=?");
+    $stmt = $conn->prepare("SELECT id,password FROM users WHERE username=?");
     echo $conn->error;
     $stmt->bind_param("s", $userName);
-    $stmt->bind_result($passwordFromDb);
+    $stmt->bind_result($idFromDb, $passwordFromDb);
     if($stmt->execute()){
         //kui päring õnnestus
         if($stmt->fetch()){
             //kasutaja on olemas
             if($password === $passwordFromDb){
                 //kui salasõna klapib
-                $stmt->close();
+
 
                 //Salvestame kasutaja info sessioonimuutujasse
                 $_SESSION["userFirstName"] = $userName;
                 $_SESSION["userLastName"] = $passwordFromDb;
-
-
+                $_SESSION["id"] = $idFromDb;
+                header("Location: aine/");
 
 
                 $stmt->close();
@@ -51,8 +48,8 @@ function signIn($userName, $password){
 
     $stmt->close();
     $conn->close();
-    */
-    header("Location: aine/");
+
+
     return $notice;
 }
 

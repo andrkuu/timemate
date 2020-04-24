@@ -41,13 +41,13 @@ function getSubjects(){
     return $result;
 }
 
-function insert_time_report($subject_id, $activity_id, $duration){
+function insert_time_report($subject_id, $activity_id, $duration, $user_id){
 
     $ret = False;
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn->prepare("INSERT INTO time_reportings (subject_id, activity_id, duration) VALUES ((?),(?),(?))");
+    $stmt = $conn->prepare("INSERT INTO time_reportings (subject_id, activity_id, duration, user_id) VALUES ((?),(?),(?),(?))");
 
-    $stmt->bind_param("iii", $subject_id,$activity_id, $duration);
+    $stmt->bind_param("iiii", $subject_id,$activity_id, $duration, $user_id);
     if($stmt->execute()){
         $ret = True;
     }else{
@@ -60,6 +60,58 @@ function insert_time_report($subject_id, $activity_id, $duration){
 
     return  $ret;
 
+}
+
+function getPreviousActivities($userId){
+    $result = null;
+    $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
+    $stmt = $conn -> prepare("SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
+                                            (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
+                                            duration, date FROM time_reportings WHERE user_id=? ORDER BY date");
+
+    echo $conn -> error;
+    $stmt->bind_param("i", $userId);
+    $stmt -> bind_result($subjectIdFromDb, $activityIdFromDb, $durationFromDb, $dateFromDb);
+    $stmt -> execute();
+    $result .= "<ul>";
+
+
+     $months = [
+        "jaanuar",
+        "veebruar",
+        "märts",
+        "aprill",
+        "mai",
+        "juuni",
+        "juuli",
+        "august",
+        "september",
+        "oktoober",
+        "november",
+        "detsember"
+    ];
+
+    while($stmt -> fetch()){
+        $hours = floor($durationFromDb / 60);
+        $minutes = ($durationFromDb % 60);
+        $day = date("d",strtotime($dateFromDb));
+        $month = date("m",strtotime($dateFromDb));
+        $result .=
+            "<li>"
+                .$day." "
+                .ucfirst($months[intval($month)])." "
+                .$subjectIdFromDb." "
+                .$activityIdFromDb." "
+                .$hours."h "
+                .$minutes."m  
+            </li> \n";
+    }
+
+    $result .= "</ul>";
+
+    $stmt->close();
+    $conn->close();
+    return $result;
 }
 
 /*

@@ -27,11 +27,12 @@ if(isset($_POST["submitSubject"])){
 
     $duration = ($hour * 60) + $min;
 
-    echo(insert_time_report($_POST["subject"], $_POST["type"], $duration));
+    echo(insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"])));
 }
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,7 +49,7 @@ if(isset($_POST["submitSubject"])){
         <a href="../statistika/" class="page"><span class="link_names">Statistika</span></a>
         <a href="../aine/" class="page" id="chosen"> <span class="link_names">Aine</span></a>
         <a href="../kalender/" class="page"><span class="link_names">Kalender</span></a>
-        <a href="../seaded/" class="page"><span class="link_names">Seaded</span></a>
+        <a href="../seaded/" class="page" id="tools"><span class="link_names">Seaded</span></a>
     </div>
 
     <div class="images">

@@ -69,20 +69,21 @@ input:checked + .slider:before {
     white-space: nowrap;
     text-align: right;
 }
+.switch_text{
+    font-size: medium;
+}
 #notifications{
     margin-left: 25vw;
     top: 4vh;
     position: absolute;
     height: 96vh;
     width: 30vw;
-    background-color: greenyellow;
 }
 
 /* history*/
 #history{
     height: 96vh;
     width: 50vw;
-    background-color: green;
     margin-left: 50vw;
     top: 4vh;
     position: absolute;
@@ -97,11 +98,15 @@ input:checked + .slider:before {
 #content_box{
     height: 80vh;
     width: 48vw;
-    background-color: #81DF00;
     margin-left: 1vw;
     margin-top: 2vh;
+    background-color: green;
+
 }
 
+#back_button{
+    display: none;
+}
 
 label{
     margin-left:0%;
@@ -111,5 +116,41 @@ label{
 @media only screen and (max-width: 800px) {
     #chosen{
         display:none
+    }
+
+    #history{
+        height: 65vh;
+        width: 100vw;
+        margin-left: 0vw;
+        top: 35vh;
+        position: absolute;
+    }
+
+    #content_box{
+        height: 40vh;
+        width: 80vw;
+        margin-left: 10vw;
+        margin-top: 2vh;
+    }
+
+    #notifications{
+        margin-left: 0vw;
+        top: 5vh;
+        position: absolute;
+        height: 30vh;
+        width: 100vw;
+    }
+
+    #back_button{
+        display: block;
+        height: 6vh;
+        width: 50vw;
+        margin-left: 25vw;
+        margin-top: 5vh;
+        background-color: #950a27;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 6vh;
+        color: white;
     }
 }
