@@ -69,7 +69,7 @@ function getPreviousActivities($userId){
                                             (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
                                             sum(duration), report_date FROM time_reportings WHERE user_id=? 
                                             GROUP BY duration
-                                            ORDER BY report_date
+                                            ORDER BY report_date DESC
                                             LIMIT 7");
 
     echo $conn -> error;
