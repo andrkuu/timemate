@@ -4,6 +4,7 @@ session_start();
 include("../functions_subject.php");
 
 
+
 if(!isset($_SESSION["id"])){
     header("Location: ../");
     exit();

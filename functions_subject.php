@@ -62,7 +62,7 @@ function insert_time_report($subject_id, $activity_id, $duration, $user_id){
 
 }
 
-function getPreviousActivities($userId){
+function getPreviousActivities($userId,$limit){
     $result = null;
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
     $stmt = $conn -> prepare("SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
@@ -70,7 +70,7 @@ function getPreviousActivities($userId){
                                             sum(duration), report_date FROM time_reportings WHERE user_id=? 
                                             GROUP BY time_reportings.subject_id, time_reportings.activity_id, DATE(report_date)
                                             ORDER BY report_date DESC
-                                            LIMIT 7");
+                                            LIMIT ".$limit);
 
     echo $conn -> error;
     $stmt->bind_param("i", $userId);

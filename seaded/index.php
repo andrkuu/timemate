@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("../functions_subject.php");
+include("../functions_main.php");
 
 if(!isset($_SESSION["id"])){
     header("Location: ../");
@@ -68,7 +69,12 @@ if(!isset($_SESSION["id"])){
             <div id="history_header">Sinu eelmised tegevused</div>
             <div id="content_box">
                 <?php
-                    echo getPreviousActivities(intval($_SESSION["id"]));
+                    if (isMobile()){
+                        echo getPreviousActivities(intval($_SESSION["id"]),3);
+                    }else{
+                        echo getPreviousActivities(intval($_SESSION["id"]),5);
+                    }
+
                 ?>
             </div>
             <div id="back_button">Tagasi</div>
