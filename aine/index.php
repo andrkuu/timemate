@@ -58,7 +58,7 @@ if(isset($_POST["submitSubject"])){
     }*/
 
 }
-$submitDay ="täna";
+$submitDay ="Täna";
 
 ?>
 
@@ -96,22 +96,20 @@ $submitDay ="täna";
 
       <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-          <p id="labelForSubjects"><label for="class" id="label">Aine </label></p>
-        <div id="subject">
+          <i id="labelForSubjects"><label for="class" id="label">Aine </label></i>
             <?php
                 echo getSubjects();
             ?>
-        </div>
       <br />
 
-          <p id="labelForSubjects"><label for="type" id="label">Tüüp </label></p>
+          <i id="labelForSubjects"><label for="type" id="label">Tüüp </label></i>
 
         <?php
            echo getActivities();
         ?>
       <br />
 
-          <p id="labelForSubjects"><label for="kulu" id="label">Kulu </label></p>
+          <i id="labelForSubjects"><label for="kulu" id="label">Kulu </label></i>
 
           <select class="hourSelect" name="hourSelect" >
           <?php
@@ -135,7 +133,8 @@ $submitDay ="täna";
               ?>
           </select>
 
-      <input id="submit_button" name="submitSubject" type="submit" value="sisesta" />
+          <div><button type="submit_button" class="submitButton" >Sisesta</button></div>
+
 
       </form>
     </div>
@@ -146,7 +145,7 @@ $submitDay ="täna";
 
 </html>
 <script>
-    let days = ['täna', 'eile', 'üleeile'];
+    let days = ['Täna', 'eile', 'üleeile'];
     let dayNr = 0;
 
 

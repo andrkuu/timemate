@@ -1,7 +1,7 @@
 #inputContainer{
     padding: 0;
-    margin-left: 45vw;
-    margin-top:-90vh;
+    margin-left: 40vw;
+    margin-top:-92vh;
     position: absolute;
     justify-content: space-evenly;
     align-items: center;
@@ -20,6 +20,7 @@
     border-width: 1px;
     border-radius:2vh;
     width: 27vw;
+    margin-bottom: 4vw;
 }
 .option {
     padding: 4vh;
@@ -38,7 +39,7 @@ label{
     border-radius:2vh;
 }
 
-#submit_button {
+.submitButton {
     cursor: pointer;
     background-color: #b71234;
     border: none;
@@ -49,16 +50,22 @@ label{
     height: 2.5vh;
     text-align: center;
     text-decoration: none;
-    margin-top: 2vw;
-    margin-left: 8vw;
+    margin-top: 6vh;
+    margin-left: 7vw;
     line-height: 0;
-    padding:2.5vw;
+    padding-top:2.5vw;
+    padding-bottom: 2.5vw;
+    padding-left: 15vw;
+    padding-right: 15vw;
     border-radius:2vw;
 }
 
 #labelForSubjects{
-    margin-left: 11vw;
+    margin-left: 0vw;
     font-size:2vw;
+    font-style: normal;
+    border: none;
+    margin-right: 12vw;
 }
 
 input[type="time"] {
@@ -84,35 +91,40 @@ input[type="time"] {
     border: none;
 }
 
-#displayDay{
-    border:none;
-    font-size:2vw;
+#displayDay {
+    border: none;
+    font-size: 5vw;
     font-style: normal;
+    padding:3vw;
 }
 #arrows{
     display: inline-block;
     margin-left: -1vw;
+
 }
 
 i {
     align-self: flex-start;
     border: solid black;
-    border-width: 0 3px 3px 0;
+    border-width: 0 6px 6px 0;
     display: inline-block;
-    padding: 3px;
+    padding: 8px;
 }
 
 .right {
+    margin-left: 7vw;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
 
 .left {
+    margin-right: 7vw;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
 
 .hourSelect {
+    overflow-x: scroll;
     background-color: #b71234;
     color: white;
     padding: 1vw;
@@ -165,6 +177,7 @@ i {
     #labelForSubjects {
         margin-left: 19vw;
         font-size: 2vw;
+
     }
 
     #submit_button {
@@ -185,6 +198,7 @@ i {
         padding: 5vw;
         font-size: 5vw;
         width: 52vw;
+        overflow-y: auto;
     }
 
     #arrows{

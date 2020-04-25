@@ -3,6 +3,7 @@ body {
     height: 100%;
     width: 100%;
     margin: 0;
+    font-family: "Comic Sans MS";
     /*overflow: hidden;*/
 }
 
@@ -35,7 +36,6 @@ body {
     background-color: #b71234;
     height: 3vh;
     padding: 0;
-    margin: 0;
     margin: 0.5vh;
     margin-right: 2vw;
 }
@@ -178,7 +178,6 @@ body {
         background-color: #b71234;
         text-align: center;
         height: 4vh;
-        text-align: center;
         line-height: 1vh;
         font-size: 2.5vh;
         width: 33.3vw;
