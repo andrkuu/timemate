@@ -18,10 +18,34 @@ if(isset($_POST["submitSubject"])){
     echo $_POST["type"];
     echo "\n";
     echo $_POST["time"];*/
-    $time = $_POST["time"];
+    $min = $_POST["minuteSelect"];
+    $hour = $_POST["hourSelect"];
+
    // echo $time;
-    $arr = explode(':',$time);
-    $hour = intval($arr[0]);
+    //echo "hour: ".$hour;
+    //echo "minute: ".$min;
+    //echo "<br>";
+    $hour = intval(substr($hour,0,strlen($hour)));
+    $min = intval(substr($min,0,strlen($min)));
+    //echo "hour: ".$hour;
+    //echo "minute: ".$min;
+
+    if ($hour != 0){
+        $duration = ($hour * 60) + $min;
+    }
+    else{
+        $duration = $min;
+    }
+
+    if ($duration != 0){
+        insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"]));
+    }
+    else{
+        //näita mingit sõnumit
+    }
+
+
+    /*
     $min = intval($arr[1]);
     if (sizeof($arr) == 2){
         $duration = ($hour * 60) + $min;
@@ -30,7 +54,7 @@ if(isset($_POST["submitSubject"])){
     }
     else if(sizeof($arr) == 2){
 
-    }
+    }*/
 
 }
 $submitDay ="täna";
@@ -87,7 +111,29 @@ $submitDay ="täna";
       <br />
 
           <p id="labelForSubjects"><label for="kulu" id="label">Kulu </label></p>
-      <input type="time" id="kulu" name="time" />
+
+          <select class="hourSelect" name="hourSelect" >
+          <?php
+
+                for($i=0; $i<=12; $i++)
+                {
+
+                    echo "<option value=".$i.">".$i."h</option>";
+                }
+                ?>
+          </select>
+
+          <select class="minuteSelect" name="minuteSelect">
+              <?php
+
+              for($i=0; $i<=55; $i+=5)
+              {
+
+                  echo "<option value=".$i.">".$i."m</option>";
+              }
+              ?>
+          </select>
+
       <input id="submit_button" name="submitSubject" type="submit" value="sisesta" />
 
       </form>
