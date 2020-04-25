@@ -4,12 +4,11 @@ session_start();
 include("../functions_subject.php");
 
 
-/*if(!isset($_SESSION["userFirstName"])){
-    header("Location: index.php");
+if(!isset($_SESSION["id"])){
+    header("Location: ../");
     exit();
 }
-kui ei ole sisselogitud siis see viskab login lehele tagasi. Hiljem lisa igale lehele
-*/
+
 
 
 if(isset($_POST["submitSubject"])){
