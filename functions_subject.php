@@ -68,7 +68,7 @@ function getPreviousActivities($userId){
     $stmt = $conn -> prepare("SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
                                             (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
                                             sum(duration), report_date FROM time_reportings WHERE user_id=? 
-                                            GROUP BY duration
+                                            GROUP BY time_reportings.subject_id, time_reportings.activity_id, DATE(report_date)
                                             ORDER BY report_date DESC
                                             LIMIT 7");
 
