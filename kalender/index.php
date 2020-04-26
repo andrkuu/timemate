@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+include("../functions_calendar.php");
 
 if(!isset($_SESSION["id"])){
     header("Location: ../");
@@ -185,7 +186,11 @@ if(!isset($_SESSION["id"])){
 
         ?>
     </div>
+
 </div>
+<?php
+getMonthActivities(1,4,2020);
+?>
 <script src="calendar.js"></script>
 <script>
 

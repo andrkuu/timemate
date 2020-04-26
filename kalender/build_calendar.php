@@ -1,4 +1,5 @@
 <?php
+include ("../functions_calendar.php");
 
 $year = $_POST["year"];
 $month = $_POST["month"];
@@ -6,11 +7,17 @@ $month = $_POST["month"];
 $events = [
     "2020-04-05" => [
         "Matemaatika" => [
-            "type" => "Kodutöö",
-            "duration" => 5
-        ]
-    ],
+            "Kodutöö" => [
+                "duration" => 3
+            ],
+            "Rühmatöö" => [
+                "duration" => 5
+            ]
 
+        ],
+
+    ]
+    /*
     "2020-04-07" => [
         "Interaktsioonidisain" => [
             "type" => "Kodutöö",
@@ -22,9 +29,12 @@ $events = [
             "duration" => 5
         ]
 
-    ],
+    ],*/
 ];
 
+//print_r($events);
+
+$events = getMonthActivities(1,$month,$year);
 
 
 // CSS classes
@@ -102,9 +112,29 @@ for ($day = 1; $day <= $days_in_month; $day++) {
             $temp = "";
 
             foreach (array_keys($events[$cur_date]) as $key => $value) {
-                $temp.= "<tr><td>".$value."</td>";
-                $temp.= "<td>".$events[$cur_date][$value]["type"]."</td>";
-                $temp.= "<td>".$events[$cur_date][$value]["duration"]."h</td></tr>";
+
+
+                foreach (array_keys($events[$cur_date][$value]) as $key2 => $activityType) {
+                    $temp.= "<tr><td>".$value."</td>";
+                    $temp.= "<td>".$activityType."</td>";
+
+                    $time = $events[$cur_date][$value][$activityType]["duration"];
+                    $hours = floor($time / 60);
+                    $minutes = ($time % 60);
+
+                    if($hours == 0){
+                        $temp.= "<td>".$minutes."m</td></tr>";
+                    }
+                    else if($minutes == 0){
+                        $temp.= "<td>".$hours."h</td></tr>";
+                    }
+
+
+                }
+
+
+
+
             }
 
             $calendar .=
