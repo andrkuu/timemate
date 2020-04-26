@@ -17,9 +17,6 @@ function getMonthActivities($userId, $monthNr, $yearNr){
    ';
     $stmt = $conn -> prepare($sql);
 
-    //echo $conn -> error;
-    //echo $beginDate;
-    //echo $endDate;
 
     $stmt->bind_param("iss", $userId,$beginDate,$endDate);
     $stmt -> bind_result($subjectFromDb, $activityFromDb, $durationFromDb, $dateFromDb);

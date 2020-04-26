@@ -188,9 +188,7 @@ if(!isset($_SESSION["id"])){
     </div>
 
 </div>
-<?php
-getMonthActivities(1,4,2020);
-?>
+
 <script src="calendar.js"></script>
 <script>
 

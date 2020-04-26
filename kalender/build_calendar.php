@@ -128,6 +128,9 @@ for ($day = 1; $day <= $days_in_month; $day++) {
                     else if($minutes == 0){
                         $temp.= "<td>".$hours."h</td></tr>";
                     }
+                    else{
+                        $temp.= "<td>".$hours."h ".$minutes."m</td></tr>";
+                    }
 
 
                 }

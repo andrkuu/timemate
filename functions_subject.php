@@ -41,12 +41,12 @@ function getSubjects(){
     return $result;
 }
 
-function insert_time_report($subject_id, $activity_id, $duration, $user_id){
+function insert_time_report($subject_id, $activity_id, $duration, $user_id, $minusDays){
 
     $ret = False;
 
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn->prepare("INSERT INTO time_reportings (subject_id, activity_id, duration, user_id) VALUES ((?),(?),(?),(?))");
+    $stmt = $conn->prepare("INSERT INTO time_reportings (subject_id, activity_id, duration, user_id, report_date) VALUES ((?),(?),(?),(?),subdate(current_date, 1))");
 
     $stmt->bind_param("iiii", $subject_id,$activity_id, $duration, $user_id);
     if($stmt->execute()){

@@ -39,7 +39,7 @@ if(isset($_POST["submitSubject"])){
     }
 
     if ($duration != 0){
-        insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"]));
+        insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"]), 0);
     }
     else{
         //näita mingit sõnumit
