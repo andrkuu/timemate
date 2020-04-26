@@ -14,22 +14,16 @@ if(!isset($_SESSION["id"])){
 
 if(isset($_POST["submitSubject"])){
 
-    /*echo $_POST["subject"];
-    echo "\n";
-    echo $_POST["type"];
-    echo "\n";
-    echo $_POST["time"];*/
+
+
     $min = $_POST["minuteSelect"];
     $hour = $_POST["hourSelect"];
+    // = $_POST["minusDays"];
+    $minusDays = 0;
 
-   // echo $time;
-    //echo "hour: ".$hour;
-    //echo "minute: ".$min;
-    //echo "<br>";
     $hour = intval(substr($hour,0,strlen($hour)));
     $min = intval(substr($min,0,strlen($min)));
-    //echo "hour: ".$hour;
-    //echo "minute: ".$min;
+
 
     if ($hour != 0){
         $duration = ($hour * 60) + $min;
@@ -39,23 +33,16 @@ if(isset($_POST["submitSubject"])){
     }
 
     if ($duration != 0){
-        insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"]), 0);
+        if ((0 <= $minusDays) && ($minusDays <= 2)){
+            insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"]), $minusDays);
+        }
+
     }
     else{
         //näita mingit sõnumit
     }
 
 
-    /*
-    $min = intval($arr[1]);
-    if (sizeof($arr) == 2){
-        $duration = ($hour * 60) + $min;
-
-    echo(insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"])));
-    }
-    else if(sizeof($arr) == 2){
-
-    }*/
 
 }
 $submitDay ="Täna";
