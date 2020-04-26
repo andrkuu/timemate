@@ -44,6 +44,7 @@ function getSubjects(){
 function insert_time_report($subject_id, $activity_id, $duration, $user_id){
 
     $ret = False;
+
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
     $stmt = $conn->prepare("INSERT INTO time_reportings (subject_id, activity_id, duration, user_id) VALUES ((?),(?),(?),(?))");
 

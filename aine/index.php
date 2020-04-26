@@ -133,7 +133,7 @@ $submitDay ="Täna";
               ?>
           </select>
 
-          <div><button type="submit_button" class="submitButton" >Sisesta</button></div>
+          <div><button name="submitSubject" type="submit_button" class="submitButton" >Sisesta</button></div>
 
 
       </form>
