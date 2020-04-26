@@ -102,7 +102,7 @@ function getPreviousActivities($userId,$limit){
         $month = date("m",strtotime($dateFromDb));
         $result .=
             "<li id='one_item_history'>"
-                ."<span id='date_box'> <span id='history_day'>".$day." </span>"
+                ."<span id='date_box'> <span id='history_day'>".$day."</span>"
                 ."<span id='history_month'>".substr(ucfirst($months[intval($month)-1]),0,3)."</span></span>"
                 ."<span id='subject_box'> <span id='history_subject'>".$subjectIdFromDb."</span>"
                 ."<span id='history_activity'>".$activityIdFromDb."</span></span>"
