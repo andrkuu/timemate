@@ -46,7 +46,7 @@ function insert_time_report($subject_id, $activity_id, $duration, $user_id, $min
     $ret = False;
 
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn->prepare("INSERT INTO time_reportings (subject_id, activity_id, duration, user_id, report_date) VALUES ((?),(?),(?),(?),subdate(current_date, (?)))");
+    $stmt = $conn->prepare("INSERT INTO time_reportings (subject_id, activity_id, duration, user_id, report_date) VALUES ((?),(?),(?),(?),subdate(current_timestamp, (?)))");
 
     $stmt->bind_param("iiiii", $subject_id,$activity_id, $duration, $user_id, $minusDays);
     if($stmt->execute()){
