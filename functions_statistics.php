@@ -118,7 +118,12 @@ function getWeekActivities($userId, $week){
                         display: true,
                         ticks: {
                             suggestedMin: 0,
-                            suggestedMax: ".(intval($maxChartValue)+1)."
+                               
+                            suggestedMax: ".(intval($maxChartValue)+1).",
+                            
+                            callback: function(value, index, values) {
+                                return  value +' min';
+                            }
                         }
                     }],
                     xAxes: [{
