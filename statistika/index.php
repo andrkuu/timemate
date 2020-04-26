@@ -35,11 +35,19 @@ if(!isset($_SESSION["id"])){
     <img src="../images/calendar.png" alt="statistics" class="link_icons" id="third_icon">
     <img src="../images/wrench.png" alt="statistics" class="link_icons" id="fourth_icon">
 </div>
-    <button id="test">vaheta vaadet</button>
+<div id="container">
+<ul>
+    <li class="prev" onclick="changeWeek(event)">❮</li>
+    <li class="next" onclick="changeWeek(event)">❯</li>
+
+        <button id="test">vaheta vaadet</button>
+
+</ul>
+</div>
     <div id="statistics" class="statistics">
-        <canvas id="barChart" width=300 height=300></canvas>
+        <canvas id="barChart" width=500 height=500></canvas>
         <canvas id="pieChart" width=300 height=300></canvas>
-        <canvas id="radarChart" width=300 height=300></canvas>
+        <canvas id="radarChart" width=400 height=300></canvas>
     </div>
 
 
@@ -111,7 +119,7 @@ if(!isset($_SESSION["id"])){
         });
 
         <?php
-        echo getWeekActivities(1,0);
+        echo getWeekActivities(1,1);
         ?>
 
         var barChart=document.getElementById('barChart');

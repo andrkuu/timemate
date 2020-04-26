@@ -27,7 +27,7 @@ function getWeekActivities($userId, $week){
     echo $stmt->error;
 
 
-    $colors = ["green","red","blue","pink","black"];
+    $colors = ["green","red","blue","cyan","orange","pink"];
     $colorsIndex = 0;
     $weekSubjects = array();
     $weekActivities = array();
@@ -63,11 +63,10 @@ function getWeekActivities($userId, $week){
         $result .= "{
                     label: '" . $subject . "',
                     backgroundColor: '" . $colors[$colorsIndex] . "',
-                    borderColor: 'rgb(62,162,255)',";
+                    borderColor: 'rgb(62,162,255)',
+                    barThickness: 6,";
 
         $result.= "data: [";
-        //$result.= "0, 4, 1, 2, 6, 1, 5";
-
 
 
         for ($x = 1; $x <=7; $x++) {
@@ -105,9 +104,6 @@ function getWeekActivities($userId, $week){
     }
 
 
-
-
-
     $result.= "]},";
 
     $result.= "options: {
@@ -123,8 +119,10 @@ function getWeekActivities($userId, $week){
                         ticks: {
                             suggestedMin: 0,
                             suggestedMax: ".(intval($maxChartValue)+1)."
-                            // hiljem peaks võtma väärtuste min ja max väärtused ja siia panema
                         }
+                    }],
+                    xAxes: [{
+                        barThickness: 20
                     }]
                 },";
 
