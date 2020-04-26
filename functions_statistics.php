@@ -16,7 +16,7 @@ function getWeekActivities($userId, $week){
                                             FROM time_reportings WHERE user_id=?
 
                                             AND WEEK(date(report_date),1) = WEEK(NOW(),1) -? AND YEAR(date(report_date)) = YEAR(NOW())
-                                            GROUP BY time_reportings.subject_id, time_reportings.activity_id, DATE(report_date)
+                                            GROUP BY time_reportings.subject_id, DATE(report_date)
                                             ORDER BY report_date ASC';
     $stmt = $conn -> prepare($sql);
 
