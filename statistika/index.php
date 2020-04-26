@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include("../functions_statistics.php");
 if(!isset($_SESSION["id"])){
     header("Location: ../");
     exit();
@@ -44,65 +44,7 @@ if(!isset($_SESSION["id"])){
 
 
     <script>
-        var ctx = document.getElementById('barChart').getContext('2d');
-        var chart = new Chart(ctx, {
 
-            type: 'line',
-
-            data: {
-                labels: ['Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev', 'Pühapäev'],
-                datasets: [{
-                    label: 'Selle nädala aktiivsus',
-                    backgroundColor: 'rgb(62,162,255)',
-                    borderColor: 'rgb(62,162,255)',
-                    data: [0, 4, 1, 2, 6, 1, 24]
-                }]
-            },
-
-            options: {
-                responsive: true,
-                legend: {
-                    position: 'bottom',
-                    display: true,
-
-                },
-                scales: {
-                    yAxes: [{
-                        display: true,
-                        ticks: {
-                            suggestedMin: 0,
-                            suggestedMax: 7
-                            // hiljem peaks võtma väärtuste min ja max väärtused ja siia panema
-                        }
-                    }]
-                },
-                "hover": {
-                    "animationDuration": 0
-                },
-                "animation": {
-                    "onComplete": function () {
-                        var chartInstance = this.chart,
-                            ctx = chartInstance.ctx;
-
-                        ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-                        ctx.textAlign = 'center';
-                        ctx.textBaseline = 'bottom';
-
-                        this.data.datasets.forEach(function (dataset, i) {
-                            var meta = chartInstance.controller.getDatasetMeta(i);
-                            meta.data.forEach(function (bar, index) {
-                                var data = dataset.data[index];
-                                ctx.fillText(data, bar._model.x, bar._model.y - 5);
-                            });
-                        });
-                    }
-                },
-                title: {
-                    display: false,
-                    text: ''
-                },
-            },
-        });
 
         var ctx = document.getElementById('pieChart').getContext('2d');
         var chart = new Chart(ctx, {
@@ -167,6 +109,11 @@ if(!isset($_SESSION["id"])){
 
             }
         });
+
+        <?php
+        echo getWeekActivities(1,0);
+        ?>
+
         var barChart=document.getElementById('barChart');
         var pieChart=document.getElementById('pieChart');
         var radarChart=document.getElementById('radarChart');
@@ -175,7 +122,7 @@ if(!isset($_SESSION["id"])){
             swapCanvases();
         };
 
-        var chartNr = 0;
+        var chartNr = 2;
 
         swapCanvases();
 

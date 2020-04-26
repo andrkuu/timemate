@@ -1,5 +1,6 @@
 <?php
 include ("../functions_calendar.php");
+session_start();
 
 $year = $_POST["year"];
 $month = $_POST["month"];
@@ -34,7 +35,7 @@ $events = [
 
 //print_r($events);
 
-$events = getMonthActivities(1,$month,$year);
+$events = getMonthActivities($_SESSION["id"],$month,$year);
 
 
 // CSS classes
