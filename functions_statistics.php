@@ -90,7 +90,7 @@ function getWeekActivities($userId, $week){
             }
             else{
                 if ($x != 7){
-                    $result.= "0, ";
+                    $result.= ", ";
                 }
                 else{
                     $result.= "";
@@ -117,6 +117,7 @@ function getWeekActivities($userId, $week){
                     yAxes: [{
                         display: true,
                         ticks: {
+                            display: false,
                             suggestedMin: 0,
                                
                             suggestedMax: ".(intval($maxChartValue)+1).",
@@ -152,6 +153,8 @@ function getWeekActivities($userId, $week){
                         });
                     }
                 },
+                      
+                
                 title: {
                     display: false,
                     text: ''
