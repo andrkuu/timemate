@@ -119,7 +119,7 @@ if(!isset($_SESSION["id"])){
         });
 
         <?php
-        echo getWeekActivities(1,0);
+        echo getWeekActivities(intval($_SESSION["id"]),0);
         ?>
 
         var barChart=document.getElementById('barChart');
