@@ -32,7 +32,7 @@ $stmt -> execute();
 echo $stmt->error;
 
 
-$colors = ["green","red","blue","cyan","orange","pink"];
+$colors = ["blue","blue","blue","blue","blue","blue"];
 $colorsIndex = 0;
 $weekSubjects = array();
 $weekActivities = array();
@@ -55,7 +55,7 @@ $result.="<script>";
 $result.= "var ctx = document.getElementById('selectedChart').getContext('2d');
         var chart = new Chart(ctx, {
 
-            type: 'bar',
+            type: 'pie',
 
             data: {
                 labels: ['Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev', 'Pühapäev'],

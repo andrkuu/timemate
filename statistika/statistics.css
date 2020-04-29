@@ -1,3 +1,6 @@
+ul {
+    list-style-type: none;
+}
 #wrapper {
     position: relative;
 }
@@ -32,11 +35,46 @@
     top: 8vh;
     background-color: #b71234;
     border: none;
-    border-radius: 5px;
     color: white;
     width: 20vw;
     height: 5vh;
     left: 52.5vw;
+    cursor: pointer;
+}
+
+.prev{
+    position: absolute;
+    top: 8vh;
+    width: 5vw;
+    height: 5vh;
+    left: 47.5vw;
+    background-color: #b71234;
+    font-size: 3vh;
+    line-height: 5vh;
+    text-align: center;
+    border-radius: 5px 0px 0px 5px;
+    cursor: pointer;
+}
+.prev:hover {
+    background-color: #950a27;
+}
+
+
+.next{
+    position: absolute;
+    top: 8vh;
+    width: 5vw;
+    height: 5vh;
+    left: 72.5vw;
+    background-color: #b71234;
+    font-size: 3vh;
+    line-height: 5vh;
+    text-align: center;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+}
+.next:hover {
+    background-color: #950a27;
 }
 
 @media only screen and (max-width: 800px) {
@@ -57,5 +95,22 @@
         width: 60vw;
         height: 5vh;
         left: 20vw;
+    }
+
+    #changeView{
+        width: 70vw;
+        left: 15vw;
+        top: 13vh;
+    }
+    .next{
+        top: 13vh;
+        left: 85vw;
+        width: 10vw;
+    }
+
+    .prev{
+        top: 13vh;
+        left: 5vw;
+        width: 10vw;
     }
 }

@@ -83,7 +83,7 @@ input:checked + .slider:before {
     margin-left: 25vw;
     top: 4vh;
     position: absolute;
-    height: 96vh;
+    height: 95vh;
     width: 30vw;
 }
 
@@ -184,11 +184,11 @@ input:checked + .slider:before {
     }
 
     #history{
-        height: auto;
         width: 100vw;
         margin-left: 0vw;
-        top: 35vh;
+        top: 32vh;
         position: absolute;
+        height: 60vh;
     }
 
     #content_box{
@@ -211,14 +211,15 @@ input:checked + .slider:before {
         position: absolute;
         height: 6vh;
         width: 50vw;
-        margin-left: 25vw;
-        margin-top: 5vh;
+        left: 25vw;
+        bottom: 3vh;
         background-color: #950a27;
         border-radius: 20px;
         text-align: center;
         line-height: 6vh;
         color: white;
         cursor: pointer;
+        text-decoration:none;
     }
 
 }

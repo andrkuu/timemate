@@ -45,14 +45,14 @@ if(!isset($_SESSION["id"])){
 </ul>
 </div>
     <div id="statistics" class="statistics">
-        <canvas id="barChart" width=500 height=500></canvas>
-        <canvas id="pieChart" width=500 height=500></canvas>
-        <canvas id="radarChart" width=500 height=500></canvas>
+        <canvas id="selectedChart" width=500 height=500></canvas>
     </div>
 
     <div id="statistics_box"></div>
     <script src="../jquery.js"></script>
     <script>
+
+        var weekNr = 0;
 
         var barChart=document.getElementById('barChart');
         var pieChart=document.getElementById('pieChart');
@@ -60,39 +60,38 @@ if(!isset($_SESSION["id"])){
 
         document.getElementById("changeView").onclick=function(){
             swapCanvases();
-
+            weekNr = 0;
         };
 
         var chartNr = 2;
-        var weekNr = 0;
 
 
-        swapCanvases();
+        var chartTypes = ["week_activities","subject_activities"];
+        var chartType = "week_activities";
 
         function swapCanvases(){
 
-            if(chartNr < 2){
+            if(chartNr < 1){
                 chartNr++;
             }
             else{
                 chartNr = 0;
             }
 
-            if(chartNr == 0){
-                barChart.style.visibility = 'visible';
-                pieChart.style.visibility = 'hidden';
-                radarChart.style.visibility = 'hidden';
+            chartType = chartTypes[chartNr];
 
-            }else if(chartNr == 1){
-                barChart.style.visibility = 'hidden';
-                pieChart.style.visibility = 'visible';
-                radarChart.style.visibility = 'hidden';
-            }else if(chartNr == 2){
-                barChart.style.visibility = 'hidden';
-                pieChart.style.visibility = 'hidden';
-                radarChart.style.visibility = 'visible';
-            }
+
+            console.log(chartType);
+            $("#statistics_box").html("");
+            $("#statistics_box").load(chartType+".php", {
+
+                week: weekNr
+            });
         }
+
+
+
+        swapCanvases();
 
         function changeWeek(e){
 
@@ -107,19 +106,11 @@ if(!isset($_SESSION["id"])){
                     }
                 }
 
-                $("#statistics_box").load("week_activities.php", {
-
-                    week: weekNr
-                });
+            //swapCanvases();
 
 
 
         }
-
-        $("#statistics_box").load("week_activities.php", {
-
-            week: 0
-        });
 
         function refreshGraph(w){
             console.log("A");
