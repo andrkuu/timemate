@@ -193,6 +193,7 @@ if(!isset($_SESSION["id"])){
 <script>
 
     refreshCalendar(year,month);
+    popup.classList.toggle("show");
     $('.popupCloseButton').click(function(){
         $('.popup').hide();
     });
@@ -204,6 +205,10 @@ if(!isset($_SESSION["id"])){
         popup.classList.toggle("show");
         popup.innerHTML = date;
         $('.popup').show();
+        $('.popupCloseButton').click(function(){
+            $('.popup').hide();
+        });
+
 
 
     }

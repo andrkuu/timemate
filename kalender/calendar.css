@@ -170,7 +170,7 @@ ul {
     right: 4vw;
     width: 28vw;
     z-index: 1;
-    top: 5vw;
+    top: 10vh;
     background-color: transparent;
     overflow-x: visible;
 
@@ -220,18 +220,21 @@ ul {
     }
     .popupasi {
         width: 90vw;
-        font-size: 2vh;
+        font-size: 1.6vh;
         line-height: 10vh;
+        z-index: 2;
+
     }
     .popupCloseButton {
-        top: 0;
+        bottom: 0;
         position: absolute;
         right: -62vw;
         width: 90vw;
-        height: 20vh;
+        height: 77vh;
         color: transparent;
-
+        cursor: pointer;
     }
+
 }
 
 
