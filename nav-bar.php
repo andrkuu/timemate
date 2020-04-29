@@ -7,7 +7,7 @@
         exit();
     }
     echo "<div id=\"topbar\"><img src=\"../images/tlulogo.png\" id=\"tlu_logo\" alt=\"Tlu logo\"> 
-    <div id='client_name'>".$_SESSION["userFirstName"]. " ".$_SESSION["userLastName"]."</div>
+    <div id='client_name'><a href=\"../seaded\" id='client_link'>".$_SESSION["userFirstName"]. " ".$_SESSION["userLastName"]."</a></div>
     <form method=\"POST\" action=\"". htmlspecialchars($_SERVER["PHP_SELF"])."\">
         <button type=\"submit\" id=\"logout\" name=\"logout\">
             <img id='logout_img' src=\"../images/logout.png\" alt=\"logout\">
