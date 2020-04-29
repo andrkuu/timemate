@@ -50,25 +50,19 @@ if(!isset($_SESSION["id"])){
         <canvas id="radarChart" width=400 height=300></canvas>
     </div>
 
+    <div id="statistics_box"></div>
 
     <script>
 
-        function refreshGraph(week){
+        function refreshGraph(w){
             $(document).ready(function(){
-
-                $("#calender_box").load("build_calendar.php", {
-                    year: y,
-                    month: m
-                });
+                /*
+                $("#statistics_box").load("week_activities.php", {
+                    week: m
+                });*/
             });
 
-            let kuuContainer = document.querySelector("#kuu");
-            let aastaContainer = document.querySelector("#aasta");
 
-            let months = ["jaanuar", "veebruar", "märts", "aprill", "mai", "juuni", "juuli", "august", "september", "oktoober", "november", "detsember"]
-
-            kuuContainer.innerHTML = capitalize(months[m-1]);
-            aastaContainer.innerHTML = y;
 
         }
 
@@ -187,9 +181,7 @@ if(!isset($_SESSION["id"])){
             console.log(weekNr);
         }
 
-        <?php
-            echo getWeekActivities(intval($_SESSION["id"]),0);
-        ?>
+
 
     </script>
 
