@@ -96,4 +96,21 @@ ul {
         height: 5vh;
         left: 20vw;
     }
+
+    #changeView{
+        width: 70vw;
+        left: 15vw;
+        top: 13vh;
+    }
+    .next{
+        top: 13vh;
+        left: 85vw;
+        width: 10vw;
+    }
+
+    .prev{
+        top: 13vh;
+        left: 5vw;
+        width: 10vw;
+    }
 }
