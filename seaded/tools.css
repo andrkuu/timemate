@@ -83,7 +83,7 @@ input:checked + .slider:before {
     margin-left: 25vw;
     top: 4vh;
     position: absolute;
-    height: 96vh;
+    height: 95vh;
     width: 30vw;
 }
 
@@ -188,7 +188,7 @@ input:checked + .slider:before {
         margin-left: 0vw;
         top: 35vh;
         position: absolute;
-        height: 65vh;
+        height: 60vh;
     }
 
     #content_box{

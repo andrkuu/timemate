@@ -74,16 +74,17 @@ if(!isset($_SESSION["id"])){
                     return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
                 }
                 if (isMobileDevice()){
-                        echo getPreviousActivities(intval($_SESSION["id"]),3);
+                        echo getPreviousActivities(intval($_SESSION["id"]),4);
                     }
                 else{
-                        echo getPreviousActivities(intval($_SESSION["id"]),4);
+                        echo getPreviousActivities(intval($_SESSION["id"]),7);
                     }
 
                 ?>
             </div>
-            <a id="back_button" href="../aine/">Tagasi</a>
+
         </div>
+        <a id="back_button" href="../aine/">Tagasi</a>
 
 
 
