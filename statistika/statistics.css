@@ -39,6 +39,7 @@ ul {
     width: 20vw;
     height: 5vh;
     left: 52.5vw;
+    cursor: pointer;
 }
 
 .prev{
