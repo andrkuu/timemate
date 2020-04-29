@@ -193,23 +193,17 @@ if(!isset($_SESSION["id"])){
 <script>
 
     refreshCalendar(year,month);
-    popup.classList.toggle("show");
-    $('.popupCloseButton').click(function(){
-        $('.popup').hide();
-    });
-
-
+    $('.popupCloseButton').hide();
     function myFunction(date) {
 
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
         popup.innerHTML = date;
         $('.popup').show();
+        $('.popupCloseButton').show();
         $('.popupCloseButton').click(function(){
             $('.popup').hide();
         });
-
-
 
     }
 </script>
