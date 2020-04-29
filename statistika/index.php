@@ -53,6 +53,25 @@ if(!isset($_SESSION["id"])){
 
     <script>
 
+        function refreshGraph(week){
+            $(document).ready(function(){
+
+                $("#calender_box").load("build_calendar.php", {
+                    year: y,
+                    month: m
+                });
+            });
+
+            let kuuContainer = document.querySelector("#kuu");
+            let aastaContainer = document.querySelector("#aasta");
+
+            let months = ["jaanuar", "veebruar", "märts", "aprill", "mai", "juuni", "juuli", "august", "september", "oktoober", "november", "detsember"]
+
+            kuuContainer.innerHTML = capitalize(months[m-1]);
+            aastaContainer.innerHTML = y;
+
+        }
+
 
         var ctx = document.getElementById('pieChart').getContext('2d');
         var chart = new Chart(ctx, {
@@ -118,16 +137,15 @@ if(!isset($_SESSION["id"])){
             }
         });
 
-        <?php
-        echo getWeekActivities(intval($_SESSION["id"]),0);
-        ?>
 
+
+        var weekNr = 0;
         var barChart=document.getElementById('barChart');
         var pieChart=document.getElementById('pieChart');
         var radarChart=document.getElementById('radarChart');
 
         document.getElementById("test").onclick=function(){
-            swapCanvases();
+            //swapCanvases();
         };
 
         var chartNr = 2;
@@ -158,8 +176,24 @@ if(!isset($_SESSION["id"])){
             }
         }
 
+        function changeWeek(e){
+
+            if (e.target.className === "prev"){
+                weekNr--;
+
+            }else if(e.target.className === "next"){
+                weekNr++;
+            }
+            console.log(weekNr);
+        }
+
+        <?php
+            echo getWeekActivities(intval($_SESSION["id"]),0);
+        ?>
 
     </script>
+
+
 
 </body>
 </html>

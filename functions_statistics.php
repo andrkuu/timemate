@@ -163,6 +163,7 @@ function getWeekActivities($userId, $week){
         });";
 
     return $result;
+    echo $result;
 }
 
 /*
