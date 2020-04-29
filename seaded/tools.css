@@ -212,7 +212,7 @@ input:checked + .slider:before {
         height: 6vh;
         width: 50vw;
         left: 25vw;
-        bottom: 0vh;
+        bottom: 3vh;
         background-color: #950a27;
         border-radius: 20px;
         text-align: center;
