@@ -215,15 +215,19 @@ ul {
         left: 5vw;
     }
     .popup {
-        top: 32vh;
-        left: 10vw;
+        top: 17vh;
+        left: 5vw;
     }
     .popupasi {
-        width: 80vw;
+        width: 90vw;
     }
     .popupCloseButton {
         top: 0;
-        right: -49vw;
+        position: absolute;
+        right: -62vw;
+        width: 90vw;
+        height: 20vh;
+        color: transparent;
 
     }
 }
