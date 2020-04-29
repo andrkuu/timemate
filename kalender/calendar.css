@@ -220,6 +220,8 @@ ul {
     }
     .popupasi {
         width: 90vw;
+        font-size: 2vh;
+        line-height: 10vh;
     }
     .popupCloseButton {
         top: 0;
