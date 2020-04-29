@@ -157,7 +157,7 @@ ul {
     line-height: 6vh;
     text-align: center;
     margin-top: 0vh;
-    font-size: x-small;
+    font-size: 1.3vh;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background: linear-gradient(90deg, rgb(226, 226, 226) 0%, rgb(226, 226, 226) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 79%, rgba(226, 226, 226) 79%, rgba(226, 226, 226) 100%);
@@ -213,6 +213,18 @@ ul {
         font-size: 3vh;
         width: 90vw;
         left: 5vw;
+    }
+    .popup {
+        top: 32vh;
+        left: 10vw;
+    }
+    .popupasi {
+        width: 80vw;
+    }
+    .popupCloseButton {
+        top: 0;
+        right: -49vw;
+
     }
 }
 
