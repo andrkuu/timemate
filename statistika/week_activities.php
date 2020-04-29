@@ -1,7 +1,12 @@
 <?php
 
+session_start();
+
 $userId = $_SESSION["id"];
 $week = $_POST["week"];
+
+
+require("../../../config.php");
 
 $result = null;
 $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
@@ -46,7 +51,7 @@ while($stmt -> fetch()){
 
 $stmt->close();
 $conn->close();
-
+$result.="<script>";
 $result.= "var ctx = document.getElementById('barChart').getContext('2d');
         var chart = new Chart(ctx, {
 
@@ -161,6 +166,7 @@ $result.= "\"hover\": {
                 },
             },
         });";
+$result.="</script>";
 
 echo $result;
 

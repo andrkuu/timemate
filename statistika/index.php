@@ -40,33 +40,97 @@ if(!isset($_SESSION["id"])){
     <li class="prev" onclick="changeWeek(event)">❮</li>
     <li class="next" onclick="changeWeek(event)">❯</li>
 
-        <button id="test">vaheta vaadet</button>
+        <button id="changeView">vaheta vaadet</button>
 
 </ul>
 </div>
     <div id="statistics" class="statistics">
         <canvas id="barChart" width=500 height=500></canvas>
-        <canvas id="pieChart" width=300 height=300></canvas>
-        <canvas id="radarChart" width=400 height=300></canvas>
+        <canvas id="pieChart" width=500 height=500></canvas>
+        <canvas id="radarChart" width=500 height=500></canvas>
     </div>
 
     <div id="statistics_box"></div>
-
+    <script src="../jquery.js"></script>
     <script>
 
-        function refreshGraph(w){
-            $(document).ready(function(){
-                /*
+        var barChart=document.getElementById('barChart');
+        var pieChart=document.getElementById('pieChart');
+        var radarChart=document.getElementById('radarChart');
+
+        document.getElementById("changeView").onclick=function(){
+            swapCanvases();
+
+        };
+
+        var chartNr = 2;
+        var weekNr = 0;
+
+
+        swapCanvases();
+
+        function swapCanvases(){
+
+            if(chartNr < 2){
+                chartNr++;
+            }
+            else{
+                chartNr = 0;
+            }
+
+            if(chartNr == 0){
+                barChart.style.visibility = 'visible';
+                pieChart.style.visibility = 'hidden';
+                radarChart.style.visibility = 'hidden';
+
+            }else if(chartNr == 1){
+                barChart.style.visibility = 'hidden';
+                pieChart.style.visibility = 'visible';
+                radarChart.style.visibility = 'hidden';
+            }else if(chartNr == 2){
+                barChart.style.visibility = 'hidden';
+                pieChart.style.visibility = 'hidden';
+                radarChart.style.visibility = 'visible';
+            }
+        }
+
+        function changeWeek(e){
+
+
+
+                if (e.target.className === "prev"){
+                    weekNr++;
+
+                }else if(e.target.className === "next"){
+                    if(weekNr > 0){
+                        weekNr--;
+                    }
+                }
+
                 $("#statistics_box").load("week_activities.php", {
-                    week: m
-                });*/
-            });
+
+                    week: weekNr
+                });
 
 
 
         }
 
+        $("#statistics_box").load("week_activities.php", {
 
+            week: 0
+        });
+
+        function refreshGraph(w){
+            console.log("A");
+
+        }
+
+        $(document).ready(function(){
+            refreshGraph(0);
+
+        });
+        /*
         var ctx = document.getElementById('pieChart').getContext('2d');
         var chart = new Chart(ctx, {
 
@@ -181,7 +245,7 @@ if(!isset($_SESSION["id"])){
             console.log(weekNr);
         }
 
-
+    refreshGraph(0);*/
 
     </script>
 
