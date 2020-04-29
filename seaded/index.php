@@ -69,16 +69,22 @@ if(!isset($_SESSION["id"])){
             <div id="history_header">Sinu eelmised tegevused</div>
             <div id="content_box">
                 <?php
-                    if (isMobile()){
-                        echo getPreviousActivities(intval($_SESSION["id"]),3);
-                    }else{
-                        echo getPreviousActivities(intval($_SESSION["id"]),5);
+                function isMobileDevice()
+                {
+                    return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
+                }
+                if (isMobileDevice()){
+                        echo getPreviousActivities(intval($_SESSION["id"]),4);
+                    }
+                else{
+                        echo getPreviousActivities(intval($_SESSION["id"]),7);
                     }
 
                 ?>
             </div>
-            <div id="back_button">Tagasi</div>
+
         </div>
+        <a id="back_button" href="../aine/">Tagasi</a>
 
 
 

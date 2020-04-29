@@ -1,5 +1,6 @@
 <?php
 include ("../functions_calendar.php");
+
 session_start();
 
 $year = $_POST["year"];

@@ -40,20 +40,88 @@ if(!isset($_SESSION["id"])){
     <li class="prev" onclick="changeWeek(event)">❮</li>
     <li class="next" onclick="changeWeek(event)">❯</li>
 
-        <button id="test">vaheta vaadet</button>
+        <button id="changeView">vaheta vaadet</button>
 
 </ul>
 </div>
     <div id="statistics" class="statistics">
-        <canvas id="barChart" width=500 height=500></canvas>
-        <canvas id="pieChart" width=300 height=300></canvas>
-        <canvas id="radarChart" width=400 height=300></canvas>
+        <canvas id="selectedChart" width=500 height=500></canvas>
     </div>
 
-
+    <div id="statistics_box"></div>
+    <script src="../jquery.js"></script>
     <script>
 
+        var weekNr = 0;
 
+        var barChart=document.getElementById('barChart');
+        var pieChart=document.getElementById('pieChart');
+        var radarChart=document.getElementById('radarChart');
+
+        document.getElementById("changeView").onclick=function(){
+            swapCanvases();
+            weekNr = 0;
+        };
+
+        var chartNr = 2;
+
+
+        var chartTypes = ["week_activities","subject_activities"];
+        var chartType = "week_activities";
+
+        function swapCanvases(){
+
+            if(chartNr < 1){
+                chartNr++;
+            }
+            else{
+                chartNr = 0;
+            }
+
+            chartType = chartTypes[chartNr];
+
+
+            console.log(chartType);
+            $("#statistics_box").html("");
+            $("#statistics_box").load(chartType+".php", {
+
+                week: weekNr
+            });
+        }
+
+
+
+        swapCanvases();
+
+        function changeWeek(e){
+
+
+
+                if (e.target.className === "prev"){
+                    weekNr++;
+
+                }else if(e.target.className === "next"){
+                    if(weekNr > 0){
+                        weekNr--;
+                    }
+                }
+
+            //swapCanvases();
+
+
+
+        }
+
+        function refreshGraph(w){
+            console.log("A");
+
+        }
+
+        $(document).ready(function(){
+            refreshGraph(0);
+
+        });
+        /*
         var ctx = document.getElementById('pieChart').getContext('2d');
         var chart = new Chart(ctx, {
 
@@ -118,16 +186,15 @@ if(!isset($_SESSION["id"])){
             }
         });
 
-        <?php
-        echo getWeekActivities(intval($_SESSION["id"]),0);
-        ?>
 
+
+        var weekNr = 0;
         var barChart=document.getElementById('barChart');
         var pieChart=document.getElementById('pieChart');
         var radarChart=document.getElementById('radarChart');
 
         document.getElementById("test").onclick=function(){
-            swapCanvases();
+            //swapCanvases();
         };
 
         var chartNr = 2;
@@ -158,8 +225,22 @@ if(!isset($_SESSION["id"])){
             }
         }
 
+        function changeWeek(e){
+
+            if (e.target.className === "prev"){
+                weekNr--;
+
+            }else if(e.target.className === "next"){
+                weekNr++;
+            }
+            console.log(weekNr);
+        }
+
+    refreshGraph(0);*/
 
     </script>
+
+
 
 </body>
 </html>

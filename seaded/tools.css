@@ -73,6 +73,8 @@ input:checked + .slider:before {
     position: absolute;
     white-space: nowrap;
     text-align: right;
+    height: 33px;
+    line-height: 33px;
 }
 .switch_text{
     font-size: medium;
@@ -81,7 +83,7 @@ input:checked + .slider:before {
     margin-left: 25vw;
     top: 4vh;
     position: absolute;
-    height: 96vh;
+    height: 95vh;
     width: 30vw;
 }
 
@@ -153,12 +155,12 @@ input:checked + .slider:before {
 
 #history_subject{
     font-weight: bold;
-    font-size: 1.8vh;
+    font-size: 1.5vh;
 
 }
 
 #history_activity{
-    margin-top: 1vh;
+    margin-top: 1vw;
 }
 
 #history_time{
@@ -167,20 +169,26 @@ input:checked + .slider:before {
     margin-right: 1vw;
     text-align: right;
     line-height: 10vh;
-    font-size: 2vh;
+    font-size: 1.8vw;
 }
 
 @media only screen and (max-width: 800px) {
+    .switch_box{
+        left: 10vw;
+    }
+    .switch_text{
+        font-size: 4vw;
+    }
     #chosen{
         display:none
     }
 
     #history{
-        height: auto;
         width: 100vw;
         margin-left: 0vw;
         top: 35vh;
         position: absolute;
+        height: 60vh;
     }
 
     #content_box{
@@ -203,14 +211,15 @@ input:checked + .slider:before {
         position: absolute;
         height: 6vh;
         width: 50vw;
-        margin-left: 25vw;
-        margin-top: 5vh;
+        left: 25vw;
+        bottom: 3vh;
         background-color: #950a27;
         border-radius: 20px;
         text-align: center;
         line-height: 6vh;
         color: white;
         cursor: pointer;
+        text-decoration:none;
     }
 
 }

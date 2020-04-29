@@ -154,16 +154,16 @@ ul {
 }
 .popupasi {
     width: 28vw;
-    height: 30vh;
+    line-height: 6vh;
     text-align: center;
     margin-top: 0vh;
+    font-size: 1.3vh;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: linear-gradient(90deg, rgb(204, 204, 204) 0%, rgb(204, 204, 204) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 79%, rgba(204, 204, 204) 79%, rgba(204, 204, 204) 100%);
+    background: linear-gradient(90deg, rgb(226, 226, 226) 0%, rgb(226, 226, 226) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 79%, rgba(226, 226, 226) 79%, rgba(226, 226, 226) 100%);
     border-collapse: collapse;
 
 }
-
 .popup {
     height: 30%;
     position: fixed;
@@ -199,10 +199,12 @@ ul {
 .popupCloseButton {
     position: absolute;
     top: 0;
-    width: 28vw;
-    height: 30vh;
+    right: 0;
+    color: white;
+    width: 1vw;
+    height: 1vh;
     cursor: pointer;
-    color:transparent;
+
 
 }
 @media only screen and (max-width: 800px) {
@@ -211,6 +213,24 @@ ul {
         font-size: 3vh;
         width: 90vw;
         left: 5vw;
+    }
+    .popup {
+        top: 17vh;
+        left: 5vw;
+    }
+    .popupasi {
+        width: 90vw;
+        font-size: 2vh;
+        line-height: 10vh;
+    }
+    .popupCloseButton {
+        top: 0;
+        position: absolute;
+        right: -62vw;
+        width: 90vw;
+        height: 20vh;
+        color: transparent;
+
     }
 }
 
