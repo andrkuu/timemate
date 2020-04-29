@@ -7,6 +7,10 @@ ul {
     font-size: 16px;
 }
 
+#kuu:focus {
+    outline:none;
+}
+
 #aasta {
     color: white;
     font-size: 16px;
@@ -69,8 +73,11 @@ ul {
     line-height: 2vh;
     border-radius: 5px;
     right: 0;
+    -webkit-tap-highlight-color: transparent;
 }
-
+.next:focus {
+    outline:none;
+}
 .next:hover {
     background-color: #950a27;
 }
