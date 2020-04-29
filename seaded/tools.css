@@ -186,7 +186,7 @@ input:checked + .slider:before {
     #history{
         width: 100vw;
         margin-left: 0vw;
-        top: 35vh;
+        top: 32vh;
         position: absolute;
         height: 60vh;
     }
@@ -212,7 +212,7 @@ input:checked + .slider:before {
         height: 6vh;
         width: 50vw;
         left: 25vw;
-        bottom: 3vh;
+        bottom: 0vh;
         background-color: #950a27;
         border-radius: 20px;
         text-align: center;
