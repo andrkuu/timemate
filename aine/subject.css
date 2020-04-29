@@ -22,6 +22,8 @@
     width: 27vw;
     margin-bottom: 4vw;
 }
+
+
 .option {
     padding: 4vh;
 }
@@ -61,7 +63,7 @@ label{
 }
 
 #labelForSubjects{
-    margin-left: 0vw;
+    margin-left: 0;
     font-size:2vw;
     font-style: normal;
     border: none;
@@ -108,7 +110,7 @@ i {
     border: solid black;
     border-width: 0 6px 6px 0;
     display: inline-block;
-    padding: 8px;
+    padding: 6px;
 }
 
 .right {
@@ -152,7 +154,7 @@ i {
 
 @media only screen and (max-width: 800px) {
     #inputContainer {
-        margin-left: 20vw;
+        margin-left: 22vw;
         /*margin: 0;*/
         padding: 0;
         display: flex;
@@ -175,20 +177,20 @@ i {
     }
 
     #labelForSubjects {
-        margin-left: 19vw;
-        font-size: 2vw;
+        margin-left: 22vw;
+        margin-bottom:1vh;
 
     }
 
-    #submit_button {
-        font-size: 5vw;
+    .submitButton {
+        font-size: 3vh;
         display: block;
-        height: 2.5vh;
+        height: 4vh;
         margin-left: 15vw;
         line-height: 0;
         padding: 7vw;
         margin-top: 8vw;
-        border-radius: 2vw;
+        border-radius: 4vw;
     }
 
     input[type="time"] {
@@ -202,8 +204,8 @@ i {
     }
 
     #arrows{
-        margin-left: -7vw;
-        margin-bottom: 5vh;
+        margin-right: 20vw;
+        margin-bottom: 2vh;
 
     }
 

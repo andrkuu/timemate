@@ -135,7 +135,7 @@ body {
 
 @media only screen and (max-width: 800px) {
     #label {
-        font-size: 5vh;
+        font-size: 3vh;
     }
 
     #topbar {

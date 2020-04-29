@@ -45,7 +45,7 @@ if(isset($_POST["submitSubject"])){
 
 
 }
-$submitDay ="Täna";
+
 
 ?>
 
@@ -77,7 +77,7 @@ $submitDay ="Täna";
     <div id="inputContainer">
         <div id="arrows">
             <i class="arrow left" onclick="changeDay(event)"></i>
-            <i id="displayDay"><?php echo $submitDay;?></i>
+            <i id="displayDay">Täna</i>
             <i class="arrow right" onclick="changeDay(event)"></i>
         </div>
 
@@ -128,20 +128,18 @@ $submitDay ="Täna";
 
 
   </body>
+  <script>
+      let days = ['Täna', 'eile', 'üleeile'];
+      let dayNr = 0;
 
+
+      function changeDay(e) {
+          if (e.target.className === "dayBefore") {
+              Document.getElementbyId("displayDay").innerHTML(days[dayNr + 1]);
+          } else {
+              Document.getElementbyId("displayDay").innerHTML(days[dayNr - 1]);
+          }
+      }
+  </script>
 
 </html>
-<script>
-    let days = ['Täna', 'eile', 'üleeile'];
-    let dayNr = 0;
-
-
-    function changeDay(e) {
-        if (e.target.className === "dayBefore") {
-            if (dayNr !== 2)
-                Document.getElementById("displayDay").innerHTML(days[dayNr + 1]);
-        } else{
-            if (dayNr !== 0)
-                Document.getElementById("displayDay").innerHTML(days[dayNr - 1]);
-        }
-</script>
