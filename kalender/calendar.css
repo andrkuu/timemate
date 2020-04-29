@@ -7,6 +7,10 @@ ul {
     font-size: 16px;
 }
 
+#kuu:focus {
+    outline:none;
+}
+
 #aasta {
     color: white;
     font-size: 16px;
@@ -69,8 +73,11 @@ ul {
     line-height: 2vh;
     border-radius: 5px;
     right: 0;
+    -webkit-tap-highlight-color: transparent;
 }
-
+.next:focus {
+    outline:none;
+}
 .next:hover {
     background-color: #950a27;
 }
@@ -154,15 +161,16 @@ ul {
 }
 .popupasi {
     width: 28vw;
-    line-height: 6vh;
+    height: 30vh;
     text-align: center;
     margin-top: 0vh;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: linear-gradient(90deg, rgb(226, 226, 226) 0%, rgb(226, 226, 226) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 79%, rgba(226, 226, 226) 79%, rgba(226, 226, 226) 100%);
+    background: linear-gradient(90deg, rgb(204, 204, 204) 0%, rgb(204, 204, 204) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 79%, rgba(204, 204, 204) 79%, rgba(204, 204, 204) 100%);
     border-collapse: collapse;
 
 }
+
 .popup {
     height: 30%;
     position: fixed;
@@ -198,12 +206,10 @@ ul {
 .popupCloseButton {
     position: absolute;
     top: 0;
-    right: 0;
-    color: white;
-    width: 1vw;
-    height: 1vh;
+    width: 28vw;
+    height: 30vh;
     cursor: pointer;
-
+    color:transparent;
 
 }
 @media only screen and (max-width: 800px) {
