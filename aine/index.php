@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -125,21 +126,5 @@ if(isset($_POST["submitSubject"])){
 
       </form>
     </div>
-
-
   </body>
-  <script>
-      let days = ['Täna', 'eile', 'üleeile'];
-      let dayNr = 0;
-
-
-      function changeDay(e) {
-          if (e.target.className === "dayBefore") {
-              Document.getElementbyId("displayDay").innerHTML(days[dayNr + 1]);
-          } else {
-              Document.getElementbyId("displayDay").innerHTML(days[dayNr - 1]);
-          }
-      }
-  </script>
-
 </html>

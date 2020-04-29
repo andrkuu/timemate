@@ -179,6 +179,7 @@ i {
     #labelForSubjects {
         margin-left: 22vw;
         margin-bottom:1vh;
+        display: inline-table;
 
     }
 
@@ -186,10 +187,10 @@ i {
         font-size: 3vh;
         display: block;
         height: 4vh;
-        margin-left: 15vw;
+        margin-left: 14vw;
         line-height: 0;
         padding: 7vw;
-        margin-top: 8vw;
+        margin-top: 10vh;
         border-radius: 4vw;
     }
 
@@ -223,28 +224,29 @@ i {
     }
 
     .hourSelect {
+        margin-left: 3vw;
         background-color: #b71234;
         color: white;
-        padding: 1vw;
-        font-size: 1.5vw;
+        padding: 2vw;
+        font-size: 3vw;
         border-color: grey;
         cursor: pointer;
         border-width: 1px;
         border-radius:2vh;
-        width: 15vw;
+        width: 25vw;
 
     }
 
     .minuteSelect {
         background-color: #b71234;
         color: white;
-        padding: 1vw;
-        font-size: 1.5vw;
+        padding: 2vw;
+        font-size: 3vw;
         border-color: grey;
         cursor: pointer;
         border-width: 1px;
         border-radius:2vh;
-        width: 15vw;
+        width: 25vw;
 
     }
 
