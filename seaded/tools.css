@@ -155,12 +155,12 @@ input:checked + .slider:before {
 
 #history_subject{
     font-weight: bold;
-    font-size: 1.8vh;
+    font-size: 1.5vh;
 
 }
 
 #history_activity{
-    margin-top: 1vh;
+    margin-top: 1vw;
 }
 
 #history_time{
@@ -169,7 +169,7 @@ input:checked + .slider:before {
     margin-right: 1vw;
     text-align: right;
     line-height: 10vh;
-    font-size: 2vh;
+    font-size: 1.8vw;
 }
 
 @media only screen and (max-width: 800px) {
