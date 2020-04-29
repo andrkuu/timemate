@@ -94,6 +94,8 @@ if(!isset($_SESSION["id"])){
             }
         }
 
+        var chartType = "subject_activities";
+
         function changeWeek(e){
 
 
@@ -107,7 +109,7 @@ if(!isset($_SESSION["id"])){
                     }
                 }
 
-                $("#statistics_box").load("week_activities.php", {
+            $("#statistics_box").load(chartType+".php", {
 
                     week: weekNr
                 });
@@ -116,7 +118,9 @@ if(!isset($_SESSION["id"])){
 
         }
 
-        $("#statistics_box").load("week_activities.php", {
+
+
+        $("#statistics_box").load(chartType+".php", {
 
             week: 0
         });
