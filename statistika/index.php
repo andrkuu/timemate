@@ -45,7 +45,8 @@ if(!isset($_SESSION["id"])){
 </ul>
 </div>
     <div id="statistics" class="statistics">
-        <canvas id="selectedChart" width=500 height=500></canvas>
+        <canvas id="week_activities" width=500 height=500></canvas>
+        <canvas id="subject_activities" width=500 height=500></canvas>
     </div>
 
     <div id="statistics_box"></div>
@@ -54,20 +55,17 @@ if(!isset($_SESSION["id"])){
 
         var weekNr = 0;
 
-        var barChart=document.getElementById('barChart');
-        var pieChart=document.getElementById('pieChart');
-        var radarChart=document.getElementById('radarChart');
+
 
         document.getElementById("changeView").onclick=function(){
             swapCanvases();
             weekNr = 0;
         };
 
-        var chartNr = 2;
-
+        var chartNr = 1;
+        var chartType = "";
 
         var chartTypes = ["week_activities","subject_activities"];
-        var chartType = "week_activities";
 
         function swapCanvases(){
 
@@ -81,17 +79,46 @@ if(!isset($_SESSION["id"])){
             chartType = chartTypes[chartNr];
 
 
-            console.log(chartType);
-            $("#statistics_box").html("");
-            $("#statistics_box").load(chartType+".php", {
+            for (let i = 0; i <chartTypes.length ; i++) {
+                if(chartType === chartTypes[chartNr]){
+                    console.log(chartType + " = " + chartTypes[chartNr]);
+                    document.getElementById(chartType).style.display = "visible";
+                    console.log(chartType+" visible");
+                }
+                else{
+                    console.log(chartType + " hidden");
+                    document.getElementById(chartType).style.display = "none";
 
-                week: weekNr
-            });
+                }
+            }
+
+
+            $("#statistics_box").innerHTML = "";
+            refreshGraph(chartNr);
         }
 
 
 
         swapCanvases();
+
+        function refreshGraph(weekNr){
+            console.log("Refrash");
+
+
+            $.ajax(
+                {
+                    url: chartType+".php",
+                    type: 'POST',
+                    dataType: 'text',
+                    data: {week: weekNr},
+                    success: function (response)
+                    {
+                        $("#statistics_box").html(response);
+                    }
+                });
+
+        }
+
 
         function changeWeek(e){
 
@@ -106,137 +133,19 @@ if(!isset($_SESSION["id"])){
                     }
                 }
 
-            //swapCanvases();
+            refreshGraph(weekNr);
 
 
 
         }
 
-        function refreshGraph(w){
-            console.log("A");
 
-        }
 
         $(document).ready(function(){
             refreshGraph(0);
 
         });
-        /*
-        var ctx = document.getElementById('pieChart').getContext('2d');
-        var chart = new Chart(ctx, {
 
-            type: 'pie',
-
-            data: {
-                labels: ['Vähem aega kulutatud', 'Rohkem aega kulutatud'],
-                datasets: [{
-                    label: 'Selle nädala aktiivsus',
-                    backgroundColor: [
-                        'rgb(255,54,44)',
-                        'rgb(158,156,160)'
-                    ],
-                    borderColor: 'rgb(158,156,160)',
-                    data: [25,300]
-                }]
-            },
-
-            options: {}
-        });
-
-        var ctx = document.getElementById('radarChart').getContext('2d');
-        var chart = new Chart(ctx, {
-
-            type: 'radar',
-
-
-            data: {
-
-                labels: ['Matemaatika', 'Java', 'PHP', 'Tarkvara testimine'],
-                scaleLabel :[{
-                    fontSize : 20,
-                    fontColor: 'black'
-                }],
-
-
-                datasets: [{
-                    label: 'Erinevatele ainetele kulutatud aeg',
-                    data: [1, 3, 2, 5],
-                    backgroundColor: [
-                        'rgba(255,54,44,0.5)'
-                    ],
-                    borderColor: 'rgba(255,54,44,0.5)',
-                }]
-            },
-
-            options: {
-
-                scale: {
-                    ticks: {
-                        beginAtZero: true,
-                        max: 5,
-                        min: 0,
-                        stepSize: 1,
-                        fontSize: 25
-                    },
-                    pointLabels: { fontSize: 25 }
-                },
-
-
-
-            }
-        });
-
-
-
-        var weekNr = 0;
-        var barChart=document.getElementById('barChart');
-        var pieChart=document.getElementById('pieChart');
-        var radarChart=document.getElementById('radarChart');
-
-        document.getElementById("test").onclick=function(){
-            //swapCanvases();
-        };
-
-        var chartNr = 2;
-
-        swapCanvases();
-
-        function swapCanvases(){
-
-            if(chartNr < 2){
-                chartNr++;
-            }
-            else{
-                chartNr = 0;
-            }
-
-            if(chartNr == 0){
-                barChart.style.visibility = 'visible';
-                pieChart.style.visibility = 'hidden';
-                radarChart.style.visibility = 'hidden';
-            }else if(chartNr == 1){
-                barChart.style.visibility = 'hidden';
-                pieChart.style.visibility = 'visible';
-                radarChart.style.visibility = 'hidden';
-            }else if(chartNr == 2){
-                barChart.style.visibility = 'hidden';
-                pieChart.style.visibility = 'hidden';
-                radarChart.style.visibility = 'visible';
-            }
-        }
-
-        function changeWeek(e){
-
-            if (e.target.className === "prev"){
-                weekNr--;
-
-            }else if(e.target.className === "next"){
-                weekNr++;
-            }
-            console.log(weekNr);
-        }
-
-    refreshGraph(0);*/
 
     </script>
 
