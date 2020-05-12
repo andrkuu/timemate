@@ -136,45 +136,35 @@ $result.= "]},";
 
 $result.= "options: {
                 
-
                 responsive: true,
+                
                 legend: {
                     position: 'bottom',
                     display: true,
                     align: 'left',
                     rowCount: 2,
                     columnCount: 2 
-                    
                 },
                
-                
-                
-                
                 options: {
-      title: {
-        display: true,
-        text: '".$labelText."'
-      },
-      
-      
-      
-      
-    },
+                    title: {
+                        display: true,
+                        text: '".$labelText."'
+                    },     
+                },
     
-   
-                
                 tooltips: {
-                enabled: true,
-                yAlign: 'bottom',
-                    callbacks: {
-                        labelColor: function(tooltipItem, chart) {
-                            var dataset = chart.config.data.datasets[tooltipItem.datasetIndex];
-                            return {
-                                backgroundColor : dataset.backgroundColor
-                            }
+                    enabled: true,
+                    yAlign: 'bottom',
+                        callbacks: {
+                            labelColor: function(tooltipItem, chart) {
+                                var dataset = chart.config.data.datasets[tooltipItem.datasetIndex];
+                                return {
+                                    backgroundColor : dataset.backgroundColor
+                                }
+                            },
                         },
-                    },
-                backgroundColor: '#227799'
+                    backgroundColor: '#227799'
                 
                 },
                 
@@ -192,8 +182,8 @@ $result.= "options: {
                             }
                         }
                     }],
-                    xAxes: [{
-                        barThickness: 10
+                        xAxes: [{
+                            barThickness: 10
                     }]
                 },";
 
@@ -203,7 +193,7 @@ $result.= "\"hover\": {
                 \"animation\": {
                     \"onComplete\": function () {
                         var chartInstance = this.chart,
-                            ctx = chartInstance.ctx;
+                        ctx = chartInstance.ctx;
 
                         ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
                         ctx.textAlign = 'center';
