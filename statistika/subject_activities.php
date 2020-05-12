@@ -11,69 +11,155 @@ require("../../../config.php");
 $result = null;
 $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 
-$sql = 'SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
-                                            (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
-                                            sum(duration), date(report_date),
-                                            date_add(date(report_date), interval  -WEEKDAY(date(report_date))+0 day) FirstDayOfWeek, 
-                                            date_add(date_add(date(report_date), interval  -WEEKDAY(date(report_date))+0 day), interval 6 day) LastDayOfWeek,
-                                            week(curdate()) CurrentWeekNumber
-                                            ,WEEKDAY(date(report_date))+1 DayNumber
+$sql = 'SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id) AS Name, 
+                                            sum(duration) Duration
                                             FROM time_reportings WHERE user_id=?
-
                                             AND WEEK(date(report_date),1) = WEEK(NOW(),1) -? AND YEAR(date(report_date)) = YEAR(NOW())
-                                            GROUP BY time_reportings.subject_id, DATE(report_date)
+                                            GROUP BY time_reportings.subject_id
                                             ORDER BY report_date ASC';
 $stmt = $conn -> prepare($sql);
 
 
 $stmt->bind_param("ii", $userId,$week);
-$stmt -> bind_result($subjectFromDb, $activityFromDb, $durationFromDb, $reportDateFromDb,$firstDayOfWeek,$lastDayOfWeek,$weekNr,$dayNr);
+$stmt -> bind_result($subjectFromDb, $durationFromDb);
 $stmt -> execute();
 echo $stmt->error;
 
 
-$colors = ["blue","blue","blue","blue","blue","blue"];
+$colors = ["green","red","blue","cyan","orange","pink"];
 $colorsIndex = 0;
 $weekSubjects = array();
 $weekActivities = array();
 while($stmt -> fetch()){
 
-    if (in_array($subjectFromDb, $weekSubjects)) {
-
-        $weekActivities[$subjectFromDb][$dayNr] = $durationFromDb;
-    }
-    else{
-        array_push($weekSubjects,$subjectFromDb);
-        $weekActivities[$subjectFromDb][$dayNr] = $durationFromDb;
-    }
+    $weekActivities[$subjectFromDb] = $durationFromDb;
 
 }
+
+foreach ($weekActivities as $key => $value){
+    //print_r($key." ".$value);
+}
+
 
 $stmt->close();
 $conn->close();
 $result.="<script>";
-$result.= "var ctx = document.getElementById('subject_activities').getContext('2d');
+$result.= "
+   
+        document.getElementById(\"statistics\").innerHTML = '</canvas><canvas id=\"week_activities\" width=900 height=500></canvas><canvas id=\"subject_activities\" width=500 height=500>';
+        var ctx = document.getElementById('subject_activities').getContext('2d');
+        
         var chart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+    ";
 
-            type: 'pie',
 
-            data: {
-                labels: ['Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev', 'Pühapäev'],
-                datasets: [";
 
+$result .="
+      labels: [";
+
+
+
+$result .= "],";
+
+$result .= "
+      datasets: [{
+        label: \"Population (millions)\",
+        backgroundColor: [\"#3e95cd\", \"#8e5ea2\",\"#3cba9f\",\"#e8c3b9\",\"#c45850\"],
+        
+        data:[";
+
+$index = 0;
+foreach ($weekActivities as $key => $value){
+    if($index != sizeof($weekActivities)){
+        $result .= "'".$value."',";
+    }
+    else{
+        $result .= "'".$value."'";
+    }
+    $index += 1;
+    //print_r($key." ".$value);
+}
+
+
+
+$index = 0;
+$result .= "]
+      }]
+      ,
+      labels: [
+      ";
+
+foreach ($weekActivities as $key => $value){
+    if($index != sizeof($weekActivities)){
+        $result .= "'".$key."',";
+    }
+    else{
+        $result .= "'".$key."'";
+    }
+    $index += 1;
+    //print_r($key." ".$value);
+}
+
+        $result .= "
+    ]
+      
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Nädala tegevused'
+      }
+    }
+});
+";
+/*
+$result .= "labels: [";
+
+for ($x = 0; $x <sizeof($weekSubjects); $x++) {
+    if($x != sizeof($weekSubjects)){
+        $result .= "'".$weekSubjects[$x]."',";
+    }
+    else{
+        $result .= "'".$weekSubjects[$x]."'";
+    }
+}
+
+$result .= "],";
+
+//$result.= "datasets: [";
 
 $maxChartValue = 0;
 
+$result .= "
+    datasets: [{
+        data: [10, 20, 30]
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+        'Red',
+        'Yellow',
+        'Blue'
+    ],
+";
+
 foreach ($weekSubjects as $subject) {
+    /*
     $result .= "{
                     label: '" . $subject . "',
                     backgroundColor: '" . $colors[$colorsIndex] . "',
                     borderColor: 'rgb(62,162,255)',
                     barThickness: 6,";
 
-    $result.= "data: [";
+    $result.= "datasets: [{
+        data: [10, 20, 30]
+    }],";
 
 
+
+/*
     for ($x = 1; $x <=7; $x++) {
 
 
@@ -109,7 +195,6 @@ foreach ($weekSubjects as $subject) {
 }
 
 
-$result.= "]},";
 
 $result.= "options: {
                 responsive: true,
@@ -165,7 +250,7 @@ $result.= "\"hover\": {
                     text: ''
                 },
             },
-        });";
+        });";*/
 $result.="</script>";
 
 echo $result;

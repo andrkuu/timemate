@@ -11,18 +11,25 @@ require("../../../config.php");
 $result = null;
 $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 
-$sql = 'SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
-                                            (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
-                                            sum(duration), date(report_date),
-                                            date_add(date(report_date), interval  -WEEKDAY(date(report_date))+0 day) FirstDayOfWeek, 
-                                            date_add(date_add(date(report_date), interval  -WEEKDAY(date(report_date))+0 day), interval 6 day) LastDayOfWeek,
-                                            week(curdate()) CurrentWeekNumber
-                                            ,WEEKDAY(date(report_date))+1 DayNumber
-                                            FROM time_reportings WHERE user_id=?
-
-                                            AND WEEK(date(report_date),1) = WEEK(NOW(),1) -? AND YEAR(date(report_date)) = YEAR(NOW())
-                                            GROUP BY time_reportings.subject_id, DATE(report_date)
-                                            ORDER BY report_date ASC';
+$sql = '
+    SELECT 
+        (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
+            (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
+                    sum(duration), 
+                    date(report_date),
+                    date_add(date(report_date), 
+                    interval  -WEEKDAY(date(report_date))+0 day) FirstDayOfWeek, 
+                    date_add(date_add(date(report_date), 
+                    interval  -WEEKDAY(date(report_date))+0 day), interval 6 day) LastDayOfWeek,
+                    week(curdate()) CurrentWeekNumber,
+                    WEEKDAY(date(report_date))+1 DayNumber
+                    
+                    FROM time_reportings 
+                    WHERE user_id=?
+                    AND WEEK(date(report_date),1) = WEEK(NOW(),1) -? 
+                    AND YEAR(date(report_date)) = YEAR(NOW())
+                            GROUP BY time_reportings.subject_id, DATE(report_date)
+                            ORDER BY report_date ASC';
 $stmt = $conn -> prepare($sql);
 
 
@@ -52,7 +59,13 @@ while($stmt -> fetch()){
 $stmt->close();
 $conn->close();
 $result.="<script>";
-$result.= "var ctx = document.getElementById('week_activities').getContext('2d');
+$result.= "
+       
+        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"subject_activities\" width=500 height=500></canvas><canvas id=\"week_activities\" width=500 height=500></canvas>';
+        var ctx = document.getElementById('week_activities').getContext('2d');
+
+        
+
         var chart = new Chart(ctx, {
 
             type: 'bar',
@@ -69,7 +82,7 @@ foreach ($weekSubjects as $subject) {
                     label: '" . $subject . "',
                     backgroundColor: '" . $colors[$colorsIndex] . "',
                     borderColor: 'rgb(62,162,255)',
-                    barThickness: 6,";
+                    barThickness: 2,";
 
     $result.= "data: [";
 
@@ -133,7 +146,7 @@ $result.= "options: {
                         }
                     }],
                     xAxes: [{
-                        barThickness: 20
+                        barThickness: 10
                     }]
                 },";
 

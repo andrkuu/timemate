@@ -59,6 +59,7 @@ if(!isset($_SESSION["id"])){
 
         document.getElementById("changeView").onclick=function(){
             swapCanvases();
+            refreshGraph(weekNr);
             weekNr = 0;
         };
 
@@ -74,32 +75,53 @@ if(!isset($_SESSION["id"])){
             }
             else{
                 chartNr = 0;
+
             }
+
+
 
             chartType = chartTypes[chartNr];
 
+            for (let i = 0; i <chartTypes.length ; i++) {
+                console.log(chartTypes[i]);
+                var canvas = document.getElementById(chartTypes[chartNr]);
+                if(chartType === chartTypes[i]){
+                    //console.log(chartType + " = " + chartTypes[i]);
+                    console.log(chartType + " visible");
+                    canvas.style.visibility='visible';
+                }else{
+                    var canvas = document.getElementById(chartTypes[i]);
+                    console.log(chartType + " hidden");
+                    canvas.style.visibility='hidden';
+                }
+            }
+
+
+            /*
 
             for (let i = 0; i <chartTypes.length ; i++) {
                 if(chartType === chartTypes[chartNr]){
                     console.log(chartType + " = " + chartTypes[chartNr]);
-                    document.getElementById(chartType).style.display = "visible";
+                    //document.getElementById(chartType).style.display = "visible";
+                    document.getElementById(chartType).hidden = false;
                     console.log(chartType+" visible");
                 }
                 else{
                     console.log(chartType + " hidden");
-                    document.getElementById(chartType).style.display = "none";
-
+                    //document.getElementById(chartType).style.display = "hidden";
+                    document.getElementById(chartType).hidden = true;
                 }
-            }
+            }*/
 
 
             $("#statistics_box").innerHTML = "";
-            refreshGraph(chartNr);
+            refreshGraph(weekNr);
         }
 
 
 
         swapCanvases();
+
 
         function refreshGraph(weekNr){
             console.log("Refrash");
