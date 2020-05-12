@@ -19,8 +19,8 @@ if(isset($_POST["submitSubject"])){
 
     $min = $_POST["minuteSelect"];
     $hour = $_POST["hourSelect"];
-    // = $_POST["minusDays"];
-    $minusDays = 0;
+
+    $minusDays = $_POST["daynr"];
 
     $hour = intval(substr($hour,0,strlen($hour)));
     $min = intval(substr($min,0,strlen($min)));
@@ -59,6 +59,47 @@ if(isset($_POST["submitSubject"])){
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="subject.css">
     <title>Aine</title>
+    <script>
+
+        let day = 0;
+
+        function changeDay(e) {
+            if(e.id === "leftarrow"){
+
+                if(day < 1){
+                    day++;
+                }
+
+
+
+            }else{
+                if(day > 0){
+                    day--;
+                }
+            }
+
+            let labelText = "";
+
+            if(day === 0){
+                labelText = "Täna";
+            }
+            else if(day === 1){
+                labelText = "Eile";
+            }
+            else if(day === 2){
+                labelText = "ÜLEEILE";
+            }
+
+
+            document.getElementById("daynr").value = day;
+            document.getElementById("displayDay").innerHTML = labelText;
+        }
+
+
+
+    </script>
+
+
   </head>
   <body>
     <?php require('../nav-bar.php'); ?>
@@ -77,9 +118,9 @@ if(isset($_POST["submitSubject"])){
     </div>
     <div id="inputContainer">
         <div id="arrows">
-            <i class="arrow left" onclick="changeDay(event)"></i>
+            <i class="arrow left" onclick="changeDay(this)" id="leftarrow"></i>
             <i id="displayDay">Täna</i>
-            <i class="arrow right" onclick="changeDay(event)"></i>
+            <i class="arrow right" onclick="changeDay(this)" id="rightarrow"></i>
         </div>
 
       <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -120,6 +161,8 @@ if(isset($_POST["submitSubject"])){
               }
               ?>
           </select>
+
+          <input type="hidden" name="daynr" id="daynr" value="0" />
 
           <div><button name="submitSubject" type="submit_button" class="submitButton" >Sisesta</button></div>
 

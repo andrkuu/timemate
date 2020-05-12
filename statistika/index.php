@@ -58,8 +58,7 @@ if(!isset($_SESSION["id"])){
         var weekNr = 0;
 
 
-
-        document.getElementById("changeView").onclick=function(){
+        document.getElementById("changeView").onclick = function () {
             swapCanvases();
             refreshGraph(weekNr);
             weekNr = 0;
@@ -68,33 +67,31 @@ if(!isset($_SESSION["id"])){
         var chartNr = 1;
         var chartType = "";
 
-        var chartTypes = ["week_activities","subject_activities"];
+        var chartTypes = ["week_activities", "subject_activities"];
 
-        function swapCanvases(){
+        function swapCanvases() {
 
-            if(chartNr < 1){
+            if (chartNr < 1) {
                 chartNr++;
-            }
-            else{
+            } else {
                 chartNr = 0;
 
             }
 
 
-
             chartType = chartTypes[chartNr];
 
-            for (let i = 0; i <chartTypes.length ; i++) {
+            for (let i = 0; i < chartTypes.length; i++) {
                 console.log(chartTypes[i]);
                 var canvas = document.getElementById(chartTypes[chartNr]);
-                if(chartType === chartTypes[i]){
+                if (chartType === chartTypes[i]) {
                     //console.log(chartType + " = " + chartTypes[i]);
                     console.log(chartType + " visible");
-                    canvas.style.visibility='visible';
-                }else{
+                    canvas.style.visibility = 'visible';
+                } else {
                     var canvas = document.getElementById(chartTypes[i]);
                     console.log(chartType + " hidden");
-                    canvas.style.visibility='hidden';
+                    canvas.style.visibility = 'hidden';
                 }
             }
 
@@ -121,22 +118,20 @@ if(!isset($_SESSION["id"])){
         }
 
 
-
         swapCanvases();
 
 
-        function refreshGraph(weekNr){
+        function refreshGraph(weekNr) {
             console.log("Refrash");
 
 
             $.ajax(
                 {
-                    url: chartType+".php",
+                    url: chartType + ".php",
                     type: 'POST',
                     dataType: 'text',
                     data: {week: weekNr},
-                    success: function (response)
-                    {
+                    success: function (response) {
                         $("#statistics_box").html(response);
                     }
                 });
@@ -144,28 +139,25 @@ if(!isset($_SESSION["id"])){
         }
 
 
-        function changeWeek(e){
+        function changeWeek(e) {
 
 
+            if (e.target.className === "prev") {
+                weekNr++;
 
-                if (e.target.className === "prev"){
-                    weekNr++;
-
-                }else if(e.target.className === "next"){
-                    if(weekNr > 0){
-                        weekNr--;
-                    }
+            } else if (e.target.className === "next") {
+                if (weekNr > 0) {
+                    weekNr--;
                 }
+            }
 
             refreshGraph(weekNr);
-
 
 
         }
 
 
-
-        $(document).ready(function(){
+        $(document).ready(function () {
             refreshGraph(0);
 
         });

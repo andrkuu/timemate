@@ -66,7 +66,7 @@ if(!isset($_SESSION["id"])){
             console.log(child.innerText);
             let events = e.target.childNodes[2];
             console.log(events.innerHTML);
-            myFunction(events.innerHTML);
+            displayPopup(events.innerHTML);
         };
 
         function changeMonth(e){
@@ -194,7 +194,7 @@ if(!isset($_SESSION["id"])){
 
     refreshCalendar(year,month);
     $('.popupCloseButton').hide();
-    function myFunction(date) {
+    function displayPopup(date) {
 
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
