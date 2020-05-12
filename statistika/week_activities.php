@@ -124,6 +124,14 @@ foreach ($weekSubjects as $subject) {
 }
 
 
+
+if(sizeof($weekActivities) == 0){
+    $labelText = "Sellel nädalal ei olnud ühtegi sisestust";
+}else{
+    $labelText = $firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused";
+}
+
+
 $result.= "]},";
 
 $result.= "options: {
@@ -145,7 +153,7 @@ $result.= "options: {
                 options: {
       title: {
         display: true,
-        text: '".$firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused'
+        text: '".$labelText."'
       },
       
       
@@ -213,7 +221,7 @@ $result.= "\"hover\": {
                       
                 title: {
                     display: true,
-                    text: '".$firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused'
+                    text: '".$labelText."'
                 }
       
                                 
