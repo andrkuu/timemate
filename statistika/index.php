@@ -39,7 +39,7 @@ if(!isset($_SESSION["id"])){
 <ul>
     <li class="prev" onclick="changeWeek(event)">❮</li>
     <li class="next" onclick="changeWeek(event)">❯</li>
-
+    <input type="hidden" id="flag" value="true" />
         <button id="changeView">vaheta vaadet</button>
 
 </ul>
@@ -48,12 +48,46 @@ if(!isset($_SESSION["id"])){
         <canvas id="week_activities" width=500 height=500></canvas>
         <canvas id="subject_activities" width=500 height=500></canvas>
     </div>
-
+    <button id="toggle">näita/peida kõik</button>
     <div id="statistics_box"></div>
+    <script>
+
+
+    </script>
     <script src="../jquery.js"></script>
 <!--  <script src="chartjs-plugin-labels.js"></script>  -->
 
     <script>
+
+        $("#toggle").click(function() {
+            var flag = $("#flag").val();
+            chart.data.datasets.forEach(function(ds) {
+
+                if(flag === 'true') {
+
+                    ds.hidden = false;
+                    $.each(ds._meta, function(k,v) {
+                        ds._meta[k].hidden = false;
+                    })
+
+                } else if (flag === 'false') {
+
+                    ds.hidden = true;
+                    $.each(ds._meta, function(k,v) {
+                        ds._meta[k].hidden = true;
+                    })
+
+                }
+
+                if(flag === 'true') {
+                    $("#flag").val("false");
+                } else if (flag === "false") {
+                    $("#flag").val("true");
+                }
+
+            });
+            chart.update();
+        });
 
         var weekNr = 0;
 
