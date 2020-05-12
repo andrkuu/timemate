@@ -62,7 +62,7 @@ $conn->close();
 $result.="<script>";
 $result.= "
        
-        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"subject_activities\" width=500 height=500></canvas><canvas id=\"week_activities\" width=500 height=500></canvas>';
+        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"subject_activities\" width=500 height=500></canvas><canvas id=\"week_activities\" width=500 height=500vh></canvas>';
         var ctx = document.getElementById('week_activities').getContext('2d');
 
         
@@ -77,6 +77,7 @@ $result.= "
 
 
 $maxChartValue = 0;
+
 
 foreach ($weekSubjects as $subject) {
     $result .= "{
@@ -126,29 +127,54 @@ foreach ($weekSubjects as $subject) {
 $result.= "]},";
 
 $result.= "options: {
+                
+
                 responsive: true,
                 legend: {
                     position: 'bottom',
                     display: true,
-
+                    align: 'left',
+                    rowCount: 2,
+                    columnCount: 2 
+                    
                 },
+               
+                
+                
                 
                 options: {
       title: {
         display: true,
         text: '".$firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused'
-      }
+      },
+      
+      
+      
+      
     },
+    
+   
                 
                 tooltips: {
-     enabled: false
-   },
+                enabled: true,
+                yAlign: 'bottom',
+                    callbacks: {
+                        labelColor: function(tooltipItem, chart) {
+                            var dataset = chart.config.data.datasets[tooltipItem.datasetIndex];
+                            return {
+                                backgroundColor : dataset.backgroundColor
+                            }
+                        },
+                    },
+                backgroundColor: '#227799'
+                
+                },
                 
                 scales: {
                     yAxes: [{
                         display: true,
                         ticks: {
-                            display: false,
+                            display: true,
                             suggestedMin: 0,
                                
                             suggestedMax: ".(intval($maxChartValue)+1).",
@@ -179,18 +205,21 @@ $result.= "\"hover\": {
                             var meta = chartInstance.controller.getDatasetMeta(i);
                             meta.data.forEach(function (bar, index) {
                                 var data = dataset.data[index];
-                                ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                                //ctx.fillText(data, bar._model.x, bar._model.y - 5);
                             });
                         });
                     }
                 },
                       
                 title: {
-        display: true,
-        text: '".$firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused'
-      }
+                    display: true,
+                    text: '".$firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused'
+                }
+      
                                 
-            },
+        },
+            
+       
             
             
             

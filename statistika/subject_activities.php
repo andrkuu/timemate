@@ -48,12 +48,15 @@ foreach ($weekActivities as $key => $value){
 }
 
 
+
+
+
 $stmt->close();
 $conn->close();
 $result.="<script>";
 $result.= "
    
-        document.getElementById(\"statistics\").innerHTML = '</canvas><canvas id=\"week_activities\" width=900 height=500></canvas><canvas id=\"subject_activities\" width=500 height=500>';
+        document.getElementById(\"statistics\").innerHTML = '</canvas><canvas id=\"week_activities\" width=500 height=500vh;></canvas><canvas id=\"subject_activities\" width=500 height=500vh>';
         var ctx = document.getElementById('subject_activities').getContext('2d');
         
         var chart = new Chart(ctx, {
@@ -117,7 +120,10 @@ foreach ($weekActivities as $key => $value){
       title: {
         display: true,
         text: '".$firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused'
-      }
+      },
+      
+      
+      
     }
 });
 ";
@@ -262,6 +268,32 @@ $result.= "\"hover\": {
             },
         });";*/
 $result.="</script>";
+
+if(sizeof($weekActivities) == 0){
+    $result = "";
+
+    $result.="<script>";
+    $result.= "
+   
+        document.getElementById(\"statistics\").innerHTML = '</canvas><canvas id=\"week_activities\" width=500 height=500vh;></canvas><canvas id=\"subject_activities\" width=500 height=500vh>';
+        var ctx = document.getElementById('subject_activities').getContext('2d');
+        
+        var chart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        datasets: [{
+        data: [1]
+    }],
+
+    labels: [
+        'Sellel nädalal ei olnud ühtegi sisestust'
+    ],
+    }
+    });
+    ";
+
+
+}
 
 echo $result;
 
