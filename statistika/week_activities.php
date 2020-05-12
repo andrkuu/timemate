@@ -40,7 +40,7 @@ $stmt -> execute();
 echo $stmt->error;
 
 
-$colors = ["green","red","blue","cyan","orange","pink"];
+$colors = ["green","red","blue","cyan","orange","pink","azure","DimGrey","darkslategrey","FireBrick"];
 $colorsIndex = 0;
 $weekSubjects = array();
 $weekActivities = array();
