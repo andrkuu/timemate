@@ -6,6 +6,7 @@ $userId = $_SESSION["id"];
 $week = $_POST["week"];
 
 
+
 require("../../../config.php");
 
 $result = null;
@@ -131,6 +132,18 @@ $result.= "options: {
                     display: true,
 
                 },
+                
+                options: {
+      title: {
+        display: true,
+        text: '".$firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused'
+      }
+    },
+                
+                tooltips: {
+     enabled: false
+   },
+                
                 scales: {
                     yAxes: [{
                         display: true,
@@ -172,12 +185,15 @@ $result.= "\"hover\": {
                     }
                 },
                       
-                
                 title: {
-                    display: false,
-                    text: ''
-                },
+        display: true,
+        text: '".$firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused'
+      }
+                                
             },
+            
+            
+            
         });";
 $result.="</script>";
 

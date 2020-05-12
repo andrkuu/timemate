@@ -51,6 +51,8 @@ if(!isset($_SESSION["id"])){
 
     <div id="statistics_box"></div>
     <script src="../jquery.js"></script>
+<!--  <script src="chartjs-plugin-labels.js"></script>  -->
+
     <script>
 
         var weekNr = 0;

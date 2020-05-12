@@ -12,7 +12,14 @@ $result = null;
 $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 
 $sql = 'SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id) AS Name, 
-                                            sum(duration) Duration
+                                            sum(duration) Duration,
+                                            week(curdate()) CurrentWeekNumber, 
+                                            date_add(date(report_date),interval  -WEEKDAY(date(report_date))+0 day) FirstDayOfWeek, 
+                    date_add(date_add(date(report_date),interval  -WEEKDAY(date(report_date))+0 day), interval 6 day) LastDayOfWeek
+                    
+                                            
+                                            
+                                            
                                             FROM time_reportings WHERE user_id=?
                                             AND WEEK(date(report_date),1) = WEEK(NOW(),1) -? AND YEAR(date(report_date)) = YEAR(NOW())
                                             GROUP BY time_reportings.subject_id
@@ -21,7 +28,7 @@ $stmt = $conn -> prepare($sql);
 
 
 $stmt->bind_param("ii", $userId,$week);
-$stmt -> bind_result($subjectFromDb, $durationFromDb);
+$stmt -> bind_result($subjectFromDb, $durationFromDb, $currentWeekNr,$firstDayOfWeek, $lastDayOfWeek);
 $stmt -> execute();
 echo $stmt->error;
 
@@ -109,7 +116,7 @@ foreach ($weekActivities as $key => $value){
     options: {
       title: {
         display: true,
-        text: 'Nädala tegevused'
+        text: '".$firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused'
       }
     }
 });
@@ -249,6 +256,9 @@ $result.= "\"hover\": {
                     display: false,
                     text: ''
                 },
+
+
+
             },
         });";*/
 $result.="</script>";
