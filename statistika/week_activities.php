@@ -60,6 +60,44 @@ while($stmt -> fetch()){
 $stmt->close();
 $conn->close();
 $result.="<script>";
+/*
+$result .= "$(\"#toggle\").click(function() {
+
+            var canvas = document.getElementById('week_activities');
+                  
+            /*
+            
+            var flag = $(\"#flag\").val();
+            chart.data.datasets.forEach(function(ds) {
+                console.log(flag);
+                if(flag === 'true') {
+
+                    ds.hidden = false;
+                    $.each(ds._meta, function(k,v) {
+                        ds._meta[k].hidden = false;
+                    })
+
+                } else if (flag === 'false') {
+
+                    ds.hidden = true;
+                    $.each(ds._meta, function(k,v) {
+                        ds._meta[k].hidden = true;
+                    })
+
+                }
+
+                if(flag === 'true') {
+                    $(\"#flag\").val(\"false\");
+                } else if (flag === \"false\") {
+                    $(\"#flag\").val(\"true\");
+                }
+
+            });
+            chart.update();
+           
+            
+        });";*/
+
 $result.= "
        
         document.getElementById(\"statistics\").innerHTML = '<canvas id=\"subject_activities\" width=500 height=500></canvas><canvas id=\"week_activities\" width=500 height=500vh></canvas>';

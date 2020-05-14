@@ -54,8 +54,41 @@ foreach ($weekActivities as $key => $value){
 $stmt->close();
 $conn->close();
 $result.="<script>";
+/*
+$result .= "$(\"#toggle\").click(function() {
+            var flag = $(\"#flag\").val();
+            console.log(\"testt\");
+            event.stopPropagation();
+               /*
+            chart.data.datasets.forEach(function(ds) {
+
+                if(flag === 'true') {
+                     $(\"#flag\").val(\"false\");
+                    ds.hidden = false;
+                    $.each(ds._meta, function(k,v) {
+                        ds._meta[k].hidden = false;
+                    })
+
+                } else if (flag === 'false') {
+                    $(\"#flag\").val(\"true\");
+                    ds.hidden = true;
+                    $.each(ds._meta, function(k,v) {
+                        ds._meta[k].hidden = true;
+                    })
+
+                }
+            
+
+            });
+            chart.update();
+            
+        });";*/
+
 $result.= "
-   
+        
+        
+        
+        
         document.getElementById(\"statistics\").innerHTML = '</canvas><canvas id=\"week_activities\" width=500 height=500vh;></canvas><canvas id=\"subject_activities\" width=500 height=500vh>';
         var ctx = document.getElementById('subject_activities').getContext('2d');
         
@@ -76,7 +109,7 @@ $result .= "],";
 $result .= "
       datasets: [{
         label: \"Population (millions)\",
-        backgroundColor: [\"#3e95cd\", \"#8e5ea2\",\"#3cba9f\",\"#e8c3b9\",\"#c45850\",\"#5d5e63\",\"FireBrick\",\"darkslategrey\",\"FireBrick\"],
+        backgroundColor: [\"#3e95cd\", \"#8e5ea2\",\"#3cba9f\",\"#e8c3b9\",\"#c45850\",\"#5d5e63\",\"#EFC050\",\"#FF6F61\",\"#8e5ea2\"],
         
         data:[";
 
@@ -129,7 +162,7 @@ foreach ($weekActivities as $key => $value){
             var total = meta.total;
             var currentValue = dataset.data[tooltipItem.index];
             var percentage = parseFloat((currentValue/total*100).toFixed(1));
-            return currentValue + ' (' + percentage + '%)';
+            return currentValue + 'm (' + percentage + '%)';
           },
           title: function(tooltipItem, data) {
             return data.labels[tooltipItem[0].index];

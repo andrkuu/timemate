@@ -48,46 +48,18 @@ if(!isset($_SESSION["id"])){
         <canvas id="week_activities" width=500 height=500></canvas>
         <canvas id="subject_activities" width=500 height=500></canvas>
     </div>
-    <button id="toggle">näita/peida kõik</button>
-    <div id="statistics_box"></div>
-    <script>
+<!-- <button id="toggle" onclick="toggleChart()">näita/peida kõik</button> -->
+<div id="statistics_box"></div>
+<script>
 
 
-    </script>
-    <script src="../jquery.js"></script>
+</script>
+<script src="../jquery.js"></script>
 <!--  <script src="chartjs-plugin-labels.js"></script>  -->
 
     <script>
 
-        $("#toggle").click(function() {
-            var flag = $("#flag").val();
-            chart.data.datasets.forEach(function(ds) {
 
-                if(flag === 'true') {
-
-                    ds.hidden = false;
-                    $.each(ds._meta, function(k,v) {
-                        ds._meta[k].hidden = false;
-                    })
-
-                } else if (flag === 'false') {
-
-                    ds.hidden = true;
-                    $.each(ds._meta, function(k,v) {
-                        ds._meta[k].hidden = true;
-                    })
-
-                }
-
-                if(flag === 'true') {
-                    $("#flag").val("false");
-                } else if (flag === "false") {
-                    $("#flag").val("true");
-                }
-
-            });
-            chart.update();
-        });
 
         var weekNr = 0;
 
@@ -103,48 +75,93 @@ if(!isset($_SESSION["id"])){
 
         var chartTypes = ["week_activities", "subject_activities"];
 
-        function swapCanvases() {
+        function toggleChart(){
+            console.log("a");
+            var flag = $("#flag").val();
+            console.log("testt");
+            event.stopPropagation();
 
-            if (chartNr < 1) {
-                chartNr++;
-            } else {
-                chartNr = 0;
-
-            }
-
-
-            chartType = chartTypes[chartNr];
-
-            for (let i = 0; i < chartTypes.length; i++) {
-                console.log(chartTypes[i]);
-                var canvas = document.getElementById(chartTypes[chartNr]);
-                if (chartType === chartTypes[i]) {
-                    //console.log(chartType + " = " + chartTypes[i]);
-                    console.log(chartType + " visible");
-                    canvas.style.visibility = 'visible';
-                } else {
-                    var canvas = document.getElementById(chartTypes[i]);
-                    console.log(chartType + " hidden");
-                    canvas.style.visibility = 'hidden';
-                }
-            }
+            $(chart.series).each(function(s){
+                //this.hide();
+                console.log(s);
+                this.setVisible(false, false);
+            });
 
 
-            /*
+         chart.data.datasets.forEach(function(ds) {
 
-            for (let i = 0; i <chartTypes.length ; i++) {
-                if(chartType === chartTypes[chartNr]){
-                    console.log(chartType + " = " + chartTypes[chartNr]);
-                    //document.getElementById(chartType).style.display = "visible";
-                    document.getElementById(chartType).hidden = false;
-                    console.log(chartType+" visible");
-                }
-                else{
-                    console.log(chartType + " hidden");
-                    //document.getElementById(chartType).style.display = "hidden";
-                    document.getElementById(chartType).hidden = true;
-                }
-            }*/
+
+
+             /*
+             $.each(ds._meta, function(k,v) {
+                 //ds._meta[k].hidden = true;
+                 console.log(ds._meta[k].hidden);
+             })
+             /*
+             if(flag === 'true') {
+                  $("#flag").val("false");
+                 ds.hidden = false;
+                 $.each(ds._meta, function(k,v) {
+                     ds._meta[k].hidden = false;
+                 })
+
+             } else if (flag === 'false') {
+                 $("#flag").val("true");
+                 ds.hidden = true;
+                 $.each(ds._meta, function(k,v) {
+                     ds._meta[k].hidden = true;
+                 })
+
+             }*/
+
+
+         });
+         chart.update();
+     }
+
+
+     function swapCanvases() {
+
+         if (chartNr < 1) {
+             chartNr++;
+         } else {
+             chartNr = 0;
+
+         }
+
+
+         chartType = chartTypes[chartNr];
+
+         for (let i = 0; i < chartTypes.length; i++) {
+             console.log(chartTypes[i]);
+             var canvas = document.getElementById(chartTypes[chartNr]);
+             if (chartType === chartTypes[i]) {
+                 //console.log(chartType + " = " + chartTypes[i]);
+                 console.log(chartType + " visible");
+                 canvas.style.visibility = 'visible';
+             } else {
+                 var canvas = document.getElementById(chartTypes[i]);
+                 console.log(chartType + " hidden");
+                 canvas.style.visibility = 'hidden';
+             }
+         }
+
+
+         /*
+
+         for (let i = 0; i <chartTypes.length ; i++) {
+             if(chartType === chartTypes[chartNr]){
+                 console.log(chartType + " = " + chartTypes[chartNr]);
+                 //document.getElementById(chartType).style.display = "visible";
+                 document.getElementById(chartType).hidden = false;
+                 console.log(chartType+" visible");
+             }
+             else{
+                 console.log(chartType + " hidden");
+                 //document.getElementById(chartType).style.display = "hidden";
+                 document.getElementById(chartType).hidden = true;
+             }
+         }*/
 
 
             $("#statistics_box").innerHTML = "";
