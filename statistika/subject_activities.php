@@ -54,35 +54,7 @@ foreach ($weekActivities as $key => $value){
 $stmt->close();
 $conn->close();
 $result.="<script>";
-/*
-$result .= "$(\"#toggle\").click(function() {
-            var flag = $(\"#flag\").val();
-            console.log(\"testt\");
-            event.stopPropagation();
-               /*
-            chart.data.datasets.forEach(function(ds) {
 
-                if(flag === 'true') {
-                     $(\"#flag\").val(\"false\");
-                    ds.hidden = false;
-                    $.each(ds._meta, function(k,v) {
-                        ds._meta[k].hidden = false;
-                    })
-
-                } else if (flag === 'false') {
-                    $(\"#flag\").val(\"true\");
-                    ds.hidden = true;
-                    $.each(ds._meta, function(k,v) {
-                        ds._meta[k].hidden = true;
-                    })
-
-                }
-            
-
-            });
-            chart.update();
-            
-        });";*/
 
 $result.= "
         

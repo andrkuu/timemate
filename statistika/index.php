@@ -15,7 +15,6 @@ if(!isset($_SESSION["id"])){
     <link rel="shortcut icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../chart.js"></script>
-    <script src="statistics.js"></script>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="statistics.css">
     <title>Statistika</title>
@@ -55,7 +54,6 @@ if(!isset($_SESSION["id"])){
 
 </script>
 <script src="../jquery.js"></script>
-<!--  <script src="chartjs-plugin-labels.js"></script>  -->
 
     <script>
 
@@ -129,39 +127,20 @@ if(!isset($_SESSION["id"])){
 
          }
 
-
          chartType = chartTypes[chartNr];
 
          for (let i = 0; i < chartTypes.length; i++) {
              console.log(chartTypes[i]);
              var canvas = document.getElementById(chartTypes[chartNr]);
              if (chartType === chartTypes[i]) {
-                 //console.log(chartType + " = " + chartTypes[i]);
                  console.log(chartType + " visible");
                  canvas.style.visibility = 'visible';
              } else {
-                 var canvas = document.getElementById(chartTypes[i]);
                  console.log(chartType + " hidden");
                  canvas.style.visibility = 'hidden';
              }
          }
 
-
-         /*
-
-         for (let i = 0; i <chartTypes.length ; i++) {
-             if(chartType === chartTypes[chartNr]){
-                 console.log(chartType + " = " + chartTypes[chartNr]);
-                 //document.getElementById(chartType).style.display = "visible";
-                 document.getElementById(chartType).hidden = false;
-                 console.log(chartType+" visible");
-             }
-             else{
-                 console.log(chartType + " hidden");
-                 //document.getElementById(chartType).style.display = "hidden";
-                 document.getElementById(chartType).hidden = true;
-             }
-         }*/
 
 
             $("#statistics_box").innerHTML = "";
@@ -173,8 +152,7 @@ if(!isset($_SESSION["id"])){
 
 
         function refreshGraph(weekNr) {
-            console.log("Refrash");
-
+            console.log("Refresh");
 
             $.ajax(
                 {
@@ -192,7 +170,6 @@ if(!isset($_SESSION["id"])){
 
         function changeWeek(e) {
 
-
             if (e.target.className === "prev") {
                 weekNr++;
 
@@ -204,13 +181,11 @@ if(!isset($_SESSION["id"])){
 
             refreshGraph(weekNr);
 
-
         }
 
 
         $(document).ready(function () {
             refreshGraph(0);
-
         });
 
 
