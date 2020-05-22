@@ -88,8 +88,10 @@ ul {
     .statistics {
         top: 21vh;
         font-size: 3vh;
-        width: 90vw;
-        left: 5vw;
+        width: 90%;
+        left: 5%;
+        height: 500px;
+        overflow-y: auto;
     }
 
     #test {

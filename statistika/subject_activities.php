@@ -157,7 +157,7 @@ if(sizeof($weekActivities) == 0){
     $result.="<script>";
     $result.= "
    
-        document.getElementById(\"statistics\").innerHTML = '</canvas><canvas id=\"week_activities\" width=500 height=500vh;></canvas><canvas id=\"subject_activities\" width=500 height=500vh>';
+        document.getElementById(\"statistics\").innerHTML = '</canvas><canvas id=\"week_activities\" width=500px height=500px;></canvas><canvas id=\"subject_activities\" width=250px height=250px style=\"display: block; height: 500px; width: 500px;\">';
         var ctx = document.getElementById('subject_activities').getContext('2d');
         
         var chart = new Chart(ctx, {
