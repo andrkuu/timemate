@@ -32,9 +32,9 @@ if(!isset($_SESSION["id"])){
 </div>
 
 <form>
-    <input type="text" id="mheader" name="mheader" placeholder="pealkiri">
+    <input type="text" id="mheader" name="mheader" placeholder="Pealkiri">
     <textarea placeholder="Sõnumi sisu"></textarea><br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Saada ära">
 </form>
 
 <div id="send_notifications">Saada teavitus</div>
