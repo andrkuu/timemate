@@ -68,6 +68,8 @@ label{
     font-style: normal;
     border: none;
     margin-right: 12vw;
+    width:5vw;
+
 }
 
 input[type="time"] {
