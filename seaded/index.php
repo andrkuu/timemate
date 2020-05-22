@@ -68,6 +68,16 @@ if(!isset($_SESSION["id"])){
     <img src="../images/wrench.png" alt="statistics" class="link_icons" id="fourth_icon">
     </div>
 
+    <div class="popup" onclick="show()">nupp
+        <span class="popuptext" id="myPopup"><button class="popupbtn" onclick="close()">JAH</button> <button class="popupbtn">EI</button></span>
+    </div>
+    <script>
+        function show() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
+
 
         <div id="notifications">
 
