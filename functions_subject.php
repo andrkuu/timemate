@@ -68,8 +68,8 @@ function getPreviousActivities($userId,$limit){
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
     $stmt = $conn -> prepare("SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
                                             (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
-                                            sum(duration), report_date FROM time_reportings WHERE user_id=? 
-                                            GROUP BY time_reportings.subject_id, time_reportings.activity_id, DATE(report_date)
+                                            duration, report_date FROM time_reportings WHERE user_id=? 
+                                            
                                             ORDER BY report_date DESC
                                             LIMIT ".$limit);
 
