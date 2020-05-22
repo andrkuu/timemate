@@ -26,18 +26,38 @@ if(!isset($_SESSION["id"])){
             let idToDelete = b.id.split("history_time")[1];
             console.log("Delete"+b.id.split("history_time")[1]);
 
-            $("#content_box").load("getPreviousActivities.php", {
+            $.ajax({
+
+                type: "POST",
+
+                url: "deleteActivity.php",
+
+                data: {id:idToDelete},
+
+                success : function(data){
+
+                    if (data.code === "200"){
+                        //succsess
+
+                    } else {
+
+                        //fail
+
+                    }
+                    loadReportings();
+
+                }
 
             });
 
-            loadReportings();
+
 
 
         }
 
         function loadReportings(){
 
-
+            console.log("load");
             $.post('getPreviousActivities.php', {},
                 function(data) {
                     $('#content_box').html(data);
@@ -67,6 +87,16 @@ if(!isset($_SESSION["id"])){
     <img src="../images/calendar.png" alt="statistics" class="link_icons" id="third_icon">
     <img src="../images/wrench.png" alt="statistics" class="link_icons" id="fourth_icon">
     </div>
+
+    <div class="popup" onclick="show()">nupp
+        <span class="popuptext" id="myPopup"><button class="popupbtn" onclick="close()">JAH</button> <button class="popupbtn">EI</button></span>
+    </div>
+    <script>
+        function show() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
 
 
         <div id="notifications">
