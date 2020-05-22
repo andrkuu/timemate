@@ -215,12 +215,11 @@ input:checked + .slider:before {
     animation: fadeIn 1s;
 }
 .delete_activity{
-    background-color: #950a27;
     display: flex;
     order: 4;
     border: none;
-    height: 5vh;
-    margin-top: 2.5vh;
+    height: 2vh;
+    margin-top: 4vh;
     margin-left: 2vw;
     color: white;
     border-radius: 10px;
