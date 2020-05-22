@@ -70,7 +70,7 @@ while($stmt -> fetch()){
         ."<span id='history_month'>".substr(ucfirst($months[intval($month)-1]),0,3)."</span></span>"
         ."<span id='subject_box'> <span id='history_subject'>".$subjectIdFromDb."</span>"
         ."<span id='history_activity'>".$activityIdFromDb."</span></span>"
-        ."<button onClick='deleteReporting(this)' class='delete_activity' id='delete_activity".$idFromDb."'>Kustuta</button>"
+        ."<img onClick='deleteReporting(this)' src='../images/delete.png' class='delete_activity' id='delete_activity".$idFromDb."'>"
         ."<span id='history_time'>".$temp."</span>
             </li> \n";
 }
