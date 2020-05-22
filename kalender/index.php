@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include("../functions_calendar.php");
+include("functions_calendar.php");
 
 if(!isset($_SESSION["id"])){
     header("Location: ../");

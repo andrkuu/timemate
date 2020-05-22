@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../functions_statistics.php");
+include("./functions_statistics.php");
 if(!isset($_SESSION["id"])){
     header("Location: ../");
     exit();
@@ -14,7 +14,7 @@ if(!isset($_SESSION["id"])){
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="../chart.js"></script>
+    <script src="chart.js"></script>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="statistics.css">
     <title>Statistika</title>

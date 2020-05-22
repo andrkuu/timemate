@@ -1,5 +1,5 @@
 <?php
-include ("../functions_calendar.php");
+include("functions_calendar.php");
 
 session_start();
 
