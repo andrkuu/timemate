@@ -26,18 +26,38 @@ if(!isset($_SESSION["id"])){
             let idToDelete = b.id.split("history_time")[1];
             console.log("Delete"+b.id.split("history_time")[1]);
 
-            $("#content_box").load("getPreviousActivities.php", {
+            $.ajax({
+
+                type: "POST",
+
+                url: "deleteActivity.php",
+
+                data: {id:idToDelete},
+
+                success : function(data){
+
+                    if (data.code === "200"){
+                        //succsess
+
+                    } else {
+
+                        //fail
+
+                    }
+                    loadReportings();
+
+                }
 
             });
 
-            loadReportings();
+
 
 
         }
 
         function loadReportings(){
 
-
+            console.log("load");
             $.post('getPreviousActivities.php', {},
                 function(data) {
                     $('#content_box').html(data);
