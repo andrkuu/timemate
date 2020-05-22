@@ -215,6 +215,7 @@ ul {
         left: 5vw;
     }
     .popup {
+        height: 1px;
         top: 17vh;
         left: 5vw;
     }
@@ -236,5 +237,4 @@ ul {
     }
 
 }
-
 
