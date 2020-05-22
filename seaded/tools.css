@@ -287,4 +287,9 @@ input:checked + .slider:before {
         text-decoration:none;
     }
 
+    .delete_activity{
+        height: 3vh;
+        margin-top: 3.5vh;
+    }
+
 }
