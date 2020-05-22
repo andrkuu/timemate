@@ -214,6 +214,19 @@ input:checked + .slider:before {
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
 }
+.delete_activity{
+    background-color: #950a27;
+    display: flex;
+    order: 4;
+    border: none;
+    height: 5vh;
+    margin-top: 2.5vh;
+    margin-left: 2vw;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
 
 @-webkit-keyframes fadeIn {
     from {opacity: 0;}
