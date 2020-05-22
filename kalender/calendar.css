@@ -231,17 +231,21 @@ ul {
 
     }
     .popupasi {
-        width: 100vw;
+        width: 90vw;
         font-size: 1.6vh;
         line-height: 10vh;
         z-index: 1;
+        margin-left: 5vw;
+        margin-top: 3vh;
 
     }
 
     .popupCloseButton {
         position: absolute;
-        width: 100vw;
-        height: 100vh;
+        left: 5vw;
+        top: 16.5vh;
+        width: 90vw;
+        height: 73vh;
         color: transparent;
         cursor: pointer;
     }
