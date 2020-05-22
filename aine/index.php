@@ -66,7 +66,7 @@ if(isset($_POST["submitSubject"])){
         function changeDay(e) {
             if(e.id === "leftarrow"){
 
-                if(day < 1){
+                if(day < 2){
                     day++;
                 }
 
@@ -87,7 +87,7 @@ if(isset($_POST["submitSubject"])){
                 labelText = "Eile";
             }
             else if(day === 2){
-                labelText = "ÜLEEILE";
+                labelText = "Üleeile";
             }
 
 
