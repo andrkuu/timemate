@@ -68,14 +68,14 @@ function getPreviousActivities($userId,$limit){
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
     $stmt = $conn -> prepare("SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
                                             (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
-                                            duration, report_date FROM time_reportings WHERE user_id=? 
+                                            duration, report_date, id FROM time_reportings WHERE user_id=? 
                                             
                                             ORDER BY report_date DESC
                                             LIMIT ".$limit);
 
     echo $conn -> error;
     $stmt->bind_param("i", $userId);
-    $stmt -> bind_result($subjectIdFromDb, $activityIdFromDb, $durationFromDb, $dateFromDb);
+    $stmt -> bind_result($subjectIdFromDb, $activityIdFromDb, $durationFromDb, $dateFromDb, $idFromDb);
     $stmt -> execute();
     $result .= "<ul>";
 
@@ -118,6 +118,7 @@ function getPreviousActivities($userId,$limit){
                 ."<span id='history_month'>".substr(ucfirst($months[intval($month)-1]),0,3)."</span></span>"
                 ."<span id='subject_box'> <span id='history_subject'>".$subjectIdFromDb."</span>"
                 ."<span id='history_activity'>".$activityIdFromDb."</span></span>"
+                ."<button onClick='deleteReporting(this)' id='history_time".$idFromDb."'>Kustuta</button>"
                 ."<span id='history_time'>".$temp."</span>
             </li> \n";
     }

@@ -19,6 +19,38 @@ if(!isset($_SESSION["id"])){
     <link rel="stylesheet" href="../style.css">
       <link rel="stylesheet" href="tools.css">
     <title>Seaded</title>
+      <script src="../jquery.js"></script>
+    <script>
+
+        function deleteReporting(b){
+            let idToDelete = b.id.split("history_time")[1];
+            console.log("Delete"+b.id.split("history_time")[1]);
+
+            $("#content_box").load("getPreviousActivities.php", {
+
+            });
+
+            loadReportings();
+
+
+        }
+
+        function loadReportings(){
+
+
+            $.post('getPreviousActivities.php', {},
+                function(data) {
+                    $('#content_box').html(data);
+                }
+            );
+
+        }
+
+        loadReportings();
+
+    </script>
+
+
   </head>
   <body>
     <?php include('../nav-bar.php'); ?>
@@ -69,17 +101,14 @@ if(!isset($_SESSION["id"])){
             <div id="history_header">Sinu eelmised tegevused</div>
             <div id="content_box">
                 <?php
-                function isMobileDevice()
-                {
-                    return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
-                }
+                /*
                 if (isMobileDevice()){
                         echo getPreviousActivities(intval($_SESSION["id"]),3);
                     }
                 else{
                         echo getPreviousActivities(intval($_SESSION["id"]),7);
                     }
-
+                    */
                 ?>
             </div>
             <a id="back_button" href="../aine/">Tagasi</a>
