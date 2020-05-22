@@ -100,7 +100,11 @@ input[type="time"] {
     font-size: 5vw;
     font-style: normal;
     padding:3vw;
+    width:15vw;
+    padding-left: 8vw;
 }
+
+
 #arrows{
     display: inline-block;
     margin-left: -1vw;
@@ -110,13 +114,13 @@ input[type="time"] {
 i {
     align-self: flex-start;
     border: solid black;
-    border-width: 0 6px 6px 0;
+    border-width: 0 10px 10px 0;
     display: inline-block;
-    padding: 6px;
+    padding: 10px;
 }
 
 .right {
-    margin-left: 7vw;
+    margin-left: 4vw;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
@@ -181,6 +185,7 @@ i {
         margin-left: 22vw;
         margin-bottom:1vh;
         display: inline-table;
+        width:20vw;
 
     }
 
@@ -206,7 +211,7 @@ i {
     }
 
     #arrows{
-        margin-right: 20vw;
+        margin-right: 21vw;
         margin-bottom: 2vh;
 
     }
@@ -214,14 +219,16 @@ i {
     i {
         align-self: flex-start;
         border: solid black;
-        border-width: 0 6px 6px 0;
+        border-width: 0 8px 8px 0;
         display: inline-block;
-        padding: 6px;
+        padding: 8px;
     }
 
 
     #displayDay {
         font-size: 10vw;
+        padding-left: 0;
+        width:25vw;
     }
 
     .hourSelect {
@@ -235,6 +242,7 @@ i {
         border-width: 1px;
         border-radius:2vh;
         width: 25vw;
+        float: left;
 
     }
 

@@ -219,12 +219,19 @@ ul {
         top: 17vh;
         left: 5vw;
     }
+    .dark {
+        background-color: black;
+        opacity: 0.3;
+        z-index: 0;
+    }
     .popupasi {
         width: 90vw;
         font-size: 1.6vh;
         line-height: 10vh;
-        z-index: 2;
-
+        z-index: 1000000000000;
+    }
+    .popupasi.dark {
+        z-index: 1000;
     }
     .popupCloseButton {
         bottom: 0;
