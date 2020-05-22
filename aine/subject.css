@@ -126,7 +126,6 @@ i {
 }
 
 .hourSelect {
-    overflow-x: scroll;
     background-color: #b71234;
     color: white;
     padding: 1vw;
