@@ -1,5 +1,6 @@
 ul {
     list-style-type: none;
+    font-size: 0px;
 }
 #wrapper {
     position: relative;
