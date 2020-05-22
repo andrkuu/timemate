@@ -199,14 +199,14 @@ if(!isset($_SESSION["id"])){
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
         popup.innerHTML = date;
-        var element = document.body
-        element.classList.toggle("dark")
+        var element = document.body;
+        element.classList.toggle("dark");
         $('.popup').show();
         $('.popupCloseButton').show();
         $('.popupCloseButton').click(function(){
+            var element = document.body;
+            element.classList.toggle("dark");
             $('.popup').hide();
-            var element = document.body
-            element.classList.toggle("dark")
         });
 
 

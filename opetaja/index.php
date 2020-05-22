@@ -15,11 +15,28 @@ if(!isset($_SESSION["id"])){
     <link rel="shortcut icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="teacher.css">
     <title>Ülevaade</title>
+    <?php require('../nav-bar.php'); ?>
 
 </head>
 <body>
-<?php require('../nav-bar.php'); ?>
-<div id="send_notifications"></div>
+
+<div class="dropdown">
+    <button class="dropbtn">Vali aine</button>
+    <div class="dropdown-content">
+        <a href="#">Matemaatika</a>
+        <a href="#">Eesti Keel</a>
+        <a href="#">Keemia</a>
+    </div>
+</div>
+
+<form>
+    <input type="text" id="mheader" name="mheader" placeholder="pealkiri">
+    <textarea placeholder="Sõnumi sisu"></textarea><br>
+    <input type="submit" value="Submit">
+</form>
+
+<div id="send_notifications">Saada teavitus</div>
 </body>
 </html>
