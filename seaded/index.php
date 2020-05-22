@@ -89,11 +89,14 @@ if(!isset($_SESSION["id"])){
     <img src="../images/wrench.png" alt="statistics" class="link_icons" id="fourth_icon">
     </div>
 
-    <div class="popup" onclick="show()">nupp
-        <span class="popuptext" id="myPopup"><button class="popupbtn" onclick="close()">JAH</button> <button class="popupbtn">EI</button></span>
+    <div class="popup" onclick="show()">
+        <span class="popuptext" id="myPopup">Kas te tõesti soovite seda kustutada?</br><button class="popupbtn" onclick="deleteReporting()">JAH</button> <button class="popupbtn">EI</button></span>
     </div>
     <script>
-        function show() {
+        function show(b) {
+            b.parentElement.innerHTML+="<span class=\"popuptext\" id=\"myPopup\">Kas te tõesti soovite seda kustutada?</br><button class=\"popupbtn\" onclick=\"deleteReporting()\">JAH</button> <button class=\"popupbtn\">EI</button></span>"
+            let idToDelete = b.id.split("history_time")[1];
+            console.log("Delete"+b.id.split("history_time")[1]);
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
         }
