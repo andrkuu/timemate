@@ -1,0 +1,19 @@
+#send_notifications{
+    height: 10vh;
+    width: 100vw;
+    background-color: #b71234;
+    position: absolute;
+    bottom: 0;
+    line-height: 10vh;
+    color: white;
+    text-align: center;
+    font-size: 5vw;
+    border-radius: 20px 20px 0px 0px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#send_notifications:hover{
+    height: 15vh;
+    background-color: #950a27;
+}
