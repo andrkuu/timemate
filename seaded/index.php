@@ -23,8 +23,9 @@ if(!isset($_SESSION["id"])){
     <script>
 
         function deleteReporting(b){
-            let idToDelete = b.id.split("history_time")[1];
-            console.log("Delete"+b.id.split("history_time")[1]);
+            console.log(b.id);
+            let idToDelete = b.id.split("delete_activity")[1];
+            console.log("Delete"+b.id.split("delete_activity")[1]);
 
             $.ajax({
 
