@@ -165,7 +165,9 @@ if(isset($_POST["submitSubject"])){
           <input type="hidden" name="daynr" id="daynr" value="0" />
 
           <div><button name="submitSubject" type="submit_button" class="submitButton" >Sisesta</button></div>
+            <div class="notification">
 
+            </div>
 
       </form>
     </div>

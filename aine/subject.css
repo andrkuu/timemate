@@ -10,6 +10,7 @@
 }
 
 
+
 .dropdown{
     background-color: white;
     color: black;
@@ -122,12 +123,14 @@ i {
     margin-left: 4vw;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    hover:pointer;
 }
 
 .left {
     margin-right: 7vw;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
+    hover:pointer;
 }
 
 .hourSelect {
