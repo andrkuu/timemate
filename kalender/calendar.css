@@ -101,6 +101,7 @@ ul {
     text-align: center;
     height: 10vh;
     line-height: 10vh;
+    cursor: pointer;
 }
 
 .calendar-day:after {
@@ -131,6 +132,10 @@ ul {
 .calendar-day-event-container:hover {
     background-color: #dddddd;
 }
+.calendar-day-head:hover {
+    background-color: #dddddd;
+}
+
 .display-alert {
     white-space: nowrap;
     background-color: #b40000;

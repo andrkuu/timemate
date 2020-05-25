@@ -19,19 +19,7 @@ $events = [
         ],
 
     ]
-    /*
-    "2020-04-07" => [
-        "Interaktsioonidisain" => [
-            "type" => "Kodutöö",
-            "duration" => 3
-        ],
 
-        "Java" => [
-            "type" => "Kodutöö",
-            "duration" => 5
-        ]
-
-    ],*/
 ];
 
 //print_r($events);
@@ -58,8 +46,8 @@ $headings = ['E', 'T', 'K', 'N', 'R', 'L', 'P'];
 $calendar =
     "<table cellpadding='0' cellspacing='0' class='{$css_cal}'>" .
     "<tr class='{$css_cal_row}'>" .
-    "<td class='{$css_cal_day_head}'>" .
-    implode("</td><td class='{$css_cal_day_head}'>", $headings) .
+    "<td onclick='clickDay(this)' class='{$css_cal_day_head}' >" .
+    implode("</td><td class='{$css_cal_day_head}' onclick='clickDay(this)'>", $headings) .
     "</td>" .
     "</tr>";
 
