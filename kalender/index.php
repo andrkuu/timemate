@@ -124,7 +124,7 @@ if(!isset($_SESSION["id"])){
 <div id="popup" class="popup">
     <span class="helper"></span>
     <div>
-        <div class="popupCloseButton">&times;</div>
+        <div class="popupCloseButton">&times;<span class="ref"></span></div>
         <div id="myPopup"></div>
 
     </div>
