@@ -227,40 +227,28 @@ ul {
         overflow: auto;
         background-color: rgb(0,0,0);
         background-color: rgba(0, 0, 0, 0.52);
-
     }
 
-
+    }
     .popupasi {
         width: 90vw;
         font-size: 1.6vh;
         line-height: 10vh;
         z-index: 1;
-        height: 72.5vh;
         margin-left: 5vw;
         margin-top: 3vh;
+
     }
 
     .popupCloseButton {
+        position: absolute;
         left: 5vw;
-        top: 84.5vh;
+        top: 16.5vh;
         width: 90vw;
-        text-align: center;
-        height: 5.5vh;
-        background-color: #b71234;
+        height: 73vh;
         color: transparent;
         cursor: pointer;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
     }
-    .ref::after {
-        content: "SULGE";
-        position: absolute;
-        color: white;
-        top: 25%;
-        left: 45%;
-    }
-
 
 }
 

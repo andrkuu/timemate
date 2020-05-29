@@ -64,7 +64,7 @@ $result.="<script>";
 
 $result.= "
        
-        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"subject_activities\" width=500 height=500></canvas><canvas id=\"week_activities\" width=500 height=500vh></canvas>';
+        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"subject_activities\" width=200vw height=200%></canvas><canvas class=\"week_activities\" id=\"week_activities\" width=1000px height=500px ></canvas>';
         var ctx = document.getElementById('week_activities').getContext('2d');
 
         

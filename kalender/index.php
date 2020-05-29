@@ -33,6 +33,18 @@ if(!isset($_SESSION["id"])){
         var month = dateObj.getUTCMonth() + 1;
         var year = dateObj.getUTCFullYear();
 
+        var headings = ['E', 'T', 'K', 'N', 'R', 'L', 'P'];
+
+        function clickDay(a) {
+            var dayNr = headings.indexOf(a.innerHTML);
+            console.log(headings.indexOf(a.innerHTML));
+            $("#myPopup").load("get_weekday.php", {
+                year: this.year,
+                month: this.month,
+                day: dayNr
+            });
+
+        }
 
         const capitalize = (s) => {
             if (typeof s !== 'string') return ''
