@@ -35,7 +35,7 @@ if(isset($_POST["submitSubject"])){
 
     if ($duration != 0){
         if ((0 <= $minusDays) && ($minusDays <= 2)){
-            insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"]), $minusDays);
+           echo insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"]), $minusDays);
         }
 
     }
@@ -95,10 +95,7 @@ if(isset($_POST["submitSubject"])){
             document.getElementById("displayDay").innerHTML = labelText;
         }
 
-        new Picker(document.querySelector('.js-inline-picker'), {
-            controls: true,
-            inline: true,
-        });
+
 
     </script>
 
@@ -110,14 +107,14 @@ if(isset($_POST["submitSubject"])){
         <a href="../statistika/" class="page"><span class="link_names">Statistika</span></a>
         <a href="../aine/" class="page" id="chosen"> <span class="link_names">Aine</span></a>
         <a href="../kalender/" class="page"><span class="link_names">Kalender</span></a>
-        <a href="../seaded/" class="page" id="tools"><span class="link_names">Ajalugu</span></a>
+        <a href="../seaded/" class="page" id="tools"><span class="link_names">Seaded</span></a>
     </div>
 
     <div class="images">
         <img src="../images/statistics.png" alt="statistics" class="link_icons" id="first_icon">
         <img src="../images/add.png" alt="statistics" class="link_icons" id="second_icon">
         <img src="../images/calendar.png" alt="statistics" class="link_icons" id="third_icon">
-        <img src="../images/history.png" alt="statistics" class="link_icons" id="fourth_icon">
+        <img src="../images/wrench.png" alt="statistics" class="link_icons" id="fourth_icon">
     </div>
     <div id="inputContainer">
         <div id="arrows">
@@ -149,7 +146,7 @@ if(isset($_POST["submitSubject"])){
                 for($i=0; $i<=12; $i++)
                 {
 
-                    echo "<option value=".$i.">".$i." H </option>";
+                    echo "<option value=".$i.">".$i."h</option>";
                 }
                 ?>
           </select>
@@ -160,7 +157,7 @@ if(isset($_POST["submitSubject"])){
               for($i=0; $i<=55; $i+=5)
               {
 
-                  echo "<option value=".$i.">".$i." M </option>";
+                  echo "<option value=".$i.">".$i."m</option>";
               }
               ?>
           </select>
@@ -168,7 +165,9 @@ if(isset($_POST["submitSubject"])){
           <input type="hidden" name="daynr" id="daynr" value="0" />
 
           <div><button name="submitSubject" type="submit_button" class="submitButton" >Sisesta</button></div>
+            <div class="notification">
 
+            </div>
 
       </form>
     </div>
