@@ -140,28 +140,29 @@ i {
 }
 
 .hourSelect {
-    background: linear-gradient(to bottom,  #b71234 0%, #040001 100%);
+    background: #b0abab;
     color: white;
     padding: 1vw;
     font-size: 1.5vw;
-    border-color: grey;
+    border-color: black;
     cursor: pointer;
     border-width: 1px;
     border-radius:2vh;
-    width: 10vw;
-
+    width: 13vw;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .minuteSelect {
-    background: linear-gradient(to bottom,  #b71234 0%, #040001 100%);
+    background: #b0abab;
+    border-color:black;
     color: white;
     padding: 1vw;
     font-size: 1.5vw;
-    border-color: grey;
     cursor: pointer;
     border-width: 1px;
     border-radius:2vh;
-    width: 10vw;
+    width: 13vw;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 }
 
@@ -251,6 +252,7 @@ i {
     }
 
     .hourSelect {
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
         margin-left: 3vw;
         background-color: #b71234;
         color: white;
