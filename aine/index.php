@@ -95,7 +95,10 @@ if(isset($_POST["submitSubject"])){
             document.getElementById("displayDay").innerHTML = labelText;
         }
 
-
+        new Picker(document.querySelector('.js-inline-picker'), {
+            controls: true,
+            inline: true,
+        });
 
     </script>
 
@@ -146,7 +149,7 @@ if(isset($_POST["submitSubject"])){
                 for($i=0; $i<=12; $i++)
                 {
 
-                    echo "<option value=".$i.">".$i."h</option>";
+                    echo "<option value=".$i.">".$i." H </option>";
                 }
                 ?>
           </select>
@@ -157,7 +160,7 @@ if(isset($_POST["submitSubject"])){
               for($i=0; $i<=55; $i+=5)
               {
 
-                  echo "<option value=".$i.">".$i."m</option>";
+                  echo "<option value=".$i.">".$i." M </option>";
               }
               ?>
           </select>
@@ -165,9 +168,7 @@ if(isset($_POST["submitSubject"])){
           <input type="hidden" name="daynr" id="daynr" value="0" />
 
           <div><button name="submitSubject" type="submit_button" class="submitButton" >Sisesta</button></div>
-            <div class="notification">
 
-            </div>
 
       </form>
     </div>

@@ -22,11 +22,16 @@
     border-radius:2vh;
     width: 27vw;
     margin-bottom: 4vw;
+
 }
 
 
 .option {
     padding: 4vh;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color:white;
+    background-color: #b71234;
 }
 label{
     display:flex;
@@ -102,6 +107,7 @@ input[type="time"] {
     font-style: normal;
     padding:3vw;
     width:15vw;
+    user-select: none;
 }
 
 
@@ -134,7 +140,7 @@ i {
 }
 
 .hourSelect {
-    background-color: #b71234;
+    background: linear-gradient(to bottom,  #b71234 0%, #040001 100%);
     color: white;
     padding: 1vw;
     font-size: 1.5vw;
@@ -147,7 +153,7 @@ i {
 }
 
 .minuteSelect {
-    background-color: #b71234;
+    background: linear-gradient(to bottom,  #b71234 0%, #040001 100%);
     color: white;
     padding: 1vw;
     font-size: 1.5vw;
@@ -181,13 +187,23 @@ i {
         border-width: 1px;
         border-radius: 2vh;
         width: 60vw;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+    }
+    .option {
+        padding: 4vh;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width:60vw;
     }
 
     #labelForSubjects {
+        margin-top: 2vh;
         margin-left: 22vw;
-        margin-bottom:1vh;
         display: inline-table;
         width:20vw;
+        user-select: none;
 
     }
 
@@ -195,11 +211,12 @@ i {
         font-size: 3vh;
         display: block;
         height: 4vh;
-        margin-left: 14vw;
+        margin-left: 4vw;
         line-height: 0;
         padding: 7vw;
         margin-top: 10vh;
-        border-radius: 4vw;
+        border-radius: 8px;
+        width: 50vw;
     }
 
     input[type="time"] {
@@ -245,7 +262,6 @@ i {
         border-radius:2vh;
         width: 25vw;
         float: left;
-
     }
 
     .minuteSelect {
