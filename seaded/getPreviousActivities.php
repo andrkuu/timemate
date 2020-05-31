@@ -22,7 +22,7 @@ $stmt = $conn -> prepare("SELECT (SELECT name FROM subjects WHERE id = time_repo
                                             (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
                                             duration, report_date, id FROM time_reportings WHERE user_id=? 
                                             
-                                            ORDER BY report_date DESC
+                                            ORDER BY insert_date DESC
                                             LIMIT ".$limit);
 
 echo $conn -> error;
