@@ -141,6 +141,11 @@ input:checked + .slider:before {
     text-align: left;
     flex-grow: 4;
     order: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 20vw;
+
+
 }
 
 #history_day{
@@ -156,6 +161,10 @@ input:checked + .slider:before {
 #history_subject{
     font-weight: bold;
     font-size: 1.5vh;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
 
 }
 
@@ -169,7 +178,7 @@ input:checked + .slider:before {
     margin-right: 1vw;
     text-align: right;
     line-height: 10vh;
-    font-size: 1.8vw;
+    font-size: 1.5vw;
 }
 .popup {
     top: 40vh;
@@ -268,6 +277,10 @@ input:checked + .slider:before {
         position: absolute;
         height: 30vh;
         width: 100vw;
+    }
+
+    #history_time{
+        font-size: 4vw;
     }
 
     #back_button{
