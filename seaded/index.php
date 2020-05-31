@@ -132,7 +132,7 @@ if(!isset($_SESSION["id"])){
         </div>
 
         <div id="history">
-            <div id="history_header">Sinu eelmised tegevused</div>
+            <div id="history_header">Sinu eelmised sisestused</div>
             <div id="content_box">
                 <?php
                 /*
