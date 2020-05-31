@@ -10,7 +10,14 @@ $day = $_POST["day"];
 
 $events = getDayActivities($_SESSION["id"],$month,$year,$day);
 
-echo "<table class=\"popupasi\"><tbody><tr id=\"kõik\"><th id=\"aine\" class=\"popuptext\">Aine</th><th id=\"õppetegevus\" class=\"popuptext\">Õppetegevus</th><th id=\"kestvus\" class=\"popuptext\">kestvus</th></tr>";
+echo "<table class=\"popupasi\">
+      
+        <tbody>
+                <tr id=\"kõik\">
+                    <th id=\"aine\" class=\"popuptext\">Aine</th>
+                    <th id=\"õppetegevus\" class=\"popuptext\">Õppetegevus</th>
+                    <th id=\"kestvus\" class=\"popuptext\">kestvus</th>
+                </tr>";
 
 //print_r($events);
 foreach ($events as $key => $value){

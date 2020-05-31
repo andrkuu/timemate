@@ -7,10 +7,10 @@ function signIn($userName, $password){
 
 
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn->prepare("SELECT id,password FROM users WHERE username=?");
+    $stmt = $conn->prepare("SELECT id,password,role FROM users WHERE username=?");
     echo $conn->error;
     $stmt->bind_param("s", $userName);
-    $stmt->bind_result($idFromDb, $passwordFromDb);
+    $stmt->bind_result($idFromDb, $passwordFromDb, $roleFromDb);
     if($stmt->execute()){
         //kui päring õnnestus
         if($stmt->fetch()){
@@ -23,7 +23,15 @@ function signIn($userName, $password){
                 $_SESSION["userFirstName"] = $userName;
                 $_SESSION["userLastName"] = $passwordFromDb;
                 $_SESSION["id"] = $idFromDb;
-                header("Location: aine/");
+
+                if(intval($roleFromDb) === 0){
+                    header("Location: aine/");
+                }
+                else if(intval($roleFromDb) === 1){
+                    header("Location: opetaja/");
+                }
+
+
 
 
                 $stmt->close();
