@@ -11,7 +11,7 @@ function getActivities(){
     $result .= "<select name=\"type\" class=\"dropdown\">";
 
     while($stmt -> fetch()){
-        $result .= "<option value=\"".$idFromDb."\">".$name."</option> \n";
+        $result .= "<option class='option' value=\"".$idFromDb."\">".$name."</option> \n";
     }
 
     $result .= "</select>";
@@ -31,7 +31,7 @@ function getSubjects(){
     $result .= "<select name=\"subject\" class=\"dropdown\">";
 
     while($stmt -> fetch()){
-        $result .= "<option value=\"".$idFromDb."\">".$nameFromDb."</option> \n";
+        $result .= "<option value=\" class='option' ".$idFromDb."\">".$nameFromDb."</option> \n";
     }
 
     $result .= "</select>";
