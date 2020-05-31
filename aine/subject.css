@@ -7,6 +7,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    user-select: none;
 }
 
 
@@ -33,6 +34,7 @@
     color:white;
     background-color: #b71234;
 }
+
 label{
     display:flex;
     align-self: center;
@@ -99,6 +101,7 @@ input[type="time"] {
     background: white;
     color: black;
     border: none;
+    user-select: none;
 }
 
 #displayDay {
@@ -140,8 +143,8 @@ i {
 }
 
 .hourSelect {
-    background: #b0abab;
-    color: white;
+    background: white;
+    color:black;
     padding: 1vw;
     font-size: 1.5vw;
     border-color: black;
@@ -149,13 +152,12 @@ i {
     border-width: 1px;
     border-radius:2vh;
     width: 13vw;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .minuteSelect {
-    background: #b0abab;
+    background: white;
     border-color:black;
-    color: white;
+    color: black;
     padding: 1vw;
     font-size: 1.5vw;
     cursor: pointer;
@@ -204,7 +206,7 @@ i {
         margin-left: 22vw;
         display: inline-table;
         width:20vw;
-        user-select: none;
+
 
     }
 
@@ -252,10 +254,9 @@ i {
     }
 
     .hourSelect {
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
         margin-left: 3vw;
-        background-color: #b71234;
-        color: white;
+        background-color: white;
+        color: black;
         padding: 2vw;
         font-size: 3vw;
         border-color: grey;
@@ -267,8 +268,8 @@ i {
     }
 
     .minuteSelect {
-        background-color: #b71234;
-        color: white;
+        background-color: white;
+        color: black;
         padding: 2vw;
         font-size: 3vw;
         border-color: grey;
