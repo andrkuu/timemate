@@ -8,7 +8,7 @@ function isMobileDevice()
 }
 
 if (isMobileDevice()){
-    $limit = 3;
+    $limit = 6;
 }
 else{
     $limit = 7;

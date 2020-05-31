@@ -89,48 +89,6 @@ if(!isset($_SESSION["id"])){
     <img src="../images/wrench.png" alt="statistics" class="link_icons" id="fourth_icon">
     </div>
 
-    <div class="popup" onclick="show()">
-        <span class="popuptext" id="myPopup">Kas te tõesti soovite seda kustutada?</br><button class="popupbtn" onclick="deleteReporting()">JAH</button> <button class="popupbtn">EI</button></span>
-    </div>
-    <script>
-        function show(b) {
-            b.parentElement.innerHTML+="<span class=\"popuptext\" id=\"myPopup\">Kas te tõesti soovite seda kustutada?</br><button class=\"popupbtn\" onclick=\"deleteReporting()\">JAH</button> <button class=\"popupbtn\">EI</button></span>"
-            let idToDelete = b.id.split("history_time")[1];
-            console.log("Delete"+b.id.split("history_time")[1]);
-            var popup = document.getElementById("myPopup");
-            popup.classList.toggle("show");
-        }
-    </script>
-
-
-        <div id="notifications">
-
-           <div id="first" class="switch_box">
-            <label class="switch" >
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-               <span class="switch_text">Õppejõu teavitused</span>
-           </div>
-
-            <div id="second" class="switch_box">
-            <label class="switch" >
-                <input type="checkbox" id="second2" >
-                <span class="slider round"></span>
-            </label>
-                <span class="switch_text">Tunniplaani teavitused</span>
-            </div>
-
-            <div  id="third" class="switch_box">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-                <span class="switch_text">Tähtaja teavitused</span>
-            </div>
-
-        </div>
-
         <div id="history">
             <div id="history_header">Sinu eelmised sisestused</div>
             <div id="content_box">

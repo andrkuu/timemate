@@ -4,94 +4,11 @@ ul {
     margin: 0;
     padding: 0;
 }
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked + .slider {
-    background-color: #81DF00;
-}
-
-input:focus + .slider {
-    box-shadow: 0 0 1px #81DF00;
-}
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-/* Toggle switch end*/
-
-#first{
-    top: 7vh;
-}
-#second{
-    top: 14vh;
-}
-#third{
-    top: 21vh;
-}
-
-.switch_box{
-    left: 2vw;
-    position: absolute;
-    white-space: nowrap;
-    text-align: right;
-    height: 33px;
-    line-height: 33px;
-}
-.switch_text{
-    font-size: medium;
-}
-#notifications{
-    margin-left: 25vw;
-    top: 4vh;
-    position: absolute;
-    height: 95vh;
-    width: 30vw;
-}
-
 /* history*/
 #history{
     height: 96vh;
     width: 50vw;
-    margin-left: 50vw;
+    margin-left: 37.5vw;
     top: 4vh;
     position: absolute;
 }
@@ -180,48 +97,6 @@ input:checked + .slider:before {
     line-height: 10vh;
     font-size: 1.5vw;
 }
-.popup {
-    top: 40vh;
-    left: 35vw;
-    position: absolute;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.popup .popuptext {
-    visibility: hidden;
-    width: 220px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 15px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    margin-left: -128px;
-}
-
-.popup .popuptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
-.popupbtn{
-    background-color: #c8c8c8;
-    border-radius: 4px;
-}
-
-.popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-}
 .delete_activity{
     display: flex;
     order: 4;
@@ -235,23 +110,7 @@ input:checked + .slider:before {
 
 }
 
-@-webkit-keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
-}
-
 @media only screen and (max-width: 800px) {
-    .switch_box{
-        left: 10vw;
-    }
-    .switch_text{
-        font-size: 4vw;
-    }
     #chosen{
         display:none
     }
@@ -259,9 +118,9 @@ input:checked + .slider:before {
     #history{
         width: 100vw;
         margin-left: 0vw;
-        top: 32vh;
+        top: 5vh;
         position: absolute;
-        height: 60vh;
+        height: 90vh;
     }
 
     #content_box{
