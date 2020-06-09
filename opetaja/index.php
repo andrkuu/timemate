@@ -21,22 +21,14 @@ if(!isset($_SESSION["id"])){
 
 </head>
 <body>
+<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-<div class="dropdown">
-    <button class="dropbtn">Vali aine</button>
-    <div class="dropdown-content">
-        <a href="#">Matemaatika</a>
-        <a href="#">Eesti Keel</a>
-        <a href="#">Keemia</a>
-    </div>
-</div>
-
-<form>
-    <input type="text" id="mheader" name="mheader" placeholder="Pealkiri">
-    <textarea placeholder="Sõnumi sisu"></textarea><br>
-    <input type="submit" value="Saada ära">
+    <?php
+    echo getSubjects();
+    ?>
+    <br />
+    <div id="statistics_teacher">Statistics</div>
 </form>
 
-<div id="send_notifications">Saada teavitus</div>
 </body>
 </html>
