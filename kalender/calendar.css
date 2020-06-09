@@ -224,7 +224,7 @@ ul {
     .popup {
 
         display: none;
-        position: fixed;
+
         z-index: 1;
         padding-top: 100px;
         left: 0;
@@ -244,7 +244,7 @@ ul {
         line-height: 10vh;
         z-index: 1;
         margin-left: 5vw;
-        margin-top: 3vh;
+        top: 12vh;
     }
 
     .popuptext {
@@ -252,9 +252,9 @@ ul {
     }
     .popupCloseButton {
         left: 90vw;
-        top: 16.5vh;
+        position: fixed;
+        top: 95px;
         font-size: 30px;
-        height: 5.5vh;
         color: white;
         cursor: pointer;
     }
