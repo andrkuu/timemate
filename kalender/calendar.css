@@ -176,7 +176,7 @@ ul {
     right: 4vw;
     width: 28vw;
     z-index: 1;
-    top: 10vh;
+    top: 6vh;
     background-color: transparent;
     overflow-x: visible;
 
@@ -195,6 +195,7 @@ ul {
     width: 21%;
     border-top-right-radius: 5px;
 }
+
 
 
 
