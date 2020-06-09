@@ -147,9 +147,12 @@ ul {
     flex-wrap: nowrap;
     margin: 0;
     padding: 0;
-    height: 8vh;
+    height: 8vh
     flex-direction: row;
     color: white;
+    table-layout:fixed;
+    overflow:hidden;
+
 
 }
 .popupasi {
@@ -163,6 +166,8 @@ ul {
     background: linear-gradient(90deg, rgb(226, 226, 226) 0%, rgb(226, 226, 226) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 79%, rgba(226, 226, 226) 79%, rgba(226, 226, 226) 100%);
     border-collapse: collapse;
 
+
+
 }
 .popup {
     height: 30%;
@@ -173,6 +178,7 @@ ul {
     top: 10vh;
     background-color: transparent;
     overflow-x: visible;
+
 
 }
 #aine{
@@ -207,6 +213,7 @@ ul {
 
 
 }
+
 @media only screen and (max-width: 800px) {
     .kalender {
         top: 17vh;
@@ -233,33 +240,25 @@ ul {
 
     .popupasi {
         width: 90vw;
-        font-size: 1.6vh;
+        font-size: 1.8vw;
         line-height: 10vh;
         z-index: 1;
-        height: 72.5vh;
         margin-left: 5vw;
         margin-top: 3vh;
     }
 
+    .popuptext {
+        font-size: 1.6vh;
+    }
     .popupCloseButton {
-        left: 5vw;
-        top: 84.5vh;
-        width: 90vw;
-        text-align: center;
+        left: 90vw;
+        top: 16.5vh;
+        font-size: 30px;
         height: 5.5vh;
-        background-color: #b71234;
-        color: transparent;
-        cursor: pointer;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
-    .ref::after {
-        content: "SULGE";
-        position: absolute;
         color: white;
-        top: 25%;
-        left: 45%;
+        cursor: pointer;
     }
+
 
 
 }

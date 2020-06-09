@@ -126,6 +126,7 @@ if(!isset($_SESSION["id"])){
     <a href="../seaded/" class="page" id="tools"><span class="link_names">Ajalugu</span></a>
 </div>
 
+
 <div class="images">
     <img src="../images/statistics.png" alt="statistics" class="link_icons" id="first_icon">
     <img src="../images/add.png" alt="statistics" class="link_icons" id="second_icon">
@@ -136,9 +137,8 @@ if(!isset($_SESSION["id"])){
 <div id="popup" class="popup">
     <span class="helper"></span>
     <div>
-        <div class="popupCloseButton">&times;<span class="ref"></span></div>
+        <div class="popupCloseButton">&times;</div>
         <div id="myPopup"></div>
-
     </div>
 </div>
 
@@ -207,7 +207,6 @@ if(!isset($_SESSION["id"])){
     refreshCalendar(year,month);
     $('.popupCloseButton').hide();
     function displayPopup(date) {
-
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
         popup.innerHTML = date;
