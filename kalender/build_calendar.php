@@ -105,22 +105,26 @@ for ($day = 1; $day <= $days_in_month; $day++) {
 
 
                 foreach (array_keys($events[$cur_date][$value]) as $key2 => $activityType) {
-                    $temp.= "<tr><td>".$value."</td>";
-                    $temp.= "<td>".$activityType."</td>";
+
+
+
+                    $temp.= "<tr><td><div id='val'>".$value."</td> </div>";
+                    $temp.= "<td><div id='act'>".$activityType."</td> </div>";
 
                     $time = $events[$cur_date][$value][$activityType]["duration"];
                     $hours = floor($time / 60);
                     $minutes = ($time % 60);
 
                     if($hours == 0){
-                        $temp.= "<td>".$minutes."m</td></tr>";
+                        $temp.= "<td><div id='tim'>".$minutes."m</td></tr></div>";
                     }
                     else if($minutes == 0){
-                        $temp.= "<td>".$hours."h</td></tr>";
+                        $temp.= "<td><div id='tim'>".$hours."h</td></tr></div>";
                     }
                     else{
-                        $temp.= "<td>".$hours."h ".$minutes."m</td></tr>";
+                        $temp.= "<td ><div id='tim'>".$hours."h ".$minutes."m</td></tr></div>";
                     }
+
 
 
                 }
@@ -132,7 +136,13 @@ for ($day = 1; $day <= $days_in_month; $day++) {
 
             $calendar .=
 
-                "<div hidden id='hidden_text'><table class='popupasi'><tr id='kõik' class='kõik'><th id='aine' class='popuptext'>Aine</th><th id='õppetegevus' class='popuptext'>Õppetegevus</th><th id='kestvus' class='popuptext'>kestvus</th></tr>".$temp.
+                "<div hidden id='hidden_text'>
+                    <table class='popupasi'>
+                    <tr id='kõik' class='kõik'>
+                        <th id='aine' class='popuptext'>Aine</th>
+                        <th id='õppetegevus' class='popuptext'>Õppetegevus</th>
+                        <th id='kestvus' class='popuptext'>kestvus</th>
+                    </tr>".$temp.
 
 
                 "</table></div>";
