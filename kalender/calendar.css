@@ -152,6 +152,7 @@ ul {
     color: white;
     table-layout:fixed;
     overflow:hidden;
+    font-size: 1.6vh;
 
 
 }
@@ -160,7 +161,7 @@ ul {
     line-height: 6vh;
     text-align: center;
     margin-top: 0vh;
-    font-size: 1.3vh;
+    font-size: 0.7vw;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background: linear-gradient(90deg, rgb(226, 226, 226) 0%, rgb(226, 226, 226) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 79%, rgba(226, 226, 226) 79%, rgba(226, 226, 226) 100%);
@@ -175,7 +176,7 @@ ul {
     right: 4vw;
     width: 28vw;
     z-index: 1;
-    top: 10vh;
+    top: 6vh;
     background-color: transparent;
     overflow-x: visible;
 
@@ -194,6 +195,7 @@ ul {
     width: 21%;
     border-top-right-radius: 5px;
 }
+
 
 
 
@@ -224,7 +226,7 @@ ul {
     .popup {
 
         display: none;
-        position: fixed;
+
         z-index: 1;
         padding-top: 100px;
         left: 0;
@@ -240,11 +242,11 @@ ul {
 
     .popupasi {
         width: 90vw;
-        font-size: 1.8vw;
+        font-size: 2.3vw;
         line-height: 10vh;
         z-index: 1;
         margin-left: 5vw;
-        margin-top: 3vh;
+        top: 12vh;
     }
 
     .popuptext {
@@ -252,9 +254,9 @@ ul {
     }
     .popupCloseButton {
         left: 90vw;
-        top: 16.5vh;
+        position: fixed;
+        top: 95px;
         font-size: 30px;
-        height: 5.5vh;
         color: white;
         cursor: pointer;
     }
