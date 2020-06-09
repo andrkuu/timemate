@@ -16,7 +16,7 @@
     background-color: white;
     color: black;
     padding: 1vw;
-    font-size: 1.5vw;
+    font-size: 25px;
     border-color: grey;
     cursor: pointer;
     border-width: 1px;
@@ -72,7 +72,7 @@ label{
 
 #labelForSubjects{
     margin-left: 0;
-    font-size:2vw;
+    font-size:30px;
     font-style: normal;
     border: none;
     margin-right: 12vw;
@@ -85,7 +85,7 @@ input[type="time"] {
     color: white;
     border: none;
     padding: 1vw;
-    font-size: 2vw;
+    font-size: 30px;
     width: 25.5vw;
 }
 
@@ -212,7 +212,7 @@ i {
     .submitButton {
         font-size: 3vh;
         display: block;
-        height: 4vh;
+        height: 10px;
         margin-left: 4vw;
         line-height: 0;
         padding: 7vw;
