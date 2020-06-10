@@ -62,11 +62,13 @@ if(isset($_POST["submitSubject"])){
 
         let day = 0;
 
+
         function changeDay(e) {
             if(e.id === "leftarrow"){
 
                 if(day < 2){
                     day++;
+                    moveLeft();
                 }
 
 
@@ -74,6 +76,7 @@ if(isset($_POST["submitSubject"])){
             }else{
                 if(day > 0){
                     day--;
+                    moveRight();
                 }
             }
 
@@ -94,8 +97,32 @@ if(isset($_POST["submitSubject"])){
             document.getElementById("displayDay").innerHTML = labelText;
         }
 
-
-
+        function moveLeft() {
+            var elem = document.getElementById("displayDay");
+            var pos = -22;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (pos == 0) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.left = pos + 'vw';
+                }
+            }
+        }
+        function moveRight() {
+            var elem = document.getElementById("displayDay");
+            var pos = 25;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (pos == 0) {
+                    clearInterval(id);
+                } else {
+                    pos--;
+                    elem.style.left = pos + 'vw';
+                }
+            }
+        }
     </script>
 
 
@@ -117,27 +144,27 @@ if(isset($_POST["submitSubject"])){
     </div>
     <div id="inputContainer">
         <div id="arrows">
-            <i class="arrow left" onclick="changeDay(this)" id="leftarrow"></i>
+            <div id="leftArrowBox"><i class="arrow left" onclick="changeDay(this)" id="leftarrow"></i></div>
             <i id="displayDay">Täna</i>
-            <i class="arrow right" onclick="changeDay(this)" id="rightarrow"></i>
+            <div id="rightArrowBox"><i class="arrow right" onclick="changeDay(this)" id="rightarrow"></i></div>
         </div>
 
       <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-          <i id="labelForSubjects"><label for="class" id="label">Aine </label></i>
+          <i id="labelForSubjects"><label for="class" id="label">Kursuse </label></i>
             <?php
                 echo getSubjects();
             ?>
       <br />
 
-          <i id="labelForSubjects"><label for="type" id="label">Tüüp </label></i>
+          <i id="labelForSubjects"><label for="type" id="label">Õppetöö tüüp </label></i>
 
         <?php
            echo getActivities();
         ?>
       <br />
 
-          <i id="labelForSubjects"><label for="kulu" id="label">Kulu </label></i>
+          <i id="labelForSubjects"><label for="kulu" id="label">Ajakulu </label></i>
 
           <select class="hourSelect" name="hourSelect" >
           <?php
