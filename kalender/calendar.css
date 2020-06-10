@@ -167,7 +167,7 @@ ul {
     font-size: 1vw;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 43%, rgba(226, 226, 226) 43%, rgba(226, 226, 226) 86.5%, rgba(255,255,255,1) 86.5%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 43%, rgba(226, 226, 226) 43%, rgba(226, 226, 226) 86%, rgba(255,255,255,1) 86%, rgba(255,255,255,1) 100%);
     border-collapse: collapse;
 
 
