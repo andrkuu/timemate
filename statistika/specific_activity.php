@@ -12,9 +12,123 @@ require("../../../config.php");
 $result = null;
 
 
-$colors = ["green","red","blue","cyan","orange","pink","azure","DimGrey","darkslategrey","FireBrick"];
+$conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
+
+$sql = '
+    SELECT 
+        (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
+            (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
+                    sum(duration), 
+                    date(report_date),
+                    date_add(date(report_date), 
+                    interval  -WEEKDAY(date(report_date))+0 day) FirstDayOfWeek, 
+                    date_add(date_add(date(report_date), 
+                    interval  -WEEKDAY(date(report_date))+0 day), interval 6 day) LastDayOfWeek,
+                    week(curdate()) CurrentWeekNumber,
+                    WEEKDAY(date(report_date))+1 DayNumber
+                    
+                    FROM time_reportings 
+                    WHERE user_id=1
+                    AND time_reportings.subject_id = 7
+                    AND WEEK(date(report_date),1) = WEEK(NOW(),1) -0 
+                    AND YEAR(date(report_date)) = YEAR(NOW())
+                            GROUP BY YEAR(time_reportings.report_date), MONTH(time_reportings.report_date), DAY(time_reportings.report_date), time_reportings.subject_id, time_reportings.activity_id
+                            ORDER BY report_date ASC';
+$stmt = $conn -> prepare($sql);
+
+
+//$stmt->bind_param("ii", $userId,$week);
+$stmt -> bind_result($subjectFromDb, $activityFromDb, $durationFromDb, $reportDateFromDb, $firstDayOfWeek, $lastDayOfWeek, $weekNr, $dayNr);
+$stmt -> execute();
+echo $stmt->error;
+
+
+$colors = ["green","orange","blue","cyan","DimGrey","pink","azure","red","darkslategrey","FireBrick"];
+
+
+
 
 $result.="<script>";
+
+$weekSubjects = array();
+$weekActivities = array();
+
+while($stmt -> fetch()){
+
+    if (in_array($activityFromDb, $weekActivities)) {
+
+        $weekActivities[$activityFromDb][$dayNr] = $durationFromDb;
+    }
+    else{
+        //array_push($weekActivities, $activityFromDb);
+        $weekActivities[$activityFromDb][$dayNr] = $durationFromDb;
+    }
+
+}
+//print_r($weekActivities);
+//print_r($weekActivities["Akadeemiline õppetöö"]);
+
+$maxChartValue = 0;
+$colorsIndex = 0;
+$temp = "";
+foreach (array_keys($weekActivities) as $activity) {
+
+    $temp .= "{";
+    $temp .= "label:\"".$activity."\",";
+    $temp .= "type: \"bar\",";
+    $temp .= "backgroundColor: \"".$colors[$colorsIndex]."\",";
+    $colorsIndex += 1;
+    print_r($activity);
+    $temp .= "data: [";
+    //print_r($weekActivities[$activity]);
+    //print_r($weekActivities[$weekActivities[$activity]]);
+    for ($x = 1; $x <=7; $x++) {
+
+
+        //$result.="";
+        if (!empty($weekActivities[$activity][$x])){
+            //echo $x." - " .$weekActivities[$subject][$x]."<br>";
+
+            if ($weekActivities[$activity] > $maxChartValue){
+                $maxChartValue = $weekActivities[$activity][$x];
+            }
+
+            if ($x != 7){
+                $temp.= $weekActivities[$activity][$x].", ";
+            }
+            else{
+                $temp.= $weekActivities[$activity][$x]."";
+
+            }
+        }
+        else{
+            if ($x != 7){
+                $temp.= "0, ";
+            }
+            else{
+                $temp.= "0";
+            }
+        }
+
+    }
+    $temp .= "],";
+    $temp .= "},";
+    //echo $temp;
+
+}
+
+/*
+ * {
+          label: "Akadeemiline õppetöö",
+          type: "bar",
+          backgroundColor: "red",
+          data: [408,547,675,734],
+        },
+ *
+ */
+
+//print_r($weekActivities);
+
 
 
 $result.= "
@@ -25,26 +139,21 @@ $result.= "
         var chart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: [\"1900\", \"1950\", \"1999\", \"2050\"],
+      labels: ['Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev', 'Pühapäev'],
       datasets: [{
           label: \"Keskmine\",
           type: \"line\",
           borderColor: \"blue\",
           backgroundColor: \"blue\",
-          data: [408,547,675,734],
-          fill: false
-        }, {
-          label: \"Akadeemiline õppetöö\",
-          type: \"bar\",
-          backgroundColor: \"red\",
-          data: [408,547,675,734],
-        }, {
-          label: \"Õppematerjalide lugemine\",
-          type: \"bar\",
-          backgroundColor: \"orange\",
-          backgroundColorHover: \"#3e95cd\",
-          data: [133,221,783,2478]
-        }
+          data: [20,5,10,22,15,6,12],
+          fill: false,
+          lineTension: 0    
+          
+        }, 
+        
+        
+        ".$temp."
+        
       ]
     },
     options: {
@@ -54,34 +163,47 @@ $result.= "
       },
       legend: { display: true },
       scales: {
-        xAxes: [{ stacked: true }],
-        yAxes: [{ stacked: true }]
-          }
-    },
-    
-    scales: {
-                    yAxes: [{
-                        display: true,
-                        stacked: true,
+        xAxes: [{ 
+        
+        stacked: true 
+        
+        }],
+        yAxes: [{ 
+        
+        stacked: true, 
+        
+        display: true,
                         ticks: {
                             display: true,
                             suggestedMin: 0,
-                  
+                               
+                            suggestedMax: ".(intval($maxChartValue)+15).",
+                            
                             callback: function(value, index, values) {
                                 return  value +' min';
                             }
                         }
-                    }],
-                        xAxes: [{
-                            stacked: true,
-                            barThickness: 10
-                    }]
-                },
+        
+        }]
+          }
+    },
+    
+   
     
 });
 
         
        ";
+
+
+
+
+
+
+
+
+
+
 
 /*
 $maxChartValue = 0;
