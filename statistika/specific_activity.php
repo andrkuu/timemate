@@ -10,81 +10,78 @@ $week = $_POST["week"];
 require("../../../config.php");
 
 $result = null;
-$conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-
-$sql = '
-    SELECT 
-        (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
-            (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
-                    sum(duration), 
-                    date(report_date),
-                    date_add(date(report_date), 
-                    interval  -WEEKDAY(date(report_date))+0 day) FirstDayOfWeek, 
-                    date_add(date_add(date(report_date), 
-                    interval  -WEEKDAY(date(report_date))+0 day), interval 6 day) LastDayOfWeek,
-                    week(curdate()) CurrentWeekNumber,
-                    WEEKDAY(date(report_date))+1 DayNumber
-                    
-                    FROM time_reportings 
-                    WHERE user_id=?
-                    AND WEEK(date(report_date),1) = WEEK(NOW(),1) -? 
-                    AND YEAR(date(report_date)) = YEAR(NOW())
-                    AND time_reportings.subject_id = 1
-                            GROUP BY time_reportings.subject_id, DATE(report_date)
-                            ORDER BY report_date ASC';
-$stmt = $conn -> prepare($sql);
-
-
-$stmt->bind_param("ii", $userId,$week);
-$stmt -> bind_result($subjectFromDb, $activityFromDb, $durationFromDb, $reportDateFromDb,$firstDayOfWeek,$lastDayOfWeek,$weekNr,$dayNr);
-$stmt -> execute();
-echo $stmt->error;
 
 
 $colors = ["green","red","blue","cyan","orange","pink","azure","DimGrey","darkslategrey","FireBrick"];
-$colorsIndex = 0;
-$weekSubjects = array();
-$weekActivities = array();
-while($stmt -> fetch()){
 
-    if (in_array($subjectFromDb, $weekSubjects)) {
-
-        $weekActivities[$subjectFromDb][$dayNr] = $durationFromDb;
-    }
-    else{
-        array_push($weekSubjects,$subjectFromDb);
-        $weekActivities[$subjectFromDb][$dayNr] = $durationFromDb;
-    }
-
-}
-
-$stmt->close();
-$conn->close();
 $result.="<script>";
 
 
 $result.= "
        
-        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"specific_activity\"></canvas><canvas class=\"week_activities\" id=\"week_activities\" width=1000px height=700px ></canvas>';
+        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"specific_activity\"  width=1000px height=700px ></canvas><canvas id=\"week_activities\"></canvas><canvas id=\"subject_activities\" width=500 height=300vh></canvas>';
         var ctx = document.getElementById('specific_activity').getContext('2d');
         
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                datasets: [{
-                    label: 'Bar Dataset',
-                    data: [10, 20, 30, 40]
-                }, {
-                    label: 'Line Dataset',
-                    data: [50, 50, 50, 50],
+        var chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: [\"1900\", \"1950\", \"1999\", \"2050\"],
+      datasets: [{
+          label: \"Keskmine\",
+          type: \"line\",
+          borderColor: \"blue\",
+          backgroundColor: \"blue\",
+          data: [408,547,675,734],
+          fill: false
+        }, {
+          label: \"Akadeemiline õppetöö\",
+          type: \"bar\",
+          backgroundColor: \"red\",
+          data: [408,547,675,734],
+        }, {
+          label: \"Õppematerjalide lugemine\",
+          type: \"bar\",
+          backgroundColor: \"orange\",
+          backgroundColorHover: \"#3e95cd\",
+          data: [133,221,783,2478]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Mingi graafik'
+      },
+      legend: { display: true },
+      scales: {
+        xAxes: [{ stacked: true }],
+        yAxes: [{ stacked: true }]
+          }
+    },
+    
+    scales: {
+                    yAxes: [{
+                        display: true,
+                        stacked: true,
+                        ticks: {
+                            display: true,
+                            suggestedMin: 0,
+                  
+                            callback: function(value, index, values) {
+                                return  value +' min';
+                            }
+                        }
+                    }],
+                        xAxes: [{
+                            stacked: true,
+                            barThickness: 10
+                    }]
+                },
+    
+});
+
         
-                    // Changes this dataset to become a line
-                    type: 'line'
-                }],
-                labels: ['January', 'February', 'March', 'April']
-            },
-            options: options
-        });";
+       ";
 
 /*
 $maxChartValue = 0;
