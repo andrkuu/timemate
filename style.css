@@ -149,7 +149,18 @@ body {
 .chosen {
     color: white;
 }
-
+#Linkout{
+    visibility: hidden;
+    display: none;
+}
+#Links{
+    visibility: hidden;
+    display: none;
+}
+#img_container{
+    visibility: hidden;
+    display: none;
+}
 
 
 @media only screen and (max-width: 800px) {
@@ -250,6 +261,8 @@ body {
         width: 34vw;
         border: none;
         font-size: 2.5vh;
+        visibility: visible;
+        display: block;
     }
 
     #Linkout{
@@ -263,11 +276,9 @@ body {
         padding: 0;
         color: white;
         font-size: 2.5vh;
-    }
-
-    #topbar a:hover {
-        background-color: #b40000;
-        color: black;
+        visibility: visible;
+        display: block;
+        cursor: pointer;
     }
 
     .active {
@@ -281,13 +292,20 @@ body {
         text-align: center;
         position: relative;
         right: 0;
+        visibility: visible;
+        display: block;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
     }
     #dropdown_img{
-        height: 2vh;
+        height: 1.9vh;
     }
-    /**/
 
 }
+
+    /**/
 
 
 
