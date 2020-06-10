@@ -177,7 +177,7 @@ $result.= "
                             display: true,
                             suggestedMin: 0,
                                
-                            suggestedMax: ".(intval($maxChartValue)+15).",
+                            //suggestedMax: ".(intval($maxChartValue)+15).",
                             
                             callback: function(value, index, values) {
                                 return  value +' min';
