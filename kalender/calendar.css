@@ -147,24 +147,27 @@ ul {
     flex-wrap: nowrap;
     margin: 0;
     padding: 0;
-    height: 8vh
+    height: 8vh;
     flex-direction: row;
     color: white;
     table-layout:fixed;
     overflow:hidden;
     font-size: 1.6vh;
+    width: 18vw;
 
 
 }
 .popupasi {
+
+    max-width: 28vw;
     width: 28vw;
     line-height: 6vh;
     text-align: center;
     margin-top: 0vh;
-    font-size: 0.7vw;
+    font-size: 1vw;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: linear-gradient(90deg, rgb(226, 226, 226) 0%, rgb(226, 226, 226) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 79%, rgba(226, 226, 226) 79%, rgba(226, 226, 226) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 43%, rgba(226, 226, 226) 43%, rgba(226, 226, 226) 86%, rgba(255,255,255,1) 86%, rgba(255,255,255,1) 100%);
     border-collapse: collapse;
 
 
@@ -173,7 +176,7 @@ ul {
 .popup {
     height: 30%;
     position: fixed;
-    right: 4vw;
+    right: 6vw;
     width: 28vw;
     z-index: 1;
     top: 6vh;
@@ -183,16 +186,10 @@ ul {
 
 }
 #aine{
-    width: 46%;
     border-top-left-radius: 5px;
+    width: 5vw;
  }
-#õppetegevus{
-    left: 46%;
-    width: 33%;
-}
 #kestvus{
-    left: 79%;
-    width: 21%;
     border-top-right-radius: 5px;
 }
 
@@ -206,14 +203,46 @@ ul {
 
 .popupCloseButton {
     position: absolute;
-    top: 0;
-    right: 0;
+    right: -4.5vw;
     color: white;
     width: 1vw;
     height: 1vh;
     cursor: pointer;
 
 
+}
+
+#val{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: rgb(226, 226, 226);
+    width: 13vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+
+}
+
+#act{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 13vw;
+    white-space: nowrap;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    background-color: rgba(255,255,255,1);
+}
+
+#tim{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    background-color: rgb(226, 226, 226);
+}
+#Daynr{
+    color: transparent;
 }
 
 @media only screen and (max-width: 800px) {
@@ -242,14 +271,17 @@ ul {
 
     .popupasi {
         width: 90vw;
+        max-width: 90vw;
         font-size: 2.3vw;
         line-height: 10vh;
         z-index: 1;
         margin-left: 5vw;
         top: 12vh;
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(226, 226, 226) 40%, rgba(226, 226, 226) 81%, rgba(255,255,255,1) 81%, rgba(255,255,255,1) 100%);
     }
 
     .popuptext {
+
         font-size: 1.6vh;
     }
     .popupCloseButton {
@@ -259,6 +291,21 @@ ul {
         font-size: 30px;
         color: white;
         cursor: pointer;
+    }
+    #val{
+        width: 35vw;
+    }
+
+    #act{
+        width: 35vw;
+    }
+
+    #Daynr{
+        position: absolute;
+        top: 2vh;
+        left: 37%;
+        font-size: 6vw;
+        color: white;
     }
 
 

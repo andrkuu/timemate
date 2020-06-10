@@ -7,14 +7,36 @@
     cursor: pointer;
     border-width: 1px;
     border-radius:2vh;
-    width: 40vw;
+    width: 35vw;
     position: absolute;
     top: 10vh;
-    left:30vw;
+    left:32.5vw;
+}
 
-
+#statistics_teacher{
+    height: 35vw;
+    width: 35vw;
+    background-color: #b71234;
+    position: absolute;
+    left: 32.5vw;
+    top: 25vh;
+    font-size: 4vw;
+    line-height: 35vw;
+    text-align: center;
+    color: white;
 }
 
 @media only screen and (max-width: 800px) {
+    .dropdown{
+        width: 80vw;
+        font-size: 3vw;
+        left: 10vw;
+    }
 
+    #statistics_teacher{
+        height: 80vw;
+        width: 80vw;
+        left: 10vw;
+        line-height: 80vw;
+    }
 }

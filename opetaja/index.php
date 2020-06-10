@@ -27,6 +27,7 @@ if(!isset($_SESSION["id"])){
     echo getSubjects();
     ?>
     <br />
+    <div id="statistics_teacher">Statistics</div>
 </form>
 
 </body>
