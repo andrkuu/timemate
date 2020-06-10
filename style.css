@@ -88,6 +88,7 @@ body {
     position: relative;
     top: 0;
     width: 25vw;
+    z-index: 1;
 }
 .link_icons{
     height: 8vh;
@@ -98,22 +99,30 @@ body {
     top: 11vh;
     left: 16vw;
     pointer-events: none;
+    z-index: 2;
 }
+
 #second_icon{
     top: 35vh;
     left: 16vw;
     pointer-events: none;
+    z-index: 2;
 }
+
 #third_icon{
     top: 60vh;
     left: 16vw;
     pointer-events: none;
+    z-index: 2;
 }
+
 #fourth_icon{
     top: 83vh;
     left: 16vw;
     pointer-events: none;
+    z-index: 2;
 }
+
 .page {
     color: white;
     background-color: #b71234;
