@@ -31,7 +31,7 @@ function getSubjects(){
     echo $conn -> error;
     $stmt -> bind_result($idFromDb, $nameFromDb, $codeFromDb);
     $stmt -> execute();
-    $result .= "<select name=\"subject\" class=\"dropdown\">";
+    $result .= "<select id=\"subject\" name=\"subject\" class=\"dropdown\">";
 
     while($stmt -> fetch()){
         $result .= "<option class='option' value=\"".$idFromDb."\">".$nameFromDb."</option> \n";
