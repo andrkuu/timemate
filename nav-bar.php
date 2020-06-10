@@ -6,12 +6,12 @@
         header("Location: ../");
         exit();
     }
-    echo "<div id=\"topbar\"><img src=\"../images/tlulogo.png\" id=\"tlu_logo\" alt=\"Tlu logo\"> 
-    <div id='client_name'><a href=\"../seaded\" id='client_link'>".$_SESSION["userFirstName"]. " ".$_SESSION["userLastName"]."</a></div>
+    echo "<div id=\"topbar\"><a href=\"../aine\" id='client_link'><img src=\"../images/tlulogo.png\" id=\"tlu_logo\" alt=\"Tlu logo\"></a>
+    <div id='client_name'>".$_SESSION["userFirstName"]. " ".$_SESSION["userLastName"]."</div>
       <form method=\"POST\" action=\"". htmlspecialchars($_SERVER["PHP_SELF"])."\">
         <button type=\"submit\" id=\"logout\" name=\"logout\">
             <img id='logout_img' src=\"../images/logout.png\" alt=\"logout\">
-        </button>       
+        </button>
     </form> 
     
     <div id=\"myLinks\">
@@ -37,7 +37,6 @@
         y.style.display = \"flex\";
         z.style.display = \"flex\";       
         r.style.transform = \"rotate(360deg)\";
-
       } else {
         x.style.display = \"block\";
         y.style.display = \"none\";
