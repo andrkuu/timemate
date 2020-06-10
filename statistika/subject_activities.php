@@ -61,7 +61,7 @@ $result.= "
         
         
         
-        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"week_activities\"></canvas><canvas id=\"subject_activities\" width=500 height=400vh></canvas>';
+        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"subject_activities\" width=500 height=300vh></canvas><canvas id=\"week_activities\"  width=0px height=0px ></canvas><canvas id=\"specific_activity\"  width=0px height=0px ></canvas>';
         var ctx = document.getElementById('subject_activities').getContext('2d');
         
         var chart = new Chart(ctx, {
@@ -157,7 +157,7 @@ if(sizeof($weekActivities) == 0){
     $result.="<script>";
     $result.= "
    
-        document.getElementById(\"statistics\").innerHTML = '</canvas><canvas id=\"week_activities\" width=500px height=500px;></canvas><canvas id=\"subject_activities\" width=250px height=250px style=\"display: block; height: 500px; width: 500px;\">';
+        document.getElementById(\"statistics\").innerHTML = '</canvas><canvas id=\"week_activities\" width=500 height=300vh;></canvas><canvas id=\"subject_activities\" width=500 height=250>';
         var ctx = document.getElementById('subject_activities').getContext('2d');
         
         var chart = new Chart(ctx, {
