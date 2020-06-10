@@ -8,10 +8,19 @@
     }
     echo "<div id=\"topbar\"><img src=\"../images/tlulogo.png\" id=\"tlu_logo\" alt=\"Tlu logo\"> 
     <div id='client_name'><a href=\"../seaded\" id='client_link'>".$_SESSION["userFirstName"]. " ".$_SESSION["userLastName"]."</a></div>
+     
+      <form method=\"POST\" action=\"". htmlspecialchars($_SERVER["PHP_SELF"])."\">
+        <button type=\"submit\" id=\"logout\" name=\"logout\">
+            <img id='logout_img' src=\"../images/logout.png\" alt=\"logout\">
+        </button>       
+    </form> 
     
     <div id=\"myLinks\">
-    <a id=\"Links\" href=\"#news\">News</a>
-    <a id=\"Links\" href=\"#contact\">Contact</a>
+    <a id=\"Links\" href=\"../seaded\">Seaded</a>
+    <form method=\"POST\" action=\"". htmlspecialchars($_SERVER["PHP_SELF"])."\">
+        <button type=\"submit\"  id=\"Linkout\" name=\"logout\">Logi välja</button>       
+    </form>
+    
   </div>
   <a href=\"javascript:void(0);\" id='img_container' onclick=\"myFunction()\">
     <img id='dropdown_img' src=\"../images/dropdown.png\" alt=\"dropdown\">
@@ -35,11 +44,7 @@
     }
 </script>
   
-   <form method=\"POST\" action=\"". htmlspecialchars($_SERVER["PHP_SELF"])."\">
-        <button type=\"submit\" id=\"logout\" name=\"logout\">
-            <img id='logout_img' src=\"../images/logout.png\" alt=\"logout\">
-        </button>       
-    </form> 
+ 
   
    
     <link rel=\"stylesheet\" href=\"../style.css\">

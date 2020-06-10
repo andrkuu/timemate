@@ -213,32 +213,56 @@ body {
         margin:0;
     }
 
+    #logout{
+        visibility: hidden;
+        display: none;
+    }
+
     /**/
 
 
     #myLinks{
         height: 3vh;
+        text-align: center;
     }
 
     #topbar #myLinks {
         display: none;
     }
 
-    #topbar #Links {
-        float: left;
+    #Links {
         color: white;
         text-decoration: none;
-        line-height: 5vh;
+        line-height: 5.1vh;
         margin-right: 3vw;
+        position: absolute;
+        left: 10.5vw;
+        background-color: #b71234;
+        width: 34vw;
+        border: none;
+        font-size: 2.5vh;
+    }
+
+    #Linkout{
+        position: absolute;
+        left: 55vw;
+        top: 0;
+        border: none;
+        height: 5vh;
+        width: 34vw;
+        background-color:#b71234;
+        padding: 0;
+        color: white;
+        font-size: 2.5vh;
     }
 
     #topbar a:hover {
-        background-color: #ddd;
+        background-color: #b40000;
         color: black;
     }
 
     .active {
-        background-color: #4CAF50;
+        background-color: #b40000;
         color: white;
     }
     #img_container{
@@ -246,6 +270,8 @@ body {
         width: 5vh;
         line-height: 6vh;
         text-align: center;
+        position: relative;
+        right: 0;
     }
     #dropdown_img{
         height: 2vh;
