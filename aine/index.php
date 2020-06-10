@@ -151,20 +151,23 @@ if(isset($_POST["submitSubject"])){
         </div>
 
       <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-
+        <div id="courseBox">
           <i id="labelForSubjects"><label for="class" id="label">Kursuse </label></i>
             <?php
                 echo getSubjects();
             ?>
+         </div>
       <br />
+         <div id="labelBox" >
 
           <i id="labelForSubjects"><label for="type" id="label">Õppetöö tüüp </label></i>
 
         <?php
            echo getActivities();
         ?>
+         </div>
       <br />
-
+        <div id="timeBox">
           <i id="labelForSubjects"><label for="kulu" id="label">Ajakulu </label></i>
 
           <select class="hourSelect" name="hourSelect" >
@@ -188,7 +191,7 @@ if(isset($_POST["submitSubject"])){
               }
               ?>
           </select>
-
+        </div>
           <input type="hidden" name="daynr" id="daynr" value="0" />
 
           <div><button name="submitSubject" type="submit_button" class="submitButton" >Sisesta</button></div>
