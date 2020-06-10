@@ -88,6 +88,7 @@ label{
     padding-left: 15vw;
     padding-right: 15vw;
     border-radius:2vw;
+    min-height:  50px;
 }
 
 #labelForSubjects{
@@ -149,16 +150,9 @@ input[type="time"] {
 #displayDay {
     position: relative;
     border: none;
-
-    max-font-size: 40px;
     font-style: normal;
     padding:3vw;
-    height:8vh;
-    width:43vw;
     user-select: none;
-    animation:right;
-    animation-duration: 2s;
-    animation-play-state: running;
     z-index: 0;
     text-align: center;
     font-size:5vw;
@@ -373,7 +367,7 @@ i {
     }
     .submitButton{
         margin-left: 6vw;
-        min-height: 200px;
+        min-height:  50px;
         align-items: center;
     }
     #courseBox{
