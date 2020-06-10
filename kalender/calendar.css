@@ -241,6 +241,9 @@ ul {
     padding-right: 0.5vw;
     background-color: rgb(226, 226, 226);
 }
+#Daynr{
+    color: transparent;
+}
 
 @media only screen and (max-width: 800px) {
     .kalender {
@@ -297,8 +300,12 @@ ul {
         width: 35vw;
     }
 
-    #tim{
-
+    #Daynr{
+        position: absolute;
+        top: 2vh;
+        left: 37%;
+        font-size: 6vw;
+        color: white;
     }
 
 
