@@ -44,8 +44,9 @@ if(!isset($_SESSION["id"])){
 </ul>
 </div>
     <div id="statistics" class="statistics">
-        <canvas id="week_activities" width=500 height=500></canvas>
-        <canvas id="subject_activities" width=500 height=500></canvas>
+        <canvas id="specific_activity" width=500 height=500></canvas>
+
+
     </div>
 <!-- <button id="toggle" onclick="toggleChart()">näita/peida kõik</button> -->
 <div id="statistics_box"></div>
@@ -68,10 +69,10 @@ if(!isset($_SESSION["id"])){
             weekNr = 0;
         };
 
-        var chartNr = 1;
+        var chartNr = 0;
         var chartType = "";
 
-        var chartTypes = ["week_activities", "subject_activities"];
+        var chartTypes = ["week_activities", "subject_activities", "specific_activity"]; //"week_activities", "subject_activities",
 
         function toggleChart(){
             console.log("a");
@@ -120,7 +121,7 @@ if(!isset($_SESSION["id"])){
 
      function swapCanvases() {
 
-         if (chartNr < 1) {
+         if (chartNr < 2) {
              chartNr++;
          } else {
              chartNr = 0;
@@ -153,7 +154,7 @@ if(!isset($_SESSION["id"])){
 
         function refreshGraph(weekNr) {
             console.log("Refresh");
-
+            chartType = chartTypes[chartNr];
             $.ajax(
                 {
                     url: chartType + ".php",
@@ -185,7 +186,11 @@ if(!isset($_SESSION["id"])){
 
 
         $(document).ready(function () {
-            refreshGraph(0);
+
+            swapCanvases();
+            refreshGraph(weekNr);
+            weekNr = 0;
+
         });
 
 
