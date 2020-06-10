@@ -6,6 +6,9 @@ function getActivities(){
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
     $stmt = $conn -> prepare("SELECT id, name FROM activities ORDER BY name");
     echo $conn -> error;
+
+    mysqli_set_charset($conn, 'utf8');
+
     $stmt -> bind_result($idFromDb, $name);
     $stmt -> execute();
     $result .= "<select name=\"type\" class=\"dropdown\">";

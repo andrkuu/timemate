@@ -61,7 +61,7 @@ $result.= "
         
         
         
-        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"week_activities\" width=500 height=500vh;></canvas><canvas id=\"subject_activities\" width=500 height=500vh></canvas>';
+        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"week_activities\"></canvas><canvas id=\"subject_activities\" width=500 height=400vh></canvas>';
         var ctx = document.getElementById('subject_activities').getContext('2d');
         
         var chart = new Chart(ctx, {

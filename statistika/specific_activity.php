@@ -29,6 +29,7 @@ $sql = '
                     WHERE user_id=?
                     AND WEEK(date(report_date),1) = WEEK(NOW(),1) -? 
                     AND YEAR(date(report_date)) = YEAR(NOW())
+                    AND time_reportings.subject_id = 1
                             GROUP BY time_reportings.subject_id, DATE(report_date)
                             ORDER BY report_date ASC';
 $stmt = $conn -> prepare($sql);
@@ -64,20 +65,28 @@ $result.="<script>";
 
 $result.= "
        
-        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"subject_activities\" width=200vw height=200%></canvas><canvas class=\"week_activities\" id=\"week_activities\" width=1000px height=700px ></canvas>';
-        var ctx = document.getElementById('week_activities').getContext('2d');
-
+        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"specific_activity\"></canvas><canvas class=\"week_activities\" id=\"week_activities\" width=1000px height=700px ></canvas>';
+        var ctx = document.getElementById('specific_activity').getContext('2d');
         
-
-        var chart = new Chart(ctx, {
-
+        new Chart(ctx, {
             type: 'bar',
-
             data: {
-                labels: ['Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev', 'Pühapäev'],
-                datasets: [";
+                datasets: [{
+                    label: 'Bar Dataset',
+                    data: [10, 20, 30, 40]
+                }, {
+                    label: 'Line Dataset',
+                    data: [50, 50, 50, 50],
+        
+                    // Changes this dataset to become a line
+                    type: 'line'
+                }],
+                labels: ['January', 'February', 'March', 'April']
+            },
+            options: options
+        });";
 
-
+/*
 $maxChartValue = 0;
 
 
@@ -224,6 +233,7 @@ $result.= "\"hover\": {
             
             
         });";
+*/
 $result.="</script>";
 
 echo $result;
