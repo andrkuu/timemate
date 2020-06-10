@@ -76,6 +76,7 @@ if(!isset($_SESSION["id"])){
             e.stopPropagation();
             let child = e.target.childNodes[0];
             console.log(child.innerText);
+            paev = child.innerHTML;
             let events = e.target.childNodes[2];
             console.log(events.innerHTML);
             displayPopup(events.innerHTML);
@@ -139,6 +140,7 @@ if(!isset($_SESSION["id"])){
     <div>
         <div class="popupCloseButton">&times;</div>
         <div id="myPopup"></div>
+        <div id="Daynr"></div>
     </div>
 </div>
 
@@ -207,9 +209,11 @@ if(!isset($_SESSION["id"])){
     refreshCalendar(year,month);
     $('.popupCloseButton').hide();
     function displayPopup(date) {
+
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
         popup.innerHTML = date;
+        document.getElementById("Daynr").innerHTML = (year + '/' + month + '/' + paev);
         $('.popup').show();
         $('.popupCloseButton').show();
         $('.popupCloseButton').click(function(){
