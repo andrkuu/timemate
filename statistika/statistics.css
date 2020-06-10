@@ -24,7 +24,7 @@ ul {
     width: 50vw;
     background-color: #ffffff;
     position: absolute;
-    left: 45vw;
+    left: 40vw;
     top: 25vh;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -92,6 +92,7 @@ ul {
         left: 5%;
         height: 500px;
         overflow-y: auto;
+        overflow-x: auto;
     }
 
     #test {
