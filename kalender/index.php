@@ -213,6 +213,13 @@ if(!isset($_SESSION["id"])){
         $('.popupCloseButton').click(function(){
             $('.popup').hide();
         });
+        $(document).click(function() {
+            var container = $(".popupasi");
+            if (!container.is(event.target) &&
+                !container.has(event.target).length) {
+                $('.popup').hide();
+            }
+        });
 
 
     }
