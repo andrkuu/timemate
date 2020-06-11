@@ -208,12 +208,12 @@ if(!isset($_SESSION["id"])){
 
     refreshCalendar(year,month);
     $('.popupCloseButton').hide();
-    function displayPopup(date) {
 
+    function displayPopup(date) {
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
         popup.innerHTML = date;
-        document.getElementById("Daynr").innerHTML = (year + '/' + month + '/' + paev);
+        document.getElementById("Daynr").innerHTML = (month + '/' + paev + '/' + year);
         $('.popup').show();
         $('.popupCloseButton').show();
         $('.popupCloseButton').click(function(){
