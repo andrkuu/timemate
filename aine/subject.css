@@ -1,9 +1,8 @@
 
 #inputContainer{
-    position: absolute;
     padding: 0;
     left: 25vw;
-    margin-top:-93vh;
+    margin-top:-95vh;
     height: 70vh;
     justify-content: space-evenly;
     align-items: center;
@@ -12,7 +11,6 @@
     user-select: none;
     min-width: 300px;
     min-height: 300px;
-
 
 }
 
@@ -26,9 +24,9 @@
     border-color: grey;
     cursor: pointer;
     border-width: 1px;
-    border-radius:2vh;
+    border-radius:1vh;
     width: 26vw;
-
+    user-select: none;
 
 }
 
@@ -120,8 +118,8 @@ input[type="time"] {
 
 #rightArrowBox{
     height:auto;
-    width:30vw;
-    z-index: 0;
+    width:22vw;
+    z-index: 1;
     align-items: end;
     background-color: white;
     cursor:pointer;
@@ -130,8 +128,8 @@ input[type="time"] {
 
 #leftArrowBox{
     height:15vh;
-    width:30vw;
-    z-index: 0;
+    width:13vw;
+    z-index: 1;
     background-color: white;
     cursor:pointer;
 }
@@ -153,17 +151,19 @@ input[type="time"] {
     font-style: normal;
     padding:4vh;
     user-select: none;
-    z-index: -1;
+    z-index: -2;
     text-align: center;
     font-size:4vw;
     width: 14vw;
     max-height: 50px;
+    margin-left: 2vw;
 }
 
 
 #arrows{
     display: inline-flex;
     width: 67vw;
+    margin-left: 20vw;
 
 }
 
@@ -179,11 +179,11 @@ i {
     margin-top:4vw;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    margin-left: 8vw;
+    margin-left: 10vw;
 }
 
 .left {
-    margin-left: 12vw;
+    margin-left: 2vw;
     margin-top:4vw;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
@@ -240,10 +240,6 @@ i {
         width: 60vw;
         text-overflow: ellipsis;
         overflow: hidden;
-        -webkit-user-select: none; /* Safari */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* IE10+/Edge */
-        user-select: none; /* Standard */
 
     }
 
@@ -304,7 +300,7 @@ i {
         position:absolute;
         left:0;
         height: 10vh;
-        width:14vw;
+        width:10vw;
         background-color: white;
     }
 
