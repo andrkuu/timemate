@@ -5,6 +5,7 @@ ul {
 #kuu {
     color: white;
     font-size: 16px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #aasta {
@@ -37,12 +38,15 @@ ul {
     margin-right: 2vw;
     padding: 0;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
 }
 
 .month ul li {
     color: white;
     font-size: 20px;
     letter-spacing: 3px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .month .prev {

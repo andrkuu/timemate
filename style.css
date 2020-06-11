@@ -53,6 +53,10 @@ body {
     line-height: 4vh;
     text-decoration: none;
     color:white;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
 }
 
 #client_link{
@@ -299,9 +303,11 @@ body {
         -moz-transition: all 0.5s ease-in-out;
         -o-transition: all 0.5s ease-in-out;
         transition: all 0.5s ease-in-out;
+        -webkit-tap-highlight-color: transparent;
     }
     #dropdown_img{
         height: 1.9vh;
+        -webkit-tap-highlight-color: transparent;
     }
 
 }
