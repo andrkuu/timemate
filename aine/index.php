@@ -61,6 +61,7 @@ if(isset($_POST["submitSubject"])){
     <script>
 
         let day = 0;
+        var pos = -19;
 
 
         function changeDay(e) {
@@ -99,7 +100,7 @@ if(isset($_POST["submitSubject"])){
 
         function moveLeft() {
             var elem = document.getElementById("displayDay");
-            var pos = -22;
+            var pos = -19;
             var id = setInterval(frame, 10);
             function frame() {
                 if (pos == 0) {
@@ -112,7 +113,7 @@ if(isset($_POST["submitSubject"])){
         }
         function moveRight() {
             var elem = document.getElementById("displayDay");
-            var pos = 25;
+            var pos = 19;
             var id = setInterval(frame, 10);
             function frame() {
                 if (pos == 0) {
