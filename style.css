@@ -105,12 +105,12 @@ body {
     align-items: center;
     font-size: 3vw;
     cursor: pointer;
-    display: grid;
+    display: flex;
     padding:0;
     transition: 0.3s;
 }
 .page:hover{
-    background-color: #9da59e;
+    background-color:  #b71234;
     color: white;
     border-radius: 0px 30px 30px 0px;
     width: 25vw;
@@ -121,17 +121,18 @@ body {
     visibility: hidden;
     display: none;
     transition: 0.3s visibility;
+    line-height: 24vh;
 }
+
 .link_icons{
     height: 8vh;
-    position: absolute;
-    line-height: 24vh;
-    margin-left: 2.5vw;
-    margin-top: 8vh;
+    position: relative;
+    margin-left: 1vw;
     transition: 0.3s margin-left;
 }
 .page:hover .link_icons{
-     margin-left: 18vw;
+     margin-left: 4vw;
+     background-color:  transparent;
  }
 
 .page:hover .link_names{
