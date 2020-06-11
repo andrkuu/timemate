@@ -108,7 +108,7 @@ for ($day = 1; $day <= $days_in_month; $day++) {
 
 
 
-                    $temp.= "<tr><td><div id='val'>".$value."</td> </div>";
+                    $temp.= "<tr id='rid'><td><div id='val'>".$value."</td> </div>";
                     $temp.= "<td><div id='act'>".$activityType."</td> </div>";
 
                     $time = $events[$cur_date][$value][$activityType]["duration"];
