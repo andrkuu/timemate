@@ -63,7 +63,7 @@ if(isset($_POST["submitSubject"])){
 
 
         function changeDay(e) {
-            if(e.id === "leftarrow"){
+            if(e.id === "leftArrowBox"){
 
                 if(day < 2){
                     day++;
@@ -136,9 +136,9 @@ if(isset($_POST["submitSubject"])){
     </div>
     <div id="inputContainer">
         <div id="arrows">
-            <div id="leftArrowBox"><i class="arrow left" onclick="changeDay(this)" id="leftarrow"></i></div>
+            <div id="leftArrowBox"  onclick="changeDay(this)"><i class="arrow left" id="leftarrow"></i></div>
             <i id="displayDay">Täna</i>
-            <div id="rightArrowBox"><i class="arrow right" onclick="changeDay(this)" id="rightarrow"></i></div>
+            <div id="rightArrowBox" onclick="changeDay(this)"><i class="arrow right"  id="rightarrow"></i></div>
         </div>
 
       <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
