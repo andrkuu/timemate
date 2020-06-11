@@ -122,24 +122,25 @@ body {
     visibility: hidden;
     display: none;
     transition: 0.3s visibility;
-    text-decoration: none;
     color: white;
 }
 
 .link_icons{
-    height: 8vh;
+    width: 5vw;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    line-height: 24vh;
     position: relative;
-    margin-left: 1vw;
+    text-align: center;
     transition: 0.3s margin-left;
 }
 .page:hover .link_icons{
-     margin-left: 4vw;
      background-color:  transparent;
  }
 
 .page:hover .link_names{
     visibility: visible;
-    display: flex;
+    display: block;
 }
 #chosen {
     background-color: #b71234;
@@ -224,13 +225,12 @@ body {
 
     }
     .page:hover{
+        margin: 0;
         width: 33.3vw;
         background-color: #b71234;
     }
 
-    .page:hover .link_names{
-        margin-left: 30%;
-    }
+
 
     #chosen {
         background-color: white;
@@ -249,7 +249,7 @@ body {
 
     .link_names{
         margin:0;
-        margin-left: 30%;
+        width: 33.3vw;
     }
 
     #logout{
