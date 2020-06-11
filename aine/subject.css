@@ -120,9 +120,9 @@ input[type="time"] {
 
 #rightArrowBox{
     margin-top: 2vh;
-    height:14vh;
+    height:auto;
     width:30vw;
-    z-index: 1;
+    z-index: 0;
     align-items: end;
     background-color: white;
 }
@@ -130,7 +130,7 @@ input[type="time"] {
 #leftArrowBox{
     height:15vh;
     width:30vw;
-    z-index: 1;
+    z-index: 0;
     background-color: white;
     margin-top: 2vh;
 
@@ -153,7 +153,7 @@ input[type="time"] {
     font-style: normal;
     padding:3vw;
     user-select: none;
-    z-index: 0;
+    z-index: -1;
     text-align: center;
     font-size:4vw;
     width: 14vw;
@@ -217,7 +217,7 @@ i {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
     #inputContainer {
         position: absolute;
         left:3vw;
@@ -234,8 +234,8 @@ i {
     .dropdown {
         background-color: white;
         color: black;
-        padding: 2vw;
-        font-size: 5vw;
+        padding: 1.5vw;
+        font-size: 4vw;
         border-color: grey;
         cursor: pointer;
         border-width: 1px;
@@ -252,18 +252,19 @@ i {
         text-overflow: ellipsis;
         overflow: hidden;
         width:60vw;
+        font-size: 3vh;
     }
 
     #labelForSubjects {
         margin-top: 2vh;
-        margin-left: 23vw;
+        margin-left: 22vw;
         display: inline-block;
         width:30vw;
     }
 
     .submitButton {
-        position: fixed;
-        top: 75vh;
+        position: absolute;
+        top: 60vh;
         font-size: 3vh;
         display: block;
         height: 10px;
@@ -280,7 +281,7 @@ i {
         color: white;
         border: none;
         padding: 5vw;
-        font-size: 5vw;
+        font-size: 4vw;
         width: 52vw;
         overflow-y: auto;
     }
@@ -288,7 +289,7 @@ i {
     #arrows{
         top:5vh;
         width: 64vw;
-
+        margin-top: 1vh;
     }
     #rightArrowBox{
         margin-top: 1vh;
@@ -342,8 +343,8 @@ i {
         margin: 0;
         background-color: white;
         color: black;
-        padding: 2vw;
-        font-size: 5vw;
+        padding: 1.5vw;
+        font-size: 3vw;
         border-color: grey;
         cursor: pointer;
         border-width: 1px;
@@ -359,8 +360,8 @@ i {
     .minuteSelect {
         background-color: white;
         color: black;
-        padding: 2vw;
-        font-size: 5vw;
+        padding: 1.5vw;
+        font-size: 3vw;
         border-color: grey;
         cursor: pointer;
         border-width: 1px;
@@ -369,7 +370,7 @@ i {
 
     }
     .submitButton{
-        margin-left: 6vw;
+        margin-left: 8vw;
         min-height:  50px;
         align-items: center;
     }
