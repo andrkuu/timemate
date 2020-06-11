@@ -78,7 +78,7 @@ foreach (array_keys($weekActivities) as $activity) {
     $temp .= "type: \"bar\",";
     $temp .= "backgroundColor: \"".$colors[$colorsIndex]."\",";
     $colorsIndex += 1;
-    print_r($activity);
+    //print_r($activity);
     $temp .= "data: [";
     //print_r($weekActivities[$activity]);
     //print_r($weekActivities[$weekActivities[$activity]]);
@@ -133,7 +133,7 @@ foreach (array_keys($weekActivities) as $activity) {
 
 $result.= "
        
-        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"specific_activity\"  width=1000px height=700px ></canvas><canvas id=\"week_activities\"></canvas><canvas id=\"subject_activities\" width=500 height=300vh></canvas>';
+        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"specific_activity\" ></canvas><canvas id=\"week_activities\" width=0px height=0px ></canvas><canvas id=\"subject_activities\" width=0px height=0px></canvas>';
         var ctx = document.getElementById('specific_activity').getContext('2d');
         
         var chart = new Chart(ctx, {
@@ -143,8 +143,8 @@ $result.= "
       datasets: [{
           label: \"Keskmine\",
           type: \"line\",
-          borderColor: \"blue\",
-          backgroundColor: \"blue\",
+          borderColor: \"red\",
+          backgroundColor: \"red\",
           data: [20,5,10,22,15,6,12],
           fill: false,
           lineTension: 0    
@@ -177,7 +177,7 @@ $result.= "
                             display: true,
                             suggestedMin: 0,
                                
-                            //suggestedMax: ".(intval($maxChartValue)+15).",
+                            suggestedMax: ".(intval($maxChartValue)+130).",
                             
                             callback: function(value, index, values) {
                                 return  value +' min';

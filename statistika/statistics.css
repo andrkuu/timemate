@@ -32,9 +32,12 @@ ul {
 }
 
 #statistics > canvas {
-    position:absolute;
+    position:relative;
     left:0;
     top:0;
+    width: 300vw;
+    height: 1vh;
+
 }
 
 #changeView {
@@ -84,6 +87,14 @@ ul {
     background-color: #950a27;
 }
 
+
+
+/*
+#specific_activity {
+    width: 1000vw;
+    height: 800vh;
+}*/
+
 @media only screen and (max-width: 800px) {
     .statistics {
         top: 21vh;
@@ -91,9 +102,11 @@ ul {
         width: 90%;
         left: 5%;
         height: 500px;
-        overflow-y: auto;
-        overflow-x: auto;
+        overflow-y: scroll;
+        overflow-x: scroll;
     }
+
+
 
     #test {
         position: absolute;

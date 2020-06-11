@@ -61,6 +61,20 @@ if(!isset($_SESSION["id"])){
 
         var weekNr = 0;
 
+        var chartNr = 0;
+        var chartType = "";
+
+        var chartTypes = ["week_activities", "subject_activities", "specific_activity"];
+
+
+        $(document).ready(function () {
+
+            //swapCanvases();
+            refreshGraph(weekNr);
+
+
+        });
+
 
         document.getElementById("subject").onchange = function (){
 
@@ -76,10 +90,6 @@ if(!isset($_SESSION["id"])){
             weekNr = 0;
         };
 
-        var chartNr = 0;
-        var chartType = "";
-
-        var chartTypes = ["week_activities", "subject_activities", "specific_activity"]; //"week_activities", "subject_activities",
 
         function toggleChart(){
             console.log("a");
@@ -133,6 +143,14 @@ if(!isset($_SESSION["id"])){
          } else {
              chartNr = 0;
 
+         }
+
+         if (chartNr === 2){
+             var e = document.getElementById("subject");
+             e.style.visibility = 'visible';
+         }else{
+             var e = document.getElementById("subject");
+             e.style.visibility = 'hidden';
          }
 
          chartType = chartTypes[chartNr];
@@ -195,13 +213,7 @@ if(!isset($_SESSION["id"])){
         }
 
 
-        $(document).ready(function () {
 
-            swapCanvases();
-            refreshGraph(weekNr);
-            weekNr = 0;
-
-        });
 
 
     </script>
