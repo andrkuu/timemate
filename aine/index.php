@@ -20,7 +20,6 @@ if(isset($_POST["submitSubject"])){
     $hour = $_POST["hourSelect"];
 
     $minusDays = $_POST["daynr"];
-
     $hour = intval(substr($hour,0,strlen($hour)));
     $min = intval(substr($min,0,strlen($min)));
 

@@ -4,14 +4,12 @@ session_start();
 
 $userId = $_SESSION["id"];
 $week = $_POST["week"];
-$subject = $_POST["subject"];
+
 
 
 require("../../../config.php");
 
 $result = null;
-
-
 $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 
 $sql = '
@@ -28,184 +26,58 @@ $sql = '
                     WEEKDAY(date(report_date))+1 DayNumber
                     
                     FROM time_reportings 
-                    WHERE user_id=?     
-                    AND time_reportings.subject_id = ?
+                    WHERE user_id=?
                     AND WEEK(date(report_date),1) = WEEK(NOW(),1) -? 
                     AND YEAR(date(report_date)) = YEAR(NOW())
-                            GROUP BY YEAR(time_reportings.report_date), MONTH(time_reportings.report_date), DAY(time_reportings.report_date), time_reportings.subject_id, time_reportings.activity_id
+                            GROUP BY time_reportings.subject_id, DATE(report_date)
                             ORDER BY report_date ASC';
 $stmt = $conn -> prepare($sql);
 
 
-$stmt->bind_param("iii", $userId,$subject, $week);
-$stmt -> bind_result($subjectFromDb, $activityFromDb, $durationFromDb, $reportDateFromDb, $firstDayOfWeek, $lastDayOfWeek, $weekNr, $dayNr);
+$stmt->bind_param("ii", $userId,$week);
+$stmt -> bind_result($subjectFromDb, $activityFromDb, $durationFromDb, $reportDateFromDb,$firstDayOfWeek,$lastDayOfWeek,$weekNr,$dayNr);
 $stmt -> execute();
 echo $stmt->error;
 
 
-$colors = ["green","orange","blue","cyan","DimGrey","pink","azure","red","darkslategrey","FireBrick"];
-
-
-
-
-$result.="<script>";
-
+$colors = ["green","red","blue","cyan","orange","pink","azure","DimGrey","darkslategrey","FireBrick"];
+$colorsIndex = 0;
 $weekSubjects = array();
 $weekActivities = array();
-
 while($stmt -> fetch()){
 
-    if (in_array($activityFromDb, $weekActivities)) {
+    if (in_array($subjectFromDb, $weekSubjects)) {
 
-        $weekActivities[$activityFromDb][$dayNr] = $durationFromDb;
+        $weekActivities[$subjectFromDb][$dayNr] = $durationFromDb;
     }
     else{
-        //array_push($weekActivities, $activityFromDb);
-        $weekActivities[$activityFromDb][$dayNr] = $durationFromDb;
+        array_push($weekSubjects,$subjectFromDb);
+        $weekActivities[$subjectFromDb][$dayNr] = $durationFromDb;
     }
 
 }
-//print_r($weekActivities);
-//print_r($weekActivities["Akadeemiline õppetöö"]);
 
-$maxChartValue = 0;
-$colorsIndex = 0;
-$temp = "";
-foreach (array_keys($weekActivities) as $activity) {
-
-    $temp .= "{";
-    $temp .= "label:\"".$activity."\",";
-    $temp .= "type: \"bar\",";
-    $temp .= "backgroundColor: \"".$colors[$colorsIndex]."\",";
-    $colorsIndex += 1;
-    print_r($activity);
-    $temp .= "data: [";
-    //print_r($weekActivities[$activity]);
-    //print_r($weekActivities[$weekActivities[$activity]]);
-    for ($x = 1; $x <=7; $x++) {
-
-
-        //$result.="";
-        if (!empty($weekActivities[$activity][$x])){
-            //echo $x." - " .$weekActivities[$subject][$x]."<br>";
-
-            if ($weekActivities[$activity] > $maxChartValue){
-                $maxChartValue = $weekActivities[$activity][$x];
-            }
-
-            if ($x != 7){
-                $temp.= $weekActivities[$activity][$x].", ";
-            }
-            else{
-                $temp.= $weekActivities[$activity][$x]."";
-
-            }
-        }
-        else{
-            if ($x != 7){
-                $temp.= "0, ";
-            }
-            else{
-                $temp.= "0";
-            }
-        }
-
-    }
-    $temp .= "],";
-    $temp .= "},";
-    //echo $temp;
-
-}
-
-/*
- * {
-          label: "Akadeemiline õppetöö",
-          type: "bar",
-          backgroundColor: "red",
-          data: [408,547,675,734],
-        },
- *
- */
-
-//print_r($weekActivities);
-
+$stmt->close();
+$conn->close();
+$result.="<script>";
 
 
 $result.= "
        
-        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"specific_activity\"  width=1000px height=700px ></canvas><canvas id=\"week_activities\"></canvas><canvas id=\"subject_activities\" width=500 height=300vh></canvas>';
-        var ctx = document.getElementById('specific_activity').getContext('2d');
+        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"subject_activities\" width=200vw height=200%></canvas><canvas class=\"week_activities_sum\" id=\"week_activities_sum\" width=1000px height=500px ></canvas>';
+        var ctx = document.getElementById('week_activities_sum').getContext('2d');
+
         
+
         var chart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev', 'Pühapäev'],
-      datasets: [{
-          label: \"Keskmine\",
-          type: \"line\",
-          borderColor: \"blue\",
-          backgroundColor: \"blue\",
-          data: [20,5,10,22,15,6,12],
-          fill: false,
-          lineTension: 0    
-          
-        }, 
-        
-        
-        ".$temp."
-        
-      ]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Mingi graafik'
-      },
-      legend: { display: true },
-      scales: {
-        xAxes: [{ 
-        
-        stacked: true 
-        
-        }],
-        yAxes: [{ 
-        
-        stacked: true, 
-        
-        display: true,
-                        ticks: {
-                            display: true,
-                            suggestedMin: 0,
-                               
-                            //suggestedMax: ".(intval($maxChartValue)+15).",
-                            
-                            callback: function(value, index, values) {
-                                return  value +' min';
-                            }
-                        }
-        
-        }]
-          }
-    },
-    
-   
-    
-});
 
-        
-       ";
+            type: 'bar',
+
+            data: {
+                labels: ['Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev', 'Pühapäev'],
+                datasets: [";
 
 
-
-
-
-
-
-
-
-
-
-/*
 $maxChartValue = 0;
 
 
@@ -352,9 +224,7 @@ $result.= "\"hover\": {
             
             
         });";
-*/
 $result.="</script>";
-
 
 echo $result;
 

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("./functions_statistics.php");
+include("../functions_subject.php");
 if(!isset($_SESSION["id"])){
     header("Location: ../");
     exit();
@@ -35,11 +36,15 @@ if(!isset($_SESSION["id"])){
     <img src="../images/history.png" alt="statistics" class="link_icons" id="fourth_icon">
 </div>
 <div id="container">
+    <?php
+    echo getSubjects();
+    ?>
 <ul>
     <li class="prev" onclick="changeWeek(event)">❮</li>
     <li class="next" onclick="changeWeek(event)">❯</li>
     <input type="hidden" id="flag" value="true" />
         <button id="changeView">vaheta vaadet</button>
+
 
 </ul>
 </div>
@@ -62,6 +67,14 @@ if(!isset($_SESSION["id"])){
 
         var weekNr = 0;
 
+
+        document.getElementById("subject").onchange = function (){
+
+            var e = document.getElementById("subject");
+            var str = e.options[e.selectedIndex].value;
+            console.log(str);
+            refreshGraph(weekNr);
+        };
 
         document.getElementById("changeView").onclick = function () {
             swapCanvases();
@@ -155,12 +168,15 @@ if(!isset($_SESSION["id"])){
         function refreshGraph(weekNr) {
             console.log("Refresh");
             chartType = chartTypes[chartNr];
+            var e = document.getElementById("subject");
+            var sub = e.options[e.selectedIndex].value;
+            console.log(sub);
             $.ajax(
                 {
                     url: chartType + ".php",
                     type: 'POST',
                     dataType: 'text',
-                    data: {week: weekNr},
+                    data: {week: weekNr, subject: sub},
                     success: function (response) {
                         $("#statistics_box").html(response);
                     }
