@@ -203,7 +203,6 @@ if(!isset($_SESSION["id"])){
 
     function displayPopup(date) {
         var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
         popup.innerHTML = date;
         document.getElementById("Daynr").innerHTML = (month + '/' + paev + '/' + year);
         $('.popup').show();

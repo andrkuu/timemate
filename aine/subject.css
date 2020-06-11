@@ -231,8 +231,8 @@ i {
     .dropdown {
         background-color: white;
         color: black;
-        padding: 1.5vw;
-        font-size: 4vw;
+        padding: 2vh;
+        font-size: 1rem;
         border-color: grey;
         cursor: pointer;
         border-width: 1px;
@@ -254,7 +254,7 @@ i {
 
     #labelForSubjects {
         margin-top: 2vh;
-        margin-left: 22vw;
+        margin-left: 2vw;
         display: inline-block;
         width:30vw;
     }
@@ -341,7 +341,7 @@ i {
         margin: 0;
         background-color: white;
         color: black;
-        padding: 1.5vw;
+        padding: 2vh;
         font-size: 3vw;
         border-color: grey;
         cursor: pointer;
@@ -358,7 +358,7 @@ i {
     .minuteSelect {
         background-color: white;
         color: black;
-        padding: 1.5vw;
+        padding: 2vh;
         font-size: 3vw;
         border-color: grey;
         cursor: pointer;
@@ -381,7 +381,7 @@ i {
 
     #labelBox{
         position:absolute;
-        top:25vh;
+        top:27vh;
         min-height: 100px;
         margin-left: 2vw;
     }
