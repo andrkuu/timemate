@@ -44,25 +44,69 @@ function getSubjects(){
     return $result;
 }
 
+function get_subject_time($user_id, $minusDays){
+    $ret = False;
+
+    $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
+
+
+    $stmt = $conn -> prepare("SELECT SUM(time_reportings.duration) FROM time_reportings where time_reportings.user_id = ? AND DATE(report_date) = DATE(subdate(current_timestamp, (?)))");
+
+    echo $conn -> error;
+    $stmt->bind_param("ii", $user_id, $minusDays);
+    $stmt -> bind_result($totaltimeFromDb);
+    if($stmt->execute()){
+        //$ret = True;
+    }else{
+        $ret = "Mingi viga: " .$stmt->error;
+    }
+
+    while($stmt -> fetch()){
+
+        return $totaltimeFromDb;
+        $stmt->close();
+    }
+
+
+
+
+}
+
 function insert_time_report($subject_id, $activity_id, $duration, $user_id, $minusDays){
 
     $ret = False;
 
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn->prepare("INSERT INTO time_reportings (subject_id, activity_id, duration, user_id, report_date) VALUES ((?),(?),(?),(?),subdate(current_timestamp, (?)))");
 
-    $stmt->bind_param("iiiii", $subject_id,$activity_id, $duration, $user_id, $minusDays);
-    if($stmt->execute()){
-        $ret = True;
+    //echo "test";
+
+    if (intval(get_subject_time($user_id, $minusDays)) + intval($duration) <= (60*24)){
+        //echo "õnnestus";
+
+        $stmt = $conn->prepare("INSERT INTO time_reportings (subject_id, activity_id, duration, user_id, report_date) VALUES ((?),(?),(?),(?),subdate(current_timestamp, (?)))");
+
+        $stmt->bind_param("iiiii", $subject_id,$activity_id, $duration, $user_id, $minusDays);
+        if($stmt->execute()){
+            //$ret = True;
+        }else{
+            $ret = "Mingi viga: " .$stmt->error;
+        }
+
+        $stmt->close();
+
+        $conn->close();
+
+        return  $ret;
+
     }else{
-        $ret = "Mingi viga: " .$stmt->error;
+        $current = intval(get_subject_time($user_id, $minusDays));
+        $max = (60*24) - intval(get_subject_time($user_id, $minusDays));
+        $message = "Võimalik sisestada veel ".$max." ".$current;
+        echo "<script type='text/javascript'>alert('$message');</script>";
     }
 
-    $stmt->close();
 
-    $conn->close();
 
-    return  $ret;
 
 }
 

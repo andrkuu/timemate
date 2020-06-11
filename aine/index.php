@@ -33,7 +33,8 @@ if(isset($_POST["submitSubject"])){
 
     if ($duration != 0){
         if ((0 <= $minusDays) && ($minusDays <= 2)){
-          insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"]), $minusDays);
+
+            echo insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"]), $minusDays);
         }
 
     }
