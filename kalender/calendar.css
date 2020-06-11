@@ -5,6 +5,7 @@ ul {
 #kuu {
     color: white;
     font-size: 16px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #aasta {
@@ -37,12 +38,15 @@ ul {
     margin-right: 2vw;
     padding: 0;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
 }
 
 .month ul li {
     color: white;
     font-size: 20px;
     letter-spacing: 3px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .month .prev {
@@ -217,7 +221,7 @@ ul {
     overflow: hidden;
     white-space: nowrap;
     background-color: rgb(226, 226, 226);
-    width: 13vw;
+    width: 12.5vw;
     padding-left: 0.5vw;
     padding-right: 0.5vw;
 
@@ -226,7 +230,7 @@ ul {
 #act{
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 13vw;
+    width: 12.5vw;
     white-space: nowrap;
     padding-left: 0.5vw;
     padding-right: 0.5vw;
@@ -236,6 +240,7 @@ ul {
 #tim{
     text-overflow: ellipsis;
     overflow: hidden;
+    width: 4vw;
     white-space: nowrap;
     padding-left: 0.5vw;
     padding-right: 0.5vw;
@@ -298,6 +303,10 @@ ul {
 
     #act{
         width: 35vw;
+    }
+
+    #tim{
+        width: 16vw;
     }
 
     #Daynr{

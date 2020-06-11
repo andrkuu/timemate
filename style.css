@@ -53,6 +53,10 @@ body {
     line-height: 4vh;
     text-decoration: none;
     color:white;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
 }
 
 #client_link{
@@ -264,6 +268,11 @@ body {
         font-size: 2.5vh;
         visibility: visible;
         display: block;
+        animation: fadeIn ease 0.5s;
+        -webkit-animation: fadeIn ease 0.5s;
+        -moz-animation: fadeIn ease 0.5s;
+        -o-animation: fadeIn ease 0.5s;
+        -ms-animation: fadeIn ease 0.5s;
     }
 
     #Linkout{
@@ -280,6 +289,11 @@ body {
         visibility: visible;
         display: block;
         cursor: pointer;
+        animation: fadeIn ease 0.5s;
+        -webkit-animation: fadeIn ease 0.5s;
+        -moz-animation: fadeIn ease 0.5s;
+        -o-animation: fadeIn ease 0.5s;
+        -ms-animation: fadeIn ease 0.5s;
     }
 
     .active {
@@ -299,9 +313,56 @@ body {
         -moz-transition: all 0.5s ease-in-out;
         -o-transition: all 0.5s ease-in-out;
         transition: all 0.5s ease-in-out;
+        -webkit-tap-highlight-color: transparent;
     }
     #dropdown_img{
         height: 1.9vh;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
+    }
+
+    @-moz-keyframes fadeIn {
+        0% {
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
+    }
+
+    @-webkit-keyframes fadeIn {
+        0% {
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
+    }
+
+    @-o-keyframes fadeIn {
+        0% {
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
+    }
+
+    @-ms-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
 
 }
