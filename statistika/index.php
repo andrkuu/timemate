@@ -42,11 +42,14 @@ if(!isset($_SESSION["id"])){
 
 </ul>
 </div>
-    <div id="statistics" class="statistics">
-        <canvas id="specific_activity" width=500 height=500></canvas>
 
+<div class="chartWrapper">
+    <div id="statistics" class="statistics">
 
     </div>
+
+</div>
+
 <!-- <button id="toggle" onclick="toggleChart()">näita/peida kõik</button> -->
 <div id="statistics_box"></div>
 <script>

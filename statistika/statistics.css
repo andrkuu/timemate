@@ -2,9 +2,19 @@ ul {
     list-style-type: none;
     font-size: 0px;
 }
-#wrapper {
+#chartWrapper {
     position: relative;
+    overflow-x: scroll;
 }
+
+.chartWrapper > canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events:none;
+}
+
+
 
 #radarChart {
     position: absolute;
@@ -21,14 +31,26 @@ ul {
 }
 
 .statistics {
-    width: 50vw;
+    width: 100%;
     background-color: #ffffff;
-    position: absolute;
-    left: 40vw;
-    top: 20vh;
+    position: relative;
+
+
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-size: 4vh;
+}
+
+.chartWrapper {
+    position: absolute;
+    overflow: auto;
+    height: 75vh;
+    left: 20vw;
+    width: 70%;
+    top: 15vh;
+    border-width:1px;
+    border-style:solid;
+    border-color:black;
 }
 
 #statistics > canvas {
@@ -97,18 +119,24 @@ ul {
 
 @media only screen and (max-width: 800px) {
     .statistics {
-        top: 21vh;
+        top: 10vh;
         font-size: 3vh;
-        width: 90%;
+        width: 900px;
         left: 5%;
+        right: 5%;
         height: 500px;
-        overflow-y: scroll;
-        overflow-x: scroll;
+        position: static;
     }
 
-    #specific_activity {
-        //width: 1000px !important;
-        //height: 400px !important;
+    .chartWrapper {
+        position: absolute;
+        overflow: scroll;
+        height: 75vh;
+        left: 5%;
+        width: 90%;
+        top: 20vh;
+        right: 5%;
+
     }
 
     #test {
