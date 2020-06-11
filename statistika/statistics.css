@@ -35,7 +35,7 @@ ul {
     position:relative;
     left:0;
     top:0;
-    width: 300vw;
+
     height: 1vh;
 
 }
@@ -106,7 +106,10 @@ ul {
         overflow-x: scroll;
     }
 
-
+    #specific_activity {
+        //width: 1000px !important;
+        //height: 400px !important;
+    }
 
     #test {
         position: absolute;
