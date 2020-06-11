@@ -183,6 +183,7 @@ body {
         visibility: visible;
         display: block;
         text-align: center;
+        color: inherit;
     }
     #client_name {
         height: 5vh;
