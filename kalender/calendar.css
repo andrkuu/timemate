@@ -135,6 +135,7 @@ ul {
 .calendar-day-event-container:hover {
     background-color: #dddddd;
 }
+
 .display-alert {
     white-space: nowrap;
     background-color: #b40000;
@@ -219,6 +220,7 @@ ul {
 
 #val{
     text-overflow: ellipsis;
+
     overflow: hidden;
     white-space: nowrap;
     background-color: rgb(226, 226, 226);
@@ -230,6 +232,7 @@ ul {
 
 #act{
     text-overflow: ellipsis;
+
     overflow: hidden;
     width: 12.5vw;
     white-space: nowrap;
@@ -240,12 +243,17 @@ ul {
 
 #tim{
     text-overflow: ellipsis;
+
     overflow: hidden;
     width: 4vw;
     white-space: nowrap;
     padding-left: 0.5vw;
     padding-right: 0.5vw;
     background-color: rgb(226, 226, 226);
+}
+#rid:hover{
+    background-color: #f1f1f1;
+    opacity: 0.6;
 }
 #Daynr{
     color: transparent;
