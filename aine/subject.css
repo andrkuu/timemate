@@ -286,11 +286,11 @@ i {
     #arrows{
         top:5vh;
         width: 64vw;
-        margin-top: 1vh;
+        margin: 1vh;
     }
     #rightArrowBox{
         margin-top: 1vh;
-        width: 40vw;
+        width: 20vw;
         left: 50vw;
         height: 10vh;
     }
@@ -300,12 +300,12 @@ i {
         position:absolute;
         left:0;
         height: 10vh;
-        width:10vw;
+        width:15vw;
         background-color: white;
     }
 
     .left {
-        margin-left: 10vw;
+        margin-left: 2vw;
         margin-top: 1vh;
     }
 
@@ -326,8 +326,8 @@ i {
     #displayDay {
         padding-top:1vh;
         font-size: 5vh;
-        padding-left: 20vw;
-        width: 60vw;
+        padding-left: 15vw;
+        width: 50vw;
         text-align: center;
         margin:0;
 
