@@ -141,7 +141,7 @@ $result.= "options: {
                 responsive: true,
                 
                 legend: {
-                    position: 'bottom',
+                    position: 'top',
                     display: true,
                     align: 'left',
                     rowCount: 2,
