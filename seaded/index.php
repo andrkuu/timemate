@@ -75,13 +75,13 @@ if(!isset($_SESSION["id"])){
   </head>
   <body>
     <?php include('../nav-bar.php'); ?>
-    <div class="links">
-        <a href="../statistika/" class="page" id="tools"><span class="link_names">Statistika</span><img src="../images/statistics.png" alt="statistics" class="link_icons" id="first_icon"></a>
-        <a href="../aine/" class="page" id="tools"> <span class="link_names">Aine</span><img src="../images/add.png" alt="statistics" class="link_icons" id="second_icon"></a>
-        <a href="../kalender/" class="page" id="tools"><span class="link_names">Kalender</span><img src="../images/calendar.png" alt="statistics" class="link_icons" id="third_icon"></a>
-        <a href="../seaded/" class="page" id="chosen" id="tools"<span class="link_names">Ajalugu</span><img src="../images/history.png" alt="statistics" class="link_icons" id="fourth_icon"></a>
-    </div>
 
+    <div class="links">
+        <a href="../statistika/" class="page" ><span class="link_names">Statistika</span><img src="../images/statistics.png" alt="statistics" class="link_icons" id="first_icon"></a>
+        <a href="../aine/" class="page"> <span class="link_names">Aine</span><img src="../images/add.png" alt="statistics" class="link_icons" id="second_icon"></a>
+        <a href="../kalender/" class="page" ><span class="link_names">Kalender</span><img src="../images/calendar.png" alt="statistics" class="link_icons" id="third_icon"></a>
+        <a href="../seaded/" class="page" id="chosen"><span class="link_names">Ajalugu</span><img src="../images/history.png" alt="statistics" class="link_icons" id="fourth_icon"></a>
+    </div>
 
         <div id="history">
             <div id="history_header">Sinu eelmised sisestused</div>
