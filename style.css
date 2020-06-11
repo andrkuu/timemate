@@ -18,6 +18,7 @@ body {
     padding: 0;
     margin: 0;
     overflow: hidden;
+    z-index: 2;
 }
 .dropdowns{
     visibility: hidden;
@@ -57,6 +58,7 @@ body {
     -moz-user-select: none;     /* Firefox all */
     -ms-user-select: none;      /* IE 10+ */
     user-select: none;
+    z-index: 2;
 }
 
 #client_link{
@@ -88,50 +90,15 @@ body {
 .links {
     display: flex;
     flex-wrap: nowrap;
-    background-color: #b71234;
     flex-direction: column;
     position: relative;
     top: 0;
     width: 25vw;
     z-index: 1;
 }
-.link_icons{
-    height: 8vh;
-    position: absolute;
-}
-
-#first_icon{
-    top: 11vh;
-    left: 16vw;
-    pointer-events: none;
-    z-index: 2;
-}
-
-#second_icon{
-    top: 35vh;
-    left: 16vw;
-    pointer-events: none;
-    z-index: 2;
-}
-
-#third_icon{
-    top: 60vh;
-    left: 16vw;
-    pointer-events: none;
-    z-index: 2;
-}
-
-#fourth_icon{
-    top: 83vh;
-    left: 16vw;
-    pointer-events: none;
-    z-index: 2;
-}
-
 .page {
-    color: white;
-    background-color: #b71234;
-    width: 25vw;
+    background-color: white;
+    width: 10vw;
     height: 24vh;
     text-align: left;
     text-decoration: none;
@@ -140,19 +107,44 @@ body {
     cursor: pointer;
     display: grid;
     padding:0;
+    transition: 0.3s;
 }
+.page:hover{
+    background-color: green;
+    color: white;
+    border-radius: 0px 30px 30px 0px;
+    width: 25vw;
+}
+
 .link_names{
     margin-left: 1vw;
+    visibility: hidden;
+    display: none;
+    transition: 0.3s visibility;
 }
+.link_icons{
+    height: 8vh;
+    position: absolute;
+    line-height: 24vh;
+    margin-left: 2.5vw;
+    margin-top: 8vh;
+    transition: 0.3s margin-left;
+}
+.page:hover .link_icons{
+     background-color: purple;
+     margin-left: 18vw;
+ }
+
+.page:hover .link_names{
+    visibility: visible;
+    display: flex;
+}
+
 
 #chosen {
-    background-color: white;
-    color: black;
-}
-
-
-.chosen {
+    background-color: #b71234;
     color: white;
+    border-radius: 0px 30px 30px 0px;
 }
 #Linkout{
     visibility: hidden;
@@ -183,9 +175,10 @@ body {
         position: absolute;
         border: none;
     }
-
-
-
+    .link_names{
+        visibility: visible;
+        display: block;
+    }
     #client_name {
         height: 5vh;
         display: flex;
@@ -219,11 +212,24 @@ body {
         font-size: 2.5vh;
         width: 33.3vw;
         border-radius: 6px 6px 0 0;
+        color: white;
+        transition: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .page:hover{
+        width: 33.3vw;
+        background-color: #b71234;
+    }
+
+    .page:hover .link_names{
+        all:unset!important;
     }
 
     #chosen {
         background-color: white;
         color: black;
+        border-radius: 6px 6px 0 0;
+        -webkit-tap-highlight-color: transparent;
     }
 
     #tools {
@@ -244,8 +250,6 @@ body {
     }
 
     /**/
-
-
     #myLinks{
         height: 3vh;
         text-align: center;

@@ -138,7 +138,7 @@ $result.= "]},";
 
 $result.= "options: {
                 
-                responsive: true,
+                //responsive: true,
                 
                 legend: {
                     position: 'bottom',
@@ -185,7 +185,7 @@ $result.= "options: {
                         }
                     }],
                         xAxes: [{
-                            stacked: true,
+                            //stacked: true,
                            
                     }]
                 },";
