@@ -43,7 +43,7 @@ $stmt -> execute();
 echo $stmt->error;
 
 
-$colors = ["green","orange","blue","cyan","DimGrey","pink","azure","red","darkslategrey","FireBrick"];
+$colors = ["green","darkslategrey","blue","cyan","orange","pink","azure","DimGrey","red","FireBrick"];
 
 
 
