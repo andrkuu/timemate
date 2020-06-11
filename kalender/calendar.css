@@ -262,7 +262,7 @@ ul {
 
         display: none;
         max-height: 100%;
-        z-index: 1;
+        z-index: 1000;
         padding-top: 100px;
         left: 0;
         top: 0;
@@ -278,7 +278,7 @@ ul {
     .popupasi {
         width: 90vw;
         max-width: 90vw;
-        font-size: 2.3vw;
+        font-size: 3vw;
         line-height: 10vh;
         z-index: 1;
         margin-left: 4vw;
