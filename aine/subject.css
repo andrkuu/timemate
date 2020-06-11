@@ -119,21 +119,21 @@ input[type="time"] {
 }
 
 #rightArrowBox{
-    margin-top: 2vh;
     height:auto;
     width:30vw;
     z-index: 0;
     align-items: end;
     background-color: white;
+    cursor:pointer;
 }
+
 
 #leftArrowBox{
     height:15vh;
     width:30vw;
     z-index: 0;
     background-color: white;
-    margin-top: 2vh;
-
+    cursor:pointer;
 }
 
 
@@ -151,7 +151,7 @@ input[type="time"] {
     position: relative;
     border: none;
     font-style: normal;
-    padding:3vw;
+    padding:4vh;
     user-select: none;
     z-index: -1;
     text-align: center;
@@ -179,17 +179,14 @@ i {
     margin-top:4vw;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    cursor:pointer;
     margin-left: 8vw;
 }
 
 .left {
-    margin-left: 10vw;
+    margin-left: 12vw;
     margin-top:4vw;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
-    cursor:pointer;
-
 }
 
 .hourSelect {
@@ -243,6 +240,10 @@ i {
         width: 60vw;
         text-overflow: ellipsis;
         overflow: hidden;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
 
     }
 
@@ -332,6 +333,7 @@ i {
         padding-left: 20vw;
         width: 60vw;
         text-align: center;
+        margin:0;
 
     }
 
