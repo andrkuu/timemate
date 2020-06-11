@@ -37,6 +37,7 @@
         y.style.display = \"flex\";
         z.style.display = \"flex\";       
         r.style.transform = \"rotate(360deg)\";
+        
       } else {
         x.style.display = \"block\";
         y.style.display = \"none\";
