@@ -151,6 +151,14 @@ if(!isset($_SESSION["id"])){
 
          }
 
+         if (chartNr === 2){
+             var e = document.getElementById("subject");
+             e.style.visibility = 'visible';
+         }else{
+             var e = document.getElementById("subject");
+             e.style.visibility = 'hidden';
+         }
+
          chartType = chartTypes[chartNr];
 
          for (let i = 0; i < chartTypes.length; i++) {
