@@ -113,6 +113,11 @@ ul {
         display:none
     }
 
+    .links{
+        display: none;
+        visibility: hidden;
+    }
+
     #history{
         width: 100vw;
         margin-left: 0vw;
