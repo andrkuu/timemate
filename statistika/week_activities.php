@@ -176,7 +176,7 @@ $result.= "options: {
                         ticks: {
                             display: true,
                             suggestedMin: 0,
-                               
+                            stacked: true,    
                             suggestedMax: ".(intval($maxChartValue)+1).",
                             
                             callback: function(value, index, values) {
@@ -185,7 +185,8 @@ $result.= "options: {
                         }
                     }],
                         xAxes: [{
-                            barThickness: 10
+                            stacked: true,
+                           
                     }]
                 },";
 
