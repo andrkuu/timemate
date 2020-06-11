@@ -156,12 +156,14 @@ input[type="time"] {
     z-index: 0;
     text-align: center;
     font-size:5vw;
+    width: 14vw;
+    max-height: 50px;
 }
 
 
 #arrows{
     display: inline-flex;
-    width: 60vw;
+    width: 67vw;
 
 }
 
@@ -215,7 +217,7 @@ i {
 
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
     #inputContainer {
         position: absolute;
         left:3vw;
