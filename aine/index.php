@@ -145,7 +145,7 @@ if(isset($_POST["submitSubject"])){
 
       <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div id="courseBox">
-          <i id="labelForSubjects"><label for="class" id="label">Kursuse </label></i>
+          <i id="labelForSubjects"><label for="class" id="label">Kursuse nimi</label></i>
             <?php
                 echo getSubjects();
             ?>
