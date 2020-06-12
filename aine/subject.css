@@ -165,7 +165,7 @@ label{
     position: relative;
     border: none;
     font-style: normal;
-    padding:3vh 3vw 0 0;
+    padding:2vh 3vw 0 0;
     user-select: none;
     z-index: -2;
     text-align: center;
@@ -186,18 +186,19 @@ label{
 .hourSelect {
     background: white;
     color:black;
+    border-color: grey;
     padding: 1.5vh 1vw;
     font-size: 2vw;
-    border-color: black;
     cursor: pointer;
     border-width: 1px;
     border-radius:1vh;
     width: 13vw;
+
 }
 
 .minuteSelect {
     background: white;
-    border-color:black;
+    border-color:grey;
     color: black;
     padding: 1.5vh 1vw;
     font-size: 2vw;
