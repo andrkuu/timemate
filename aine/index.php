@@ -139,9 +139,9 @@ if(isset($_POST["submitSubject"])){
     </div>
     <div id="inputContainer">
         <div id="arrows">
-            <div id="leftArrowBox"  onclick="changeDay(this)"><i class="arrow left" id="leftarrow"></i></div>
+            <div id="leftArrowBox"  onclick="changeDay(this)"><img src="../images/rightarrow.png" id="leftarrow" alt="left arrow"></div>
             <i id="displayDay">Täna</i>
-            <div id="rightArrowBox" onclick="changeDay(this)"><i class="arrow right"  id="rightarrow"></i></div>
+            <div id="rightArrowBox" onclick="changeDay(this)"><img src="../images/rightarrow.png" id="rightarrow" alt="right arrow"></i></div>
         </div>
 
       <form method="POST" id="dropdownBox" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">

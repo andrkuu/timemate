@@ -13,6 +13,22 @@
     width: 60vw;
 }
 
+#rightarrow{
+    position:absolute ;
+    top:2vh;
+    height:7vh;
+    width:7vw;
+    left:43vw;
+}
+
+#leftarrow{
+    position: absolute;
+    top:2vh;
+    height:7vh;
+    width:7vw;
+    transform: rotate(180deg)
+}
+
 
 
 .dropdown{
