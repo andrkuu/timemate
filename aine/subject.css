@@ -17,15 +17,14 @@
     position:absolute ;
     top:2vh;
     height:7vh;
-    width:7vw;
-    left:43vw;
+    left:38vw;
 }
 
 #leftarrow{
     position: absolute;
+    left:6vw;
     top:2vh;
     height:7vh;
-    width:7vw;
     transform: rotate(180deg)
 }
 
@@ -288,15 +287,15 @@ i {
     .submitButton {
         position: absolute;
         top: 60vh;
+        left:4vw;
         font-size: 3vh;
         display: block;
         height: 10px;
-        margin-left: 4vw;
         line-height: 0;
-        padding: 7vw;
         margin-top: 10vh;
         border-radius: 8px;
         width: 50vw;
+        padding: 4vh 10vw 4vh;
     }
 
     input[type="time"] {
@@ -314,6 +313,21 @@ i {
         width: 68vw;
         margin:0;
 
+    }
+
+    #rightarrow{
+        position:absolute ;
+        top:2vh;
+        height:3vh;
+        left:5vw;
+    }
+
+    #leftarrow{
+        position: absolute;
+        left:6vw;
+        top:2vh;
+        height:3vh;
+        transform: rotate(180deg)
     }
 
     #rightArrowBox{
