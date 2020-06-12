@@ -80,7 +80,9 @@ if(!isset($_SESSION["id"])){
             let events = e.target.childNodes[2];
             console.log(events.innerHTML);
             displayPopup(events.innerHTML);
-            e.target.style.backgroundColor = "LightPink";
+            e.target.style.backgroundColor = "Tomato";
+            e.target.style.borderRadius = "5px";
+            e.target.style.color = "white";
 
         };
 
