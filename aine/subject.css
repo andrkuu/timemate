@@ -404,10 +404,10 @@ input[type="time"] {
 
     #timeBox{
         display:inline-grid ;
-        grid-template-rows:15vw;
+        grid-template-rows:7vh;
         grid-template-columns:30vw;
         position:absolute;
-        top:47vh;
+        top:45vh;
         min-height: 100px;
         margin-left: 2vw;
         width:min-content;
