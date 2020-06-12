@@ -2,20 +2,12 @@ ul {
     list-style-type: none;
     font-size: 0px;
 }
-#chartWrapper {
-    position: relative;
-    overflow-x: scroll;
-}
-
 .chartWrapper > canvas {
     position: absolute;
     left: 0;
     top: 0;
     pointer-events:none;
 }
-
-
-
 #radarChart {
     position: absolute;
     border: 1px solid green;
@@ -29,29 +21,26 @@ ul {
     position: absolute;
     border: 1px solid blue;
 }
-
 .statistics {
     width: 100%;
     background-color: #ffffff;
     position: relative;
-
-
     border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-size: 4vh;
-
 }
-
 .chartWrapper {
     position: absolute;
     overflow: auto;
     height: 75vh;
-    left: 20vw;
-    width: 70%;
+    border-radius: 5px;
+    left: 25vw;
+    width: 65%;
     top: 15vh;
     border-width:1px;
     border-style:solid;
     border-color:black;
+    border: transparent;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #statistics > canvas {
@@ -59,10 +48,7 @@ ul {
     left:0;
     top:0;
 
-
-
 }
-
 #changeView {
     position: absolute;
     top: 8vh;
@@ -74,7 +60,6 @@ ul {
     left: 52.5vw;
     cursor: pointer;
 }
-
 .prev{
     position: absolute;
     top: 8vh;
