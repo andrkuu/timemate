@@ -43,6 +43,75 @@ $stmt -> execute();
 echo $stmt->error;
 
 
+/////////////////////////////////
+
+$conn2 = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
+
+
+
+$sql = '
+    SELECT 
+        (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
+            		
+                    avg(duration),              
+                    WEEKDAY(date(report_date))+1 DayNumber
+                    
+                    
+                    FROM time_reportings 
+                    WHERE time_reportings.subject_id = ?
+                    AND time_reportings.user_id <> ?
+                    AND WEEK(date(report_date),1) = WEEK(NOW(),1) -? 
+                    AND YEAR(date(report_date)) = YEAR(NOW())
+                            GROUP BY DATE(report_date), time_reportings.subject_id 
+                            ORDER BY report_date ASC';
+$stmt2 = $conn2 -> prepare($sql);
+
+
+$stmt2->bind_param("iii", $subject,$userId, $week);
+$stmt2 -> bind_result($avgSubjectFromDb, $avgDurationFromDb, $avgDayNr);
+$stmt2 -> execute();
+
+$avgActivities = array();
+
+$avgValues = null;
+while($stmt2 -> fetch()) {
+
+    $avgActivities[$avgDayNr] = $avgDurationFromDb;
+}
+
+for ($x = 1; $x <=7; $x++) {
+
+    if (!empty($avgActivities[$x])){
+
+        if ($x != 7){
+            $avgValues.= $avgActivities[$x].", ";
+        }
+        else{
+            $avgValues.= $avgActivities[$x]."";
+
+        }
+    }
+    else{
+        if ($x != 7){
+            $avgValues.= "0, ";
+        }
+        else{
+            $avgValues.= "0";
+        }
+    }
+
+}
+
+
+
+
+
+///////////////////////////////////////
+
+
+
+
+
 $colors = ["green","darkslategrey","blue","cyan","orange","pink","azure","DimGrey","red","FireBrick"];
 
 
@@ -145,9 +214,9 @@ $result.= "
           type: \"line\",
           borderColor: \"red\",
           backgroundColor: \"red\",
-          data: [20,5,10,22,15,6,12],
+          data: [".$avgValues."],
           fill: false,
-          lineTension: 0    
+          lineTension: 0.15,  
           
         }, 
         
@@ -177,7 +246,7 @@ $result.= "
                             display: true,
                             suggestedMin: 0,
                                
-                            suggestedMax: ".(intval($maxChartValue)+130).",
+                            suggestedMax: ".(intval($maxChartValue)+20).",
                             
                             callback: function(value, index, values) {
                                 return  value +' min';

@@ -64,7 +64,7 @@ $result.="<script>";
 
 $result.= "
        
-        document.getElementById(\"statistics\").innerHTML = '<canvas class=\"week_activities\" id=\"week_activities\" width=1000px height=700px ></canvas><canvas id=\"subject_activities\" width=0px height=0px></canvas><canvas id=\"specific_activity\"  width=0px height=0px ></canvas>';
+        document.getElementById(\"statistics\").innerHTML = '<canvas class=\"week_activities\" id=\"week_activities\"></canvas><canvas id=\"subject_activities\" width=0px height=0px></canvas><canvas id=\"specific_activity\"  width=0px height=0px ></canvas>';
         var ctx = document.getElementById('week_activities').getContext('2d');
 
         
@@ -138,10 +138,10 @@ $result.= "]},";
 
 $result.= "options: {
                 
-                //responsive: true,
+                responsive: true,
                 
                 legend: {
-                    position: 'bottom',
+                    position: 'top',
                     display: true,
                     align: 'left',
                     rowCount: 2,
