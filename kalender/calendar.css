@@ -170,18 +170,18 @@ ul {
     margin-top: 0vh;
     font-size: 1vw;
     border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 42%, rgba(226, 226, 226) 42%, rgba(226, 226, 226) 84%, rgba(255,255,255,1) 84%, rgba(255,255,255,1) 100%);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: grey;
     border-collapse: collapse;
 }
 
 .popup {
     height: 80%;
     right: 0;
-    position: fixed;
+    position: absolute;
     width: 34vw;
     z-index: 1;
-    top: 6vh;
+    top: 5.3vh;
     background-color: transparent;
     padding: 5px;
     max-height: 80vh;
@@ -192,7 +192,7 @@ ul {
 }
 #aine{
     border-top-left-radius: 5px;
-    width: 5vw;
+
  }
 #kestvus{
     border-top-right-radius: 5px;
@@ -208,7 +208,7 @@ ul {
 
 .popupCloseButton {
     position: absolute;
-    left: 92%;
+    left: 89%;
     color: white;
     width: 1vw;
     height: 1vh;
@@ -243,12 +243,9 @@ ul {
 
 #tim{
     text-overflow: ellipsis;
-
     overflow: hidden;
-    width: 4vw;
+    width: 4.4vw;
     white-space: nowrap;
-    padding-left: 0.5vw;
-    padding-right: 0.5vw;
     background-color: rgb(226, 226, 226);
 }
 #rid:hover{
@@ -275,7 +272,7 @@ ul {
         left: 0;
         top: 0;
         width: 100%;
-        height: 85.5%;
+        height: 87%;
         overflow: auto;
         background-color: rgb(0,0,0);
         background-color: rgba(0, 0, 0, 0.52);
