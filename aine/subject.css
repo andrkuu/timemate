@@ -201,7 +201,7 @@ label{
     font-size: 1.5vw;
     cursor: pointer;
     border-width: 1px;
-    border-radius:2vh;
+    border-radius:1vh;
     width: 13vw;
 
 }
@@ -238,10 +238,9 @@ label{
 
 
     .option {
-        padding: 4vh;
         text-overflow: ellipsis;
         overflow: hidden;
-        width:60vw;
+        width:30vw;
         font-size: 3vh;
     }
 
@@ -329,10 +328,6 @@ label{
 
     }
 
-
-
-
-
     .hourSelect {
         margin: 0;
         background-color: white;
@@ -344,12 +339,8 @@ label{
         border-width: 1px;
         border-radius:2vh;
         width: 30vw;
-        float: left;
 
     }
-
-
-
 
     .minuteSelect {
         background-color: white;
