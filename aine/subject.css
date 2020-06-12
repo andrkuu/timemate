@@ -125,7 +125,7 @@ input[type="time"] {
 
 #rightArrowBox{
     height:auto;
-    width:20vw;
+    width:15vw;
     z-index: 1;
     align-items: end;
     background-color: white;
