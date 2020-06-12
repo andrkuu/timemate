@@ -12,7 +12,6 @@
     user-select: none;
     min-width: 300px;
     min-height: 300px;
-
 }
 
 
@@ -95,7 +94,7 @@ label{
     font-size:2vw;
     font-style: normal;
     border: none;
-    margin-right: 12vw;
+    margin-right: 14vw;
     width:5vw;
 
 }
@@ -255,7 +254,7 @@ i {
         margin-top: 2vh;
         margin-left: 2vw;
         display: inline-block;
-        width:30vw;
+        width:50vw;
     }
 
     .submitButton {
