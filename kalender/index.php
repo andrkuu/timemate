@@ -34,6 +34,7 @@ if(!isset($_SESSION["id"])){
         var year = dateObj.getUTCFullYear();
 
         var headings = ['E', 'T', 'K', 'N', 'R', 'L', 'P'];
+        var lastButton = null;
 
         function clickDay(a) {
             var dayNr = headings.indexOf(a.innerHTML);
@@ -80,10 +81,14 @@ if(!isset($_SESSION["id"])){
             let events = e.target.childNodes[2];
             console.log(events.innerHTML);
             displayPopup(events.innerHTML);
-            e.target.style.backgroundColor = "Tomato";
-            e.target.style.borderRadius = "5px";
-            e.target.style.color = "white";
 
+            if(lastButton !== e){
+                if(lastButton !== null){
+                    lastButton.target.style.backgroundColor = "white";
+                }
+                lastButton = e;
+                e.target.style.backgroundColor = "#dddddd";
+            }
         };
 
         function changeMonth(e){
