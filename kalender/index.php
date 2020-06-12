@@ -80,6 +80,8 @@ if(!isset($_SESSION["id"])){
             let events = e.target.childNodes[2];
             console.log(events.innerHTML);
             displayPopup(events.innerHTML);
+            e.target.style.backgroundColor = "LightPink";
+
         };
 
         function changeMonth(e){
@@ -209,12 +211,14 @@ if(!isset($_SESSION["id"])){
         $('.popupCloseButton').show();
         $('.popupCloseButton').click(function(){
             $('.popup').hide();
+            refreshCalendar(year,month);
         });
         $(document).click(function() {
             var container = $(".popupasi");
             if (!container.is(event.target) &&
                 !container.has(event.target).length) {
                 $('.popup').hide();
+                refreshCalendar(year,month);
             }
         });
 
