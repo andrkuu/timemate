@@ -141,7 +141,7 @@ for ($day = 1; $day <= $days_in_month; $day++) {
                     <tr id='kõik' class='kõik'>
                         <th id='aine' class='popuptext'>Aine</th>
                         <th id='õppetegevus' class='popuptext'>Õppetegevus</th>
-                        <th id='kestvus' class='popuptext'>kestvus</th>
+                        <th id='kestvus' class='popuptext'>Kestvus</th>
                     </tr>".$temp.
 
 

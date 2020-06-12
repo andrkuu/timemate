@@ -2,20 +2,12 @@ ul {
     list-style-type: none;
     font-size: 0px;
 }
-#chartWrapper {
-    position: relative;
-    overflow-x: scroll;
-}
-
 .chartWrapper > canvas {
     position: absolute;
     left: 0;
     top: 0;
     pointer-events:none;
 }
-
-
-
 #radarChart {
     position: absolute;
     border: 1px solid green;
@@ -29,29 +21,26 @@ ul {
     position: absolute;
     border: 1px solid blue;
 }
-
 .statistics {
     width: 100%;
     background-color: #ffffff;
     position: relative;
-
-
     border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-size: 4vh;
-
 }
-
 .chartWrapper {
     position: absolute;
     overflow: auto;
     height: 75vh;
-    left: 20vw;
-    width: 70%;
+    border-radius: 5px;
+    left: 25vw;
+    width: 65%;
     top: 15vh;
     border-width:1px;
     border-style:solid;
     border-color:black;
+    border: transparent;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #statistics > canvas {
@@ -59,28 +48,26 @@ ul {
     left:0;
     top:0;
 
-
-
 }
-
 #changeView {
     position: absolute;
-    top: 8vh;
+    top: 7vh;
     background-color: #b71234;
     border: none;
     color: white;
-    width: 20vw;
+    width: 25vw;
     height: 5vh;
-    left: 52.5vw;
+    left: 45vw;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
-
 .prev{
+    -webkit-tap-highlight-color: transparent;
     position: absolute;
-    top: 8vh;
+    top: 7vh;
     width: 5vw;
     height: 5vh;
-    left: 47.5vw;
+    left: 40vw;
     background-color: #b71234;
     font-size: 3vh;
     line-height: 5vh;
@@ -95,19 +82,32 @@ ul {
 
 .next{
     position: absolute;
-    top: 8vh;
+    top: 7vh;
     width: 5vw;
     height: 5vh;
-    left: 72.5vw;
+    left: 70vw;
     background-color: #b71234;
     font-size: 3vh;
     line-height: 5vh;
     text-align: center;
     border-radius: 0px 5px 5px 0px;
+    -webkit-tap-highlight-color: transparent;
     cursor: pointer;
 }
 .next:hover {
     background-color: #950a27;
+}
+
+#subject{
+    height: 5vh;
+    width: 15vw ;
+    position: absolute;
+    top: 7vh;
+    left: 80vw;
+    background-color: #b71234;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
 
@@ -132,24 +132,30 @@ ul {
     .chartWrapper {
         position: absolute;
         overflow: scroll;
-        height: 75vh;
+        height: 70vh;
         left: 5%;
         width: 90%;
-        top: 20vh;
+        top: 25vh;
         right: 5%;
-
     }
 
-    #test {
+
+
+    #subject{
+        text-align: center;
+        height: 5vh;
+        width: 90vw ;
         position: absolute;
-        top: 15vh;
+        top: 19vh;
+        z-index: 4;
+        left: 5vw;
         background-color: #b71234;
+        color: white;
         border: none;
         border-radius: 5px;
-        color: white;
-        width: 60vw;
-        height: 5vh;
-        left: 20vw;
+    }
+    select {
+        text-align-last:center;
     }
 
     #changeView{

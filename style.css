@@ -19,6 +19,7 @@ body {
     margin: 0;
     overflow: hidden;
     z-index: 2;
+    -webkit-tap-highlight-color: transparent;
 }
 .dropdowns{
     visibility: hidden;
@@ -34,6 +35,7 @@ body {
     justify-content: flex-end;
     flex: 2;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -43,6 +45,7 @@ body {
     padding: 0;
     margin: 0.5vh;
     margin-right: 2vw;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #client_name {
@@ -69,6 +72,7 @@ body {
 #tlu_logo {
     height: 4vh;
     display: inline;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #timemate {
@@ -93,7 +97,7 @@ body {
     flex-direction: column;
     position: relative;
     top: 0;
-    width: 25vw;
+    width: 10vw;
     z-index: 1;
 }
 .page {
