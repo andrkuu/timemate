@@ -10,8 +10,6 @@
     display: flex;
     flex-direction: column;
     user-select: none;
-    min-width: 300px;
-    min-height: 300px;
 }
 
 
@@ -54,22 +52,35 @@ label{
     border:transparent;
     border-radius:1vh;
 }
+
+
 #courseBox{
-    top:10vh;
+    top: 20vh;
+    left: 2vw;
+    position: absolute;
+    width: 45vw;
 }
 
 #labelBox{
-    top:25vh;
+    top:36vh;
+    left: 2vw;
+    position: absolute;
+    width: 45vw;
 }
 
 #timeBox{
-
-    top:45vh;
+    top: 52vh;
+    left: 2vw;
+    position:absolute;
+    width: 45vw;
 }
+
+
 .submitButton {
     cursor: pointer;
-    position: relative;
-    top:15vh;
+    position:absolute;
+    top:75vh;
+    left:4.5vw;
     background-color: #b71234;
     border: none;
     color: white;
@@ -78,15 +89,9 @@ label{
     height: 2.5vh;
     text-align: center;
     text-decoration: none;
-    margin-top: 3vh;
-    margin-left: 5vw;
     line-height: 0;
-    padding-top:2.5vw;
-    padding-bottom: 2.5vw;
-    padding-left: 15vw;
-    padding-right: 15vw;
+    padding: 4vh 15vw 4vh;
     border-radius:2vw;
-    min-height:  50px;
 }
 
 #labelForSubjects{
@@ -94,7 +99,7 @@ label{
     font-size:2vw;
     font-style: normal;
     border: none;
-    margin-right: 14vw;
+    margin-right: 7vw;
     width:5vw;
 
 }
@@ -115,6 +120,8 @@ input[type="time"] {
     border: transparent;
     border-radius: 2vh;
 }
+
+
 
 #rightArrowBox{
     height:auto;
@@ -150,12 +157,12 @@ input[type="time"] {
     border: none;
     font-style: normal;
     padding:4vh;
-    padding-left: 11vh;
+    padding-left: 2vw;
     user-select: none;
     z-index: -2;
     text-align: center;
     font-size:4vw;
-    width: 27vw;
+    width: 15vw;
     max-height: 50px;
 }
 
@@ -163,6 +170,9 @@ input[type="time"] {
 #arrows{
     display: inline-flex;
     width: 67vw;
+    position: absolute;
+    top: 2vh;
+    left:2vw;
 }
 
 i {
@@ -177,11 +187,11 @@ i {
     margin-top:4vw;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    margin-left: 5vw;
+    margin-left: 6vw;
 }
 
 .left {
-    margin-left: 12vw;
+    margin-left: 2vw;
     margin-top:4vw;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
@@ -215,8 +225,8 @@ i {
 @media only screen and (max-width: 800px) {
     #inputContainer {
         position: absolute;
-        left:3vw;
-        margin-left: 15vw;
+        top:2vh;
+        left:16vw;
         padding: 0;
         display: inline-block;
         margin-top: 8vh;
@@ -282,10 +292,12 @@ i {
     }
 
     #arrows{
-        top:5vh;
-        width: 64vw;
-        margin: 1vh;
+        top:2vh;
+        width: 68vw;
+        margin:0;
+
     }
+
     #rightArrowBox{
         margin-top: 1vh;
         width: 20vw;
@@ -298,17 +310,17 @@ i {
         position:absolute;
         left:0;
         height: 10vh;
-        width:15vw;
+        width:16vw;
         background-color: white;
     }
 
     .left {
-        margin-left: 2vw;
+        margdin-left: 2vw;
         margin-top: 1vh;
     }
 
     .right{
-        margin-left: 2vw;
+        margin-left: 0;
         margin-top: 1vh;
     }
 
@@ -325,7 +337,7 @@ i {
         padding-top:1vh;
         font-size: 5vh;
         padding-left: 15vw;
-        width: 50vw;
+        width: 65vw;
         text-align: center;
         margin:0;
 
@@ -365,11 +377,14 @@ i {
         width:30vw;
 
     }
+
     .submitButton{
-        margin-left: 8vw;
+        margin-left: 6vw;
         min-height:  50px;
         align-items: center;
     }
+
+
     #courseBox{
         position:absolute;
         top:10vh;
@@ -389,6 +404,7 @@ i {
         top:45vh;
         min-height: 100px;
         margin-left: 2vw;
+        width:min-content;
     }
 
 }
