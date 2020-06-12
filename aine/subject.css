@@ -71,6 +71,7 @@ label{
 
 
 #courseBox{
+    display: inline-flex;
     top: 20vh;
     left: 2vw;
     position: absolute;
@@ -78,6 +79,7 @@ label{
 }
 
 #labelBox{
+    display: inline-flex;
     top:36vh;
     left: 2vw;
     position: absolute;
@@ -85,6 +87,7 @@ label{
 }
 
 #timeBox{
+    display: inline-flex;
     top: 52vh;
     left: 2vw;
     position:absolute;
@@ -130,6 +133,7 @@ input[type="time"] {
 }
 
 .time {
+    display: inline-flex;
     background-color: #b71234;
     color: white;
     padding: 1vw;
@@ -140,6 +144,7 @@ input[type="time"] {
 
 
 #rightArrowBox{
+    display: inline-flex;
     height:auto;
     width:15vw;
     z-index: 1;
@@ -151,6 +156,7 @@ input[type="time"] {
 
 
 #leftArrowBox{
+    display: inline-flex;
     height:15vh;
     width:11vw;
     z-index: 1;
@@ -189,28 +195,6 @@ input[type="time"] {
     position: absolute;
     top: 2vh;
     left:2vw;
-}
-
-i {
-    align-self: flex-start;
-    border: solid black;
-    border-width: 0 10px 10px 0;
-    display: inline-block;
-    padding: 10px;
-}
-
-.right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    position: absolute;
-    top: 5vh;
-}
-
-.left {
-    position:absolute;
-    top:5vh;
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
 }
 
 .hourSelect {
@@ -347,21 +331,7 @@ i {
         background-color: white;
     }
 
-    .left {
-        top:2vh;
-    }
 
-    .right{
-        top: 2vh;
-    }
-
-    i {
-        align-self: flex-start;
-        border: solid black;
-        border-width: 0 8px 8px 0;
-        display: inline-block;
-        padding: 8px;
-    }
 
 
     #displayDay {
@@ -417,26 +387,40 @@ i {
 
 
     #courseBox{
+        display:inline-grid ;
         position:absolute;
-        top:10vh;
+        top:12vh;
         min-height: 100px;
         margin-left: 2vw;
     }
 
     #labelBox{
+        display:inline-grid ;
         position:absolute;
-        top:27vh;
+        top:29vh;
         min-height: 100px;
         margin-left: 2vw;
     }
 
     #timeBox{
+        display:inline-grid ;
+        grid-template-rows:15vw;
+        grid-template-columns:30vw;
         position:absolute;
-        top:45vh;
+        top:47vh;
         min-height: 100px;
         margin-left: 2vw;
         width:min-content;
     }
 
+    .hourSelect{
+        grid-row:2;
+        grid-column: 1;
+    }
+
+    .minuteSelect{
+        grid-row:2;
+        grid-column: 2;
+    }
 }
 
