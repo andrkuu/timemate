@@ -98,6 +98,18 @@ ul {
     background-color: #950a27;
 }
 
+#subject{
+    height: 5vh;
+    width: 15vw ;
+    position: absolute;
+    top: 7vh;
+    left: 80vw;
+    background-color: #b71234;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
 
 
 /*
@@ -120,24 +132,30 @@ ul {
     .chartWrapper {
         position: absolute;
         overflow: scroll;
-        height: 75vh;
+        height: 70vh;
         left: 5%;
         width: 90%;
-        top: 20vh;
+        top: 25vh;
         right: 5%;
-
     }
 
-    #test {
+
+
+    #subject{
+        text-align: center;
+        height: 5vh;
+        width: 90vw ;
         position: absolute;
-        top: 15vh;
+        top: 19vh;
+        z-index: 4;
+        left: 5vw;
         background-color: #b71234;
+        color: white;
         border: none;
         border-radius: 5px;
-        color: white;
-        width: 60vw;
-        height: 5vh;
-        left: 20vw;
+    }
+    select {
+        text-align-last:center;
     }
 
     #changeView{
