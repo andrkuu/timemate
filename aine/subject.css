@@ -135,6 +135,7 @@ label{
     background-color: white;
     cursor:pointer;
     padding-left: 6vw;
+    -webkit-tap-highlight-color: transparent;
 
 }
 
@@ -146,6 +147,7 @@ label{
     z-index: 1;
     background-color: white;
     cursor:pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -184,8 +186,8 @@ label{
 .hourSelect {
     background: white;
     color:black;
-    padding: 2vh 1vw;
-    font-size: 1.5vw;
+    padding: 1.5vh 1vw;
+    font-size: 2vw;
     border-color: black;
     cursor: pointer;
     border-width: 1px;
@@ -197,8 +199,8 @@ label{
     background: white;
     border-color:black;
     color: black;
-    padding: 2vh 1vw;
-    font-size: 1.5vw;
+    padding: 1.5vh 1vw;
+    font-size: 2vw;
     cursor: pointer;
     border-width: 1px;
     border-radius:1vh;
@@ -224,7 +226,7 @@ label{
     .dropdown {
         background-color: white;
         color: black;
-        padding: 2vh;
+        padding: 1vh 2vw;;
         font-size: 1rem;
         border-color: grey;
         cursor: pointer;
@@ -332,7 +334,7 @@ label{
         margin: 0;
         background-color: white;
         color: black;
-        padding: 2vh;
+        padding: 1vh 2vw;
         font-size: 3vw;
         border-color: grey;
         cursor: pointer;
@@ -345,7 +347,7 @@ label{
     .minuteSelect {
         background-color: white;
         color: black;
-        padding: 2vh;
+        padding: 1vh 2vw;;
         font-size: 3vw;
         border-color: grey;
         cursor: pointer;
@@ -356,6 +358,7 @@ label{
     }
 
     .submitButton{
+        top:67vh;
         margin-left: 6vw;
         min-height:  50px;
         align-items: center;
@@ -367,23 +370,25 @@ label{
         position:absolute;
         top:15vh;
         min-height: 100px;
+        grid-template-rows:7vh 7vh;
         margin-left: 2vw;
     }
 
     #labelBox{
         display:inline-grid ;
         position:absolute;
-        top:30vh;
+        grid-template-rows:7vh 7vh;
+        top:31vh;
         min-height: 100px;
         margin-left: 2vw;
     }
 
     #timeBox{
         display:inline-grid ;
-        grid-template-rows:7vh;
+        grid-template-rows:7vh 7vh;
         grid-template-columns:30vw;
         position:absolute;
-        top:45vh;
+        top:46vh;
         min-height: 100px;
         margin-left: 2vw;
         width:min-content;
