@@ -1,8 +1,9 @@
 
 #inputContainer{
+    position:absolute;
     padding: 0;
     left: 25vw;
-    margin-top:-95vh;
+    top:3vh;
     height: 70vh;
     justify-content: space-evenly;
     align-items: center;
@@ -118,7 +119,7 @@ input[type="time"] {
 
 #rightArrowBox{
     height:auto;
-    width:22vw;
+    width:20vw;
     z-index: 1;
     align-items: end;
     background-color: white;
@@ -150,21 +151,19 @@ input[type="time"] {
     border: none;
     font-style: normal;
     padding:4vh;
+    padding-left: 11vh;
     user-select: none;
     z-index: -2;
     text-align: center;
     font-size:4vw;
-    width: 14vw;
+    width: 20vw;
     max-height: 50px;
-    margin-left: 2vw;
 }
 
 
 #arrows{
     display: inline-flex;
     width: 67vw;
-    margin-left: 20vw;
-
 }
 
 i {
@@ -179,11 +178,11 @@ i {
     margin-top:4vw;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    margin-left: 10vw;
+    margin-left: 5vw;
 }
 
 .left {
-    margin-left: 2vw;
+    margin-left: 12vw;
     margin-top:4vw;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
