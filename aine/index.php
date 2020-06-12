@@ -61,8 +61,6 @@ if(isset($_POST["submitSubject"])){
     <script>
 
         let day = 0;
-        var pos = -19;
-
 
         function changeDay(e) {
             if(e.id === "leftArrowBox"){
@@ -98,9 +96,12 @@ if(isset($_POST["submitSubject"])){
             document.getElementById("displayDay").innerHTML = labelText;
         }
 
+
+        var startPosition = 18;
+
         function moveLeft() {
             var elem = document.getElementById("displayDay");
-            var pos = -19;
+            var pos = startPosition * -1;
             var id = setInterval(frame, 10);
             function frame() {
                 if (pos == 0) {
@@ -113,7 +114,7 @@ if(isset($_POST["submitSubject"])){
         }
         function moveRight() {
             var elem = document.getElementById("displayDay");
-            var pos = 19;
+            var pos = startPosition ;
             var id = setInterval(frame, 10);
             function frame() {
                 if (pos == 0) {
@@ -143,7 +144,7 @@ if(isset($_POST["submitSubject"])){
             <div id="rightArrowBox" onclick="changeDay(this)"><i class="arrow right"  id="rightarrow"></i></div>
         </div>
 
-      <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <form method="POST" id="dropdownBox" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div id="courseBox">
           <i id="labelForSubjects"><label for="class" id="label">Kursuse nimi</label></i>
             <?php
