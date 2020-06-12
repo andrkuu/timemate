@@ -256,13 +256,13 @@ label{
 
     .submitButton {
         position: absolute;
-        top: 60vh;
+        top: 67vh;
         left:4vw;
         font-size: 3vh;
         display: block;
         height: 10px;
         line-height: 0;
-        margin-top: 10vh;
+        margin-top: 0;
         border-radius: 8px;
         width: 50vw;
         padding: 4vh 10vw 4vh;
@@ -388,6 +388,7 @@ label{
         display:inline-grid ;
         grid-template-rows:7vh 7vh;
         grid-template-columns:30vw;
+        grid-gap: 2px;
         position:absolute;
         top:46vh;
         min-height: 100px;
