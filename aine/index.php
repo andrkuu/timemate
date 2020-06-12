@@ -97,7 +97,7 @@ if(isset($_POST["submitSubject"])){
         }
 
 
-        var startPosition = 18;
+        var startPosition = 15;
 
         function moveLeft() {
             var elem = document.getElementById("displayDay");
