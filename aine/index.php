@@ -100,7 +100,7 @@ if(isset($_POST["submitSubject"])){
 
 
         function moveLeft() {
-            var elem = document.getElementById("displayDay");
+            var day = document.getElementById("displayDay");
             var pos = -15;
             var id = setInterval(frame, 10);
             function frame() {
@@ -108,12 +108,12 @@ if(isset($_POST["submitSubject"])){
                     clearInterval(id);
                 } else {
                     pos++;
-                    elem.style.left = pos + 'vw';
+                    day.style.left = pos + 'vw';
                 }
             }
         }
         function moveRight() {
-            var elem = document.getElementById("displayDay");
+            var day = document.getElementById("displayDay");
             var pos = 15;
             var id = setInterval(frame, 10);
             function frame() {
@@ -121,7 +121,7 @@ if(isset($_POST["submitSubject"])){
                     clearInterval(id);
                 } else {
                     pos--;
-                    elem.style.left = pos + 'vw';
+                    day.style.left = pos + 'vw';
                 }
             }
         }
