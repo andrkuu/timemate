@@ -143,7 +143,7 @@ if(isset($_POST["submitSubject"])){
             <div id="rightArrowBox" onclick="changeDay(this)"><i class="arrow right"  id="rightarrow"></i></div>
         </div>
 
-      <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <form method="POST" id="dropdownBox" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div id="courseBox">
           <i id="labelForSubjects"><label for="class" id="label">Kursuse nimi</label></i>
             <?php
