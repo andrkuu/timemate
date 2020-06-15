@@ -1,7 +1,6 @@
 ul {
     list-style-type: none;
 }
-
 #kuu {
     color: white;
     font-size: 16px;
@@ -157,22 +156,19 @@ ul {
     color: white;
     table-layout:fixed;
     overflow:hidden;
-    font-size: 1.6vh;
     width: 18vw;
-
-
 }
 .popupasi {
-    right: -5px;
     width: 28vw;
     line-height: 6vh;
     text-align: center;
-    margin-top: 0vh;
     font-size: 1vw;
     border-radius: 5px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: grey;
-    border-collapse: collapse;
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
 .popup {
@@ -181,9 +177,9 @@ ul {
     position: absolute;
     width: 34vw;
     z-index: 1;
-    top: 5.3vh;
+    top: 6vh;
     background-color: transparent;
-    padding: 5px;
+    padding-left: 6%;
     max-height: 80vh;
     overflow-y: auto;
     overflow-x: hidden;
@@ -192,14 +188,13 @@ ul {
 }
 #aine{
     border-top-left-radius: 5px;
-
+    width: 14vw;
  }
 #kestvus{
     border-top-right-radius: 5px;
+    width: 4vw;
+
 }
-
-
-
 
 
 .popup a:hover {
@@ -208,51 +203,42 @@ ul {
 
 .popupCloseButton {
     position: absolute;
-    left: 89%;
+    left: 93%;
     color: white;
     width: 1vw;
     height: 1vh;
     cursor: pointer;
-
-
-
+    font-size: 1vw;
 }
 
 #val{
     text-overflow: ellipsis;
-
     overflow: hidden;
     white-space: nowrap;
     background-color: rgb(226, 226, 226);
-    width: 12vw;
-    padding-left: 0.5vw;
-    padding-right: 0.5vw;
-
+    width: 14vw;
 }
 
 #act{
     text-overflow: ellipsis;
-
     overflow: hidden;
-    width: 12vw;
     white-space: nowrap;
-    padding-left: 0.5vw;
-    padding-right: 0.5vw;
     background-color: rgba(255,255,255,1);
+    width: 14vw;
 }
 
 #tim{
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 5.5vw;
     white-space: nowrap;
     background-color: rgb(226, 226, 226);
+    width: 4vw;
 }
 #rid:hover{
     background-color: #f1f1f1;
     opacity: 0.6;
 }
-#Daynr{
+#Day_nr_container{
     color: transparent;
 }
 
@@ -264,11 +250,11 @@ ul {
         left: 5vw;
     }
     .popup {
-
         display: none;
         max-height: 100%;
-        z-index: 1000;
-        padding-top: 100px;
+        z-index: 10;
+        padding-top: 20%;
+        padding-left: 0%;
         left: 0;
         top: 0;
         width: 100%;
@@ -276,51 +262,103 @@ ul {
         overflow: auto;
         background-color: rgb(0,0,0);
         background-color: rgba(0, 0, 0, 0.52);
-
     }
 
+    #aine{
+        border-top-left-radius: 0px;
 
+    }
+    #kestvus{
+        border-top-right-radius: 0px;
+    }
     .popupasi {
+        position: absolute;
         width: 90vw;
-        max-width: 90vw;
         font-size: 3vw;
         line-height: 10vh;
         z-index: 1;
-        margin-left: 4vw;
+        left: 5vw;
+        top:18vh;
+        border-collapse:collapse;
         background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(226, 226, 226) 40%, rgba(226, 226, 226) 81%, rgba(255,255,255,1) 81%, rgba(255,255,255,1) 100%);
     }
-
     .popuptext {
-        font-size: 1.6vh;
+        height: 6vh;
+        line-height: 0vh;
+        border-radius: 0;
+
     }
     .popupCloseButton {
-        left: 90vw;
+        left: 89vw;
         position: absolute;
-        top: 82px;
-        z-index: 12354;
-        font-size: 30px;
+        top: 9.4vh;
+        font-size: 3.5vh;
+        z-index: 17;
         color: white;
         cursor: pointer;
+
     }
     #val{
         width: 35vw;
+        padding: 0;
     }
 
     #act{
         width: 35vw;
+        padding: 0;
     }
 
     #tim{
-        width: 17vw;
+        width: 20vw;
+        padding: 0;
     }
 
-    #Daynr{
-        position: absolute;
+    th {
+        display: flex;
+        flex-direction: row;
+    }
 
-        top: 85px;
+    td{
+        border: table-cell;
+    }
+
+    #aine{
+        position: absolute;
+        left: 0vw;
+        top: -6vh;
+        border-top-left-radius: 5px;
+        width: 35vw;
+        height: 6vh;
+        line-height: 6vh;
+        padding-left: 15vw;
+    }
+    #õppetegevus{
+        position: absolute;
+        left:35vw;
+        top: -6vh;
+        width: 35vw;
+        height: 6vh;
+        line-height: 6vh;
+        padding-left: 7vw;
+    }
+    #kestvus{
+        position: absolute;
+        left:70vw;
+        top: -6vh;
+        width: 17vw;
+        height: 6vh;
+        line-height: 6vh;
+        padding-left: 3vw;
+    }
+
+    #Day_nr_container{
+        position: absolute;
+        top: 10vh;
         width: 90vw;
-        margin-left: 4vw;
-        font-size: 4.5vw;
+        height: 3vh;
+        left: 5vw;
+        font-size: 3vw;
+        z-index: 11;
         text-align: center;
         color: white;
         background-color: #b71234;
@@ -328,8 +366,11 @@ ul {
         border-top-left-radius: 5px;
     }
 
-
-
+    #Daynr{
+       margin-left: 13vw;
+        height: 3vh;
+        line-height: 3vh;
+    }
 
 }
 
