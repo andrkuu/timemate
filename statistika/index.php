@@ -2,6 +2,7 @@
 session_start();
 include("./functions_statistics.php");
 include("../functions_subject.php");
+
 if(!isset($_SESSION["id"])){
     header("Location: ../");
     exit();
@@ -36,12 +37,14 @@ if(!isset($_SESSION["id"])){
 <ul>
     <li class="prev" onclick="changeWeek(event)">❮</li>
     <li class="next" onclick="changeWeek(event)">❯</li>
-    <input type="hidden" id="flag" value="true" />
-        <button id="changeView">vaheta vaadet</button>
-
-
 </ul>
-</div>
+    <input type="hidden" id="flag" value="true" />
+    <button id="changeView">vaheta vaadet</button>
+
+    <div id="report_count">Õpingute hulk: <?php
+        echo total_report_count($_SESSION["id"]);
+        ?> päeva</div>
+    </div>
 
 <div class="chartWrapper">
     <div id="statistics" class="statistics">
@@ -90,7 +93,7 @@ if(!isset($_SESSION["id"])){
         document.getElementById("changeView").onclick = function () {
             swapCanvases();
             refreshGraph(weekNr);
-            weekNr = 0;
+            //weekNr = 0;
         };
 
 

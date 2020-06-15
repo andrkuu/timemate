@@ -3,6 +3,7 @@
 session_start();
 include("functions_calendar.php");
 
+
 if(!isset($_SESSION["id"])){
     header("Location: ../");
     exit();
@@ -138,10 +139,9 @@ if(!isset($_SESSION["id"])){
 
 <div id="popup" class="popup">
     <span class="helper"></span>
-    <div>
         <div class="popupCloseButton">&times;</div>
         <div id="myPopup"></div>
-        <div id="Daynr"></div>
+        <div id="Day_nr_container"><div id="Daynr"></div></div>
     </div>
 </div>
 

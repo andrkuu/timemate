@@ -56,7 +56,6 @@ $sql = '
                     avg(duration),              
                     WEEKDAY(date(report_date))+1 DayNumber
                     
-                    
                     FROM time_reportings 
                     WHERE time_reportings.subject_id = ?
                     AND time_reportings.user_id <> ?
@@ -228,7 +227,7 @@ $result.= "
     options: {
       title: {
         display: true,
-        text: 'Mingi graafik'
+        text: '".$firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused'
       },
       legend: { display: true },
       scales: {
