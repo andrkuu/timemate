@@ -35,7 +35,7 @@ ul {
     border-radius: 5px;
     left: 25vw;
     width: 65%;
-    top: 15vh;
+    top: 20vh;
     border-width:1px;
     border-style:solid;
     border-color:black;
@@ -51,7 +51,7 @@ ul {
 }
 #changeView {
     position: absolute;
-    top: 7vh;
+    top: 12vh;
     background-color: #b71234;
     border: none;
     color: white;
@@ -60,20 +60,23 @@ ul {
     left: 45vw;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    font-size: 2vh;
+    border-radius:5px;
 }
 .prev{
     -webkit-tap-highlight-color: transparent;
     position: absolute;
-    top: 7vh;
+    top: 12vh;
     width: 5vw;
     height: 5vh;
-    left: 40vw;
+    left: 38vw;
     background-color: #b71234;
     font-size: 3vh;
     line-height: 5vh;
     text-align: center;
-    border-radius: 5px 0px 0px 5px;
+    border-radius:5px;
     cursor: pointer;
+    color: white;
 }
 .prev:hover {
     background-color: #950a27;
@@ -82,17 +85,18 @@ ul {
 
 .next{
     position: absolute;
-    top: 7vh;
+    top: 12vh;
     width: 5vw;
     height: 5vh;
-    left: 70vw;
+    left: 72vw;
     background-color: #b71234;
     font-size: 3vh;
     line-height: 5vh;
     text-align: center;
-    border-radius: 0px 5px 5px 0px;
+    border-radius:5px;
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
+    color: white;
 }
 .next:hover {
     background-color: #950a27;
@@ -100,14 +104,27 @@ ul {
 
 #subject{
     height: 5vh;
-    width: 15vw ;
+    width: 10vw ;
     position: absolute;
-    top: 7vh;
+    top: 12vh;
     left: 80vw;
     background-color: #b71234;
     color: white;
     border: none;
     border-radius: 5px;
+}
+
+#report_count{
+    width: 45vw;
+    height: 5vh;
+    line-height: 5vh;
+    left: 35vw;
+    top: 6vh;
+    color: black;
+    position: absolute;
+    text-align: center;
+    font-size: 3vh;
+    font-weight: 500;
 }
 
 
@@ -132,15 +149,12 @@ ul {
     .chartWrapper {
         position: absolute;
         overflow: scroll;
-        height: 70vh;
+        height: 60vh;
         left: 5%;
         width: 90%;
         top: 25vh;
         right: 5%;
     }
-
-
-
     #subject{
         text-align: center;
         height: 5vh;
@@ -159,8 +173,8 @@ ul {
     }
 
     #changeView{
-        width: 70vw;
-        left: 15vw;
+        width: 60vw;
+        left: 20vw;
         top: 13vh;
     }
     .next{
@@ -173,5 +187,17 @@ ul {
         top: 13vh;
         left: 5vw;
         width: 10vw;
+    }
+    #report_count{
+        width: 90vw;
+        height: 5vh;
+        line-height: 5vh;
+        left: 5vw;
+        top: 90vh;
+        color: black;
+        position: absolute;
+        text-align: center;
+        font-size: 3vh;
+        font-weight: 500;
     }
 }
