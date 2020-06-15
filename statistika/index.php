@@ -93,7 +93,7 @@ if(!isset($_SESSION["id"])){
         document.getElementById("changeView").onclick = function () {
             swapCanvases();
             refreshGraph(weekNr);
-            weekNr = 0;
+            //weekNr = 0;
         };
 
 

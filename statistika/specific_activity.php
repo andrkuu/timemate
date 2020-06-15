@@ -227,7 +227,7 @@ $result.= "
     options: {
       title: {
         display: true,
-        text: 'Mingi graafik'
+        text: '".$firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused'
       },
       legend: { display: true },
       scales: {
