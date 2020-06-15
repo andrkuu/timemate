@@ -1,6 +1,6 @@
 <?php
-require("../../config.php");
-session_start();
+require("../../../config.php");
+
 
 function signIn($userName, $password){
     $notice = "";
