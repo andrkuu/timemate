@@ -7,7 +7,7 @@
         header("Location: ../");
         exit();
     }
-    $report_count = total_report_count($_SESSION["id"]);
+    $report_count = 10;
 
     echo "<div id=\"topbar\"><a href=\"../aine\" id='client_link'><img src=\"../images/tlulogo.png\" id=\"tlu_logo\" alt=\"Tlu logo\"></a>
     <div id='client_name'>".$_SESSION["userFirstName"]. " ".$_SESSION["userLastName"]."</div>
