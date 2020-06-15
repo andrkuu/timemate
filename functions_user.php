@@ -1,6 +1,6 @@
 <?php
-require("../../config.php");
-session_start();
+require("../../../config.php");
+
 
 function signIn($userName, $password){
     $notice = "";
@@ -83,4 +83,21 @@ function signUp($userName, $password){
     $stmt->close();
     $conn->close();
     return $notice;
+}
+
+
+function total_report_count($userId){
+
+    $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
+    $stmt = $conn->prepare("SELECT COUNT(*) FROM `time_reportings` WHERE user_id =?");
+    echo $conn->error;
+    $stmt->bind_param("i", $userId);
+    $stmt->bind_result($reportCount);
+    if($stmt -> execute()){
+        if($stmt->fetch()){
+
+        }
+    }
+
+    return $reportCount;
 }

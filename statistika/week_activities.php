@@ -143,9 +143,8 @@ $result.= "options: {
                 legend: {
                     position: 'top',
                     display: true,
-                    align: 'left',
-                    rowCount: 2,
-                    columnCount: 2 
+                    align: 'left'
+           
                 },
                
                 options: {
@@ -176,7 +175,7 @@ $result.= "options: {
                         ticks: {
                             display: true,
                             suggestedMin: 0,
-                            stacked: true,    
+                             
                             suggestedMax: ".(intval($maxChartValue)+1).",
                             
                             callback: function(value, index, values) {
@@ -202,13 +201,7 @@ $result.= "\"hover\": {
                         ctx.textAlign = 'center';
                         ctx.textBaseline = 'bottom';
 
-                        this.data.datasets.forEach(function (dataset, i) {
-                            var meta = chartInstance.controller.getDatasetMeta(i);
-                            meta.data.forEach(function (bar, index) {
-                                var data = dataset.data[index];
-                                //ctx.fillText(data, bar._model.x, bar._model.y - 5);
-                            });
-                        });
+                       
                     }
                 },
                       
