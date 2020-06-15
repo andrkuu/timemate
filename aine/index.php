@@ -3,7 +3,7 @@
 
 session_start();
 include("../functions_subject.php");
-include("../functions_user.php");
+
 
 
 if(!isset($_SESSION["id"])){
