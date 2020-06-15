@@ -1,7 +1,5 @@
 <?php
 
-    include("functions_user.php");
-
 
     if(isset($_POST["logout"])){
         session_unset();
