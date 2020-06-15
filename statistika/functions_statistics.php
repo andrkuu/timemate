@@ -169,7 +169,8 @@ function getWeekActivities($userId, $week){
 function total_report_count($userId){
 
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn->prepare("SELECT COUNT(*) FROM `time_reportings` WHERE user_id =?");
+    $stmt = $conn->prepare("SELECT COUNT(*) FROM (SELECT * FROM time_reportings WHERE user_id =? GROUP BY DATE(time_reportings.report_date)) AS X");
+
     echo $conn->error;
     $stmt->bind_param("i", $userId);
     $stmt->bind_result($reportCount);
