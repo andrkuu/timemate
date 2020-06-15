@@ -38,7 +38,9 @@ if(!isset($_SESSION["id"])){
     <li class="next" onclick="changeWeek(event)">❯</li>
     <input type="hidden" id="flag" value="true" />
         <button id="changeView">vaheta vaadet</button>
-
+        <div id="report_count"><?php
+            echo total_report_count($_SESSION["id"]);
+            ?></div>
 
 </ul>
 </div>
