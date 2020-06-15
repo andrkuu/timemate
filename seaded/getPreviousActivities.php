@@ -14,14 +14,14 @@ else{
     $limit = 7;
 }
 
+
 $userId = $_SESSION["id"];
 
 $result = null;
 $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 $stmt = $conn -> prepare("SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
                                             (SELECT name FROM activities WHERE id = time_reportings.activity_id), 
-                                            duration, report_date, id FROM time_reportings WHERE user_id=?  
-                                            AND insert_date BETWEEN date(NOW()) and NOW() - INTERVAL -2 DAY                                      
+                                            duration, report_date, id FROM time_reportings WHERE user_id=?                                                               
                                             ORDER BY insert_date DESC
                                             LIMIT ".$limit);
 
