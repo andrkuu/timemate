@@ -21,7 +21,7 @@
     </form> 
     
     <div id=\"myLinks\">
-    <a id=\"Links\" href=\"../seaded\">Seaded</a>
+    <a id=\"Links\" href=\"../seaded\">Ajalugu</a>
     <form method=\"POST\" action=\"". htmlspecialchars($_SERVER["PHP_SELF"])."\">
         <button type=\"submit\"  id=\"Linkout\" name=\"logout\">Logi välja</button>       
     </form>
