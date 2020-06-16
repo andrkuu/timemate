@@ -55,13 +55,6 @@ if(isset($_POST["submit_button"])) {
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <img src="images/tlu_logo_wide.jpg" id="tlu_logo2" alt="Tlu logo">
             <br><br>
-            <input type="text" id="user_name" name="username" placeholder="TLU Kasutajanimi">
-            <br><br>
-            <input type="password" id="password" name="password" placeholder="TLU Parool">
-            <br><br>
-            <input type="checkbox" id="remember_me" name="remember" value="remember">
-            <label for="remember_me">Mäleta mind</label>
-            <br><br>
             <button type="submit" id="submit_button" name="submit_button" >Logi sisse</button>
             <div id="error_message"><?php echo $notice; ?></div>
         </form>
