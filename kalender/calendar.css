@@ -191,14 +191,14 @@ ul {
     height: 80%;
     right: 0;
     position: absolute;
-    width: 34vw;
+    width: 32.5vw;
     z-index: 1;
     top: 6vh;
     background-color: transparent;
-    padding-left: 6%;
     max-height: 80vh;
     overflow-y: auto;
     overflow-x: hidden;
+    left: 66vw;
 
 
 }
