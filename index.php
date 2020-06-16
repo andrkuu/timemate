@@ -1,6 +1,5 @@
 <?php
 
-require("functions_user.php");
 require("functions_main.php");
 
 $notice = "";

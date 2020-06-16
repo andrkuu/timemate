@@ -78,14 +78,13 @@ function insert_time_report($subject_id, $activity_id, $duration, $user_id, $min
 
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 
-    //echo "test";
 
     if (intval(get_subject_time($user_id, $minusDays)) + intval($duration) <= (60*24)){
         //echo "õnnestus";
 
-        $stmt = $conn->prepare("INSERT INTO time_reportings (subject_id, activity_id, duration, user_id, report_date) VALUES ((?),(?),(?),(?),subdate(current_timestamp, (?)))");
-
-        $stmt->bind_param("iiiii", $subject_id,$activity_id, $duration, $user_id, $minusDays);
+        $stmt = $conn->prepare("INSERT INTO time_reportings (subject_id, activity_id, duration, report_date, user_id ) VALUES ((?),(?),(?),subdate(current_timestamp, (?)),(?))");
+        var_dump($user_id);
+        $stmt->bind_param("iiiii", $subject_id,$activity_id, $duration, $minusDays, $user_id);
         if($stmt->execute()){
             //$ret = True;
         }else{

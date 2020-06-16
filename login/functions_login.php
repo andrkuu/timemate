@@ -20,6 +20,7 @@ function check_user($uid){
     $result = array();
     $result["found"] = $found;
     $result["id"] = $idFromDb;
+    echo $idFromDb;
     return $result;
 }
 
@@ -27,10 +28,10 @@ function add_user($uid, $first_name, $last_name, $student_id, $role){
     $notice = null;
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 
-    $stmt = $conn->prepare("INSERT INTO users (uid, first_name, last_name, student_code, role) VALUES(?,?,?,?,?)");
+    $stmt = $conn->prepare("INSERT INTO users (uid, first_name, last_name, student_code, role, reg_date) VALUES(?,?,?,?,?,current_timestamp)");
     echo $conn->error;
 
-
+    echo "test";
     $stmt->bind_param("sssss", $uid, $first_name, $last_name, $student_id, $role);
 
     if($stmt->execute()){
