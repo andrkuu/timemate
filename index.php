@@ -9,6 +9,7 @@ $notice = "";
 // if login button has been pressed
 if(isset($_POST["submit_button"])) {
 
+        /*
     $usernameError = null;
     $passwordError = null;
 
@@ -29,7 +30,8 @@ if(isset($_POST["submit_button"])) {
         $notice = "Ei saa sisse logida!";
     }
 
-    //echo $notice;
+    //echo $notice;*/
+    header("Location: /login");
 
 }
 

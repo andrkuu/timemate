@@ -1,7 +1,10 @@
 <?php
 
-
+    require_once('/var/simplesamlphp/lib/_autoload.php');
     if(isset($_POST["logout"])){
+        $auth = new \SimpleSAML\Auth\Simple('timemate');
+        $auth->logout('http://www.timemate.ee');
+        SimpleSAML_Session::getSessionFromRequest()->cleanup();
         session_unset();
         session_destroy();
         header("Location: ../");
