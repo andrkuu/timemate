@@ -83,7 +83,7 @@ function insert_time_report($subject_id, $activity_id, $duration, $user_id, $min
         //echo "õnnestus";
 
         $stmt = $conn->prepare("INSERT INTO time_reportings (subject_id, activity_id, duration, report_date, user_id ) VALUES ((?),(?),(?),subdate(current_timestamp, (?)),(?))");
-        var_dump($user_id);
+
         $stmt->bind_param("iiiii", $subject_id,$activity_id, $duration, $minusDays, $user_id);
         if($stmt->execute()){
             //$ret = True;

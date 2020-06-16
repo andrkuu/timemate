@@ -22,7 +22,7 @@
     $role = $attributes["eduPersonAffiliation"][0];
     $student_id = $attributes["tluStudentID"][0];
 
-    add_user($uid, $first_name, $last_name, $student_id, $role);
+
     $result = check_user($uid);
 
 
@@ -40,10 +40,11 @@
         add_user($uid, $first_name, $last_name, $student_id, $role);
     }else{
         echo "found user id".$_SESSION["id"];
+        header("Location: /aine");
     }
 
 
 
-    header("Location: /aine");
+
 
 
