@@ -2,7 +2,7 @@
 
 session_start();
 
-$userId = $_SESSION["id"];
+$userId = $_POST["student"];
 $week = $_POST["week"];
 $subject = $_POST["subject"];
 
@@ -37,7 +37,7 @@ $sql = '
 $stmt = $conn -> prepare($sql);
 
 
-$stmt->bind_param("iii", $userId,$subject, $week);
+$stmt->bind_param("iii",$userId, $subject, $week);
 $stmt -> bind_result($subjectFromDb, $activityFromDb, $durationFromDb, $reportDateFromDb, $firstDayOfWeek, $lastDayOfWeek, $weekNr, $dayNr);
 $stmt -> execute();
 echo $stmt->error;

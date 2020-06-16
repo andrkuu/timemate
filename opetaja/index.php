@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include("../functions_subject.php");
+include("functions_teacher.php");
 
 if(!isset($_SESSION["id"])){
     header("Location: ../");
@@ -22,11 +22,20 @@ if(!isset($_SESSION["id"])){
 
 </head>
 <body>
-<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
     <?php
     echo getSubjects();
+    echo getStudents();
     ?>
+
+    <ul>
+        <li class="prev" onclick="changeWeek(event)">❮</li>
+        <li class="next" onclick="changeWeek(event)">❯</li>
+    </ul>
+    <input type="hidden" id="flag" value="true" />
+    <button id="changeView">vaheta vaadet</button>
+
+
     <br />
 
     <div class="chartWrapper">
@@ -37,7 +46,7 @@ if(!isset($_SESSION["id"])){
     </div>
 
     <div id="statistics_box"></div>
-</form>
+
 
 <script src="../jquery.js"></script>
 
@@ -68,6 +77,14 @@ if(!isset($_SESSION["id"])){
         var str = e.options[e.selectedIndex].value;
         console.log(str);
         refreshGraph(weekNr);
+    };
+
+
+
+    document.getElementById("student").onchange = function () {
+        swapCanvases();
+        refreshGraph(weekNr);
+        //weekNr = 0;
     };
 
     document.getElementById("changeView").onclick = function () {
@@ -131,7 +148,7 @@ if(!isset($_SESSION["id"])){
 
         }*/
 
-        if (chartNr === 2){
+        if (chartNr === 0){
             var e = document.getElementById("subject");
             e.style.visibility = 'visible';
         }else{
@@ -168,13 +185,16 @@ if(!isset($_SESSION["id"])){
         chartType = chartTypes[chartNr];
         var e = document.getElementById("subject");
         var sub = e.options[e.selectedIndex].value;
+        e = document.getElementById("student");
+        var stud = e.options[e.selectedIndex].value;
+
         console.log(sub);
         $.ajax(
             {
                 url: chartType + ".php",
                 type: 'POST',
                 dataType: 'text',
-                data: {week: weekNr, subject: sub},
+                data: {week: weekNr, subject: sub, student: stud},
                 success: function (response) {
                     $("#statistics_box").html(response);
                 }
