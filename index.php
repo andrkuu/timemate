@@ -6,6 +6,12 @@ require("functions_main.php");
 $notice = "";
 
 
+if(isset($_SESSION["id"])){
+    header("Location: /aine");
+    exit();
+}
+
+
 // if login button has been pressed
 if(isset($_POST["submit_button"])) {
 

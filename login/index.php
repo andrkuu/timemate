@@ -43,9 +43,6 @@
         echo "found user id".$result["id"];
     }
 
-
-
-
     $_SESSION["id"] = $result["id"];
 
 
