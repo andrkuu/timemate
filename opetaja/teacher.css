@@ -13,13 +13,36 @@
     left:32.5vw;
 }
 
-#statistics_teacher{
-    height: 35vw;
-    width: 35vw;
-    background-color: #b71234;
+.chartWrapper > canvas {
     position: absolute;
-    left: 32.5vw;
-    top: 25vh;
+    left: 0;
+    top: 0;
+    pointer-events:none;
+}
+
+.chartWrapper {
+    position: absolute;
+    overflow: auto;
+    height: 75vh;
+    border-radius: 5px;
+    left: 25vw;
+    width: 65%;
+    top: 20vh;
+    border-width:1px;
+    border-style:solid;
+    border-color:black;
+    border: transparent;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+#statistics_teacher{
+    height: 20vw;
+    width: 50vw;
+    position: absolute;
+    left: 0vw;
+    top: 0vh;
     font-size: 4vw;
     line-height: 35vw;
     text-align: center;
@@ -34,9 +57,22 @@
     }
 
     #statistics_teacher{
-        height: 80vw;
-        width: 80vw;
-        left: 10vw;
-        line-height: 80vw;
+        top: 10vh;
+        font-size: 3vh;
+        width: 900px;
+        left: 5%;
+        right: 5%;
+        height: 500px;
+        position: static;
+    }
+
+    .chartWrapper {
+        position: absolute;
+        overflow: scroll;
+        height: 60vh;
+        left: 5%;
+        width: 90%;
+        top: 25vh;
+        right: 5%;
     }
 }
