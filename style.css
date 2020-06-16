@@ -46,6 +46,11 @@ body {
     margin: 0.5vh;
     margin-right: 2vw;
     -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 #client_name {
@@ -137,6 +142,11 @@ body {
     position: relative;
     text-align: center;
     transition: 0.3s margin-left;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 .page:hover .link_icons{
      background-color:  transparent;

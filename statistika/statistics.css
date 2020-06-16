@@ -62,6 +62,11 @@ ul {
     -webkit-tap-highlight-color: transparent;
     font-size: 2vh;
     border-radius:5px;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 .prev{
     -webkit-tap-highlight-color: transparent;
@@ -77,6 +82,11 @@ ul {
     border-radius:5px;
     cursor: pointer;
     color: white;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 .prev:hover {
     background-color: #950a27;
@@ -97,6 +107,11 @@ ul {
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     color: white;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 .next:hover {
     background-color: #950a27;
@@ -125,6 +140,11 @@ ul {
     text-align: center;
     font-size: 3vh;
     font-weight: 500;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 
