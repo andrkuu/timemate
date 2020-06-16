@@ -58,7 +58,6 @@ $sql = '
                     
                     FROM time_reportings 
                     WHERE time_reportings.subject_id = ?
-                    AND time_reportings.user_id <> ?
                     AND WEEK(date(report_date),1) = WEEK(NOW(),1) -? 
                     AND YEAR(date(report_date)) = YEAR(NOW())
                             GROUP BY DATE(report_date), time_reportings.subject_id 
@@ -66,7 +65,7 @@ $sql = '
 $stmt2 = $conn2 -> prepare($sql);
 
 
-$stmt2->bind_param("iii", $subject,$userId, $week);
+$stmt2->bind_param("ii", $subject, $week);
 $stmt2 -> bind_result($avgSubjectFromDb, $avgDurationFromDb, $avgDayNr);
 $stmt2 -> execute();
 
