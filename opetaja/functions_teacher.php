@@ -48,7 +48,7 @@ function getSubjects($user_id){
 function getStudents(){
     $result = null;
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn -> prepare("SELECT id, student_code FROM users WHERE student_code <>'' ORDER BY student_code");
+    $stmt = $conn -> prepare("SELECT id, last_name FROM users WHERE student_code <>'' ORDER BY student_code");
     echo $conn -> error;
     $stmt -> bind_result($idFromDb, $studentCode);
     $stmt -> execute();
