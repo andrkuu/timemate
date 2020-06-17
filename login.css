@@ -38,7 +38,7 @@ body{
     background-color: #b71234;
     color: #dddddd;
     height: 5vh;
-    width: 10vw;
+    width: 15vw;
     cursor: pointer;
     font: inherit;
     box-shadow: inset 0 -3px 0 #950a27;
@@ -62,19 +62,8 @@ body{
         height: 10vh;
         margin-top: 0vh;
     }
-    #user_name{
-        width: 60vw;
-        height: 5vh;
-        border-radius: 5px;
-    }
-
-    #password{
-        width: 60vw;
-        height: 5vh;
-        border-radius: 5px;
-    }
-
     #submit_button{
+        margin-top: 10vh;
         width: 60vw;
         height: 7vh;
     }

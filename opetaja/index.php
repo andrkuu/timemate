@@ -66,7 +66,7 @@ if(!isset($_SESSION["id"])){
 
         //swapCanvases();
         refreshGraph(weekNr);
-
+        document.getElementById("Links").style.visibility = 'hidden';
 
     });
 

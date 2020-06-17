@@ -81,7 +81,7 @@ if(!isset($_SESSION["id"])){
 
     <div class="links">
         <a href="../statistika/" class="page" ><span class="link_names">Statistika</span><img src="../images/statistics.png" alt="statistics" class="link_icons" id="first_icon"></a>
-        <a href="../aine/" class="page"> <span class="link_names">Aine</span><img src="../images/add.png" alt="statistics" class="link_icons" id="second_icon"></a>
+        <a href="../aine/" class="page"> <span class="link_names">Sissekanne</span><img src="../images/add.png" alt="statistics" class="link_icons" id="second_icon"></a>
         <a href="../kalender/" class="page" ><span class="link_names">Kalender</span><img src="../images/calendar.png" alt="statistics" class="link_icons" id="third_icon"></a>
         <a href="../seaded/" class="page" id="chosen" id="tools"><span class="link_names">Ajalugu</span><img src="../images/history.png" alt="statistics" class="link_icons" id="fourth_icon"></a>
     </div>
