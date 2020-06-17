@@ -24,7 +24,9 @@ function getActivities(){
     return $result;
 }
 
-function getSubjects($user_id){
+function getSubjects(){
+
+    $user_id = $_SESSION["id"];
     $result = null;
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
     $stmt = $conn -> prepare("SELECT * FROM subjects WHERE subjects.id IN (SELECT user_subjects.subject_id FROM user_subjects WHERE user_subjects.user_id = ?)");
@@ -45,17 +47,18 @@ function getSubjects($user_id){
     return $result;
 }
 
-function getStudents(){
+function getStudents($subject_id){
     $result = null;
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn -> prepare("SELECT id, last_name FROM users WHERE student_code <>'' ORDER BY student_code");
+    $stmt = $conn -> prepare("SELECT id, first_name, last_name FROM users WHERE role = 'student' AND id IN (SELECT user_subjects.user_id FROM user_subjects WHERE user_subjects.subject_id = ?) ORDER BY student_code");
     echo $conn -> error;
-    $stmt -> bind_result($idFromDb, $studentCode);
+    $stmt->bind_param("i", $subject_id);
+    $stmt -> bind_result($idFromDb, $first_name, $last_name);
     $stmt -> execute();
     $result .= "<select id=\"student\" name=\"student\" class=\"dropdown\">";
 
     while($stmt -> fetch()){
-        $result .= "<option class='option' value=\"".$idFromDb."\">".$studentCode."</option> \n";
+        $result .= "<option class='option' value=\"".$idFromDb."\">".$first_name." ".$last_name."</option> \n";
     }
 
     $result .= "</select>";

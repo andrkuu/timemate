@@ -22,11 +22,18 @@ if(!isset($_SESSION["id"])){
 
 </head>
 <body>
+    <div id="subject_container">
+        <?php
+        echo getSubjects();
+        ?>
+    </div>
 
-    <?php
-    echo getSubjects($_SESSION["id"]);
-    echo getStudents();
-    ?>
+    <div id="student_container">
+
+    </div>
+
+
+
 
     <ul>
         <li class="prev" onclick="changeWeek(event)">❮</li>
@@ -65,7 +72,11 @@ if(!isset($_SESSION["id"])){
     $(document).ready(function () {
 
         //swapCanvases();
-        refreshGraph(weekNr);
+        var e = document.getElementById("subject");
+        var sub = e.options[e.selectedIndex].value;
+        $("#student").innerHTML = getStudents(sub);
+
+
         document.getElementById("Links").style.visibility = 'hidden';
 
     });
@@ -74,24 +85,42 @@ if(!isset($_SESSION["id"])){
     document.getElementById("subject").onchange = function (){
 
         var e = document.getElementById("subject");
-        var str = e.options[e.selectedIndex].value;
-        console.log(str);
+        var sub = e.options[e.selectedIndex].value;
+        $("#student").innerHTML = getStudents(sub);
+
         refreshGraph(weekNr);
     };
 
 
 
-    document.getElementById("student").onchange = function () {
-        swapCanvases();
-        refreshGraph(weekNr);
-        //weekNr = 0;
-    };
+
 
     document.getElementById("changeView").onclick = function () {
         swapCanvases();
         refreshGraph(weekNr);
         //weekNr = 0;
     };
+
+    function getStudents(subject_id){
+        $.ajax(
+            {
+                url: "get_students.php",
+                type: 'POST',
+                dataType: 'text',
+                data: {subject_id: subject_id},
+                success: function (response) {
+                    $("#student_container").html(response);
+                    refreshGraph(weekNr);
+                    document.getElementById("student").onchange = function () {
+                        swapCanvases();
+                        refreshGraph(weekNr);
+                        //weekNr = 0;
+                    };
+                }
+            });
+
+
+    }
 
 
     function toggleChart(){
@@ -181,14 +210,17 @@ if(!isset($_SESSION["id"])){
 
 
     function refreshGraph(weekNr) {
+
+
         console.log("Refresh");
         chartType = chartTypes[chartNr];
+
         var e = document.getElementById("subject");
         var sub = e.options[e.selectedIndex].value;
-        e = document.getElementById("student");
+
+        var e = document.getElementById("student");
         var stud = e.options[e.selectedIndex].value;
 
-        console.log(sub);
         $.ajax(
             {
                 url: chartType + ".php",
