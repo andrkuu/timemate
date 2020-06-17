@@ -24,7 +24,7 @@ if(!isset($_SESSION["id"])){
 <body>
 
     <?php
-    echo getSubjects();
+    echo getSubjects($_SESSION["id"]);
     echo getStudents();
     ?>
 
