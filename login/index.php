@@ -53,9 +53,18 @@
     }
 
     if($uid == "andrku"){
-        echo "õpetaja";
         header("Location: /opetaja");
-    }else{
+    }
+    else if($uid == "jaagup"){
+        header("Location: /aine");
+    }
+    else if($uid == "rinde"){
+        header("Location: /opetaja");
+    }
+    else if($uid == "inga"){
+        header("Location: /opetaja");
+    }
+    else{
         header("Location: /aine");
     }
 
