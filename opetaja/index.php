@@ -140,29 +140,6 @@ if(!isset($_SESSION["id"])){
 
 
 
-            /*
-            $.each(ds._meta, function(k,v) {
-                //ds._meta[k].hidden = true;
-                console.log(ds._meta[k].hidden);
-            })
-            /*
-            if(flag === 'true') {
-                 $("#flag").val("false");
-                ds.hidden = false;
-                $.each(ds._meta, function(k,v) {
-                    ds._meta[k].hidden = false;
-                })
-
-            } else if (flag === 'false') {
-                $("#flag").val("true");
-                ds.hidden = true;
-                $.each(ds._meta, function(k,v) {
-                    ds._meta[k].hidden = true;
-                })
-
-            }*/
-
-
         });
         chart.update();
     }
@@ -249,10 +226,6 @@ if(!isset($_SESSION["id"])){
         refreshGraph(weekNr);
 
     }
-
-
-
-
 
 </script>
 
