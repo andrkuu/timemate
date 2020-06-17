@@ -16,6 +16,8 @@ Client came to us with a problem. The problem was that teachers do not have actu
 
 ![Rakenduse ekraanitõmmised](https://raw.githubusercontent.com/andrkuu/timemate/master/pildid/Ajalugu.PNG)
 
+![Rakenduse ekraanitõmmised](https://raw.githubusercontent.com/andrkuu/timemate/master/pildid/Teacher.PNG)
+
 # Kasutatud tehnoloogiad / Used technologies
 
 MySQL 5
