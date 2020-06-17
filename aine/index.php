@@ -5,7 +5,6 @@ session_start();
 include("../functions_subject.php");
 
 
-
 if(!isset($_SESSION["id"])){
     header("Location: ../");
     exit();
@@ -34,7 +33,6 @@ if(isset($_POST["submitSubject"])){
 
     if ($duration != 0){
         if ((0 <= $minusDays) && ($minusDays <= 2)){
-
             echo insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"]), $minusDays);
         }
 
@@ -145,7 +143,7 @@ if(isset($_POST["submitSubject"])){
             <div id="rightArrowBox" onclick="changeDay(this)"><img src="../images/rightarrow.png" id="rightarrow" alt="right arrow"></i></div>
         </div>
 
-      <form method="POST" id="dropdownBox" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <form method="POST" id="dropdownBox" action="">
         <div id="courseBox">
           <i id="labelForSubjects"><label for="class" id="label">Kursuse nimi</label></i>
             <?php

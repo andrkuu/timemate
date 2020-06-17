@@ -1,14 +1,20 @@
 <?php
 
-require("functions_user.php");
 require("functions_main.php");
 
 $notice = "";
 
 
+if(isset($_SESSION["id"])){
+    header("Location: /aine");
+    exit();
+}
+
+
 // if login button has been pressed
 if(isset($_POST["submit_button"])) {
 
+        /*
     $usernameError = null;
     $passwordError = null;
 
@@ -29,7 +35,8 @@ if(isset($_POST["submit_button"])) {
         $notice = "Ei saa sisse logida!";
     }
 
-    //echo $notice;
+    //echo $notice;*/
+    header("Location: /login");
 
 }
 
