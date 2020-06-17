@@ -4,6 +4,7 @@
 session_start();
 include("../functions_subject.php");
 
+//echo($_SESSION["id"]);
 
 if(!isset($_SESSION["id"])){
     header("Location: ../");
@@ -147,7 +148,7 @@ if(isset($_POST["submitSubject"])){
         <div id="courseBox">
           <i id="labelForSubjects"><label for="class" id="label">Kursuse nimi</label></i>
             <?php
-                echo getSubjects();
+                echo getSubjects($_SESSION["id"]);
             ?>
          </div>
       <br />

@@ -12,11 +12,13 @@ function check_user($uid){
     $stmt->bind_param("s", $uid);
     $stmt -> bind_result($idFromDb);
     $stmt -> execute();
-    $found = false;
 
-    while($stmt -> fetch()){
+    if($stmt -> fetch()){
         $found = true;
+    }else{
+        $found = false;
     }
+
     $result = array();
     $result["found"] = $found;
     $result["id"] = $idFromDb;

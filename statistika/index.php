@@ -32,7 +32,7 @@ if(!isset($_SESSION["id"])){
 
 <div id="container">
     <?php
-    echo getSubjects();
+    echo getSubjects(16);
     ?>
 <ul>
     <li class="prev" onclick="changeWeek(event)">❮</li>
