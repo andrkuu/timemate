@@ -7,7 +7,7 @@
     $as->isAuthenticated();
     //SimpleSAML_Configuration::setConfigDir('/var/simplesamlphp/lib/simplesaml/config/saml');
     //$as->requireAuth(['ReturnTo' => '/aine']);
-    $as->requireAuth(['ReturnTo' => '/login', 'KeepPost' => FALSE]);
+    $as->requireAuth(['ReturnTo' => '/login', 'KeepPost' => TRUE]);
     $attributes = $as->getAttributes();
     echo $attributes["uid"][0];
     echo "<br>";
@@ -23,7 +23,7 @@
     $last_name = $names[1];
     $role = $attributes["eduPersonAffiliation"][0];
 
-    if(!isset($student_id)){
+    if(!isset($attributes["tluStudentID"][0])){
         $student_id = "";
     }else{
         $student_id = $attributes["tluStudentID"][0];
@@ -43,6 +43,7 @@
     $_SESSION["id"] = $result["id"];
     $_SESSION["found"] = $result["found"];
 
+
     $_SESSION["role"] = $role;
 
     if(!$result["found"]){
@@ -54,14 +55,23 @@
         //header("Location: /login");
     }
 
+
+    /*
+    if($role == "student" and $uid == "andrku"){
+        $_SESSION["role"] = "faculty";
+        header("Location: /opetaja");
+    }else */
+
     if($role == "student" and $uid == "andrku"){
         $_SESSION["role"] = "faculty";
         header("Location: /opetaja");
     }else if($role == "student"){
         header("Location: /aine");
-    }else{
+    }
+    else{
         header("Location: /opetaja");
     }
+
     /*
     if($uid == "andrku"){
         header("Location: /opetaja");

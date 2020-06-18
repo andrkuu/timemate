@@ -27,9 +27,10 @@ function getActivities(){
 function getSubjects($user_id){
     $result = null;
     $conn = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-    $stmt = $conn -> prepare("SELECT * FROM subjects WHERE subjects.id IN (SELECT user_subjects.subject_id FROM user_subjects WHERE user_subjects.user_id = ?)");
+    //$stmt = $conn -> prepare("SELECT * FROM subjects WHERE subjects.id IN (SELECT user_subjects.subject_id FROM user_subjects WHERE user_subjects.user_id = ?)");
+    $stmt = $conn -> prepare("SELECT * FROM subjects");
     echo $conn -> error;
-    $stmt->bind_param("i", $user_id);
+    //$stmt->bind_param("i", $user_id);
     $stmt -> bind_result($idFromDb, $nameFromDb, $codeFromDb);
     $stmt -> execute();
     $result .= "<select id=\"subject\" name=\"subject\" class=\"dropdown\">";

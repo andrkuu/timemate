@@ -33,18 +33,18 @@ $result .= "<ul>";
 
 
 $months = [
-    "jaanuar",
-    "veebruar",
-    "märts",
-    "aprill",
+    "jan",
+    "veb",
+    "mär",
+    "apr",
     "mai",
-    "juuni",
-    "juuli",
-    "august",
-    "september",
-    "oktoober",
-    "november",
-    "detsember"
+    "jun",
+    "jul",
+    "aug",
+    "sep",
+    "okt",
+    "nov",
+    "det"
 ];
 
 while($stmt -> fetch()){
@@ -55,13 +55,13 @@ while($stmt -> fetch()){
     $temp = "";
 
     if($hours == 0){
-        $temp.= "<td>".$minutes."m</td></tr>";
+        $temp.= "<td>".$minutes."min</td></tr>";
     }
     else if($minutes == 0){
         $temp.= "<td>".$hours."h</td></tr>";
     }
     else{
-        $temp.= "<td>".$hours."h ".$minutes."m</td></tr>";
+        $temp.= "<td>".$hours."h ".$minutes."min</td></tr>";
     }
 
     $result .=
