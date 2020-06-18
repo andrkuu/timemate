@@ -3,6 +3,10 @@
 session_start();
 include("functions_teacher.php");
 
+if($_SESSION["role"] == "student"){
+    header("Location: ../aine");
+}
+
 if(!isset($_SESSION["id"])){
     header("Location: ../");
     exit();

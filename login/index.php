@@ -15,19 +15,21 @@
     echo "<br>";
     echo $attributes["eduPersonAffiliation"][0];
     echo "<br>";
-    echo $attributes["tluStudy"][0];
-    echo "<br>";
-    echo $attributes["tluStudentID"][0];
-    echo "<br>";
+
     $uid = $attributes["uid"][0];
     $displayName = $attributes["displayname"][0];
     $names = explode(" ", $displayName);
     $first_name = $names[0];
     $last_name = $names[1];
     $role = $attributes["eduPersonAffiliation"][0];
-    $student_id = $attributes["tluStudentID"][0];
 
-
+    if(!isset($student_id)){
+        $student_id = "";
+    }else{
+        $student_id = $attributes["tluStudentID"][0];
+        echo $attributes["tluStudentID"][0];
+        echo "<br>";
+    }
     //print_r($attributes);
 
 
@@ -41,7 +43,7 @@
     $_SESSION["id"] = $result["id"];
     $_SESSION["found"] = $result["found"];
 
-
+    $_SESSION["role"] = $role;
 
     if(!$result["found"]){
         echo "not found";
@@ -52,6 +54,15 @@
         //header("Location: /login");
     }
 
+    if($role == "student" and $uid == "andrku"){
+        $_SESSION["role"] = "faculty";
+        header("Location: /opetaja");
+    }else if($role == "student"){
+        header("Location: /aine");
+    }else{
+        header("Location: /opetaja");
+    }
+    /*
     if($uid == "andrku"){
         header("Location: /opetaja");
     }
@@ -62,11 +73,11 @@
         header("Location: /opetaja");
     }
     else if($uid == "inga"){
-        header("Location: /opetaja");
+        //header("Location: /opetaja");
     }
     else{
         header("Location: /aine");
-    }
+    }*/
 
 
 
