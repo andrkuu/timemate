@@ -116,13 +116,13 @@ for ($day = 1; $day <= $days_in_month; $day++) {
                     $minutes = ($time % 60);
 
                     if($hours == 0){
-                        $temp.= "<td><div id='tim'>".$minutes."m</td></tr></div>";
+                        $temp.= "<td><div id='tim'>".$minutes." min</td></tr></div>";
                     }
                     else if($minutes == 0){
-                        $temp.= "<td><div id='tim'>".$hours."h</td></tr></div>";
+                        $temp.= "<td><div id='tim'>".$hours." h</td></tr></div>";
                     }
                     else{
-                        $temp.= "<td ><div id='tim'>".$hours."h ".$minutes."m</td></tr></div>";
+                        $temp.= "<td ><div id='tim'>".$hours." h ".$minutes." min</td></tr></div>";
                     }
 
 

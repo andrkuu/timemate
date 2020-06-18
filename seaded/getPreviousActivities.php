@@ -55,19 +55,19 @@ while($stmt -> fetch()){
     $temp = "";
 
     if($hours == 0){
-        $temp.= "<td>".$minutes."min</td></tr>";
+        $temp.= "<td>".$minutes." min</td></tr>";
     }
     else if($minutes == 0){
-        $temp.= "<td>".$hours."h</td></tr>";
+        $temp.= "<td>".$hours." h</td></tr>";
     }
     else{
-        $temp.= "<td>".$hours."h ".$minutes."min</td></tr>";
+        $temp.= "<td>".$hours." h ".$minutes." min</td></tr>";
     }
 
     $result .=
         "<li id='one_item_history'>"
         ."<span id='date_box'> <span id='history_day'>".$day."</span>"
-        ."<span id='history_month'>".substr(ucfirst($months[intval($month)-1]),0,3)."</span></span>"
+        ."<span id='history_month'>".substr($months[intval($month)-1],0,3)."</span></span>"
         ."<span id='subject_box'> <span id='history_subject'>".$subjectIdFromDb."</span>"
         ."<span id='history_activity'>".$activityIdFromDb."</span></span>"
         ."<img onClick='deleteReporting(this)' src='../images/delete.png' class='delete_activity' id='delete_activity".$idFromDb."'>"

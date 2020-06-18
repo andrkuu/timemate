@@ -15,6 +15,7 @@ $sql = 'SELECT (SELECT name FROM subjects WHERE id = time_reportings.subject_id)
                                             sum(duration) Duration,
                                             week(curdate()) CurrentWeekNumber, 
                                             date_add(date(report_date),interval  -WEEKDAY(date(report_date))+0 day) FirstDayOfWeek, 
+                                            
                     date_add(date_add(date(report_date),interval  -WEEKDAY(date(report_date))+0 day), interval 6 day) LastDayOfWeek
                     
                                             
@@ -28,10 +29,9 @@ $stmt = $conn -> prepare($sql);
 
 
 $stmt->bind_param("ii", $userId,$week);
-$stmt -> bind_result($subjectFromDb, $durationFromDb, $currentWeekNr,$firstDayOfWeek, $lastDayOfWeek);
+$stmt -> bind_result($subjectFromDb, $durationFromDb, $currentWeekNr, $firstDayOfWeek, $lastDayOfWeek);
 $stmt -> execute();
 echo $stmt->error;
-
 
 $colors = ["green","red","blue","cyan","orange","pink","azure","DimGrey","darkslategrey","FireBrick"];
 $colorsIndex = 0;
