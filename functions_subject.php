@@ -102,7 +102,7 @@ function insert_time_report($subject_id, $activity_id, $duration, $user_id, $min
     }else{
         $current = intval(get_subject_time($user_id, $minusDays));
         $max = (60*24) - intval(get_subject_time($user_id, $minusDays));
-        $message = "Võimalik sisestada veel ".$max." ".$current;
+        $message = "Võimalik sisestada veel ".$max." minutit";
         echo "<script type='text/javascript'>alert('$message');</script>";
     }
 
