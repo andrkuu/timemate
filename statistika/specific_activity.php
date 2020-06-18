@@ -54,7 +54,10 @@ $sql = '
         (SELECT name FROM subjects WHERE id = time_reportings.subject_id), 
             		
                     avg(duration),              
-                    WEEKDAY(date(report_date))+1 DayNumber
+                    WEEKDAY(date(report_date))+1 DayNumber,
+                    week(curdate()) CurrentWeekNumber, 
+                    date_add(date(report_date),interval  -WEEKDAY(date(report_date))+0 day) FirstDayOfWeek, 
+                    date_add(date_add(date(report_date),interval  -WEEKDAY(date(report_date))+0 day), interval 6 day) LastDayOfWeek
                     
                     FROM time_reportings 
                     WHERE time_reportings.subject_id = ?
@@ -67,7 +70,7 @@ $stmt2 = $conn2 -> prepare($sql);
 
 
 $stmt2->bind_param("iii", $subject,$userId, $week);
-$stmt2 -> bind_result($avgSubjectFromDb, $avgDurationFromDb, $avgDayNr);
+$stmt2 -> bind_result($avgSubjectFromDb, $avgDurationFromDb, $avgDayNr,$currentWeekNr, $firstDayOfWeek, $lastDayOfWeek);
 $stmt2 -> execute();
 
 $avgActivities = array();
