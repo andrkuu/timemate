@@ -200,6 +200,12 @@ foreach (array_keys($weekActivities) as $activity) {
 
 //print_r($weekActivities);
 
+if(sizeof($weekActivities) == 0){
+    $chartText = "Sellel nädalal ei olnud ühtegi sisestust";
+}else{
+    $chartText = $firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused";
+}
+
 
 
 $result.= "
@@ -230,7 +236,7 @@ $result.= "
     options: {
       title: {
         display: true,
-        text: '".$firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused'
+        text: '".$chartText."'
       },
       legend: { display: true },
       scales: {
