@@ -1,30 +1,137 @@
+ul {
+    list-style-type: none;
+    font-size: 0px;
+}
+
 .dropdown{
     background-color: white;
     color: black;
-    padding: 1vw;
-    font-size: 2vw;
+    font-size: 1vw;
     border-color: grey;
     cursor: pointer;
     border-width: 1px;
-    border-radius:2vh;
-    width: 35vw;
+    border-radius: 5px;
+    width: 14vw;
+    height: 5vh;
     position: absolute;
     top: 10vh;
-    left:32.5vw;
+    left:15vw;
+}
+
+.chartWrapper > canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events:none;
+}
+
+.chartWrapper {
+    position: absolute;
+    overflow: auto;
+    height: 75vh;
+    border-radius: 5px;
+    left: 15vw;
+    width: 70vw;
+    top: 20vh;
+    border-width:1px;
+    border-style:solid;
+    border-color:black;
+    border: transparent;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.prev{
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    top: 10vh;
+    width: 5vw;
+    height: 5vh;
+    left: 29.5vw;
+    background-color: #b71234;
+    font-size: 3vh;
+    line-height: 5vh;
+    text-align: center;
+    border-radius:5px;
+    cursor: pointer;
+    color: white;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+.prev:hover {
+    background-color: #950a27;
+}
+#changeView {
+    position: absolute;
+    top: 10vh;
+    background-color: #b71234;
+    border: none;
+    color: white;
+    width: 30vw;
+    height: 5vh;
+    left: 35vw;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 2vh;
+    border-radius:5px;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+.next{
+    position: absolute;
+    top: 10vh;
+    width: 5vw;
+    height: 5vh;
+    left: 65.5vw;
+    background-color: #b71234;
+    font-size: 3vh;
+    line-height: 5vh;
+    text-align: center;
+    border-radius:5px;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    color: white;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+.next:hover {
+    background-color: #950a27;
 }
 
 #statistics_teacher{
-    height: 35vw;
-    width: 35vw;
-    background-color: #b71234;
+    height: 20vw;
+    width: 100%;
     position: absolute;
-    left: 32.5vw;
-    top: 25vh;
+    left: 0vw;
+    top: 0vh;
     font-size: 4vw;
     line-height: 35vw;
     text-align: center;
     color: white;
 }
+
+#student{
+    height: 5vh;
+    border-color: grey;
+    background-color: white;
+    color: black;
+    width: 14vw;
+    position: absolute;
+    top: 10vh;
+    left: 71vw;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
 
 @media only screen and (max-width: 800px) {
     .dropdown{
@@ -34,9 +141,48 @@
     }
 
     #statistics_teacher{
-        height: 80vw;
-        width: 80vw;
-        left: 10vw;
-        line-height: 80vw;
+        top: 10vh;
+        font-size: 3vh;
+        width: 900px;
+        left: 5%;
+        right: 5%;
+        height: 500px;
+        position: static;
+    }
+
+    .chartWrapper {
+        position: absolute;
+        overflow: scroll;
+        height: 60vh;
+        left: 5%;
+        width: 90%;
+        top: 25vh;
+        right: 5%;
+    }
+    .prev{
+        width: 10vw;
+        left: 5vw;
+        top: 17.5vh;
+    }
+    .next{
+        width: 10vw;
+        left: 85vw;
+        top: 17.5vh;
+    }
+    #changeView{
+        left: 20vw;
+        width: 60vw;
+        top: 17.5vh;
+    }
+
+    #student{
+        width: 42.5vw;
+        left: 52.5vw;
+        top: 10vh;
+    }
+    .dropdown{
+        width: 42.5vw;
+        left: 5vw;
+        top: 10vh;
     }
 }

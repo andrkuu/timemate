@@ -22,6 +22,11 @@ ul {
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-size: 3vh;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 .month {
     text-align: center;
@@ -83,6 +88,7 @@ ul {
     text-align: center;
     cursor: pointer;
     color: #c8c8c8;
+
 }
 
 .calendar-day-np:after {
@@ -95,6 +101,11 @@ ul {
     width: 13vw;
     text-align: center;
     cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 .calendar-day:hover {
     background-color: #dddddd;
@@ -104,6 +115,11 @@ ul {
     text-align: center;
     height: 10vh;
     line-height: 10vh;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 .calendar-day:after {
@@ -175,14 +191,14 @@ ul {
     height: 80%;
     right: 0;
     position: absolute;
-    width: 34vw;
+    width: 32.5vw;
     z-index: 1;
     top: 6vh;
     background-color: transparent;
-    padding-left: 6%;
     max-height: 80vh;
     overflow-y: auto;
     overflow-x: hidden;
+    left: 66vw;
 
 
 }
@@ -209,6 +225,11 @@ ul {
     height: 1vh;
     cursor: pointer;
     font-size: 1vw;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 #val{
@@ -235,7 +256,6 @@ ul {
     width: 4vw;
 }
 #rid:hover{
-    background-color: #f1f1f1;
     opacity: 0.6;
 }
 #Day_nr_container{
@@ -280,7 +300,6 @@ ul {
         left: 5vw;
         top:18vh;
         border-collapse:collapse;
-        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(226, 226, 226) 40%, rgba(226, 226, 226) 81%, rgba(255,255,255,1) 81%, rgba(255,255,255,1) 100%);
     }
     .popuptext {
         height: 6vh;

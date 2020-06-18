@@ -4,7 +4,7 @@
 session_start();
 include("../functions_subject.php");
 
-
+//echo($_SESSION["id"]);
 
 if(!isset($_SESSION["id"])){
     header("Location: ../");
@@ -34,7 +34,6 @@ if(isset($_POST["submitSubject"])){
 
     if ($duration != 0){
         if ((0 <= $minusDays) && ($minusDays <= 2)){
-
             echo insert_time_report($_POST["subject"], $_POST["type"], $duration, intval($_SESSION["id"]), $minusDays);
         }
 
@@ -134,7 +133,7 @@ if(isset($_POST["submitSubject"])){
     <?php require('../nav-bar.php'); ?>
     <div class="links">
         <a href="../statistika/" class="page" ><span class="link_names">Statistika</span><img src="../images/statistics.png" alt="statistics" class="link_icons" id="first_icon"></a>
-        <a href="../aine/" class="page" id="chosen"> <span class="link_names">Aine</span><img src="../images/add.png" alt="statistics" class="link_icons" id="second_icon"></a>
+        <a href="../aine/" class="page" id="chosen"> <span class="link_names">Sissekanne</span><img src="../images/add.png" alt="statistics" class="link_icons" id="second_icon"></a>
         <a href="../kalender/" class="page"><span class="link_names">Kalender</span><img src="../images/calendar.png" alt="statistics" class="link_icons" id="third_icon"></a>
         <a href="../seaded/" class="page" id="tools"><span class="link_names">Ajalugu</span><img src="../images/history.png" alt="statistics" class="link_icons" id="fourth_icon"></a>
     </div>
@@ -145,17 +144,17 @@ if(isset($_POST["submitSubject"])){
             <div id="rightArrowBox" onclick="changeDay(this)"><img src="../images/rightarrow.png" id="rightarrow" alt="right arrow"></i></div>
         </div>
 
-      <form method="POST" id="dropdownBox" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <form method="POST" id="dropdownBox" action="">
         <div id="courseBox">
           <i id="labelForSubjects"><label for="class" id="label">Õppeaine</label></i>
             <?php
-                echo getSubjects();
+                echo getSubjects($_SESSION["id"]);
             ?>
          </div>
       <br />
          <div id="labelBox" >
 
-          <i id="labelForSubjects"><label for="type" id="label">Õppetöö tüüp </label></i>
+          <i id="labelForSubjects"><label for="type" id="label">Õppetegevus </label></i>
 
         <?php
            echo getActivities();

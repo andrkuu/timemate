@@ -2,7 +2,7 @@
 
 session_start();
 
-$userId = $_SESSION["id"];
+$userId = $_POST["student"];
 $week = $_POST["week"];
 $subject = $_POST["subject"];
 
@@ -37,7 +37,7 @@ $sql = '
 $stmt = $conn -> prepare($sql);
 
 
-$stmt->bind_param("iii", $userId,$subject, $week);
+$stmt->bind_param("iii",$userId, $subject, $week);
 $stmt -> bind_result($subjectFromDb, $activityFromDb, $durationFromDb, $reportDateFromDb, $firstDayOfWeek, $lastDayOfWeek, $weekNr, $dayNr);
 $stmt -> execute();
 echo $stmt->error;
@@ -61,7 +61,6 @@ $sql = '
                     
                     FROM time_reportings 
                     WHERE time_reportings.subject_id = ?
-                    AND time_reportings.user_id <> ?
                     AND WEEK(date(report_date),1) = WEEK(NOW(),1) -? 
                     AND YEAR(date(report_date)) = YEAR(NOW())
                             GROUP BY DATE(report_date), time_reportings.subject_id 
@@ -69,8 +68,8 @@ $sql = '
 $stmt2 = $conn2 -> prepare($sql);
 
 
-$stmt2->bind_param("iii", $subject,$userId, $week);
-$stmt2 -> bind_result($avgSubjectFromDb, $avgDurationFromDb, $avgDayNr,$currentWeekNr, $firstDayOfWeek, $lastDayOfWeek);
+$stmt2->bind_param("ii", $subject, $week);
+$stmt2 -> bind_result($avgSubjectFromDb, $avgDurationFromDb, $avgDayNr, $currentWeekNr, $firstDayOfWeek, $lastDayOfWeek);
 $stmt2 -> execute();
 
 $avgActivities = array();
@@ -200,17 +199,11 @@ foreach (array_keys($weekActivities) as $activity) {
 
 //print_r($weekActivities);
 
-if(sizeof($weekActivities) == 0){
-    $chartText = "Sellel nädalal ei olnud ühtegi sisestust";
-}else{
-    $chartText = $firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused";
-}
-
 
 
 $result.= "
        
-        document.getElementById(\"statistics\").innerHTML = '<canvas id=\"specific_activity\" ></canvas><canvas id=\"week_activities\" width=0px height=0px ></canvas><canvas id=\"subject_activities\" width=0px height=0px></canvas>';
+        document.getElementById(\"statistics_teacher\").innerHTML = '<canvas id=\"specific_activity\" ></canvas>';
         var ctx = document.getElementById('specific_activity').getContext('2d');
         
         var chart = new Chart(ctx, {
@@ -236,7 +229,7 @@ $result.= "
     options: {
       title: {
         display: true,
-        text: '".$chartText."'
+        text: '".$firstDayOfWeek." kuni ".$lastDayOfWeek." Nädala tegevused'
       },
       legend: { display: true },
       scales: {

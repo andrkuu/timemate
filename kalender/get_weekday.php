@@ -31,13 +31,13 @@ foreach ($events as $key => $value){
             $minutes = ($time % 60);
             $temp = "";
             if($hours == 0){
-                $temp.= "<td>".$minutes."m</td></tr>";
+                $temp.= "<td>".$minutes." min</td></tr>";
             }
             else if($minutes == 0){
-                $temp.= "<td>".$hours."h</td></tr>";
+                $temp.= "<td>".$hours." h</td></tr>";
             }
             else{
-                $temp.= "<td>".$hours."h ".$minutes."m</td></tr>";
+                $temp.= "<td>".$hours." h ".$minutes." min</td></tr>";
             }
            // print_r($key3);
             echo "<tr><td>".$key2."</td><td>".$key3."</td>".$temp;

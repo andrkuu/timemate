@@ -112,10 +112,22 @@ ul {
     #chosen{
         display:none
     }
-
+    .link_names{
+        color: transparent;
+        font-size: 0;
+    }
     .links{
-        display: none;
         visibility: hidden;
+        display: none;
+        pointer-events: none;
+    }
+
+    #history_activity{
+        margin-top: 1vh;
+        font-size: 2.2vh;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
     }
 
     #history{
